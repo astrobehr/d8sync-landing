@@ -1,50 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>D8Sync</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>D8Sync Beta Access</title>
   <style>
     body {
-      font-family: Inter, sans-serif;
       margin: 0;
       padding: 0;
-      min-height: 100vh;
+      background: #f9f9fb;
+      font-family: Inter, sans-serif;
       display: flex;
+      flex-direction: column;
       align-items: center;
       justify-content: center;
-      background: #f9f9fb;
+      min-height: 100vh;
       text-align: center;
-      flex-direction: column;
     }
 
     h1 {
-      font-size: 3em;
-      margin-bottom: 0.3em;
+      font-size: 3rem;
+      margin-bottom: 0.5rem;
     }
 
     p {
-      font-size: 1.2em;
       max-width: 700px;
-      margin: 10px auto;
+      font-size: 1.1rem;
       line-height: 1.6;
+      margin: 10px 20px;
     }
 
     ul {
-      font-size: 1em;
       max-width: 600px;
       text-align: left;
       margin: 20px auto;
       padding: 0 20px;
+      font-size: 1rem;
+      line-height: 1.5;
     }
 
     ul li {
       margin-bottom: 10px;
     }
 
-    /* Form container tweaks */
-    .formkit-form {
+    .form-container {
       margin-top: 40px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .form-container input[type="email"] {
+      padding: 12px;
+      font-size: 1rem;
+      width: 300px;
+      max-width: 80%;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      margin-bottom: 16px;
+    }
+
+    .form-container button {
+      padding: 12px 24px;
+      font-size: 1rem;
+      background-color: black;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .formkit-guarantee {
+      font-size: 0.8rem;
+      color: #555;
+      margin-top: 10px;
     }
   </style>
 </head>
@@ -52,23 +81,26 @@
 
   <h1>Welcome to D8Sync</h1>
   <p>
-    D8Sync is a new kind of dating platform—where memes, media preferences, and real humor matter more than looks.
-    Our AI matches you based on shared vibes, playlists, and punchlines—not just swipe photos.
+    A swipe-free dating experience where your humor, taste, and real-world compatibility define the match.  
+    No more endless scrolling. Just pure vibe-matching through memes, media, and magic.
   </p>
 
   <ul>
-    <li>🎯 AI-matched dates based on your humor, shows, books & music</li>
-    <li>🎭 Swipe memes to train your comedy algorithm</li>
-    <li>🔒 No photos. No swiping. Just vibes and consent</li>
-    <li>🎥 Post-date? You decide if it was a match</li>
+    <li>🎯 AI-matched dates based on your humor, playlists, and punchlines</li>
+    <li>🎭 Meme-swipe engine to train your comedy match graph</li>
+    <li>🔒 Blind dates. No photos. No judgment. Just vibes</li>
+    <li>🎥 Review dates and opt-in only when the feeling is mutual</li>
   </ul>
 
-  <!-- Signup Form -->
-  <script src="https://f.convertkit.com/ckjs/ck.5.js"></script>
-  <!-- Keep the full ConvertKit embed form code below this line exactly as-is -->
-  <!-- START OF FORM -->
-  [PASTE YOUR FULL CONVERTKIT EMBED HERE]
-  <!-- END OF FORM -->
+  <!-- Begin ConvertKit Signup Form -->
+  <div class="form-container">
+    <form action="https://api.convertkit.com/forms/6761755/subscriptions" method="post">
+      <input type="email" name="email_address" placeholder="Enter your email" required />
+      <button type="submit">Join the Beta</button>
+    </form>
+    <div class="formkit-guarantee">We’ll only vibe with your inbox when it counts. Unsubscribe any time.</div>
+  </div>
+  <!-- End ConvertKit Signup Form -->
 
 </body>
 </html>
