@@ -4,27 +4,15 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>D8Sync</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
   <style>
     body {
-      font-family: 'Inter', sans-serif;
+      font-family: Inter, sans-serif;
       margin: 0;
       padding: 0;
       background: #000;
       color: #fff;
       text-align: center;
       scroll-behavior: smooth;
-    }
-
-    .fade-in {
-      opacity: 0;
-      transform: translateY(30px);
-      transition: opacity 0.8s ease, transform 0.8s ease;
-    }
-
-    .fade-in.visible {
-      opacity: 1;
-      transform: translateY(0);
     }
 
     .container {
@@ -41,25 +29,33 @@
       margin: 60px auto;
     }
 
+    .section {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+      margin-bottom: 60px;
+    }
+
+    .section.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
     h1 {
       font-size: 2.8rem;
       margin: 0 0 20px 0;
     }
 
-    .intro, .section {
+    p {
       font-size: 1.2rem;
       line-height: 1.6;
-      margin-bottom: 60px;
-    }
-
-    .section {
-      margin-top: 100px;
+      margin-bottom: 20px;
     }
 
     ul.bullets {
       list-style: none;
       padding: 0;
-      margin-bottom: 60px;
+      margin: 0 auto 60px auto;
       text-align: left;
       font-size: 1.1rem;
       display: inline-block;
@@ -75,7 +71,7 @@
       justify-content: center;
       align-items: stretch;
       width: 700px;
-      margin: 0 auto 100px auto;
+      margin: 0 auto 60px auto;
       background: #fff;
       color: #000;
       border-radius: 20px;
@@ -163,49 +159,57 @@
   </style>
 </head>
 <body>
-  <div class="container fade-in">
+  <div class="container">
     <!-- Logo -->
     <div class="logo">
       <img src="https://github.com/astrobehr/d8sync-landing/blob/main/D8S%20YT%20Banner.jpg?raw=true" alt="D8Sync Logo">
     </div>
 
-    <!-- Welcome Text -->
-    <h1>Welcome to D8Sync</h1>
-    <div class="intro">
-      Discover a new kind of dating experience—authentic, meme-driven, and AI-matched.<br><br>
-      Join people who want to break the mold and find meaningful connections using humor and personality.<br>
-      D8Sync is more than swipes—it's about vibes.
+    <!-- Hero Text -->
+    <div class="section">
+      <h1>Welcome to D8Sync</h1>
+      <p>
+        Tired of the same old dating apps that rely on perfect photos and endless swiping? <br>
+        So were we. That’s why we built something different.
+      </p>
     </div>
 
-    <!-- Scroll Section 1 -->
-    <div class="section fade-in">
-      <h2>What if your next date started with a laugh?</h2>
-      <p>No more awkward intros. D8Sync finds people who laugh at the same memes, listen to the same playlists, and know how to vibe. Because that's where real connection starts—in the stuff you already love.</p>
+    <!-- Story Block -->
+    <div class="section">
+      <p>
+        D8Sync is built for people who lead with personality. Whether your love language is sharing TikToks, playlists, or inside jokes,
+        this app is where your sense of humor becomes your best wingman.
+      </p>
     </div>
 
-    <!-- Scroll Section 2 -->
-    <div class="section fade-in">
-      <h2>Your face isn’t your personality.</h2>
-      <p>We skip profile pics. Instead, we get to know your sense of humor, media taste, and personality. Every match starts as a blind vibe check—AI-backed and cringe-free.</p>
+    <!-- Feature Highlights -->
+    <div class="section">
+      <ul class="bullets">
+        <li>🎯 AI-matched dates based on your humor, playlists, and punchlines</li>
+        <li>🎭 Meme-swipe engine to train your comedy match graph</li>
+        <li>🔒 Blind dates. No photos. No judgment. Just vibes</li>
+        <li>🎬 Review dates and opt-in only when the feeling is mutual</li>
+      </ul>
     </div>
 
-    <!-- Scroll Section 3 -->
-    <div class="section fade-in">
-      <h2>More than matches—memories.</h2>
-      <p>Each AI-matched blind date ends with a simple choice: do you want to reconnect? If both say yes, then the match is revealed. It’s dating without the pressure, and connection without the performance.</p>
+    <!-- Narrative Expansion -->
+    <div class="section">
+      <p>
+        Imagine this: You vibe with someone’s taste in memes, music, and shows—and you connect in real time.
+        No photos. No pressure. Just authentic interactions based on your shared energy.
+      </p>
     </div>
 
-    <!-- Feature Bullets -->
-    <ul class="bullets fade-in">
-      <li>🎯 AI-matched dates based on humor, playlists, and punchlines</li>
-      <li>🎭 Meme-swipe engine to train your comedy match graph</li>
-      <li>🔒 Blind dates. No photos. No judgment. Just vibes</li>
-      <li>🎬 Review dates and opt-in only when the feeling is mutual</li>
-    </ul>
+    <div class="section">
+      <p>
+        Our AI isn’t just swiping right—it’s studying your sense of humor and matching you with people who’ll actually get your weird references.
+        Finally, a dating app that understands your comedy soul.
+      </p>
+    </div>
 
     <!-- Signup Form -->
     <script src="https://f.convertkit.com/ckjs/ck.5.js"></script>
-    <div class="form-wrapper fade-in">
+    <div class="form-wrapper section">
       <div class="form-left">
         <h2>Get Notified About<br>D8Sync Beta Waitlist</h2>
         <p>Drop your email and be the first to access the meme-powered dating experience.</p>
@@ -216,30 +220,23 @@
         <div class="disclaimer">No spam. No cringe. Unmatch us anytime.</div>
       </div>
       <div class="form-right">
-        <img src="https://github.com/astrobehr/d8sync-landing/blob/main/D8S%20YT%20Banner.jpg?raw=true" alt="D8Sync Logo Reused">
+        <img src="https://github.com/astrobehr/d8sync-landing/blob/main/D8S%20YT%20Banner.jpg?raw=true" alt="D8Sync Phone Mockup">
       </div>
     </div>
   </div>
 
+  <!-- Scroll-trigger Animation -->
   <script>
-    const faders = document.querySelectorAll('.fade-in');
-
-    const appearOptions = {
-      threshold: 0.1,
-      rootMargin: "0px 0px -20px 0px"
-    };
-
-    const appearOnScroll = new IntersectionObserver(function(entries, observer) {
-      entries.forEach(entry => {
-        if (!entry.isIntersecting) return;
-        entry.target.classList.add('visible');
-        observer.unobserve(entry.target);
+    const sections = document.querySelectorAll('.section');
+    const showOnScroll = () => {
+      const triggerBottom = window.innerHeight * 0.9;
+      sections.forEach(sec => {
+        const secTop = sec.getBoundingClientRect().top;
+        if (secTop < triggerBottom) sec.classList.add('visible');
       });
-    }, appearOptions);
-
-    faders.forEach(fader => {
-      appearOnScroll.observe(fader);
-    });
+    };
+    window.addEventListener('scroll', showOnScroll);
+    window.addEventListener('load', showOnScroll);
   </script>
 </body>
 </html>
