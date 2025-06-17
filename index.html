@@ -20,17 +20,6 @@
       padding: 40px 20px;
     }
 
-    .fade-target {
-      opacity: 0;
-      transform: translateY(40px);
-      transition: all 0.8s ease-out;
-    }
-
-    .fade-in {
-      opacity: 1 !important;
-      transform: translateY(0) !important;
-    }
-
     .logo img {
       width: 800px;
       max-width: 100%;
@@ -49,6 +38,7 @@
       line-height: 1.6;
       margin-bottom: 60px;
       text-align: center;
+      white-space: pre-line;
     }
 
     .section h2 {
@@ -65,6 +55,7 @@
     .feature-block p {
       margin: 0 auto;
       max-width: 600px;
+      white-space: pre-line;
     }
 
     .form-wrapper {
@@ -165,47 +156,57 @@
 <body>
   <div class="container">
     <!-- Logo -->
-    <div class="logo fade-target">
+    <div class="logo">
       <img src="https://github.com/astrobehr/d8sync-landing/blob/main/D8S%20YT%20Banner.jpg?raw=true" alt="D8Sync Logo">
     </div>
 
     <!-- Welcome Text -->
-    <h1 class="fade-target">Welcome to D8Sync</h1>
-    <div class="intro fade-target">
-      You’re not here for surface-level. You’re here for something real.<br><br>
-      AI-powered dates. Meme-based vibes. Blind matches that start with laughs, not looks.<br><br>
+    <h1>Welcome to D8Sync</h1>
+    <div class="intro">
+      You’re not here for surface-level. <br>
+      You’re here for something real. <br><br>
+      AI-powered dates. Meme-based vibes. <br>
+      Blind matches that start with laughs—not looks. <br><br>
       Welcome to the dating app that *gets you*.
     </div>
 
     <!-- Features -->
-    <div class="section fade-target">
+    <div class="section">
       <div class="feature-block">
         <h3>🎯 AI Matches That Actually Hit</h3>
-        <p>We use your memes, playlists, and inside jokes to match you with people on your wavelength. No guesswork. Just shared vibes.</p>
+        <p>We use your memes, playlists, and inside jokes <br>
+        to match you with people on your wavelength. <br>
+        No guesswork. Just shared vibes.</p>
       </div>
 
       <div class="feature-block">
         <h3>🎭 Swipe Memes, Not Faces</h3>
-        <p>Train your comedy graph by reacting to memes. It's fast, addictive, and dead-on accurate. Humor is your love language—let it match you.</p>
+        <p>Train your comedy graph by reacting to memes. <br>
+        It's fast, addictive, and dead-on accurate. <br>
+        Humor is your love language—let it match you.</p>
       </div>
 
       <div class="feature-block">
         <h3>🔒 Go Blind (On Purpose)</h3>
-        <p>No photos. No pressure. Just you and a stranger with amazing banter. Let connection—not appearance—lead the way.</p>
+        <p>No photos. No pressure. <br>
+        Just you and a stranger with amazing banter. <br>
+        Let connection—not appearance—lead the way.</p>
       </div>
 
       <div class="feature-block">
         <h3>🎬 Mutual Only. You’re In Control.</h3>
-        <p>If the post-date vibe is mutual, unlock a full profile. If not? You vanish from each other’s feed like it never happened. No awkwardness. No pressure.</p>
+        <p>If the post-date vibe is mutual, unlock a full profile. <br>
+        If not? You vanish from each other’s feed like it never happened. <br>
+        No awkwardness. No pressure.</p>
       </div>
     </div>
 
     <!-- Signup Form -->
     <script src="https://f.convertkit.com/ckjs/ck.5.js"></script>
-    <div class="form-wrapper fade-target">
+    <div class="form-wrapper">
       <div class="form-left">
         <h2>Join the Beta Waitlist</h2>
-        <p>First access. First laughs. First dates. Drop your email now:</p>
+        <p>First access. First laughs. First dates. <br> Drop your email now:</p>
         <form action="https://app.kit.com/forms/8193604/subscriptions" method="post" data-sv-form="8193604">
           <input type="email" name="email_address" placeholder="Email Address" required />
           <button type="submit">Get In Early</button>
@@ -217,20 +218,5 @@
       </div>
     </div>
   </div>
-
-  <script>
-    const targets = document.querySelectorAll('.fade-target');
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('fade-in');
-        }
-      });
-    }, {
-      threshold: 0.1
-    });
-
-    targets.forEach(target => observer.observe(target));
-  </script>
 </body>
 </html>
