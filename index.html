@@ -9,8 +9,8 @@
       font-family: Inter, sans-serif;
       margin: 0;
       padding: 0;
-      background: #f9f9f9;
-      color: #222;
+      background: #000; /* black background */
+      color: #fff;       /* white text */
     }
     .container {
       max-width: 800px;
@@ -18,11 +18,17 @@
       padding: 60px 20px;
       text-align: center;
     }
+    .logo {
+      background: #fff; /* white padding around the logo */
+      display: inline-block;
+      padding: 40px;
+      border-radius: 10px;
+      margin-bottom: 40px;
+    }
     .logo img {
       max-width: 400px;
       width: 100%;
       height: auto;
-      margin-bottom: 40px;
     }
     h1 {
       font-size: 2.8rem;
@@ -47,6 +53,34 @@
     }
     .form-wrapper {
       margin-top: 40px;
+    }
+    .formkit-form {
+      background-color: #111 !important;
+      border-radius: 12px;
+      padding: 30px;
+      color: #fff !important;
+    }
+    .formkit-form h2,
+    .formkit-form p,
+    .formkit-disclaimer {
+      color: #fff !important;
+    }
+    .formkit-submit {
+      background: #6e38f7 !important;
+      border: none !important;
+      border-radius: 5px !important;
+      padding: 10px 20px !important;
+      font-weight: bold !important;
+      color: white !important;
+    }
+    .formkit-input {
+      padding: 10px !important;
+      width: 100% !important;
+      max-width: 300px !important;
+      background: #fff !important;
+      color: #000 !important;
+      border-radius: 4px !important;
+      border: none !important;
     }
   </style>
 </head>
@@ -86,13 +120,11 @@
             <ul class="formkit-alert formkit-alert-error" data-element="errors"></ul>
             <div data-element="fields" class="seva-fields formkit-fields">
               <div class="formkit-field">
-                <input class="formkit-input" name="email_address" aria-label="Email Address" placeholder="Email Address" required type="email" style="padding: 10px; width: 100%; max-width: 300px;">
+                <input class="formkit-input" name="email_address" aria-label="Email Address" placeholder="Email Address" required type="email">
               </div>
-              <button data-element="submit" class="formkit-submit" style="margin-top: 10px; padding: 10px 20px; background: #6e38f7; color: white; border: none; border-radius: 4px; font-weight: bold;">
-                Join the Beta
-              </button>
+              <button data-element="submit" class="formkit-submit">Join the Beta</button>
             </div>
-            <div class="formkit-disclaimer" style="font-size: 12px; margin-top: 10px;">
+            <div class="formkit-disclaimer">
               No spam. No cringe. Unmatch us anytime.
             </div>
           </div>
