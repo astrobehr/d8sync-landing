@@ -23,17 +23,16 @@
       max-width: 100%;
       height: auto;
       display: block;
-      margin: 0 auto 10px auto;
+      margin: 0 auto 30px auto;
     }
     h1 {
       font-size: 2.8rem;
-      margin-top: 10px;
-      margin-bottom: 20px;
+      margin: 0 0 20px 0;
     }
     .intro {
       font-size: 1.2rem;
       line-height: 1.6;
-      margin-bottom: 30px;
+      margin-bottom: 40px;
     }
     ul.bullets {
       list-style: none;
@@ -46,64 +45,97 @@
     ul.bullets li {
       margin-bottom: 12px;
     }
+
     .form-wrapper {
       display: flex;
       flex-direction: row;
-      max-width: 680px;
-      height: 320px;
+      justify-content: center;
+      align-items: center;
+      width: 700px;
+      height: 360px;
       margin: 0 auto;
-      border-radius: 10px;
-      overflow: hidden;
       background: #fff;
       color: #000;
+      border-radius: 12px;
+      overflow: hidden;
     }
-    .form-left {
+
+    .form-left, .form-right {
       flex: 1;
-      padding: 20px 24px;
       display: flex;
-      flex-direction: column;
+      align-items: center;
       justify-content: center;
+      padding: 30px;
+      box-sizing: border-box;
     }
+
+    .form-left {
+      flex-direction: column;
+      text-align: left;
+    }
+
     .form-left h2 {
       font-size: 1.6rem;
       margin-bottom: 10px;
     }
+
     .form-left p {
       font-size: 1rem;
       margin-bottom: 12px;
     }
+
+    .form-left form {
+      width: 100%;
+    }
+
     .form-left input {
+      width: 100%;
       padding: 8px;
       border-radius: 5px;
       border: 1px solid #ccc;
       margin-bottom: 10px;
-      width: 100%;
     }
+
     .form-left button {
+      width: 100%;
       padding: 10px;
+      border-radius: 5px;
       background: #6e38f7;
       color: #fff;
       font-weight: bold;
       border: none;
-      border-radius: 5px;
       cursor: pointer;
-      width: 100%;
     }
+
     .form-left .disclaimer {
       font-size: 0.8rem;
       color: #555;
       margin-top: 8px;
     }
-    .form-right {
-      flex: 1;
-      background: #fff;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
+
     .form-right img {
-      max-height: 90%;
-      width: auto;
+      max-height: 80%;
+      max-width: 100%;
+    }
+
+    @media (max-width: 768px) {
+      .form-wrapper {
+        flex-direction: column;
+        width: 90%;
+        height: auto;
+      }
+
+      .form-left, .form-right {
+        padding: 20px;
+      }
+
+      .form-left {
+        text-align: center;
+      }
+
+      .form-left form {
+        text-align: center;
+      }
     }
   </style>
 </head>
@@ -122,7 +154,7 @@
       D8Sync is more than swipes—it's about vibes.
     </div>
 
-    <!-- Bullet Features -->
+    <!-- Feature Bullets -->
     <ul class="bullets">
       <li>🎯 AI-matched dates based on your humor, playlists, and punchlines</li>
       <li>🎭 Meme-swipe engine to train your comedy match graph</li>
@@ -142,7 +174,7 @@
         <div class="disclaimer">No spam. No cringe. Unmatch us anytime.</div>
       </div>
       <div class="form-right">
-        <img src="https://embed.filekitcdn.com/e/7wYRffpBoCKHj7khzQkLM9/hiBy9erokuyXMcPK5DMXEC" alt="Phone Logo">
+        <img src="https://embed.filekitcdn.com/e/7wYRffpBoCKHj7khzQkLM9/hiBy9erokuyXMcPK5DMXEC" alt="Phone Visual">
       </div>
     </div>
   </div>
