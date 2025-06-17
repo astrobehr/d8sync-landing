@@ -3,134 +3,41 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>D8Sync</title>
-  <style>
-    body {
-      font-family: Inter, sans-serif;
-      margin: 0;
-      padding: 0;
-      background: #000; /* black background */
-      color: #fff;       /* white text */
-    }
-    .container {
-      max-width: 800px;
-      margin: auto;
-      padding: 60px 20px;
-      text-align: center;
-    }
-    .logo {
-      background: #fff; /* white padding around the logo */
-      display: inline-block;
-      padding: 4px;
-      border-radius: 1px;
-      margin-bottom: 40px;
-    }
-    .logo img {
-      max-width: 400px;
-      width: 100%;
-      height: auto;
-    }
-    h1 {
-      font-size: 2.8rem;
-      font-weight: 700;
-      margin-bottom: 20px;
-    }
-    .intro {
-      font-size: 1.2rem;
-      line-height: 1.6;
-      margin-bottom: 30px;
-    }
-    ul.bullets {
-      list-style: none;
-      padding: 0;
-      margin: 30px auto;
-      text-align: left;
-      display: inline-block;
-      font-size: 1.1rem;
-    }
-    ul.bullets li {
-      margin-bottom: 12px;
-    }
-    .form-wrapper {
-      margin-top: 40px;
-    }
-    .formkit-form {
-      background-color: #111 !important;
-      border-radius: 12px;
-      padding: 30px;
-      color: #fff !important;
-    }
-    .formkit-form h2,
-    .formkit-form p,
-    .formkit-disclaimer {
-      color: #fff !important;
-    }
-    .formkit-submit {
-      background: #6e38f7 !important;
-      border: none !important;
-      border-radius: 5px !important;
-      padding: 10px 20px !important;
-      font-weight: bold !important;
-      color: white !important;
-    }
-    .formkit-input {
-      padding: 10px !important;
-      width: 100% !important;
-      max-width: 300px !important;
-      background: #fff !important;
-      color: #000 !important;
-      border-radius: 4px !important;
-      border: none !important;
-    }
-  </style>
+  <title>D8Sync Beta Signup</title>
 </head>
-<body>
-  <div class="container">
+<body style="background-color:#000000; color:#FFFFFF; font-family:sans-serif; margin:0; padding:0;">
+
+  <div style="max-width:600px; margin:0 auto; padding:40px; text-align:center;">
+    
     <!-- Logo -->
-    <div class="logo">
-      <img src="https://github.com/astrobehr/d8sync-landing/blob/main/D8S%20YT%20Banner13.jpg?raw=true" alt="D8Sync Logo">
+    <img 
+      src="https://github.com/astrobehr/d8sync-landing/blob/main/D8S%20YT%20Banner13.jpg?raw=true" 
+      alt="D8Sync Logo" 
+      style="max-width:600px; width:100%; height:auto; margin-bottom:40px;" 
+    />
+
+    <!-- Welcome Text -->
+    <h1 style="font-size:2.2em; margin-bottom:20px;">Welcome to D8Sync</h1>
+    <p style="font-size:1.1em; line-height:1.6;">
+      A swipe-free dating experience where your humor, taste, and real-world compatibility define the match.
+      <br><br>
+      🎯 AI-matched dates based on your humor, playlists, and punchlines<br>
+      🎭 Meme-swipe engine to train your comedy match graph<br>
+      🔒 Blind dates. No photos. No judgment. Just vibes<br>
+      🎬 Review dates and opt-in only when the feeling is mutual
+    </p>
+
+    <!-- ConvertKit Signup Form -->
+    <div style="margin-top:40px;">
+      <script async data-uid="YOUR_FORM_ID_HERE" src="https://f.convertkit.com/YOUR_FORM_ID_HERE.js"></script>
     </div>
 
-    <!-- Welcome -->
-    <h1>Welcome to D8Sync</h1>
+    <!-- Privacy Note -->
+    <p style="font-size:0.9em; color:#CCCCCC; margin-top:30px;">
+      We don’t do spam. Just smart, sexy updates. Unsubscribe anytime.
+    </p>
 
-    <!-- Intro -->
-    <div class="intro">
-      Discover a new kind of dating experience—authentic, meme-driven, and AI-matched.<br><br>
-      Join the people who want to break the mold and find meaningful connections using humor and personality.<br>
-      D8Sync is more than swipes—it's about vibes.
-    </div>
-
-    <!-- Feature Bullets -->
-    <ul class="bullets">
-      <li>🎯 AI-matched dates based on your humor, playlists, and punchlines</li>
-      <li>🎭 Meme-swipe engine to train your comedy match graph</li>
-      <li>🔒 Blind dates. No photos. No judgment. Just vibes</li>
-      <li>🎬 Review dates and opt-in only when the feeling is mutual</li>
-    </ul>
-
-    <!-- ConvertKit Signup Form Embed -->
-    <div class="form-wrapper">
-      <script src="https://f.convertkit.com/ckjs/ck.5.js"></script>
-      <form action="https://app.kit.com/forms/8193604/subscriptions" class="seva-form formkit-form" method="post" data-sv-form="8193604" data-uid="7131c1a80f" data-format="inline" data-version="5">
-        <div data-style="full">
-          <div data-element="column" class="formkit-column">
-            <div class="formkit-header"><h2>Get Notified About D8Sync<br>Beta Waitlist</h2></div>
-            <div class="formkit-content"><p>Drop your email and be the first to access the meme-powered dating experience.</p></div>
-            <ul class="formkit-alert formkit-alert-error" data-element="errors"></ul>
-            <div data-element="fields" class="seva-fields formkit-fields">
-              <div class="formkit-field">
-                <input class="formkit-input" name="email_address" aria-label="Email Address" placeholder="Email Address" required type="email">
-              </div>
-              <button data-element="submit" class="formkit-submit">Join the Beta</button>
-            </div>
-            <div class="formkit-disclaimer">
-              No spam. No cringe. Unmatch us anytime.
-            </div>
-          </div>
-        </div>
-      </form>
-    </div>
   </div>
+
 </body>
 </html>
