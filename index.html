@@ -12,7 +12,6 @@
       background: #000;
       color: #fff;
       text-align: center;
-      scroll-behavior: smooth;
     }
 
     .container {
@@ -29,35 +28,36 @@
       margin: 60px auto;
     }
 
-    .section {
-      opacity: 0;
-      transform: translateY(40px);
-      transition: opacity 0.8s ease, transform 0.8s ease;
-      margin-bottom: 60px;
-    }
-
-    .section.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
     h1 {
       font-size: 2.8rem;
       margin: 0 0 20px 0;
     }
 
-    p {
+    .intro {
       font-size: 1.2rem;
-      line-height: 1.6;
+      line-height: 1.8;
+      margin-bottom: 60px;
+    }
+
+    .section {
+      margin-bottom: 60px;
+      font-size: 1.1rem;
+      line-height: 1.8;
+      text-align: left;
+    }
+
+    .section h2 {
+      font-size: 1.6rem;
+      color: #fff;
       margin-bottom: 20px;
+      text-align: center;
     }
 
     ul.bullets {
       list-style: none;
       padding: 0;
-      margin: 0 auto 60px auto;
+      margin: 20px 0;
       text-align: left;
-      font-size: 1.1rem;
       display: inline-block;
     }
 
@@ -165,54 +165,52 @@
       <img src="https://github.com/astrobehr/d8sync-landing/blob/main/D8S%20YT%20Banner.jpg?raw=true" alt="D8Sync Logo">
     </div>
 
-    <!-- Hero Text -->
+    <!-- Welcome Text -->
+    <h1>Welcome to D8Sync</h1>
+    <div class="intro">
+      You’ve tried the apps. You’ve done the swipes. You’ve endured the ghosting, the performative bios, and the infinite doom scroll of faces.
+      What if you could connect with someone in a way that actually feels like *you*?
+    </div>
+
+    <!-- Section 1 -->
     <div class="section">
-      <h1>Welcome to D8Sync</h1>
+      <h2>A New Way to Match</h2>
       <p>
-        Tired of the same old dating apps that rely on perfect photos and endless swiping? <br>
-        So were we. That’s why we built something different.
+        D8Sync isn’t just another dating app. It's a vibe engine. A curated space where humor, taste, timing, and real personality come first.
+        We believe dating should be about connection—not cosmetics. That’s why you won’t find endless selfies here. No filters. No judgment. No algorithmic hot-or-not.
       </p>
     </div>
 
-    <!-- Story Block -->
+    <!-- Section 2 -->
     <div class="section">
+      <h2>Built Around You</h2>
       <p>
-        D8Sync is built for people who lead with personality. Whether your love language is sharing TikToks, playlists, or inside jokes,
-        this app is where your sense of humor becomes your best wingman.
+        D8Sync uses a meme-swipe system to calibrate your humor style, then syncs that data with your playlists, favorite movies, and spicy one-liners to pair you with matches who actually *get you*.
+        Our AI doesn’t care what you look like—it cares about what makes you laugh. Because that’s where the magic starts.
       </p>
     </div>
 
-    <!-- Feature Highlights -->
+    <!-- Features -->
     <div class="section">
+      <h2>How It Works</h2>
       <ul class="bullets">
         <li>🎯 AI-matched dates based on your humor, playlists, and punchlines</li>
         <li>🎭 Meme-swipe engine to train your comedy match graph</li>
         <li>🔒 Blind dates. No photos. No judgment. Just vibes</li>
-        <li>🎬 Review dates and opt-in only when the feeling is mutual</li>
+        <li>🎬 Post-date reviews—opt-in only when the feeling is mutual</li>
       </ul>
-    </div>
-
-    <!-- Narrative Expansion -->
-    <div class="section">
       <p>
-        Imagine this: You vibe with someone’s taste in memes, music, and shows—and you connect in real time.
-        No photos. No pressure. Just authentic interactions based on your shared energy.
-      </p>
-    </div>
-
-    <div class="section">
-      <p>
-        Our AI isn’t just swiping right—it’s studying your sense of humor and matching you with people who’ll actually get your weird references.
-        Finally, a dating app that understands your comedy soul.
+        We don’t ask you to perform. We invite you to explore, express, and find something real—quietly curated and fully consent-based.
+        You meet, you talk, you laugh. And if the vibe’s right? You sync.
       </p>
     </div>
 
     <!-- Signup Form -->
     <script src="https://f.convertkit.com/ckjs/ck.5.js"></script>
-    <div class="form-wrapper section">
+    <div class="form-wrapper">
       <div class="form-left">
-        <h2>Get Notified About<br>D8Sync Beta Waitlist</h2>
-        <p>Drop your email and be the first to access the meme-powered dating experience.</p>
+        <h2>Be the First to Join</h2>
+        <p>We’re inviting early users to join the D8Sync Beta. Drop your email to get exclusive access before we go public.</p>
         <form action="https://app.kit.com/forms/8193604/subscriptions" method="post" data-sv-form="8193604">
           <input type="email" name="email_address" placeholder="Email Address" required />
           <button type="submit">Join the Beta</button>
@@ -220,23 +218,9 @@
         <div class="disclaimer">No spam. No cringe. Unmatch us anytime.</div>
       </div>
       <div class="form-right">
-        <img src="https://github.com/astrobehr/d8sync-landing/blob/main/D8S%20YT%20Banner.jpg?raw=true" alt="D8Sync Phone Mockup">
+        <img src="https://github.com/astrobehr/d8sync-landing/blob/main/D8S%20YT%20Banner.jpg?raw=true" alt="D8Sync Art">
       </div>
     </div>
   </div>
-
-  <!-- Scroll-trigger Animation -->
-  <script>
-    const sections = document.querySelectorAll('.section');
-    const showOnScroll = () => {
-      const triggerBottom = window.innerHeight * 0.9;
-      sections.forEach(sec => {
-        const secTop = sec.getBoundingClientRect().top;
-        if (secTop < triggerBottom) sec.classList.add('visible');
-      });
-    };
-    window.addEventListener('scroll', showOnScroll);
-    window.addEventListener('load', showOnScroll);
-  </script>
 </body>
 </html>
