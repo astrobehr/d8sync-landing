@@ -20,6 +20,17 @@
       padding: 40px 20px;
     }
 
+    .fade-target {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: all 0.8s ease-out;
+    }
+
+    .fade-in {
+      opacity: 1 !important;
+      transform: translateY(0) !important;
+    }
+
     .logo img {
       width: 800px;
       max-width: 100%;
@@ -38,9 +49,6 @@
       line-height: 1.6;
       margin-bottom: 60px;
       text-align: center;
-      opacity: 0;
-      transform: translateY(40px);
-      transition: all 0.8s ease-out;
     }
 
     .section h2 {
@@ -152,11 +160,6 @@
         margin-top: 20px;
       }
     }
-
-    .fade-in {
-      opacity: 1 !important;
-      transform: translateY(0) !important;
-    }
   </style>
 </head>
 <body>
@@ -217,17 +220,16 @@
 
   <script>
     const targets = document.querySelectorAll('.fade-target');
-    const options = {
-      root: null,
-      threshold: 0.1
-    };
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           entry.target.classList.add('fade-in');
         }
       });
-    }, options);
+    }, {
+      threshold: 0.1
+    });
+
     targets.forEach(target => observer.observe(target));
   </script>
 </body>
