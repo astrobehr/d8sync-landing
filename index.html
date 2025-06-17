@@ -3,179 +3,130 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>D8Sync</title>
+  <title>D8Sync Beta Waitlist</title>
   <style>
     body {
-      font-family: Inter, sans-serif;
       margin: 0;
       padding: 0;
-      background: #000;
-      color: #fff;
-      text-align: center;
-    }
-    .container {
-      max-width: 800px;
-      margin: auto;
-      padding: 40px 20px;
-    }
-    .logo img {
-      width: 800px;
-      max-width: 100%;
-      height: auto;
-      display: block;
-      margin: 0 auto 30px auto;
-    }
-    h1 {
-      font-size: 2.8rem;
-      margin: 0 0 20px 0;
-    }
-    .intro {
-      font-size: 1.2rem;
-      line-height: 1.6;
-      margin-bottom: 40px;
-    }
-    ul.bullets {
-      list-style: none;
-      padding: 0;
-      margin-bottom: 40px;
-      text-align: left;
-      font-size: 1.1rem;
-      display: inline-block;
-    }
-    ul.bullets li {
-      margin-bottom: 12px;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #ffffff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
     }
 
-    .form-wrapper {
+    .container {
       display: flex;
       flex-direction: row;
-      justify-content: center;
       align-items: center;
-      width: 700px;
-      height: 360px;
-      margin: 0 auto;
-      background: #fff;
-      color: #000;
-      border-radius: 12px;
-      overflow: hidden;
+      justify-content: center;
+      max-width: 900px;
+      width: 90%;
+      padding: 40px;
+      border-radius: 16px;
+      box-shadow: 0 0 40px rgba(0, 0, 0, 0.08);
     }
 
-    .form-left, .form-right {
+    .text-block {
       flex: 1;
+      padding-right: 40px;
+    }
+
+    .text-block h1 {
+      font-size: 28px;
+      margin: 0 0 10px;
+      line-height: 1.2;
+    }
+
+    .text-block p {
+      font-size: 16px;
+      margin: 0 0 24px;
+      color: #444;
+    }
+
+    form {
       display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 30px;
+      flex-direction: column;
+    }
+
+    input[type="email"] {
+      padding: 12px 16px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      margin-bottom: 16px;
+      width: 100%;
       box-sizing: border-box;
     }
 
-    .form-left {
-      flex-direction: column;
-      text-align: left;
-    }
-
-    .form-left h2 {
-      font-size: 1.6rem;
-      margin-bottom: 10px;
-    }
-
-    .form-left p {
-      font-size: 1rem;
-      margin-bottom: 12px;
-    }
-
-    .form-left form {
-      width: 100%;
-    }
-
-    .form-left input {
-      width: 100%;
-      padding: 8px;
-      border-radius: 5px;
-      border: 1px solid #ccc;
-      margin-bottom: 10px;
-    }
-
-    .form-left button {
-      width: 100%;
-      padding: 10px;
-      border-radius: 5px;
-      background: #6e38f7;
-      color: #fff;
-      font-weight: bold;
+    button {
+      padding: 12px 16px;
+      font-size: 16px;
+      background-color: #7B3FFF;
+      color: white;
       border: none;
+      border-radius: 8px;
       cursor: pointer;
+      transition: background 0.2s;
     }
 
-    .form-left .disclaimer {
-      font-size: 0.8rem;
-      color: #555;
-      margin-top: 8px;
+    button:hover {
+      background-color: #612ff0;
     }
 
-    .form-right img {
-      max-height: 80%;
-      max-width: 100%;
+    .disclaimer {
+      margin-top: 12px;
+      font-size: 12px;
+      color: #888;
+    }
+
+    .image-block {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .image-block img {
+      max-width: 70%;
+      height: auto;
     }
 
     @media (max-width: 768px) {
-      .form-wrapper {
+      .container {
         flex-direction: column;
-        width: 90%;
-        height: auto;
-      }
-
-      .form-left, .form-right {
         padding: 20px;
-      }
-
-      .form-left {
         text-align: center;
       }
 
-      .form-left form {
-        text-align: center;
+      .text-block {
+        padding-right: 0;
+      }
+
+      .image-block {
+        margin-top: 20px;
+      }
+
+      .image-block img {
+        max-width: 50%;
       }
     }
   </style>
 </head>
 <body>
   <div class="container">
-    <!-- Logo -->
-    <div class="logo">
-      <img src="https://github.com/astrobehr/d8sync-landing/blob/main/D8S%20YT%20Banner.jpg?raw=true" alt="D8Sync Logo">
-    </div>
-
-    <!-- Welcome Text -->
-    <h1>Welcome to D8Sync</h1>
-    <div class="intro">
-      Discover a new kind of dating experience—authentic, meme-driven, and AI-matched.<br><br>
-      Join the people who want to break the mold and find meaningful connections using humor and personality.<br>
-      D8Sync is more than swipes—it's about vibes.
-    </div>
-
-    <!-- Feature Bullets -->
-    <ul class="bullets">
-      <li>🎯 AI-matched dates based on your humor, playlists, and punchlines</li>
-      <li>🎭 Meme-swipe engine to train your comedy match graph</li>
-      <li>🔒 Blind dates. No photos. No judgment. Just vibes</li>
-      <li>🎬 Review dates and opt-in only when the feeling is mutual</li>
-    </ul>
-
-    <!-- Form -->
-    <div class="form-wrapper">
-      <div class="form-left">
-        <h2>Get Notified About D8Sync Beta Waitlist</h2>
-        <p>Drop your email and be the first to access the meme-powered dating experience.</p>
-        <form action="https://app.kit.com/forms/8193604/subscriptions" method="post" data-sv-form="8193604">
-          <input type="email" name="email_address" placeholder="Email Address" required />
-          <button type="submit">Join the Beta</button>
-        </form>
+    <div class="text-block">
+      <h1>Get Notified About<br>D8Sync Beta Waitlist</h1>
+      <p>Drop your email and be the first to access the meme-powered dating experience.</p>
+      <form>
+        <input type="email" placeholder="Email Address" required />
+        <button type="submit">Join the Beta</button>
         <div class="disclaimer">No spam. No cringe. Unmatch us anytime.</div>
-      </div>
-      <div class="form-right">
-        <img src="https://embed.filekitcdn.com/e/7wYRffpBoCKHj7khzQkLM9/hiBy9erokuyXMcPK5DMXEC" alt="Phone Visual">
-      </div>
+      </form>
+    </div>
+    <div class="image-block">
+      <img src="https://github.com/astrobehr/d8sync-landing/blob/main/D8S%20YT%20Banner.jpg?raw=true" alt="D8Sync Icon" />
     </div>
   </div>
 </body>
