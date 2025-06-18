@@ -75,10 +75,11 @@
       display: flex;
       justify-content: center;
       gap: 40px;
+      align-items: center;
     }
     .swipe-btns button {
       font-size: 2rem;
-      padding: 10px 20px;
+      padding: 10px;
       border: none;
       border-radius: 50%;
       background: #6e38f7;
@@ -87,8 +88,8 @@
       width: 60px;
       height: 60px;
       display: flex;
-      align-items: center;
       justify-content: center;
+      align-items: center;
     }
 
     /* Signup Form */
@@ -125,7 +126,7 @@
 </head>
 <body>
   <div class="container">
-    <img src="assets/D8S-YT-Banner.jpg" alt="D8Sync Logo" class="logo" />
+    <img src="/assets/D8S-YT-Banner.jpg" alt="D8Sync Logo" class="logo" />
 
     <h1>Welcome to D8Sync</h1>
     <div class="intro">
@@ -206,7 +207,7 @@
       setTimeout(() => {
         topCard.remove();
         if (memeSwiper.childElementCount === 0) {
-          setTimeout(() => loadMemes(), 500); // loop back
+          setTimeout(() => loadMemes(), 500); // restart loop
         }
       }, 300);
     }
