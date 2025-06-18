@@ -4,15 +4,12 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>D8Sync</title>
-
-  <!-- Meta -->
   <meta property="og:title" content="D8Sync – Meme-Based Blind Dating App" />
   <meta property="og:description" content="Swipe memes. Get matched. No faces. No pressure. Just vibes." />
-  <meta property="og:image" content="https://raw.githubusercontent.com/astrobehr/d8sync-landing/main/assets/d8sync-banner.jpg" />
+  <meta property="og:image" content="https://astrobehr.github.io/d8sync-landing/assets/d8sync-banner.jpg" />
   <meta property="og:url" content="https://www.d8sync.com" />
   <meta property="og:type" content="website" />
   <meta property="fb:app_id" content="1234567890" />
-
   <style>
     body {
       font-family: Inter, sans-serif;
@@ -47,10 +44,14 @@
       margin-bottom: 60px;
     }
 
-    .feature-block h3 {
+    .section h2, .feature-block h3 {
       font-size: 1.6rem;
       color: #fff;
       margin-bottom: 20px;
+    }
+
+    .feature-block {
+      margin-bottom: 40px;
     }
 
     #meme-swiper {
@@ -82,20 +83,22 @@
       display: flex;
       justify-content: center;
       gap: 40px;
+      margin-bottom: 80px;
     }
 
     .swipe-btns button {
       font-size: 2rem;
-      padding: 0;
+      padding: 10px;
       border: none;
       border-radius: 50%;
       background: #6e38f7;
       color: #fff;
+      cursor: pointer;
       width: 60px;
       height: 60px;
       display: flex;
-      justify-content: center;
       align-items: center;
+      justify-content: center;
     }
 
     .form-wrapper {
@@ -107,7 +110,8 @@
       margin: 60px auto;
     }
 
-    .form-wrapper input, .form-wrapper button {
+    .form-wrapper input,
+    .form-wrapper button {
       padding: 12px;
       width: 90%;
       margin: 10px auto;
@@ -124,14 +128,15 @@
     }
 
     footer {
-      margin: 60px auto 20px;
-      color: #888;
+      margin-top: 80px;
+      text-align: center;
       font-size: 0.9rem;
+      color: #aaa;
     }
 
-    .footer-logo {
-      max-width: 180px;
-      margin-top: 40px;
+    footer img {
+      max-width: 200px;
+      margin-bottom: 10px;
     }
 
     @media (max-width: 768px) {
@@ -145,7 +150,6 @@
 <body>
   <div class="container">
     <img src="assets/d8sync-banner.jpg" alt="D8Sync Logo" class="logo" />
-
     <h1>Welcome to D8Sync</h1>
     <div class="intro">
       You’re not here for surface-level. You’re here for something real.<br><br>
@@ -153,102 +157,122 @@
       Welcome to the premier Dating App that <em>*gets you*</em>
     </div>
 
-    <div class="feature-block">
-      <h3>🎯 AI Matches That Actually Hit</h3>
-      <p>Send memes. Sync vibes. Get matched on your sense of humor. No roulette. Just connection.</p>
+    <div class="section">
+      <div class="feature-block">
+        <h3>🎯 AI Matches That Actually Hit</h3>
+        <p>
+          Imagine this: You send a meme,<br>
+          and someone laughs the exact way you do.<br><br>
+          That’s not chance — it’s sync.<br>
+          We read between your media likes, playlists, and punchlines<br>
+          to pair you with people on your wavelength.<br><br>
+          No swiping roulette. No dead-end matches.<br>
+          Just real connection, fueled by your sense of humor.
+        </p>
+      </div>
+
+      <div class="feature-block">
+        <h3>🎭 Swipe Memes, Not Faces</h3>
+        <p>
+          What if your dating feed was memes instead of mugshots?<br>
+          No more trying to decode mirror selfies or gym pics.<br><br>
+          Just scroll, laugh, and react to the memes that hit hardest.<br>
+          Every swipe helps build your Comedy Graph™ —<br>
+          our algorithm that learns your humor DNA<br>
+          and matches you with someone who *actually gets it*<br><br>
+          Weirdly accurate. Dangerously fun.
+        </p>
+      </div>
+
+      <div class="feature-block">
+        <h3>🕵️ How D8Sync Blind Dates Actually Work</h3>
+        <p>
+          Tap “Sync Me!”<br>
+          D8Sync scans your Comedy Graph™, vibe data, and availability<br>
+          — and matches you with someone on your wavelength.<br><br>
+          Our Matchmaker AI then sends you both:<br>
+          🕓 A time 📍 A public place & 🧩 “The Tell” - <br>
+          a phrase or shared order to find your match.<br><br>
+          You pull up, scan the scene, and look for the signal...<br>
+          like someone lowkey ordering the same drink as the tell.<br><br>
+          In a crowded coffee shop or busy bookstore? Not sure it’s them?<br>
+          Tap the <em>“Is That You?"</em> button in-app for a private match confirm.<br><br>
+          If you’re vibing, say the optional icebreaker we gave you.<br>
+          If not? No pressure.<br>
+          Just enjoy yourself & the match fades out quietly.<br><br>
+          No profiles. No awkward intros. No rejection trauma.<br>
+          Just vibes. Real ones.
+        </p>
+      </div>
     </div>
 
-    <div class="feature-block">
-      <h3>🎭 Swipe Memes, Not Faces</h3>
-      <p>Your feed is memes — not mugshots. Scroll, react, build your Comedy Graph™. Matches powered by laughs.</p>
+    <!-- Meme Swiper -->
+    <div id="meme-swiper"></div>
+    <div class="swipe-btns">
+      <button onclick="swipeLeft()">❌</button>
+      <button onclick="swipeRight()">❤️</button>
     </div>
 
-    <div class="feature-block">
-      <h3>🕵️ How D8Sync Blind Dates Actually Work</h3>
-      <p>
-        Tap “Sync Me!”<br>
-        We match you. Then:<br>
-        🕓 A time. 📍 A place. 🧩 A Tell (like a weird drink order).<br><br>
-        Walk in, look around. If unsure? Tap “Is That You?” in the app.<br>
-        Say your icebreaker — or don’t.<br><br>
-        No pressure. No cringe. Just real-world vibes.
-      </p>
+    <!-- Signup Form -->
+    <div class="form-wrapper">
+      <img src="assets/d8sync-banner.jpg" alt="Signup Logo" style="max-width: 180px; margin-bottom: 20px;" />
+      <h2>Join the Beta Waitlist</h2>
+      <form action="https://app.kit.com/forms/8193604/subscriptions" method="post" data-sv-form="8193604">
+        <input type="email" name="email_address" placeholder="Email Address" required />
+        <button type="submit">Get In Early</button>
+      </form>
+      <div style="font-size: 0.85rem; color: #666; margin-top: 10px;">
+        No spam. No cringe. Unmatch anytime.
+      </div>
     </div>
 
-  <!-- Meme Swiper -->
-<div id="meme-swiper"></div>
-<div class="swipe-btns">
-  <button onclick="swipeLeft()" aria-label="Nope">❌</button>
-  <button onclick="swipeRight()" aria-label="Yup">❤️</button>
-</div>
-
-<!-- Signup Form -->
-<div class="form-wrapper">
-  <img src="assets/d8sync-banner.jpg" alt="Form Logo" style="max-width: 180px; margin-bottom: 20px;" />
-  <h2>Join the Beta Waitlist</h2>
-  <form action="https://app.kit.com/forms/8193604/subscriptions" method="post" data-sv-form="8193604">
-    <input type="email" name="email_address" placeholder="Email Address" required />
-    <button type="submit">Get In Early</button>
-  </form>
-  <div style="font-size: 0.85rem; color: #666; margin-top: 10px;">
-    No spam. No cringe. Unmatch anytime.
+    <!-- Footer -->
+    <footer>
+      <img src="assets/d8sync-banner.jpg" alt="Footer Logo" />
+      <p>© 2025 D8Sync Inc. — Built for chemistry, not catfish.</p>
+    </footer>
   </div>
-</div>
 
-<!-- Footer Logo -->
-<div style="margin-top: 60px;">
-  <img src="assets/d8sync-banner.jpg" alt="Footer Logo" style="max-width: 180px;" />
-  <p style="color: #aaa; font-size: 0.9rem; margin-top: 10px;">
-    © 2025 D8Sync Inc. — Built for chemistry, not catfish.
-  </p>
-</div>
+  <script>
+    const memes = [
+      "d8sync-meme-01.jpg", "d8sync-meme-12.png", "d8sync-meme-13.jpg", "d8sync-meme-14.jpg",
+      "d8sync-meme-15.jpg", "d8sync-meme-16.jpg", "d8sync-meme-17.jpg", "d8sync-meme-18.jpg",
+      "d8sync-meme-19.jpg", "d8sync-meme-20.jpg", "d8sync-meme-21.jpg", "d8sync-meme-22.jpg",
+      "d8sync-meme-23.jpg", "d8sync-meme-24.jpg", "d8sync-meme-25.png", "d8sync-meme-26.jpg",
+      "d8sync-meme-27.jpg", "d8sync-meme-28.jpg", "d8sync-meme-29.jpg", "d8sync-meme-30.jpg"
+    ];
 
-<script>
-  let memes = [
-    "d8sync-meme-01.jpg", "d8sync-meme-12.png", "d8sync-meme-13.jpg", "d8sync-meme-14.jpg",
-    "d8sync-meme-15.jpg", "d8sync-meme-16.jpg", "d8sync-meme-17.jpg", "d8sync-meme-18.jpg",
-    "d8sync-meme-19.jpg", "d8sync-meme-20.jpg", "d8sync-meme-21.jpg", "d8sync-meme-22.jpg",
-    "d8sync-meme-23.jpg", "d8sync-meme-24.jpg", "d8sync-meme-25.png", "d8sync-meme-26.jpg",
-    "d8sync-meme-27.jpg", "d8sync-meme-28.jpg", "d8sync-meme-29.jpg", "d8sync-meme-30.jpg"
-  ];
+    const memeSwiper = document.getElementById('meme-swiper');
 
-  let memeSwiper = document.getElementById('meme-swiper');
-
-  function loadMemes() {
-    memeSwiper.innerHTML = '';
-    for (let i = memes.length - 1; i >= 0; i--) {
-      let div = document.createElement('div');
-      div.className = 'meme-card';
-      let img = document.createElement('img');
-      img.src = `assets/memes/${memes[i]}`;
-      img.alt = `Meme ${i + 1}`;
-      div.appendChild(img);
-      memeSwiper.appendChild(div);
-    }
-  }
-
-  function swipe(direction) {
-    const topCard = memeSwiper.querySelector('.meme-card:last-child');
-    if (!topCard) return;
-    topCard.style.transform = `translateX(${direction === 'right' ? '200px' : '-200px'}) rotate(${direction === 'right' ? '25deg' : '-25deg'})`;
-    setTimeout(() => {
-      topCard.remove();
-      if (memeSwiper.childElementCount === 0) {
-        setTimeout(() => loadMemes(), 500); // Restart
+    function loadMemes() {
+      memeSwiper.innerHTML = '';
+      for (let i = memes.length - 1; i >= 0; i--) {
+        const div = document.createElement('div');
+        div.className = 'meme-card';
+        const img = document.createElement('img');
+        img.src = `assets/memes/${memes[i]}`;
+        img.alt = `Meme ${i + 1}`;
+        div.appendChild(img);
+        memeSwiper.appendChild(div);
       }
-    }, 300);
-  }
+    }
 
-  function swipeLeft() {
-    swipe('left');
-  }
+    function swipe(direction) {
+      const topCard = memeSwiper.querySelector('.meme-card:last-child');
+      if (!topCard) return;
+      topCard.style.transform = `translateX(${direction === 'right' ? '200px' : '-200px'}) rotate(${direction === 'right' ? '25deg' : '-25deg'})`;
+      setTimeout(() => {
+        topCard.remove();
+        if (memeSwiper.childElementCount === 0) {
+          setTimeout(loadMemes, 500);
+        }
+      }, 300);
+    }
 
-  function swipeRight() {
-    swipe('right');
-  }
+    function swipeLeft() { swipe('left'); }
+    function swipeRight() { swipe('right'); }
 
-  window.onload = loadMemes;
-</script>
-
+    window.onload = loadMemes;
+  </script>
 </body>
 </html>
