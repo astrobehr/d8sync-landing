@@ -7,7 +7,7 @@
   <meta name="description" content="D8Sync – A swipe-free AI dating app powered by memes, playlists, and vibes." />
   <meta name="keywords" content="D8Sync, dating app, memes, AI matchmaking" />
   <meta name="author" content="D8Sync Team" />
-  <link rel="icon" type="image/png" href="New Project.png" />
+  <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/astrobehr/d8sync-landing/main/assets/D8S-YT-Banner.jpg" />
   <style>
     body {
       font-family: Inter, sans-serif;
@@ -27,40 +27,31 @@
       max-width: 100%;
       height: auto;
       display: block;
-      margin: 60px auto;
+      margin: 40px auto;
     }
     h1 {
       font-size: 2.8rem;
-      margin: 0 0 20px 0;
+      margin: 20px 0;
     }
     .intro, .section, .feature-block {
       font-size: 1.2rem;
       line-height: 1.6;
       margin-bottom: 60px;
-      text-align: center;
     }
-    .section h2 {
-      font-size: 1.6rem;
-      color: #fff;
+    .section h2, .feature-block h3 {
+      font-size: 1.5rem;
       margin-bottom: 20px;
     }
-    .feature-block h3 {
-      font-size: 1.3rem;
-      margin-bottom: 10px;
-    }
-    .feature-block p {
-      margin: 0 auto;
-      max-width: 600px;
-    }
-    /* Meme swiper */
+
     #meme-box {
       position: relative;
-      max-width: 100%;
       margin: 40px auto;
     }
     #meme-image {
+      width: 100%;
       max-width: 100%;
       height: auto;
+      border-radius: 10px;
     }
     .meme-buttons {
       margin-top: 20px;
@@ -73,19 +64,21 @@
       margin: 0 20px;
       color: #fff;
     }
+
     .form-wrapper {
       display: flex;
       flex-direction: row;
       justify-content: center;
       align-items: stretch;
       width: 700px;
-      margin: 0 auto 60px auto;
+      margin: 80px auto;
       background: #fff;
       color: #000;
       border-radius: 20px;
       overflow: hidden;
       box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
     }
+
     .form-left, .form-right {
       flex: 1;
       box-sizing: border-box;
@@ -94,17 +87,21 @@
       justify-content: center;
       text-align: center;
     }
+
     .form-left {
       padding: 30px;
     }
+
     .form-left h2 {
       font-size: 1.6rem;
       margin-bottom: 12px;
     }
+
     .form-left p {
       font-size: 1rem;
       margin-bottom: 16px;
     }
+
     .form-left input {
       width: 100%;
       padding: 12px;
@@ -113,6 +110,7 @@
       margin-bottom: 12px;
       font-size: 1rem;
     }
+
     .form-left button {
       width: 100%;
       padding: 12px;
@@ -124,11 +122,13 @@
       font-size: 1rem;
       cursor: pointer;
     }
+
     .form-left .disclaimer {
       font-size: 0.85rem;
       color: #666;
       margin-top: 12px;
     }
+
     .form-right {
       background: #fff;
       display: flex;
@@ -136,6 +136,7 @@
       justify-content: center;
       padding: 20px;
     }
+
     .form-right img {
       width: 100%;
       max-width: 300px;
@@ -145,11 +146,13 @@
       padding: 10px;
       border-radius: 10px;
     }
+
     @media (max-width: 768px) {
       .form-wrapper {
         flex-direction: column;
         width: 90%;
       }
+
       .form-right img {
         width: 80%;
         margin-top: 20px;
@@ -160,7 +163,7 @@
 <body>
   <div class="container">
     <div class="logo">
-      <img src="https://raw.githubusercontent.com/astrobehr/d8sync-landing/main/D8S%20YT%20Banner.jpg" alt="D8Sync Logo">
+      <img src="https://raw.githubusercontent.com/astrobehr/d8sync-landing/main/assets/D8S-YT-Banner.jpg" alt="D8Sync Logo">
     </div>
 
     <h1>Welcome to D8Sync</h1>
@@ -173,7 +176,13 @@
     <div class="section">
       <div class="feature-block">
         <h3>🎭 Swipe Memes, Not Faces</h3>
-        <p>Scroll, laugh, and react to the memes that hit hardest. Let’s find your humor twin.</p>
+        <p>
+          Just scroll, laugh, and react to the memes that hit hardest.<br>
+          Every swipe helps build your Comedy Graph™ —<br>
+          our algorithm that learns your humor DNA<br>
+          and matches you with someone who *actually gets it*<br>
+          <strong>Weirdly accurate. Dangerously fun.</strong>
+        </p>
       </div>
     </div>
 
@@ -183,6 +192,17 @@
       <div class="meme-buttons">
         <button class="meme-button" onclick="prevMeme()">❌</button>
         <button class="meme-button" onclick="nextMeme()">❤️</button>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="feature-block">
+        <h3>🔒 Go Blind (On Purpose)</h3>
+        <p>
+          No filters. No bios. No profile paralysis.<br>
+          At D8Sync, you skip the scroll<br>
+          and jump straight into something real.
+        </p>
       </div>
     </div>
 
@@ -199,7 +219,7 @@
         <div class="disclaimer">No spam. No cringe. Unmatch anytime.</div>
       </div>
       <div class="form-right">
-        <img src="https://raw.githubusercontent.com/astrobehr/d8sync-landing/main/D8S%20YT%20Banner.jpg" alt="D8Sync Art">
+        <img src="https://raw.githubusercontent.com/astrobehr/d8sync-landing/main/assets/D8S-YT-Banner.jpg" alt="D8Sync Art">
       </div>
     </div>
   </div>
@@ -214,8 +234,8 @@
       "memes/d8sync-meme-6.jpg"
     ];
     let index = 0;
-    const image = document.getElementById("meme-image");
-    image.src = memes[index];
+    const memeImg = document.getElementById("meme-image");
+    memeImg.src = memes[index];
 
     function nextMeme() {
       if (index === memes.length - 1) {
@@ -223,13 +243,13 @@
         return;
       }
       index++;
-      image.src = memes[index];
+      memeImg.src = memes[index];
     }
 
     function prevMeme() {
       if (index > 0) {
         index--;
-        image.src = memes[index];
+        memeImg.src = memes[index];
       }
     }
   </script>
