@@ -19,42 +19,47 @@
       padding: 0;
       text-align: center;
     }
+
     .container {
       max-width: 900px;
       margin: auto;
       padding: 40px 20px;
     }
+
     img.logo {
       width: 800px;
       max-width: 100%;
       margin: 60px auto;
       display: block;
     }
+
     h1 {
       font-size: 2.8rem;
       margin-bottom: 20px;
     }
+
     .intro, .feature-block {
       font-size: 1.2rem;
       line-height: 1.6;
       margin-bottom: 60px;
     }
+
     .section h2, .feature-block h3 {
       font-size: 1.6rem;
-      color: #fff;
       margin-bottom: 20px;
     }
+
     .feature-block {
       margin-bottom: 40px;
     }
 
-    /* Meme Swiper */
     #meme-swiper {
       position: relative;
       width: 300px;
       height: 300px;
       margin: 0 auto 60px;
     }
+
     .meme-card {
       width: 100%;
       height: 100%;
@@ -65,34 +70,36 @@
       box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
       transition: transform 0.3s ease-out;
     }
+
     .meme-card img {
       width: 100%;
       height: 100%;
       object-fit: cover;
     }
+
     .swipe-btns {
-      margin-top: 20px;
       display: flex;
       justify-content: center;
-      gap: 40px;
       align-items: center;
+      gap: 30px;
+      margin-bottom: 60px;
     }
+
     .swipe-btns button {
       font-size: 2rem;
-      padding: 10px;
+      padding: 0;
+      width: 60px;
+      height: 60px;
       border: none;
       border-radius: 50%;
       background: #6e38f7;
       color: #fff;
-      cursor: pointer;
-      width: 60px;
-      height: 60px;
       display: flex;
       justify-content: center;
       align-items: center;
+      cursor: pointer;
     }
 
-    /* Signup Form */
     .form-wrapper {
       background: #fff;
       color: #000;
@@ -101,6 +108,7 @@
       max-width: 700px;
       margin: 60px auto;
     }
+
     .form-wrapper input, .form-wrapper button {
       padding: 12px;
       width: 90%;
@@ -108,6 +116,7 @@
       display: block;
       font-size: 1rem;
     }
+
     .form-wrapper button {
       background: #6e38f7;
       color: #fff;
@@ -121,6 +130,11 @@
       padding: 40px;
       font-size: 0.9rem;
       color: #aaa;
+    }
+
+    footer img {
+      max-width: 200px;
+      margin-bottom: 20px;
     }
 
     @media (max-width: 768px) {
@@ -165,7 +179,6 @@
         </p>
       </div>
 
-      <!-- Meme Swiper -->
       <div id="meme-swiper"></div>
       <div class="swipe-btns">
         <button onclick="swipeLeft()">❌</button>
@@ -173,7 +186,6 @@
       </div>
     </div>
 
-    <!-- Signup Form -->
     <div class="form-wrapper">
       <h2>Join the Beta Waitlist</h2>
       <form action="https://app.kit.com/forms/8193604/subscriptions" method="post" data-sv-form="8193604">
@@ -186,16 +198,15 @@
     </div>
 
     <footer>
-      <img src="/assets/D8S-YT-Banner.jpg" alt="D8Sync Footer Logo" style="max-width:200px; margin-bottom: 20px;"><br/>
-      &copy; 2025 D8Sync Inc. | Designed for real connections, not algorithms
+      <img src="/assets/D8S-YT-Banner.jpg" alt="Footer Logo">
+      <p>&copy; 2025 D8Sync Inc. — Built for chemistry, not catfish.</p>
     </footer>
   </div>
 
   <script>
     let memes = [];
     for (let i = 1; i <= 45; i++) {
-      const num = String(i).padStart(2, '0');
-      memes.push(`d8sync-meme-${num}.jpg`);
+      memes.push(`d8sync-meme-${String(i).padStart(2, '0')}.jpg`);
     }
 
     let memeSwiper = document.getElementById('meme-swiper');
@@ -207,6 +218,7 @@
         div.className = 'meme-card';
         let img = document.createElement('img');
         img.src = `/memes/${memes[i]}`;
+        img.alt = `Meme ${i+1}`;
         div.appendChild(img);
         memeSwiper.appendChild(div);
       }
@@ -219,7 +231,7 @@
       setTimeout(() => {
         topCard.remove();
         if (memeSwiper.childElementCount === 0) {
-          setTimeout(() => loadMemes(), 500); // restart loop
+          setTimeout(() => loadMemes(), 500); // repeat loop
         }
       }, 300);
     }
