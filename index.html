@@ -116,6 +116,13 @@
       border-radius: 6px;
     }
 
+    footer {
+      margin-top: 60px;
+      padding: 40px;
+      font-size: 0.9rem;
+      color: #aaa;
+    }
+
     @media (max-width: 768px) {
       #meme-swiper {
         width: 90%;
@@ -177,14 +184,19 @@
         No spam. No cringe. Unmatch anytime.
       </div>
     </div>
+
+    <footer>
+      <img src="/assets/D8S-YT-Banner.jpg" alt="D8Sync Footer Logo" style="max-width:200px; margin-bottom: 20px;"><br/>
+      &copy; 2025 D8Sync Inc. | Designed for real connections, not algorithms
+    </footer>
   </div>
 
   <script>
-    let memes = [
-      "d8sync-meme-01.jpg", "d8sync-meme-02.jpg", "d8sync-meme-03.jpg", "d8sync-meme-04.jpg", 
-      "d8sync-meme-05.jpg", "d8sync-meme-06.jpg", "d8sync-meme-07.jpg", "d8sync-meme-08.jpg", 
-      "d8sync-meme-09.jpg", "d8sync-meme-10.jpg", "d8sync-meme-11.jpg", "d8sync-meme-12.jpg"
-    ];
+    let memes = [];
+    for (let i = 1; i <= 45; i++) {
+      const num = String(i).padStart(2, '0');
+      memes.push(`d8sync-meme-${num}.jpg`);
+    }
 
     let memeSwiper = document.getElementById('meme-swiper');
 
@@ -212,13 +224,8 @@
       }, 300);
     }
 
-    function swipeLeft() {
-      swipe('left');
-    }
-
-    function swipeRight() {
-      swipe('right');
-    }
+    function swipeLeft() { swipe('left'); }
+    function swipeRight() { swipe('right'); }
 
     window.onload = loadMemes;
   </script>
