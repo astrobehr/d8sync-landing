@@ -3,165 +3,152 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>D8Sync</title>
+  <title>D8Sync – Blind Dates Based on Vibes</title>
   <style>
     body {
-      font-family: Inter, sans-serif;
       background: #000;
       color: #fff;
-      margin: 0;
-      padding: 0;
+      font-family: 'Inter', sans-serif;
       text-align: center;
+      margin: 0;
+      padding: 20px;
     }
-    .container {
-      max-width: 800px;
-      margin: auto;
-      padding: 40px 20px;
-    }
-    .logo img {
+    img.logo {
       max-width: 300px;
-      margin: 40px auto;
+      margin: 40px auto 20px;
       display: block;
     }
     h1 {
-      font-size: 2rem;
-      margin-bottom: 20px;
+      font-size: 1.8rem;
     }
-    .intro, .section, .feature-block {
-      font-size: 1rem;
+    p {
+      max-width: 700px;
+      margin: 10px auto;
       line-height: 1.6;
-      margin-bottom: 40px;
+    }
+    .section {
+      margin: 60px 0;
     }
     .section h2 {
-      font-size: 1.4rem;
+      font-size: 1.3rem;
       margin-bottom: 10px;
     }
-    .feature-block h3 {
-      font-size: 1.2rem;
-      margin-bottom: 10px;
-    }
-
-    /* Meme GIF Block */
-    .meme-carousel {
-      margin: 40px auto;
+    .gif-container img {
       max-width: 100%;
-    }
-    .meme-carousel img {
-      width: 100%;
-      max-width: 600px;
       height: auto;
-      border-radius: 10px;
+      margin-top: 20px;
+      border-radius: 12px;
     }
-
-    /* Form Styles */
     .form-wrapper {
       background: #fff;
       color: #000;
-      border-radius: 16px;
-      padding: 24px;
-      max-width: 500px;
+      padding: 30px;
+      max-width: 600px;
       margin: 60px auto;
+      border-radius: 12px;
       box-shadow: 0 0 12px rgba(255, 255, 255, 0.1);
     }
-    .form-wrapper h2 {
-      margin-top: 0;
-      font-size: 1rem;
-    }
-    .form-wrapper input, .form-wrapper button {
+    .form-wrapper input[type="email"] {
       width: 90%;
-      padding: 12px;
-      margin: 10px 0;
+      padding: 10px;
       font-size: 1rem;
+      margin-bottom: 15px;
       border-radius: 4px;
-    }
-    .form-wrapper input {
       border: 1px solid #ccc;
     }
     .form-wrapper button {
-      background: #7a4fff;
-      color: #fff;
+      background: #8b5cf6;
+      color: white;
+      padding: 10px 20px;
+      font-size: 1rem;
       border: none;
+      border-radius: 4px;
       cursor: pointer;
     }
-    .form-wrapper small {
-      font-size: 0.75rem;
-      color: #555;
+    .footer-logo {
+      margin-top: 20px;
+      max-width: 180px;
     }
     footer {
+      font-size: 0.75rem;
+      color: #777;
       margin-top: 60px;
-      font-size: 0.8rem;
-      color: #666;
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <div class="logo">
-      <img src="https://raw.githubusercontent.com/astrobehr/d8sync-landing/main/assets/D8sync-Logo-Black.png" alt="D8Sync Logo">
-    </div>
 
-    <h1>Welcome to D8Sync</h1>
-    <div class="intro">
-      You’re not here for surface-level. You’re here for something real.<br>
-      AI-powered dates. Meme-based vibes. Blind matches that start with laughs, not looks.<br>
-      Welcome to the premier Dating App that <em>*gets you*</em>
-    </div>
+  <!-- TOP LOGO -->
+  <img src="https://raw.githubusercontent.com/astrobehr/d8sync-landing/main/assets/D8sync-Logo-Black.png" alt="D8Sync Logo" class="logo" />
 
-    <div class="section">
-      <div class="feature-block">
-        <h3>🎯 AI Matches That Actually Hit</h3>
-        <p>Imagine this: You send a meme and someone laughs the exact way you do. That’s not chance — it’s sync.</p>
-        <p>We read between your media likes, playlists, and punchlines to pair you with people on your wavelength.</p>
-        <p>No swiping roulette. No dead-end matches. Just real connection, fueled by your sense of humor.</p>
-      </div>
+  <!-- HEADLINE -->
+  <h1>Welcome to D8Sync</h1>
+  <p>You’re not here for surface-level. You’re here for something real.</p>
+  <p>AI-powered dates. Meme-based vibes. Blind matches that start with laughs, not looks.</p>
+  <p><em>Welcome to the premier Dating App that <strong>*gets you*</strong></em></p>
 
-      <div class="feature-block">
-        <h3>🎭 Swipe Memes, Not Faces</h3>
-        <p>Scroll, laugh, and react to the memes that hit hardest. Every swipe helps build your Comedy Graph™ — our algorithm that learns your humor DNA and matches you with someone who *actually gets it*</p>
-        <p>Weirdly accurate. Dangerously fun.</p>
-      </div>
-
-      <!-- Meme GIF -->
-      <div class="meme-carousel">
-        <a href="#waitlist">
-          <img src="https://raw.githubusercontent.com/astrobehr/d8sync-landing/main/assets/d8sync-meme-carousel.gif" alt="D8Sync Meme Carousel">
-        </a>
-      </div>
-
-      <div class="feature-block">
-        <h3>🔒 Go Blind (On Purpose)</h3>
-        <p>No filters. No bios. No profile paralysis.<br>
-        At D8Sync, you skip the scroll and jump straight into something real.</p>
-      </div>
-
-      <div class="feature-block">
-        <h3>🕵️‍♀️ How D8Sync Blind Dates Actually Work</h3>
-        <p>You tap “Sync Me!” D8Sync scans your Comedy Graph™, vibe data, and availability — and matches you.</p>
-        <p>Our Matchmaker AI then sends:<br>
-        🕓 A time. 📍 A place. 🧩 “The Tell” (a secret signal).</p>
-        <p>You walk in, scan the room, and look for someone doing *the tell*.<br>
-        Not sure? Tap “Is That You?” in-app.</p>
-        <p>If you’re vibing, say the optional icebreaker.<br>
-        If not? No pressure.<br>
-        Just enjoy the moment — the match quietly fades out.</p>
-        <p>No rejection trauma. No endless scrolling. Just real-world chemistry.</p>
-      </div>
-    </div>
-
-    <!-- Signup Form -->
-    <div class="form-wrapper" id="waitlist">
-      <h2>Join the Beta Waitlist</h2>
-      <form action="https://app.kit.com/forms/8193604/subscriptions" method="post" data-sv-form="8193604">
-        <input type="email" name="email_address" placeholder="Email Address" required>
-        <button type="submit">Get In Early</button>
-      </form>
-      <small>No spam. No cringe. Unmatch anytime.</small>
-      <div style="margin-top: 10px;"><img src="https://raw.githubusercontent.com/astrobehr/d8sync-landing/main/assets/D8sync-Art.png" alt="D8Sync Art" style="max-width: 120px;"></div>
-    </div>
-
-    <footer>
-      © 2025 D8Sync Inc. — Built for chemistry, not catfish.
-    </footer>
+  <!-- MATCHES -->
+  <div class="section">
+    <h2>🎯 AI Matches That Actually Hit</h2>
+    <p>Imagine this: You send a meme and someone laughs the exact way you do. That’s not chance — it’s sync.</p>
+    <p>We read between your media likes, playlists, and punchlines to pair you with people on your wavelength.</p>
+    <p>No swiping roulette. No dead-end matches. Just real connection, fueled by your sense of humor.</p>
   </div>
+
+  <!-- SWIPE MEMES -->
+  <div class="section">
+    <h2>🎭 Swipe Memes, Not Faces</h2>
+    <p>Scroll, laugh, and react to the memes that hit hardest.<br>
+      Every swipe helps build your Comedy Graph™ —<br>
+      our algorithm that learns your humor DNA<br>
+      and matches you with someone who <strong>*actually gets it*</strong><br>
+      Weirdly accurate. Dangerously fun.</p>
+
+    <!-- Meme GIF -->
+    <div class="gif-container">
+      <img src="https://raw.githubusercontent.com/astrobehr/d8sync-landing/main/assets/d8sync-memes.gif" alt="D8Sync Meme Carousel" />
+    </div>
+  </div>
+
+  <!-- GO BLIND -->
+  <div class="section">
+    <h2>🔒 Go Blind (On Purpose)</h2>
+    <p>No filters. No bios. No profile paralysis.<br>
+    At D8Sync, you skip the scroll<br>
+    and jump straight into something real.</p>
+  </div>
+
+  <!-- HOW IT WORKS -->
+  <div class="section">
+    <h2>🕵️ How D8Sync Blind Dates Actually Work</h2>
+    <p>You tap “Sync Me!”<br>
+    D8Sync scans your Comedy Graph™, vibe data, and availability — and matches you.</p>
+    <p>Our Matchmaker AI then sends:<br>
+    🕓 A time. 📍 A public place. 🧩 “The Tell” (a secret signal).</p>
+    <p>You walk in, scan the scene, and look for someone doing “the tell.”<br>
+    Not sure? Tap “Is That You?” in-app.</p>
+    <p>If you’re vibing, say the optional icebreaker.<br>
+    If not? No pressure.<br>
+    Just enjoy the moment — the match quietly fades out.</p>
+    <p>No rejection trauma. No endless scrolling. Just real-world chemistry.</p>
+  </div>
+
+  <!-- EMAIL SIGNUP FORM -->
+  <div class="form-wrapper">
+    <h2>Join the Beta Waitlist</h2>
+    <p>First access. First laughs. First dates. Drop your email now:</p>
+    <form action="https://app.kit.com/forms/8193604/subscriptions" method="post" data-sv-form="8193604">
+      <input type="email" name="email_address" placeholder="Email Address" required />
+      <button type="submit">Get In Early</button>
+    </form>
+    <p style="font-size: 0.8rem; color: #666;">No spam. No cringe. Unmatch anytime.</p>
+
+    <!-- Bottom Art -->
+    <img src="https://raw.githubusercontent.com/astrobehr/d8sync-landing/main/assets/D8sync-Art.png" alt="D8Sync Art" class="footer-logo" />
+  </div>
+
+  <footer>
+    © 2025 D8Sync Inc. — Built for chemistry, not catfish.
+  </footer>
 </body>
 </html>
