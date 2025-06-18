@@ -6,10 +6,10 @@
   <title>D8Sync</title>
   <meta property="og:title" content="D8Sync – Meme-Based Blind Dating App" />
   <meta property="og:description" content="Swipe memes. Get matched. No faces. No pressure. Just vibes." />
-  <meta property="og:image" content="https://raw.githubusercontent.com/astrobehr/d8sync-landing/main/assets/D8S-YT-Banner.jpg" />
+  <meta property="og:image" content="https://www.d8sync.com/assets/D8S-YT-Banner.jpg" />
   <meta property="og:url" content="https://www.d8sync.com" />
   <meta property="og:type" content="website" />
-  <meta property="fb:app_id" content="1234567890" /> <!-- replace with real if needed -->
+  <meta property="fb:app_id" content="1234567890" />
   <style>
     body {
       font-family: Inter, sans-serif;
@@ -86,6 +86,9 @@
       cursor: pointer;
       width: 60px;
       height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
     /* Signup Form */
@@ -122,7 +125,7 @@
 </head>
 <body>
   <div class="container">
-    <img src="https://raw.githubusercontent.com/astrobehr/d8sync-landing/main/assets/D8S-YT-Banner.jpg" alt="D8Sync Logo" class="logo" />
+    <img src="assets/D8S-YT-Banner.jpg" alt="D8Sync Logo" class="logo" />
 
     <h1>Welcome to D8Sync</h1>
     <div class="intro">
@@ -177,14 +180,12 @@
 
   <script>
     let memes = [
-      // List your actual filenames here (you can generate this list from the GitHub folder)
       "d8sync-meme-01.jpg", "d8sync-meme-02.jpg", "d8sync-meme-03.jpg", "d8sync-meme-04.jpg", 
       "d8sync-meme-05.jpg", "d8sync-meme-06.jpg", "d8sync-meme-07.jpg", "d8sync-meme-08.jpg", 
       "d8sync-meme-09.jpg", "d8sync-meme-10.jpg", "d8sync-meme-11.jpg", "d8sync-meme-12.jpg"
     ];
 
     let memeSwiper = document.getElementById('meme-swiper');
-    let memeIndex = 0;
 
     function loadMemes() {
       memeSwiper.innerHTML = '';
