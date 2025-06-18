@@ -175,78 +175,80 @@
       </p>
     </div>
 
-    <!-- Meme Swiper -->
-    <div id="meme-swiper"></div>
-    <div class="swipe-btns">
-      <button onclick="swipeLeft()">❌</button>
-      <button onclick="swipeRight()">❤️</button>
-    </div>
+  <!-- Meme Swiper -->
+<div id="meme-swiper"></div>
+<div class="swipe-btns">
+  <button onclick="swipeLeft()" aria-label="Nope">❌</button>
+  <button onclick="swipeRight()" aria-label="Yup">❤️</button>
+</div>
 
-    <!-- Signup Form -->
-    <div class="form-wrapper">
-      <h2>Join the Beta Waitlist</h2>
-      <form action="https://app.kit.com/forms/8193604/subscriptions" method="post" data-sv-form="8193604">
-        <input type="email" name="email_address" placeholder="Email Address" required />
-        <button type="submit">Get In Early</button>
-      </form>
-      <div style="font-size: 0.85rem; color: #666; margin-top: 10px;">
-        No spam. No cringe. Unmatch anytime.
-      </div>
-    </div>
-
-    <!-- Footer -->
-    <footer>
-      <img src="assets/d8sync-banner.jpg" alt="Footer Logo" class="footer-logo" />
-      <p>© 2025 D8Sync Inc. — Built for chemistry, not catfish.</p>
-    </footer>
+<!-- Signup Form -->
+<div class="form-wrapper">
+  <img src="assets/d8sync-banner.jpg" alt="Form Logo" style="max-width: 180px; margin-bottom: 20px;" />
+  <h2>Join the Beta Waitlist</h2>
+  <form action="https://app.kit.com/forms/8193604/subscriptions" method="post" data-sv-form="8193604">
+    <input type="email" name="email_address" placeholder="Email Address" required />
+    <button type="submit">Get In Early</button>
+  </form>
+  <div style="font-size: 0.85rem; color: #666; margin-top: 10px;">
+    No spam. No cringe. Unmatch anytime.
   </div>
+</div>
 
-  <script>
-    let memes = [
-      "d8sync-meme-01.jpg", "d8sync-meme-02.jpg", "d8sync-meme-03.jpg", "d8sync-meme-04.jpg", "d8sync-meme-05.jpg",
-      "d8sync-meme-06.jpg", "d8sync-meme-07.jpg", "d8sync-meme-08.jpg", "d8sync-meme-09.jpg", "d8sync-meme-10.jpg",
-      "d8sync-meme-11.jpg", "d8sync-meme-12.jpg", "d8sync-meme-13.jpg", "d8sync-meme-14.jpg", "d8sync-meme-15.jpg",
-      "d8sync-meme-16.jpg", "d8sync-meme-17.jpg", "d8sync-meme-18.jpg", "d8sync-meme-19.jpg", "d8sync-meme-20.jpg",
-      "d8sync-meme-21.jpg", "d8sync-meme-22.jpg", "d8sync-meme-23.jpg", "d8sync-meme-24.jpg", "d8sync-meme-25.png",
-      "d8sync-meme-26.jpg", "d8sync-meme-27.jpg", "d8sync-meme-28.jpg", "d8sync-meme-29.jpg", "d8sync-meme-30.jpg"
-    ];
+<!-- Footer Logo -->
+<div style="margin-top: 60px;">
+  <img src="assets/d8sync-banner.jpg" alt="Footer Logo" style="max-width: 180px;" />
+  <p style="color: #aaa; font-size: 0.9rem; margin-top: 10px;">
+    © 2025 D8Sync Inc. — Built for chemistry, not catfish.
+  </p>
+</div>
 
-    let memeSwiper = document.getElementById('meme-swiper');
+<script>
+  let memes = [
+    "d8sync-meme-01.jpg", "d8sync-meme-12.png", "d8sync-meme-13.jpg", "d8sync-meme-14.jpg",
+    "d8sync-meme-15.jpg", "d8sync-meme-16.jpg", "d8sync-meme-17.jpg", "d8sync-meme-18.jpg",
+    "d8sync-meme-19.jpg", "d8sync-meme-20.jpg", "d8sync-meme-21.jpg", "d8sync-meme-22.jpg",
+    "d8sync-meme-23.jpg", "d8sync-meme-24.jpg", "d8sync-meme-25.png", "d8sync-meme-26.jpg",
+    "d8sync-meme-27.jpg", "d8sync-meme-28.jpg", "d8sync-meme-29.jpg", "d8sync-meme-30.jpg"
+  ];
 
-    function loadMemes() {
-      memeSwiper.innerHTML = '';
-      for (let i = memes.length - 1; i >= 0; i--) {
-        let div = document.createElement('div');
-        div.className = 'meme-card';
-        let img = document.createElement('img');
-        img.src = `assets/memes/${memes[i]}`;
-        img.alt = `Meme ${i + 1}`;
-        div.appendChild(img);
-        memeSwiper.appendChild(div);
+  let memeSwiper = document.getElementById('meme-swiper');
+
+  function loadMemes() {
+    memeSwiper.innerHTML = '';
+    for (let i = memes.length - 1; i >= 0; i--) {
+      let div = document.createElement('div');
+      div.className = 'meme-card';
+      let img = document.createElement('img');
+      img.src = `assets/memes/${memes[i]}`;
+      img.alt = `Meme ${i + 1}`;
+      div.appendChild(img);
+      memeSwiper.appendChild(div);
+    }
+  }
+
+  function swipe(direction) {
+    const topCard = memeSwiper.querySelector('.meme-card:last-child');
+    if (!topCard) return;
+    topCard.style.transform = `translateX(${direction === 'right' ? '200px' : '-200px'}) rotate(${direction === 'right' ? '25deg' : '-25deg'})`;
+    setTimeout(() => {
+      topCard.remove();
+      if (memeSwiper.childElementCount === 0) {
+        setTimeout(() => loadMemes(), 500); // Restart
       }
-    }
+    }, 300);
+  }
 
-    function swipe(direction) {
-      const topCard = memeSwiper.querySelector('.meme-card:last-child');
-      if (!topCard) return;
-      topCard.style.transform = `translateX(${direction === 'right' ? '200px' : '-200px'}) rotate(${direction === 'right' ? '25deg' : '-25deg'})`;
-      setTimeout(() => {
-        topCard.remove();
-        if (memeSwiper.childElementCount === 0) {
-          setTimeout(() => loadMemes(), 500);
-        }
-      }, 300);
-    }
+  function swipeLeft() {
+    swipe('left');
+  }
 
-    function swipeLeft() {
-      swipe('left');
-    }
+  function swipeRight() {
+    swipe('right');
+  }
 
-    function swipeRight() {
-      swipe('right');
-    }
+  window.onload = loadMemes;
+</script>
 
-    window.onload = loadMemes;
-  </script>
 </body>
 </html>
