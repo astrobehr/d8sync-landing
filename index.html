@@ -4,12 +4,6 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>D8Sync</title>
-  <meta property="og:title" content="D8Sync – Meme-Based Blind Dating App" />
-  <meta property="og:description" content="Swipe memes. Get matched. No faces. No pressure. Just vibes." />
-  <meta property="og:image" content="https://raw.githubusercontent.com/astrobehr/d8sync-landing/main/assets/d8sync-banner.jpg" />
-  <meta property="og:url" content="https://www.d8sync.com" />
-  <meta property="og:type" content="website" />
-  <meta property="fb:app_id" content="1234567890" />
   <style>
     body {
       font-family: Inter, sans-serif;
@@ -19,136 +13,113 @@
       color: #fff;
       text-align: center;
     }
-
     .container {
       max-width: 800px;
       margin: auto;
       padding: 40px 20px;
     }
-
-    .logo {
-      width: 100%;
-      max-width: 800px;
-      margin: 0 auto 40px;
+    .logo img {
+      width: 800px;
+      max-width: 100%;
+      height: auto;
       display: block;
+      margin: 60px auto;
     }
-
     h1 {
-      font-size: 2.5rem;
+      font-size: 2.8rem;
+      margin: 0 0 20px;
+    }
+    .intro, .section, .feature-block {
+      font-size: 1.2rem;
+      line-height: 1.6;
+      margin-bottom: 60px;
+      text-align: center;
+    }
+    .section h2 {
+      font-size: 1.6rem;
       margin-bottom: 20px;
     }
-
-    .intro, .section, .feature-block {
-      font-size: 1.1rem;
-      line-height: 1.6;
-      margin-bottom: 50px;
+    .feature-block h3 {
+      font-size: 1.3rem;
+      margin-bottom: 10px;
     }
-
-    .section h2, .feature-block h3 {
-      font-size: 1.5rem;
-      margin-bottom: 15px;
-    }
-
-    .feature-block {
-      margin-bottom: 50px;
-    }
-
-    /* Meme Swiper */
-    #meme-swiper {
-      position: relative;
-      width: 300px;
-      height: 300px;
+    .feature-block p {
       margin: 0 auto;
+      max-width: 600px;
     }
-
-    .meme-card {
-      width: 100%;
-      height: 100%;
-      position: absolute;
-      border-radius: 10px;
-      overflow: hidden;
-      background: #222;
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-      transition: transform 0.3s ease-out;
-    }
-
-    .meme-card img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    .swipe-btns {
-      margin-top: 20px;
-      display: flex;
-      justify-content: center;
-      gap: 30px;
-    }
-
-    .swipe-btns button {
-      font-size: 1.8rem;
-      width: 60px;
-      height: 60px;
-      border-radius: 50%;
-      border: none;
-      background: #6e38f7;
-      color: white;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    /* Signup Form */
     .form-wrapper {
       display: flex;
-      flex-direction: column;
-      align-items: center;
+      flex-direction: row;
+      justify-content: center;
+      align-items: stretch;
+      width: 700px;
+      margin: 0 auto 60px;
       background: #fff;
       color: #000;
       border-radius: 20px;
-      padding: 30px 20px;
-      max-width: 700px;
-      margin: 80px auto;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
     }
-
-    .form-wrapper img {
-      max-width: 200px;
-      margin-bottom: 20px;
+    .form-left, .form-right {
+      flex: 1;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      text-align: center;
     }
-
-    .form-wrapper h2 {
-      margin-bottom: 15px;
+    .form-left {
+      padding: 30px;
     }
-
-    .form-wrapper input, .form-wrapper button {
-      padding: 12px;
-      width: 90%;
-      margin: 10px auto;
+    .form-left h2 {
+      font-size: 1.6rem;
+      margin-bottom: 12px;
+    }
+    .form-left p {
       font-size: 1rem;
-      display: block;
+      margin-bottom: 16px;
     }
-
-    .form-wrapper button {
+    .form-left input {
+      width: 100%;
+      padding: 12px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      margin-bottom: 12px;
+      font-size: 1rem;
+    }
+    .form-left button {
+      width: 100%;
+      padding: 12px;
+      border-radius: 6px;
       background: #6e38f7;
       color: #fff;
       font-weight: bold;
       border: none;
-      border-radius: 6px;
+      font-size: 1rem;
       cursor: pointer;
     }
-
-    .footer {
-      text-align: center;
-      color: #777;
-      margin-top: 40px;
-      font-size: 0.9rem;
+    .form-left .disclaimer {
+      font-size: 0.85rem;
+      color: #666;
+      margin-top: 12px;
     }
-
+    .form-right img {
+      width: 100%;
+      max-width: 300px;
+      height: auto;
+      object-fit: contain;
+      background: #fff;
+      padding: 10px;
+      border-radius: 10px;
+    }
     @media (max-width: 768px) {
-      #meme-swiper {
+      .form-wrapper {
+        flex-direction: column;
         width: 90%;
-        height: 280px;
+      }
+      .form-right img {
+        width: 80%;
+        margin-top: 20px;
       }
     }
   </style>
@@ -156,7 +127,9 @@
 <body>
   <div class="container">
     <!-- Logo -->
-    <img src="https://raw.githubusercontent.com/astrobehr/d8sync-landing/main/assets/d8sync-banner.jpg" alt="D8Sync Logo" class="logo" />
+    <div class="logo">
+      <img src="https://raw.githubusercontent.com/astrobehr/d8sync-landing/main/assets/D8S-YT-Banner.jpg" alt="D8Sync Logo">
+    </div>
 
     <!-- Welcome Text -->
     <h1>Welcome to D8Sync</h1>
@@ -176,85 +149,36 @@
       <div class="feature-block">
         <h3>🎭 Swipe Memes, Not Faces</h3>
         <p>Your feed is memes — not mugshots. Scroll, react, build your Comedy Graph™. Matches powered by laughs.</p>
-
-        <!-- Meme Swiper Block Here -->
-        <div id="meme-swiper"></div>
-        <div class="swipe-btns">
-          <button onclick="swipeLeft()">❌</button>
-          <button onclick="swipeRight()">❤️</button>
-        </div>
       </div>
 
       <div class="feature-block">
-        <h3>🕵️ How D8Sync Blind Dates Actually Work</h3>
-        <p>
-          Tap “Sync Me!”<br>
-          We match you. Then:<br>
-          🕓 A time. 📍 A place. 🧩 A Tell (like a weird drink order).<br><br>
-          Walk in, look around. If unsure? Tap “Is That You?” in the app.<br>
-          Say your icebreaker — or don’t.<br><br>
-          No pressure. No cringe. Just real-world vibes.
-        </p>
+        <h3>🔒 Go Blind (On Purpose)</h3>
+        <p>No filters. No bios. No profile paralysis.<br>
+        You skip the scroll and jump straight into something real.</p>
+      </div>
+
+      <div class="feature-block">
+        <h3>🎬 Mutual Only. You’re In Control.</h3>
+        <p>If the vibe hits, unlock each other’s profiles. If not, you vanish quietly—no awkwardness, no ghosting guilt.</p>
       </div>
     </div>
 
-    <!-- ConvertKit Signup Form with Branding -->
+    <!-- Signup Form -->
+    <script src="https://f.convertkit.com/ckjs/ck.5.js"></script>
     <div class="form-wrapper">
-      <img src="https://raw.githubusercontent.com/astrobehr/d8sync-landing/main/assets/d8sync-banner.jpg" alt="D8Sync Logo Footer" />
-      <h2>Join the Beta Waitlist</h2>
-      <form action="https://app.kit.com/forms/8193604/subscriptions" method="post" data-sv-form="8193604">
-        <input type="email" name="email_address" placeholder="Email Address" required />
-        <button type="submit">Get In Early</button>
-      </form>
-      <div style="font-size: 0.85rem; color: #666; margin-top: 10px;">
-        No spam. No cringe. Unmatch anytime.
+      <div class="form-left">
+        <h2>Join the Beta Waitlist</h2>
+        <p>First access. First laughs. First dates. Drop your email now:</p>
+        <form action="https://app.kit.com/forms/8193604/subscriptions" method="post" data-sv-form="8193604">
+          <input type="email" name="email_address" placeholder="Email Address" required />
+          <button type="submit">Get In Early</button>
+        </form>
+        <div class="disclaimer">No spam. No cringe. Unmatch anytime.</div>
       </div>
-    </div>
-
-    <!-- Footer -->
-    <div class="footer">
-      © 2025 D8Sync Inc. — Built for chemistry, not catfish.
+      <div class="form-right">
+        <img src="https://raw.githubusercontent.com/astrobehr/d8sync-landing/main/assets/D8S-YT-Banner.jpg" alt="D8Sync Art">
+      </div>
     </div>
   </div>
-
-  <!-- Meme Swiper Script -->
-  <script>
-    const memeSwiper = document.getElementById('meme-swiper');
-    let memes = [];
-    for (let i = 1; i <= 30; i++) {
-      const ext = i === 12 || i === 25 ? 'png' : 'jpg'; // known .png files
-      memes.push(`https://raw.githubusercontent.com/astrobehr/d8sync-landing/main/assets/memes/d8sync-meme-${String(i).padStart(2, '0')}.${ext}`);
-    }
-
-    function loadMemes() {
-      memeSwiper.innerHTML = '';
-      for (let i = memes.length - 1; i >= 0; i--) {
-        const card = document.createElement('div');
-        card.className = 'meme-card';
-        const img = document.createElement('img');
-        img.src = memes[i];
-        img.alt = `Meme ${i+1}`;
-        card.appendChild(img);
-        memeSwiper.appendChild(card);
-      }
-    }
-
-    function swipe(direction) {
-      const topCard = memeSwiper.querySelector('.meme-card:last-child');
-      if (!topCard) return;
-      topCard.style.transform = `translateX(${direction === 'right' ? '200px' : '-200px'}) rotate(${direction === 'right' ? '25deg' : '-25deg'})`;
-      setTimeout(() => {
-        topCard.remove();
-        if (!memeSwiper.children.length) {
-          setTimeout(() => loadMemes(), 500); // restart
-        }
-      }, 300);
-    }
-
-    function swipeLeft() { swipe('left'); }
-    function swipeRight() { swipe('right'); }
-
-    window.onload = loadMemes;
-  </script>
 </body>
 </html>
