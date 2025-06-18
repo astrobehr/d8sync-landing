@@ -25,7 +25,7 @@
       max-width: 100%;
       height: auto;
       display: block;
-      margin: 0 auto 30px auto;
+      margin: 60px auto 60px auto; /* Top/Bottom spacing */
     }
 
     h1 {
@@ -42,7 +42,7 @@
     ul.bullets {
       list-style: none;
       padding: 0;
-      margin-bottom: 40px;
+      margin-bottom: 60px;
       text-align: left;
       font-size: 1.1rem;
       display: inline-block;
@@ -58,13 +58,12 @@
       justify-content: center;
       align-items: stretch;
       width: 700px;
-      margin: 40px auto 0 auto;
+      margin: 0 auto 60px auto;
       background: #fff;
       color: #000;
       border-radius: 20px;
       overflow: hidden;
-      padding: 0;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
     }
 
     .form-left, .form-right {
@@ -116,18 +115,21 @@
     }
 
     .form-right {
-      background: #000;
+      background: #fff;
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 0;
+      padding: 20px;
     }
 
     .form-right img {
       width: 100%;
+      max-width: 300px;
       height: auto;
-      display: block;
-      object-fit: cover;
+      object-fit: contain;
+      background: #fff;
+      padding: 10px;
+      border-radius: 10px;
     }
 
     @media (max-width: 768px) {
@@ -137,8 +139,8 @@
       }
 
       .form-right img {
-        height: auto;
-        object-fit: contain;
+        width: 80%;
+        margin-top: 20px;
       }
     }
   </style>
