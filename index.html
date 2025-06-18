@@ -149,97 +149,109 @@
         margin-top: 20px;
       }
     }
+
+    /* Scroll Animations */
+    .scroll-fade {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    }
+
+    .scroll-fade.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
   </style>
 </head>
 <body>
   <div class="container">
     <!-- Logo -->
-    <div class="logo">
+    <div class="logo scroll-fade">
       <img src="https://github.com/astrobehr/d8sync-landing/blob/main/D8S%20YT%20Banner.jpg?raw=true" alt="D8Sync Logo">
     </div>
 
     <!-- Welcome Text -->
-    <h1>Welcome to D8Sync</h1>
-    <div class="intro">
+    <h1 class="scroll-fade">Welcome to D8Sync</h1>
+    <div class="intro scroll-fade">
       You’re not here for surface-level. You’re here for something real.<br><br>
       AI-powered dates. Meme-based vibes. Blind matches that start with laughs, not looks.<br><br>
       Welcome to the premier Dating App that <em>*gets you*</em>
     </div>
 
     <!-- Features -->
-<div class="section">
-  <div class="feature-block">
-    <h3>🎯 AI Matches That Actually Hit</h3>
-    <p>
-      Imagine this: You send a meme,<br>
-      and someone laughs the exact way you do.<br><br>
+    <div class="section">
+      <div class="feature-block scroll-fade">
+        <h3>🎯 AI Matches That Actually Hit</h3>
+        <p>
+          Imagine this: You send a meme,<br>
+          and someone laughs the exact way you do.<br><br>
 
-      That’s not chance — it’s sync.<br>
-      We read between your media likes, playlists, and punchlines<br>
-      to pair you with people on your wavelength.<br><br>
+          That’s not chance — it’s sync.<br>
+          We read between your media likes, playlists, and punchlines<br>
+          to pair you with people on your wavelength.<br><br>
 
-      No swiping roulette. No dead-end matches.<br>
-      Just real connection, fueled by your sense of humor.
-    </p>
-  </div>
+          No swiping roulette. No dead-end matches.<br>
+          Just real connection, fueled by your sense of humor.
+        </p>
+      </div>
 
-  <div class="feature-block">
- <h3>🎭 Swipe Memes, Not Faces</h3>
-<p>
-  What if your dating feed was memes instead of mugshots?<br>
-  No more trying to decode mirror selfies or gym pics.<br><br>
+      <div class="feature-block scroll-fade">
+        <h3>🎭 Swipe Memes, Not Faces</h3>
+        <p>
+          What if your dating feed was memes instead of mugshots?<br>
+          No more trying to decode mirror selfies or gym pics.<br><br>
 
-  Just scroll, laugh, and react to the memes that hit hardest.<br>
-  Every swipe helps build your Comedy Graph™ —<br>
-  our algorithm that learns your humor DNA<br>
-  and matches you with someone who *actually gets it*<br>
-  Weirdly accurate. Dangerously fun. 
-</p>
-  </div>
+          Just scroll, laugh, and react to the memes that hit hardest.<br>
+          Every swipe helps build your Comedy Graph™ —<br>
+          our algorithm that learns your humor DNA<br>
+          and matches you with someone who *actually gets it*<br>
+          Weirdly accurate. Dangerously fun.
+        </p>
+      </div>
 
-  <div class="feature-block">
-    <h3>🔒 Go Blind (On Purpose)</h3>
-    <p>
-      No filters. No bios. No profile paralysis.<br>
-      At D8Sync, you skip the scroll<br>
-      and jump straight into something real.<br><br>
+      <div class="feature-block scroll-fade">
+        <h3>🔒 Go Blind (On Purpose)</h3>
+        <p>
+          No filters. No bios. No profile paralysis.<br>
+          At D8Sync, you skip the scroll<br>
+          and jump straight into something real.<br><br>
 
-      Just you and someone new — on an actual blind date.<br> 
-      No pressure. No pretending.<br>
-      And yes, we even give you the perfect icebreaker.
-    </p>
-  </div>
-  
-  <div class="feature-block">
-    <h3>🕵️ How D8Sync Blind Dates Actually Work</h3>
-    <p>
-     You tap “Sync Me!".”<br>
-     D8Scyn scans your Comedy Graph™, vibe data, and availability<br>
-      — and matches you with someone on your wavelength.<br><br>
-      
-     Our Matchmaker AI then sends you both:<br>
-      🕓 A time 📍 A public place & 🧩 “The Tell” - <br>
-      a phrase or shared order to find your match.<br><br>
-      
-      You pull up, scan the scene, and look for the signal...<br>
-      like someone lowkey ordering the same drink as the tell.<br><br>
-      
-      In a crowded coffee shop or busy bookstore? Not sure it’s them?<br>
-      Tap the <em>“Is That You?"</em> button in-app for a private match confirm.<br><br>
-      
-      If you’re vibing, say the optional icebreaker we gave you.<br>
-      If not? No pressure.<br>
-      Just enjoy yourself & the match fades out quietly.<br><br>
-      
-      No profiles. No awkward intros. No rejection trauma.<br>
-      Just vibes. Real ones.
-    </p>
-  </div>
-</div>
+          Just you and someone new — on an actual blind date.<br> 
+          No pressure. No pretending.<br>
+          And yes, we even give you the perfect icebreaker.
+        </p>
+      </div>
+
+      <div class="feature-block scroll-fade">
+        <h3>🕵️ How D8Sync Blind Dates Actually Work</h3>
+        <p>
+          You tap “Sync Me!”.<br>
+          D8Sync scans your Comedy Graph™, vibe data, and availability<br>
+          — and matches you with someone on your wavelength.<br><br>
+
+          Our Matchmaker AI then sends you both:<br>
+          🕓 A time 📍 A public place & 🧩 “The Tell” — <br>
+          a phrase or shared order to find your match.<br><br>
+
+          You pull up, scan the scene, and look for the signal...<br>
+          like someone lowkey ordering the same drink as the tell.<br><br>
+
+          In a crowded coffee shop or busy bookstore? Not sure it’s them?<br>
+          Tap the <em>“Is That You?"</em> button in-app for a private match confirm.<br><br>
+
+          If you’re vibing, say the optional icebreaker we gave you.<br>
+          If not? No pressure.<br>
+          Just enjoy yourself & the match fades out quietly.<br><br>
+
+          No profiles. No awkward intros. No rejection trauma.<br>
+          Just vibes. Real ones.
+        </p>
+      </div>
+    </div>
 
     <!-- Signup Form -->
     <script src="https://f.convertkit.com/ckjs/ck.5.js"></script>
-    <div class="form-wrapper">
+    <div class="form-wrapper scroll-fade">
       <div class="form-left">
         <h2>Join the Beta Waitlist</h2>
         <p>First access. First laughs. First dates. Drop your email now:</p>
@@ -254,5 +266,20 @@
       </div>
     </div>
   </div>
+
+  <!-- Scroll Animation Script -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const scrollElements = document.querySelectorAll('.scroll-fade');
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      });
+      scrollElements.forEach(el => observer.observe(el));
+    });
+  </script>
 </body>
 </html>
