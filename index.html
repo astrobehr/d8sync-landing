@@ -22,7 +22,7 @@
     #buttons button { font-size:2rem; padding:10px 20px; border:none; border-radius:50%; background:#6e38f7; color:#fff; cursor:pointer; width:60px; height:60px; }
     #buttons button:disabled { opacity:0.5; cursor:not-allowed; }
 
-    .form-wrapper { display:flex; flex-direction:row; justify-content:center; align-items:stretch; width:700px; margin:0 auto 60px; background:#fff; color:#000; border-radius:20px; overflow:hidden; box-shadow:0 4px 20px rgba(0,0,0,0.2); }
+    .form-wrapper { display:flex; flex-direction:row; justify-content:center; align-items:stretch; width:700px; margin:0 auto 60px auto; background:#fff; color:#000; border-radius:20px; overflow:hidden; box-shadow:0 4px 20px rgba(0,0,0,0.2); }
     .form-left, .form-right { flex:1; display:flex; flex-direction:column; justify-content:center; text-align:center; padding:30px; }
     .form-left h2 { font-size:1.6rem; margin-bottom:12px; }
     .form-left p { font-size:1rem; margin-bottom:16px; }
@@ -52,16 +52,71 @@
     </div>
 
     <div class="section">
-      <!-- Feature blocks here... -->
-    </div>
+      <div class="feature-block">
+        <h3>🎯 AI Matches That Actually Hit</h3>
+        <p>
+          Imagine this: You send a meme,<br>
+          and someone laughs the exact way you do.<br><br>
+          That’s not chance — it’s sync.<br>
+          We read between your media likes, playlists, and punchlines<br>
+          to pair you with people on your wavelength.<br><br>
+          No swiping roulette. No dead-end matches.<br>
+          Just real connection, fueled by your sense of humor.
+        </p>
+      </div>
 
-    <!-- Meme swiper -->
-    <div id="swiper">
-      <!-- Cards will populate here -->
-    </div>
-    <div id="buttons">
-      <button id="nope">❌</button>
-      <button id="like">💜</button>
+      <div class="feature-block">
+        <h3>🎭 Swipe Memes, Not Faces</h3>
+        <p>
+          What if your dating feed was memes instead of mugshots?<br>
+          No more trying to decode mirror selfies or gym pics.<br><br>
+          Just scroll, laugh, and react to the memes that hit hardest.<br>
+          Every swipe helps build your Comedy Graph™ —<br>
+          our algorithm that learns your humor DNA<br>
+          and matches you with someone who *actually gets it*.<br><br>
+          Weirdly accurate. Dangerously fun.
+        </p>
+      </div>
+
+      <!-- Meme Swiper -->
+      <div id="swiper"></div>
+      <div id="buttons">
+        <button id="nope">❌</button>
+        <button id="like">💜</button>
+      </div>
+
+      <div class="feature-block">
+        <h3>🔒 Go Blind (On Purpose)</h3>
+        <p>
+          No filters. No bios. No profile paralysis.<br>
+          At D8Sync, you skip the scroll<br>
+          and jump straight into something real.<br><br>
+          Just you and someone new — on an actual blind date.<br> 
+          No pressure. No pretending.<br>
+          And yes, we even give you the perfect icebreaker.
+        </p>
+      </div>
+
+      <div class="feature-block">
+        <h3>🕵️ How D8Sync Blind Dates Actually Work</h3>
+        <p>
+         You tap “Sync Me!”<br>
+         D8Sync scans your Comedy Graph™, vibe data, and availability<br>
+         — and matches you with someone on your wavelength.<br><br>
+         Our Matchmaker AI then sends you both:<br>
+         🕓 A time 📍 A public place & 🧩 “The Tell” - <br>
+         a phrase or shared order to find your match.<br><br>
+         You pull up, scan the scene, and look for the signal...<br>
+         like someone lowkey ordering the same drink as the tell.<br><br>
+         In a crowded coffee shop or busy bookstore? Not sure it’s them?<br>
+         Tap the <em>“Is That You?"</em> button in-app for a private match confirm.<br><br>
+         If you’re vibing, say the optional icebreaker we gave you.<br>
+         If not? No pressure.<br>
+         Just enjoy yourself & the match fades out quietly.<br><br>
+         No profiles. No awkward intros. No rejection trauma.<br>
+         Just vibes. Real ones.
+        </p>
+      </div>
     </div>
 
     <!-- Signup Form -->
@@ -81,13 +136,13 @@
     </div>
   </div>
 
-  <!-- JavaScript to auto-load and swipe memes -->
+  <!-- Meme Swiper Script -->
   <script>
     async function loadMemes() {
       const api = 'https://api.github.com/repos/astrobehr/d8sync-landing/contents/memes';
       const res = await fetch(api);
       const files = await res.json();
-      return files.filter(f => f.name.match(/\.jpe?g|\.png$/i)).map(f => f.download_url);
+      return files.filter(f => f.name.match(/\.(jpe?g|png)$/i)).map(f => f.download_url);
     }
 
     function createSwipes(images) {
@@ -116,7 +171,7 @@
       }
     }
 
-    loadMemes().then(imgs => createSwipes(imgs));
+    loadMemes().then(createSwipes);
   </script>
 </body>
 </html>
