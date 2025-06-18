@@ -7,7 +7,13 @@
   <meta name="description" content="D8Sync – A swipe-free AI dating app powered by memes, playlists, and vibes. No profiles. No pressure. Just blind dates that hit different." />
   <meta name="keywords" content="D8Sync, dating app, blind dates, meme dating, AI matchmaking, swipe-free, vibe dating" />
   <meta name="author" content="D8Sync Team" />
-  <link rel="icon" type="image/png" href="New Project.png" />
+  <meta property="og:title" content="D8Sync – Meme-Based Blind Dating App" />
+  <meta property="og:description" content="Swipe memes. Get matched. No faces. No pressure. Just vibes." />
+  <meta property="og:image" content="https://raw.githubusercontent.com/astrobehr/d8sync-landing/main/assets/d8sync-banner.jpg" />
+  <meta property="og:url" content="https://www.d8sync.com" />
+  <meta property="og:type" content="website" />
+  <meta property="fb:app_id" content="1234567890" />
+  <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/astrobehr/d8sync-landing/main/assets/New%20Project.png" />
   <style>
     body {
       font-family: Inter, sans-serif;
@@ -41,7 +47,6 @@
       font-size: 1.2rem;
       line-height: 1.6;
       margin-bottom: 60px;
-      text-align: center;
     }
 
     .section h2 {
@@ -58,52 +63,6 @@
     .feature-block p {
       margin: 0 auto;
       max-width: 600px;
-    }
-
-    #meme-swiper {
-      position: relative;
-      width: 300px;
-      height: 300px;
-      margin: 40px auto;
-    }
-
-    .meme-card {
-      width: 100%;
-      height: 100%;
-      position: absolute;
-      border-radius: 10px;
-      overflow: hidden;
-      background: #222;
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-      transition: transform 0.3s ease-out;
-    }
-
-    .meme-card img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    .swipe-btns {
-      margin-top: 20px;
-      display: flex;
-      justify-content: center;
-      gap: 40px;
-    }
-
-    .swipe-btns button {
-      font-size: 2rem;
-      padding: 10px;
-      border: none;
-      border-radius: 50%;
-      background: #6e38f7;
-      color: #fff;
-      cursor: pointer;
-      width: 60px;
-      height: 60px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
     }
 
     .form-wrapper {
@@ -188,6 +147,53 @@
       border-radius: 10px;
     }
 
+    /* Meme Swiper */
+    #meme-swiper {
+      position: relative;
+      width: 300px;
+      height: 300px;
+      margin: 0 auto 30px;
+    }
+
+    .meme-card {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      border-radius: 10px;
+      overflow: hidden;
+      background: #222;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+      transition: transform 0.3s ease-out;
+    }
+
+    .meme-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .swipe-btns {
+      margin-top: 20px;
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+    }
+
+    .swipe-btns button {
+      font-size: 2rem;
+      padding: 10px;
+      border: none;
+      border-radius: 50%;
+      background: #6e38f7;
+      color: #fff;
+      cursor: pointer;
+      width: 60px;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
     @media (max-width: 768px) {
       .form-wrapper {
         flex-direction: column;
@@ -198,13 +204,18 @@
         width: 80%;
         margin-top: 20px;
       }
+
+      #meme-swiper {
+        width: 90%;
+        height: 280px;
+      }
     }
   </style>
 </head>
 <body>
   <div class="container">
     <div class="logo">
-      <img src="https://raw.githubusercontent.com/astrobehr/d8sync-landing/main/assets/D8S-YT-Banner.jpg" alt="D8Sync Logo">
+      <img src="https://raw.githubusercontent.com/astrobehr/d8sync-landing/main/assets/d8sync-banner.jpg" alt="D8Sync Logo">
     </div>
 
     <h1>Welcome to D8Sync</h1>
@@ -240,11 +251,10 @@
           Weirdly accurate. Dangerously fun.
         </p>
 
-        <!-- Meme Swiper -->
         <div id="meme-swiper"></div>
         <div class="swipe-btns">
-          <button onclick="swipeLeft()">❌</button>
-          <button onclick="swipeRight()">❤️</button>
+          <button onclick="swipe('left')">❌</button>
+          <button onclick="swipe('right')">❤️</button>
         </div>
       </div>
 
@@ -294,60 +304,49 @@
         <div class="disclaimer">No spam. No cringe. Unmatch anytime.</div>
       </div>
       <div class="form-right">
-        <img src="https://raw.githubusercontent.com/astrobehr/d8sync-landing/main/assets/D8S-YT-Banner.jpg" alt="D8Sync Art">
+        <img src="https://raw.githubusercontent.com/astrobehr/d8sync-landing/main/assets/d8sync-banner.jpg" alt="D8Sync Art">
       </div>
     </div>
   </div>
 
   <script>
-    const memeFolder = 'assets/memes/';
-    const memeCount = 30;
-    const memeSwiper = document.getElementById('meme-swiper');
+    async function fetchMemes() {
+      const memeContainer = document.getElementById('meme-swiper');
+      memeContainer.innerHTML = '';
 
-    function getMemeList() {
-      let memes = [];
-      for (let i = 1; i <= memeCount; i++) {
-        const ext = i === 12 || i === 25 ? 'png' : 'jpg';
-        memes.push(`d8sync-meme-${String(i).padStart(2, '0')}.${ext}`);
-      }
-      return memes;
-    }
-
-    function loadMemes() {
-      memeSwiper.innerHTML = '';
-      const memes = getMemeList();
-      for (let i = memes.length - 1; i >= 0; i--) {
-        const div = document.createElement('div');
-        div.className = 'meme-card';
-        const img = document.createElement('img');
-        img.src = memeFolder + memes[i];
-        img.alt = `Meme ${i + 1}`;
-        div.appendChild(img);
-        memeSwiper.appendChild(div);
+      try {
+        const memeList = [
+          // Adjust this list manually if you can't fetch dynamically
+          'd8sync-meme-01.jpg', 'd8sync-meme-02.jpg', 'd8sync-meme-03.jpg', 'd8sync-meme-04.jpg',
+          'd8sync-meme-05.jpg', 'd8sync-meme-06.jpg', 'd8sync-meme-07.jpg', 'd8sync-meme-08.jpg'
+        ];
+        for (let i = memeList.length - 1; i >= 0; i--) {
+          const div = document.createElement('div');
+          div.className = 'meme-card';
+          const img = document.createElement('img');
+          img.src = `https://raw.githubusercontent.com/astrobehr/d8sync-landing/main/assets/memes/${memeList[i]}`;
+          img.alt = `Meme ${i}`;
+          div.appendChild(img);
+          memeContainer.appendChild(div);
+        }
+      } catch (e) {
+        memeContainer.innerHTML = '<p style="color:red;">Failed to load memes.</p>';
       }
     }
 
     function swipe(direction) {
-      const topCard = memeSwiper.querySelector('.meme-card:last-child');
+      const topCard = document.querySelector('.meme-card:last-child');
       if (!topCard) return;
       topCard.style.transform = `translateX(${direction === 'right' ? '200px' : '-200px'}) rotate(${direction === 'right' ? '25deg' : '-25deg'})`;
       setTimeout(() => {
         topCard.remove();
-        if (memeSwiper.childElementCount === 0) {
-          setTimeout(() => loadMemes(), 500);
+        if (!document.querySelector('.meme-card')) {
+          fetchMemes(); // loop memes again
         }
       }, 300);
     }
 
-    function swipeLeft() {
-      swipe('left');
-    }
-
-    function swipeRight() {
-      swipe('right');
-    }
-
-    window.onload = loadMemes;
+    window.onload = fetchMemes;
   </script>
 </body>
 </html>
