@@ -22,10 +22,24 @@
 
     img.logo {
       width: 100%;
-      max-width: 500px;
-      height: auto;
+      max-width: 300px;
       margin: 40px auto;
       display: block;
+    }
+
+    h1 {
+      font-size: 2.2rem;
+      margin-bottom: 10px;
+    }
+
+    .intro, .section {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      margin-bottom: 40px;
+    }
+
+    .section h3 {
+      margin-bottom: 10px;
     }
 
     .meme-container {
@@ -55,21 +69,6 @@
       font-size: 24px;
       cursor: pointer;
       color: white;
-    }
-
-    h1 {
-      font-size: 2.4rem;
-      margin-bottom: 10px;
-    }
-
-    .intro, .section {
-      font-size: 1.2rem;
-      line-height: 1.6;
-      margin-bottom: 40px;
-    }
-
-    .section h3 {
-      margin-bottom: 12px;
     }
 
     .form-wrapper {
@@ -139,14 +138,14 @@
         and matches you with someone who *actually gets it*<br>
         Weirdly accurate. Dangerously fun.
       </p>
+    </div>
 
-      <!-- Meme Swiper -->
-      <div class="meme-container">
-        <img id="meme" src="assets/memes/meme-1.jpg" alt="Meme" />
-        <div class="swipe-buttons">
-          <button onclick="swipeLeft()">❌</button>
-          <button onclick="swipeRight()">❤️</button>
-        </div>
+    <!-- Meme Swiper -->
+    <div class="meme-container">
+      <img id="meme" src="assets/memes/meme-1.jpg" alt="Meme" />
+      <div class="swipe-buttons">
+        <button onclick="swipeLeft()">❌</button>
+        <button onclick="swipeRight()">❤️</button>
       </div>
     </div>
 
@@ -213,10 +212,9 @@
 
     function swipeRight() {
       memeIndex++;
-      if (memeIndex < memes.length - 1) {
+      if (memeIndex < memes.length) {
         showMeme();
       } else {
-        // On last meme, scroll to form
         document.getElementById("signup-form").scrollIntoView({ behavior: "smooth" });
       }
     }
