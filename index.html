@@ -7,10 +7,10 @@
   <style>
     body {
       font-family: Inter, sans-serif;
-      margin: 0;
-      padding: 0;
       background: #000;
       color: #fff;
+      margin: 0;
+      padding: 0;
       text-align: center;
     }
 
@@ -20,82 +20,69 @@
       padding: 40px 20px;
     }
 
-    .logo img {
-      width: 800px;
-      max-width: 100%;
+    img.logo {
+      width: 100%;
+      max-width: 500px;
       height: auto;
+      margin: 40px auto;
       display: block;
-      margin: 60px auto;
     }
 
-    h1 {
-      font-size: 2.8rem;
-      margin-bottom: 20px;
+    .meme-container {
+      margin: 40px 0;
     }
 
-    .intro, .feature-block {
-      font-size: 1.2rem;
-      line-height: 1.6;
-      margin-bottom: 60px;
-    }
-
-    .section h2, .feature-block h3 {
-      font-size: 1.6rem;
-      color: #fff;
-      margin-bottom: 20px;
-    }
-
-    /* Meme Swiper */
-    .meme-swiper {
-      margin-bottom: 60px;
-    }
-
-    .meme-img {
+    #meme {
       max-width: 100%;
       height: auto;
-      border-radius: 10px;
-      margin-bottom: 20px;
+      border-radius: 12px;
+      background: #111;
     }
 
-    .meme-btns {
+    .swipe-buttons {
+      margin: 20px 0 60px;
       display: flex;
       justify-content: center;
-      gap: 40px;
-      margin-top: 10px;
+      gap: 20px;
     }
 
-    .meme-btns button {
-      font-size: 1.5rem;
-      padding: 12px;
+    .swipe-buttons button {
+      background: #6e38f7;
+      border: none;
       border-radius: 50%;
       width: 60px;
       height: 60px;
-      background: #6e38f7;
-      color: #fff;
-      border: none;
+      font-size: 24px;
       cursor: pointer;
+      color: white;
     }
 
-    /* Signup Form */
+    h1 {
+      font-size: 2.4rem;
+      margin-bottom: 10px;
+    }
+
+    .intro, .section {
+      font-size: 1.2rem;
+      line-height: 1.6;
+      margin-bottom: 40px;
+    }
+
+    .section h3 {
+      margin-bottom: 12px;
+    }
+
     .form-wrapper {
       background: #fff;
       color: #000;
       border-radius: 20px;
       padding: 30px;
-      max-width: 700px;
-      margin: 60px auto;
-      display: flex;
-      gap: 20px;
-      flex-wrap: wrap;
-      justify-content: center;
+      max-width: 600px;
+      margin: 40px auto;
     }
 
-    .form-left {
-      flex: 1 1 300px;
-      text-align: center;
-    }
-
-    .form-left input, .form-left button {
+    .form-wrapper input,
+    .form-wrapper button {
       padding: 12px;
       width: 90%;
       margin: 10px auto;
@@ -103,7 +90,7 @@
       font-size: 1rem;
     }
 
-    .form-left button {
+    .form-wrapper button {
       background: #6e38f7;
       color: #fff;
       font-weight: bold;
@@ -111,34 +98,22 @@
       border-radius: 6px;
     }
 
-    .form-right {
-      flex: 1 1 300px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-
-    .form-right img {
+    .form-wrapper img {
+      margin-top: 20px;
       max-width: 100%;
-      border-radius: 10px;
     }
 
-    @media (max-width: 768px) {
-      .form-wrapper {
-        flex-direction: column;
-        text-align: center;
-      }
+    .disclaimer {
+      font-size: 0.85rem;
+      color: #666;
+      margin-top: 10px;
     }
   </style>
 </head>
 <body>
   <div class="container">
-    <!-- Logo -->
-    <div class="logo">
-      <img src="https://raw.githubusercontent.com/astrobehr/d8sync-landing/main/assets/D8S-YT-Banner.jpg" alt="D8Sync Logo">
-    </div>
+    <img src="assets/d8sync-banner.jpg" alt="D8Sync Logo" class="logo" />
 
-    <!-- Welcome -->
     <h1>Welcome to D8Sync</h1>
     <div class="intro">
       You’re not here for surface-level. You’re here for something real.<br><br>
@@ -146,118 +121,106 @@
       Welcome to the premier Dating App that <em>*gets you*</em>
     </div>
 
-    <!-- Features -->
     <div class="section">
-      <div class="feature-block">
-        <h3>🎯 AI Matches That Actually Hit</h3>
-        <p>
-          Imagine this: You send a meme and someone laughs the exact way you do.<br>
-          That’s not chance — it’s sync.<br><br>
-          We read between your media likes, playlists, and punchlines<br>
-          to pair you with people on your wavelength.<br><br>
-          No swiping roulette. No dead-end matches.<br>
-          Just real connection, fueled by your sense of humor.
-        </p>
-      </div>
+      <h3>🎯 AI Matches That Actually Hit</h3>
+      <p>
+        Imagine this: You send a meme and someone laughs the exact way you do. That’s not chance — it’s sync.<br>
+        We read between your media likes, playlists, and punchlines to pair you with people on your wavelength.<br><br>
+        No swiping roulette. No dead-end matches. Just real connection, fueled by your sense of humor.
+      </p>
+    </div>
 
-      <div class="feature-block">
-        <h3>🎭 Swipe Memes, Not Faces</h3>
-        <p>
-          Scroll, laugh, and react to the memes that hit hardest.<br>
-          Every swipe helps build your Comedy Graph™ —<br>
-          our algorithm that learns your humor DNA<br>
-          and matches you with someone who *actually gets it*<br>
-          Weirdly accurate. Dangerously fun.
-        </p>
+    <div class="section">
+      <h3>🎭 Swipe Memes, Not Faces</h3>
+      <p>
+        Scroll, laugh, and react to the memes that hit hardest.<br>
+        Every swipe helps build your Comedy Graph™ —<br>
+        our algorithm that learns your humor DNA<br>
+        and matches you with someone who *actually gets it*<br>
+        Weirdly accurate. Dangerously fun.
+      </p>
 
-        <!-- Meme Swiper -->
-        <div class="meme-swiper">
-          <img id="memeDisplay" class="meme-img" src="" alt="Meme">
-          <div class="meme-btns">
-            <button onclick="swipeLeft()">❌</button>
-            <button onclick="swipeRight()">❤️</button>
-          </div>
+      <!-- Meme Swiper -->
+      <div class="meme-container">
+        <img id="meme" src="assets/memes/meme-1.jpg" alt="Meme" />
+        <div class="swipe-buttons">
+          <button onclick="swipeLeft()">❌</button>
+          <button onclick="swipeRight()">❤️</button>
         </div>
       </div>
+    </div>
 
-      <div class="feature-block">
-        <h3>🔒 Go Blind (On Purpose)</h3>
-        <p>
-          No filters. No bios. No profile paralysis.<br>
-          At D8Sync, you skip the scroll<br>
-          and jump straight into something real.
-        </p>
-      </div>
+    <div class="section">
+      <h3>🔒 Go Blind (On Purpose)</h3>
+      <p>
+        No filters. No bios. No profile paralysis.<br>
+        At D8Sync, you skip the scroll<br>
+        and jump straight into something real.
+      </p>
+    </div>
 
-      <div class="feature-block">
-        <h3>🕵️ How D8Sync Blind Dates Actually Work</h3>
-        <p>
-          You tap “Sync Me!”<br>
-          D8Sync scans your Comedy Graph™, vibe data, and availability — and matches you.<br><br>
-          Our Matchmaker AI then sends:<br>
-          🕓 A time • 📍 A public place • 🧩 “The Tell” (a secret signal).<br><br>
-          You walk in, scan the scene, and look for someone doing “the tell.”<br>
-          Not sure? Tap “Is That You?” in-app.<br><br>
-          If you’re vibing, say the optional icebreaker.<br>
-          If not? No pressure.<br>
-          Just enjoy the moment — the match quietly fades out.<br><br>
-          No rejection trauma. No endless scrolling. Just real-world chemistry.
-        </p>
-      </div>
+    <div class="section">
+      <h3>🕵️ How D8Sync Blind Dates Actually Work</h3>
+      <p>
+        You tap “Sync Me!”<br>
+        D8Sync scans your Comedy Graph™, vibe data, and availability — and matches you.<br><br>
+        Our Matchmaker AI then sends:<br>
+        🕓 A time. 📍 A public place. 🧩 “The Tell” (a secret signal).<br><br>
+        You walk in, scan the scene, and look for someone doing “the tell.”<br>
+        Not sure? Tap “Is That You?” in-app.<br><br>
+        If you're vibing, say the optional icebreaker.<br>
+        If not? No pressure.<br>
+        Just enjoy the moment — the match quietly fades out.<br><br>
+        No rejection trauma. No endless scrolling. Just real-world chemistry.
+      </p>
     </div>
 
     <!-- Signup Form -->
-    <div id="signup-form" class="form-wrapper">
-      <div class="form-left">
-        <h2>Join the Beta Waitlist</h2>
-        <p>First access. First laughs. First dates. Drop your email now:</p>
-        <form action="https://app.kit.com/forms/8193604/subscriptions" method="post" data-sv-form="8193604">
-          <input type="email" name="email_address" placeholder="Email Address" required />
-          <button type="submit">Get In Early</button>
-        </form>
-        <div style="font-size: 0.85rem; color: #666; margin-top: 10px;">
-          No spam. No cringe. Unmatch anytime.
-        </div>
-      </div>
-      <div class="form-right">
-        <img src="https://raw.githubusercontent.com/astrobehr/d8sync-landing/main/assets/D8S-YT-Banner.jpg" alt="D8Sync Art">
-      </div>
+    <div class="form-wrapper" id="signup-form">
+      <h2>Join the Beta Waitlist</h2>
+      <p>First access. First laughs. First dates. Drop your email now:</p>
+      <form action="https://app.kit.com/forms/8193604/subscriptions" method="post" data-sv-form="8193604">
+        <input type="email" name="email_address" placeholder="Email Address" required />
+        <button type="submit">Get In Early</button>
+      </form>
+      <img src="assets/d8sync-banner.jpg" alt="D8Sync Art" />
+      <div class="disclaimer">No spam. No cringe. Unmatch anytime.</div>
     </div>
   </div>
 
-  <!-- Meme Swiper Script -->
   <script>
     const memes = [
-      "assets/memes/d8sync-meme-01.jpg",
-      "assets/memes/d8sync-meme-02.jpg",
-      "assets/memes/d8sync-meme-03.jpg",
-      "assets/memes/d8sync-meme-04.jpg",
-      "assets/memes/d8sync-meme-05.jpg",
-      "assets/memes/d8sync-meme-06.jpg"
+      "meme-1.jpg",
+      "meme-2.jpg",
+      "meme-3.jpg",
+      "meme-4.jpg",
+      "meme-5.jpg",
+      "meme-6.jpg"
     ];
 
     let memeIndex = 0;
-    const memeDisplay = document.getElementById("memeDisplay");
 
     function showMeme() {
-      memeDisplay.src = memes[memeIndex];
+      const memeImg = document.getElementById("meme");
+      memeImg.src = "assets/memes/" + memes[memeIndex];
     }
 
     function swipeLeft() {
       memeIndex++;
-      if (memeIndex >= memes.length) memeIndex = 0;
+      if (memeIndex >= memes.length) memeIndex = memes.length - 1;
       showMeme();
     }
 
     function swipeRight() {
-      if (memeIndex === memes.length - 1) {
-        document.getElementById("signup-form").scrollIntoView({ behavior: "smooth" });
+      memeIndex++;
+      if (memeIndex < memes.length - 1) {
+        showMeme();
       } else {
-        swipeLeft();
+        // On last meme, scroll to form
+        document.getElementById("signup-form").scrollIntoView({ behavior: "smooth" });
       }
     }
 
-    // Initial Load
     window.onload = showMeme;
   </script>
 </body>
