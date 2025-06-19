@@ -327,7 +327,27 @@
 <!-- ConvertKit Email Embed -->
 <div id="waitlist">
   <script async data-uid="0ebbef2018" src="https://d8sync.kit.com/0ebbef2018/index.js"></script>
-
+<style>
+  /* Hide ConvertKit's default submit button */
+  form.ck_subscribe_form .ck_subscribe_button {
+    display: none !important;
+  }
+</style>
+  <!-- Custom Submit Button -->
+<button id="customSubmitBtn" style="
+  background-color: #6e38f7;
+  color: white;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 30px;
+  font-size: 16px;
+  cursor: pointer;
+  font-weight: bold;
+  display: block;
+  margin: 20px auto;
+">
+  🚀 Join the Waitlist
+</button>
   <!-- Visual Confirmation Message -->
   <div id="thank-you-message" style="display:none; text-align: center; margin-top: 20px;">
     ✅ You're in. Thanks for vibing with us.
@@ -451,6 +471,21 @@
     Not feeling it? Close
   </a>
 </div>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const customBtn = document.getElementById("customSubmitBtn");
+
+    const waitForCK = setInterval(() => {
+      const realButton = document.querySelector(".ck_subscribe_button");
+      if (realButton && customBtn) {
+        clearInterval(waitForCK);
+        customBtn.addEventListener("click", function () {
+          realButton.click();
+        });
+      }
+    }, 300);
+  });
+</script>
 
 </body>
 </html>
