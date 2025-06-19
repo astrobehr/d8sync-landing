@@ -1,1 +1,3 @@
-
+User-agent: *
+Allow: /
+Sitemap: https://d8sync.com/sitemap.xml
