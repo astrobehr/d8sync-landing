@@ -328,7 +328,7 @@
 <div id="waitlist">
   <script async data-uid="0ebbef2018" src="https://d8sync.kit.com/0ebbef2018/index.js"></script>
 <!-- Updated Join the Waitlist Button Placement -->
-<div style="position: relative; height: 70px; margin-top: 20px;">
+<div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 999;">
   <button id="customSubmitBtn" style="
     background-color: #6e38f7;
     color: white;
@@ -338,11 +338,6 @@
     font-size: 16px;
     cursor: pointer;
     font-weight: bold;
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 999;
   ">
     🚀 Join the Waitlist
   </button>
@@ -352,21 +347,6 @@
   form.ck_subscribe_form .ck_subscribe_button {
     display: none !important;
   }
-</style>
-  <!-- Custom Submit Button -->
-<button id="customSubmitBtn" style="
-  background-color: #6e38f7;
-  color: white;
-  padding: 12px 24px;
-  border: none;
-  border-radius: 30px;
-  font-size: 16px;
-  cursor: pointer;
-  font-weight: bold;
-  display: block;
-  margin: 20px auto;
-">
-  🚀 Join the Waitlist
 </button>
   <!-- Visual Confirmation Message -->
   <div id="thank-you-message" style="display:none; text-align: center; margin-top: 20px;">
