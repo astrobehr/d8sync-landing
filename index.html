@@ -183,6 +183,32 @@
         </p>
       </div>
 
+      <!-- Meme Flipper: iPhone Frame with ❤️ / ❌ Buttons -->
+<div style="text-align: center; margin: 60px auto;">
+  <div style="position: relative; display: inline-block; width: 300px; height: 600px; background: url('https://raw.githubusercontent.com/astrobehr/d8sync-landing/main/assets/phone-frame.png') no-repeat center/contain;">
+    <img id="memeImage" src="https://raw.githubusercontent.com/astrobehr/d8sync-landing/main/memes/meme-1.jpg" alt="Meme 1"
+      style="position: absolute; top: 80px; left: 22px; width: 255px; height: 420px; object-fit: cover; border-radius: 10px;" />
+  </div>
+
+  <div style="margin-top: 20px;">
+    <button onclick="flipMeme(-1)" style="font-size: 2rem; margin: 0 20px; background: #ccc; border: none; border-radius: 50%; width: 60px; height: 60px;">❌</button>
+    <button onclick="flipMeme(1)" style="font-size: 2rem; margin: 0 20px; background: #ff69b4; border: none; border-radius: 50%; width: 60px; height: 60px;">❤️</button>
+  </div>
+</div>
+
+<script>
+  const totalMemes = 6;
+  let currentMeme = 1;
+
+  function flipMeme(direction) {
+    currentMeme += direction;
+    if (currentMeme > totalMemes) currentMeme = totalMemes;
+    if (currentMeme < 1) currentMeme = 1;
+    document.getElementById('memeImage').src =
+      `https://raw.githubusercontent.com/astrobehr/d8sync-landing/main/memes/meme-${currentMeme}.jpg`;
+  }
+</script>
+
       <div class="feature-block">
         <h3>🔒 Go Blind (On Purpose)</h3>
         <p>
