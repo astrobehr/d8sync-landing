@@ -325,22 +325,30 @@
  </script> 
 
 <!-- ConvertKit Email Embed -->
-<div id="waitlist">
+<div id="waitlist" style="position: relative; min-height: 300px;">
   <script async data-uid="0ebbef2018" src="https://d8sync.kit.com/0ebbef2018/index.js"></script>
-<!-- Updated Join the Waitlist Button Placement -->
-<div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 999;">
-  <button id="customSubmitBtn" style="
-    background-color: #6e38f7;
-    color: white;
-    padding: 12px 24px;
-    border: none;
-    border-radius: 30px;
-    font-size: 16px;
-    cursor: pointer;
-    font-weight: bold;
-  ">🚀 Join the Waitlist
-  </button>
+
+  <!-- Custom Join Button Overlay -->
+  <div style="position: absolute; bottom: 75px; left: 50%; transform: translateX(-50%); z-index: 999;">
+    <button id="customSubmitBtn" style="
+      background-color: #6e38f7;
+      color: white;
+      padding: 12px 24px;
+      border: none;
+      border-radius: 30px;
+      font-size: 16px;
+      cursor: pointer;
+      font-weight: bold;
+    ">
+      🚀 Join the Waitlist
+    </button>
+  </div>
+  <!-- Confirmation -->
+  <div id="thank-you-message" style="display:none; text-align: center; margin-top: 20px;">
+    ✅ You're in. Thanks for vibing with us.
+  </div>
 </div>
+
   <style>
   /* Hide ConvertKit's default submit button */
   form.ck_subscribe_form .ck_subscribe_button {
