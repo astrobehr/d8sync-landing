@@ -396,9 +396,9 @@
 <script>
   function closeAndScrollToWaitlist() {
     const popup = document.getElementById('matchPopup');
-    const target = document.getElementById('waitlist');
+    const waitlist = document.getElementById('waitlist');
     if (popup) popup.style.display = 'none';
-    if (target) target.scrollIntoView({ behavior: 'smooth' });
+    if (waitlist) waitlist.scrollIntoView({ behavior: 'smooth' });
   }
 
   window.addEventListener('load', function () {
@@ -408,25 +408,12 @@
     }, 3500);
   });
 </script>
-    <div style="text-align:center;">
-      <a href="#" onclick="document.getElementById('matchPopup').style.display='none'" style="color:#999;">Not feeling it? Close</a>
-    </div>
-  </div>
-</div>
-<script>
-  function closeAndScroll() {
-    document.getElementById('matchPopup').style.display = 'none';
-    const waitlist = document.getElementById('waitlist');
-    if (waitlist) {
-      waitlist.scrollIntoView({ behavior: 'smooth' });
-    }
-  }
 
-  window.addEventListener('load', function () {
-    setTimeout(() => {
-      document.getElementById('matchPopup').style.display = 'block';
-    }, 3500);
-  });
-</script>
+<div style="text-align:center; margin-top: 20px;">
+  <a href="#" onclick="closeAndScrollToWaitlist()" style="color:#999; text-decoration: underline;">
+    Not feeling it? Close
+  </a>
+</div>
+
 </body>
 </html>
