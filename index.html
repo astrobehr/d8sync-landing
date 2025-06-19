@@ -7,10 +7,11 @@
   <meta name="description" content="D8Sync – A swipe-free AI dating app powered by memes, playlists, and vibes. No profiles. No pressure. Just blind dates that hit different." />
   <meta name="keywords" content="D8Sync, dating app, blind dates, meme dating, AI matchmaking, swipe-free, vibe dating" />
   <meta name="author" content="D8Sync Team" />
-  <link rel="icon" type="image/png" href="New Project.png" />
+  <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/astrobehr/d8sync-landing/main/assets/d8sync-icon.png" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
     body {
-      font-family: Inter, sans-serif;
+      font-family: 'Inter', sans-serif;
       margin: 0;
       padding: 0;
       background: #000;
@@ -153,50 +154,6 @@
         margin-top: 20px;
       }
     }
-
-    /* Meme Swiper */
-    .swiper-container {
-      position: relative;
-      width: 300px;
-      height: 300px;
-      margin: 40px auto 20px auto;
-    }
-
-    .meme-card {
-      width: 100%;
-      height: 100%;
-      position: absolute;
-      border-radius: 10px;
-      overflow: hidden;
-      background: #222;
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-      transition: transform 0.3s ease-out;
-    }
-
-    .meme-card img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    .swipe-btns {
-      margin-bottom: 40px;
-      display: flex;
-      justify-content: center;
-      gap: 40px;
-    }
-
-    .swipe-btns button {
-      font-size: 2rem;
-      padding: 10px;
-      border-radius: 50%;
-      background: #6e38f7;
-      color: #fff;
-      border: none;
-      cursor: pointer;
-      width: 60px;
-      height: 60px;
-    }
   </style>
 </head>
 <body>
@@ -224,24 +181,6 @@
           No swiping roulette. No dead-end matches.<br>
           Just real connection, fueled by your sense of humor.
         </p>
-      </div>
-
-      <div class="feature-block">
-        <h3>🎭 Swipe Memes, Not Faces</h3>
-        <p>
-          What if your dating feed was memes instead of mugshots?<br>
-          No more trying to decode mirror selfies or gym pics.<br><br>
-          Just scroll, laugh, and react to the memes that hit hardest.<br>
-          Every swipe helps build your Comedy Graph™ —<br>
-          our algorithm that learns your humor DNA<br>
-          and matches you with someone who *actually gets it*<br>
-          Weirdly accurate. Dangerously fun.
-        </p>
-        <div id="meme-swiper" class="swiper-container"></div>
-        <div class="swipe-btns">
-          <button onclick="swipe('left')">❌</button>
-          <button onclick="swipe('right')">❤️</button>
-        </div>
       </div>
 
       <div class="feature-block">
@@ -295,61 +234,5 @@
       </div>
     </div>
   </div>
-
-  <script>
-    const memeFolder = '/assets/memes/';
-    const memeExtensions = ['jpg', 'jpeg', 'png'];
-    const memeCount = 45;
-    let memes = [];
-
-    for (let i = 1; i <= memeCount; i++) {
-      memeExtensions.forEach(ext => memes.push(`${memeFolder}d8sync-meme-${i}.${ext}`));
-    }
-
-    const verifiedMemes = [];
-    let loadAttempts = 0;
-
-    memes.forEach(url => {
-      const img = new Image();
-      img.onload = () => { verifiedMemes.push(url); checkComplete(); };
-      img.onerror = checkComplete;
-      img.src = url;
-    });
-
-    function checkComplete() {
-      loadAttempts++;
-      if (loadAttempts === memes.length) loadMemes();
-    }
-
-    function loadMemes() {
-      const swiper = document.getElementById('meme-swiper');
-      swiper.innerHTML = '';
-      for (let i = verifiedMemes.length - 1; i >= 0; i--) {
-        const div = document.createElement('div');
-        div.className = 'meme-card';
-        const img = document.createElement('img');
-        img.src = verifiedMemes[i];
-        div.appendChild(img);
-        swiper.appendChild(div);
-      }
-    }
-
-    function swipe(direction) {
-      const swiper = document.getElementById('meme-swiper');
-      const topCard = swiper.querySelector('.meme-card:last-child');
-      if (!topCard) return;
-      topCard.style.transform = `translateX(${direction === 'right' ? '200px' : '-200px'}) rotate(${direction === 'right' ? '25deg' : '-25deg'})`;
-      setTimeout(() => {
-        topCard.remove();
-        if (!swiper.querySelector('.meme-card')) {
-          setTimeout(() => loadMemes(), 500);
-        }
-      }, 300);
-    }
-
-    window.onload = () => {};
-  </script>
 </body>
 </html>
-
-
