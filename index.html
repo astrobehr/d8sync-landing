@@ -371,7 +371,9 @@
     92% meme fluency</p>
 
     <div style="margin:30px 0; text-align:center;">
-      <a href="#waitlist" onclick="document.getElementById('matchPopup').style.display='none'; document.getElementById('waitlist').scrollIntoView({ behavior: 'smooth' });" style="background:#fff; color:#000; padding:12px 24px; border-radius:30px; text-decoration:none; font-weight:bold;">🔥 Join the Waitlist</a>
+      <button onclick="closeAndScroll()" style="background:#fff; color:#000; padding:12px 24px; border-radius:30px; font-weight:bold; border:none; cursor:pointer;">
+  🔥 Join the Waitlist
+</button>
     </div>
 
     <div style="text-align:center;">
@@ -379,8 +381,15 @@
     </div>
   </div>
 </div>
-
 <script>
+  function closeAndScroll() {
+    document.getElementById('matchPopup').style.display = 'none';
+    const waitlist = document.getElementById('waitlist');
+    if (waitlist) {
+      waitlist.scrollIntoView({ behavior: 'smooth' });
+    }
+  }
+
   window.addEventListener('load', function () {
     setTimeout(() => {
       document.getElementById('matchPopup').style.display = 'block';
