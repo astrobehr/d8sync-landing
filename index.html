@@ -373,12 +373,46 @@
     72% chaos compatibility<br>
     92% meme fluency</p>
   
-    <!-- Feedback Reaction -->
+   <!-- Popup Buttons -->
 <div style="margin: 30px 0; text-align: center;">
   <p style="margin-bottom: 10px;">🧠 Did this vibe feel accurate?</p>
-  <button style="margin-right: 10px; padding: 8px 20px; border: none; border-radius: 30px; background: #6e38f7; color: #fff; font-weight: bold; cursor: pointer;">Yup, spooky</button>
-  <button style="padding: 8px 20px; border: none; border-radius: 30px; background: #444; color: #fff; font-weight: bold; cursor: pointer;">Not really</button>
+  <button onclick="handleFeedback('yes')" style="margin-right: 10px; padding: 8px 20px; border: none; border-radius: 30px; background: #6e38f7; color: #fff; font-weight: bold; cursor: pointer;">
+    Yup, spooky
+  </button>
+  <button onclick="handleFeedback('no')" style="padding: 8px 20px; border: none; border-radius: 30px; background: #444; color: #fff; font-weight: bold; cursor: pointer;">
+    Not really
+  </button>
 </div>
+
+<!-- Confirmation Message -->
+<div id="feedback-response" style="display:none; text-align:center; margin-top:10px; font-weight:bold; color:#4caf50;">
+  ✅ Thanks for your feedback!
+</div>
+
+<script>
+  function handleFeedback(response) {
+    console.log("User response:", response); // Optional: log for testing
+    const responseBox = document.getElementById('feedback-response');
+    if (responseBox) {
+      responseBox.style.display = 'block';
+    }
+  }
+
+  function closeAndScrollToWaitlist() {
+    const popup = document.getElementById('matchPopup');
+    const waitlist = document.getElementById('waitlist');
+    if (popup) popup.style.display = 'none';
+    if (waitlist) waitlist.scrollIntoView({ behavior: 'smooth' });
+  }
+
+  window.addEventListener('load', function () {
+    setTimeout(() => {
+      const popup = document.getElementById('matchPopup');
+      if (popup) popup.style.display = 'block';
+    }, 3500);
+  });
+</script>
+
 
 <!-- Join the Waitlist CTA -->
 <div style="margin:30px 0; text-align:center;">
