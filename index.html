@@ -183,14 +183,20 @@
         </p>
       </div>
 
-      <!-- Meme Flipper: iPhone Frame with ❤️ / ❌ Buttons -->
-<div style="text-align: center; margin: 60px auto;">
-  <div style="position: relative; display: inline-block; width: 300px; height: 600px; background: url('https://raw.githubusercontent.com/astrobehr/d8sync-landing/main/assets/phone-frame.png') no-repeat center/contain;">
-    <img id="memeImage" src="https://raw.githubusercontent.com/astrobehr/d8sync-landing/main/memes/meme-1.jpg" alt="Meme 1"
+    <!-- Meme Flipper Embedded in iPhone Frame -->
+<div style="text-align: center; margin: 80px auto;">
+  <div style="
+    position: relative;
+    width: 300px;
+    height: 600px;
+    margin: auto;
+    background: url('https://raw.githubusercontent.com/astrobehr/d8sync-landing/main/assets/phone-frame.png') no-repeat center/contain;
+  ">
+    <img id="memeImage" src="https://raw.githubusercontent.com/astrobehr/d8sync-landing/main/memes/meme-1.jpg" alt="Meme"
       style="position: absolute; top: 80px; left: 22px; width: 255px; height: 420px; object-fit: cover; border-radius: 10px;" />
   </div>
 
-  <div style="margin-top: 20px;">
+  <div style="margin-top: 30px;">
     <button onclick="flipMeme(-1)" style="font-size: 2rem; margin: 0 20px; background: #ccc; border: none; border-radius: 50%; width: 60px; height: 60px;">❌</button>
     <button onclick="flipMeme(1)" style="font-size: 2rem; margin: 0 20px; background: #ff69b4; border: none; border-radius: 50%; width: 60px; height: 60px;">❤️</button>
   </div>
