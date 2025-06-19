@@ -1,139 +1,123 @@
+
+<!-- CORRECTED POPUP FILE -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>D8Sync Landing</title>
+  <title>D8Sync Popup Fix</title>
   <style>
     body {
-      font-family: Inter, sans-serif;
       margin: 0;
-      padding: 0;
+      font-family: 'Inter', sans-serif;
       background-color: #000;
       color: #fff;
     }
-    .popup {
-      display: none;
+
+    #matchPopup {
+      display: block;
       position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
       background: rgba(0,0,0,0.85);
       z-index: 9999;
+      color: #fff;
       padding: 40px;
       box-sizing: border-box;
       overflow-y: auto;
     }
-    .popup-content {
+
+    #matchPopupContent {
       max-width: 600px;
-      margin: 40px auto;
+      margin: 60px auto;
       background: #111;
       padding: 30px;
       border-radius: 16px;
       box-shadow: 0 0 30px rgba(0,0,0,0.4);
     }
-    .popup button {
-      padding: 12px 24px;
+
+    #matchPopupContent h2, #matchPopupContent p {
+      text-align: center;
+      line-height: 1.6;
+    }
+
+    .feedback-buttons {
+      margin: 30px 0;
+      text-align: center;
+    }
+
+    .feedback-buttons button {
+      margin: 5px;
+      padding: 10px 20px;
       border-radius: 30px;
-      font-weight: bold;
       border: none;
+      font-weight: bold;
       cursor: pointer;
     }
-    #customSubmitBtn {
-      background-color: #6e38f7;
-      color: white;
+
+    .feedback-buttons button:first-child {
+      background: #6e38f7;
+      color: #fff;
     }
-    .ck_subscribe_form .ck_subscribe_button {
-      display: none !important;
+
+    .feedback-buttons button:last-child {
+      background: #444;
+      color: #fff;
+    }
+
+    #feedback-response {
+      text-align: center;
+      font-weight: bold;
+      color: #4caf50;
+      display: none;
+    }
+
+    .close-link {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .close-link a {
+      color: #999;
+      text-decoration: underline;
     }
   </style>
 </head>
 <body>
 
-<div id="matchPopup" class="popup">
-  <div class="popup-content">
-    <div style="text-align: center; margin-bottom: 20px;">
-      <h2 style="margin: 0;">🔗 You Just Got Synced</h2>
-      <p style="margin-top: 5px; font-size: 0.95em; color: #888;">(Sample match preview)</p>
-    </div>
-    <p>This is a taste of what matching on D8Sync might feel like. No swiping. No bios. Just pure vibe alignment.</p>
-
+<div id="matchPopup">
+  <div id="matchPopupContent">
+    <h2>🔗 You Just Got Synced</h2>
+    <p style="color:#aaa;">(Sample match preview)</p>
+    <p><strong>🧠 Shared Meme Energy:</strong><br>
+    “Me pretending I don’t care, but secretly watching the group chat implode.”</p>
+    <p><strong>🎧 Audio Match:</strong><br>
+    Late 2000s indie drama with main character syndrome</p>
+    <p><strong>🍝 First Date Prompt:</strong><br>
+    You meet outside a thrift store. One of you is holding soup. The other is not.</p>
     <p><strong>🫣 Vibe Alignment:</strong><br>
     84% emotionally aligned<br>
     72% chaos compatibility<br>
     92% meme fluency</p>
 
-    <div style="margin: 30px 0; text-align: center;">
-      <p style="margin-bottom: 10px;">🧠 Did this vibe feel accurate?</p>
-      <button onclick="handleFeedback('yes')" style="margin-right: 10px; background:#6e38f7; color:#fff;">Yup, spooky</button>
-      <button onclick="handleFeedback('no')" style="background:#444; color:#fff;">Not really</button>
+    <div class="feedback-buttons">
+      <p>🧠 Did this vibe feel accurate?</p>
+      <button onclick="handleFeedback('yes')">Yup, spooky</button>
+      <button onclick="handleFeedback('no')">Not really</button>
     </div>
 
-    <div id="feedback-response" style="display:none; text-align:center; margin-top:10px; font-weight:bold; color:#4caf50;">
-      ✅ Thanks for your feedback!
-    </div>
+    <div id="feedback-response">✅ Thanks for your feedback!</div>
 
-    <div style="margin:30px 0; text-align:center;">
-      <button onclick="closeAndScrollToWaitlist()" style="background:#fff; color:#000;">🔥 Join the Waitlist</button>
+    <div class="close-link">
+      <a href="#" onclick="document.getElementById('matchPopup').style.display='none'">Not feeling it? Close</a>
     </div>
-
-    <div style="text-align:center;">
-      <a href="#" onclick="document.getElementById('matchPopup').style.display='none'" style="color:#999; text-decoration: underline;">
-        Not feeling it? Close
-      </a>
-    </div>
-  </div>
-</div>
-
-<!-- ConvertKit Embed -->
-<div id="waitlist">
-  <script async data-uid="0ebbef2018" src="https://d8sync.kit.com/0ebbef2018/index.js"></script>
-  <div style="position: relative; height: 70px; margin-top: 20px;">
-    <button id="customSubmitBtn">🚀 Join the Waitlist</button>
-  </div>
-  <div id="thank-you-message" style="display:none; text-align:center; margin-top:10px; font-weight:bold; color:#4caf50;">
-    ✅ You're in. Thanks for vibing with us.
   </div>
 </div>
 
 <script>
   function handleFeedback(response) {
-    console.log("User response:", response);
-    const responseBox = document.getElementById('feedback-response');
-    if (responseBox) responseBox.style.display = 'block';
+    document.getElementById("feedback-response").style.display = "block";
   }
-
-  function closeAndScrollToWaitlist() {
-    const popup = document.getElementById("matchPopup");
-    const waitlist = document.getElementById("waitlist");
-    if (popup) popup.style.display = "none";
-    if (waitlist) waitlist.scrollIntoView({ behavior: "smooth" });
-  }
-
-  window.addEventListener("load", function () {
-    setTimeout(function () {
-      const popup = document.getElementById("matchPopup");
-      if (popup) popup.style.display = "block";
-    }, 3500);
-  });
-
-  document.addEventListener("DOMContentLoaded", function () {
-    const customBtn = document.getElementById("customSubmitBtn");
-    const waitForCK = setInterval(() => {
-      const realButton = document.querySelector(".ck_subscribe_button");
-      if (realButton && customBtn) {
-        clearInterval(waitForCK);
-        customBtn.addEventListener("click", function () {
-          realButton.click();
-          setTimeout(() => {
-            const confirm = document.getElementById("thank-you-message");
-            if (confirm) confirm.style.display = "block";
-          }, 1000);
-        });
-      }
-    }, 300);
-  });
 </script>
 
 </body>
