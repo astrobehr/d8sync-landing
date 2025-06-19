@@ -1,1 +1,281 @@
-;
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>D8Sync</title>
+  <meta name="description" content="D8Sync – A swipe-free AI dating app powered by memes, playlists, and vibes. No profiles. No pressure. Just blind dates that hit different." />
+  <meta name="keywords" content="D8Sync, dating app, blind dates, meme dating, AI matchmaking, swipe-free, vibe dating" />
+  <meta name="author" content="D8Sync Team" />
+  <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/astrobehr/d8sync-landing/main/assets/d8sync-icon.png" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #000;
+      color: #fff;
+      text-align: center;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: auto;
+      padding: 40px 20px;
+    }
+
+    .logo img {
+      width: 800px;
+      max-width: 100%;
+      height: auto;
+      display: block;
+      margin: 60px auto;
+    }
+
+    h1 {
+      font-size: 2.8rem;
+      margin: 0 0 20px 0;
+    }
+
+    .intro, .section, .feature-block {
+      font-size: 1.2rem;
+      line-height: 1.6;
+      margin-bottom: 60px;
+      text-align: center;
+    }
+
+    .section h2 {
+      font-size: 1.6rem;
+      color: #fff;
+      margin-bottom: 20px;
+    }
+
+    .feature-block h3 {
+      font-size: 1.3rem;
+      margin-bottom: 10px;
+    }
+
+    .feature-block p {
+      margin: 0 auto;
+      max-width: 600px;
+    }
+
+    .form-wrapper {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: stretch;
+      width: 700px;
+      margin: 0 auto 60px auto;
+      background: #fff;
+      color: #000;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .form-left, .form-right {
+      flex: 1;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      text-align: center;
+    }
+
+    .form-left {
+      padding: 30px;
+    }
+
+    .form-left h2 {
+      font-size: 1.6rem;
+      margin-bottom: 12px;
+    }
+
+    .form-left p {
+      font-size: 1rem;
+      margin-bottom: 16px;
+    }
+
+    .form-left input {
+      width: 100%;
+      padding: 12px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      margin-bottom: 12px;
+      font-size: 1rem;
+    }
+
+    .form-left button {
+      width: 100%;
+      padding: 12px;
+      border-radius: 6px;
+      background: #6e38f7;
+      color: #fff;
+      font-weight: bold;
+      border: none;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+
+    .form-left .disclaimer {
+      font-size: 0.85rem;
+      color: #666;
+      margin-top: 12px;
+    }
+
+    .form-right {
+      background: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .form-right img {
+      width: 100%;
+      max-width: 300px;
+      height: auto;
+      object-fit: contain;
+      background: #fff;
+      padding: 10px;
+      border-radius: 10px;
+    }
+
+    @media (max-width: 768px) {
+      .form-wrapper {
+        flex-direction: column;
+        width: 90%;
+      }
+
+      .form-right img {
+        width: 80%;
+        margin-top: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="logo">
+      <img src="https://raw.githubusercontent.com/astrobehr/d8sync-landing/main/assets/d8sync-banner.jpg" alt="D8Sync Logo">
+    </div>
+
+    <h1>Welcome to D8Sync</h1>
+    <div class="intro">
+      You’re not here for surface-level. You’re here for something real.<br><br>
+      AI-powered dates. Meme-based vibes. Blind matches that start with laughs, not looks.<br><br>
+      Welcome to the premier Dating App that <em>*gets you*</em>
+    </div>
+
+    <div class="section">
+      <div class="feature-block">
+        <h3>🎯 AI Matches That Actually Hit</h3>
+        <p>
+          Imagine this: You send a meme,<br>
+          and someone laughs the exact way you do.<br><br>
+          That’s not chance — it’s sync.<br>
+          We read between your media likes, playlists, and punchlines<br>
+          to pair you with people on your wavelength.<br><br>
+          No swiping roulette. No dead-end matches.<br>
+          Just real connection, fueled by your sense of humor.
+        </p>
+      </div>
+
+      <!-- Meme Flipper Section -->
+      <div style="position: relative; width: 320px; margin: 40px auto;">
+        <img id="memeImage"
+             src="https://raw.githubusercontent.com/astrobehr/d8sync-landing/main/memes/meme1.jpg"
+             alt="D8Sync Meme"
+             style="width: 100%; height: auto; border-radius: 20px;" />
+        <div style="position: absolute; bottom: 58px; left: 85px;">
+          <button onclick="prevMeme()" style="
+            width: 44px;
+            height: 44px;
+            background-color: #ff3e6c;
+            border: none;
+            border-radius: 50%;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+          ">✘</button>
+        </div>
+        <div style="position: absolute; bottom: 58px; right: 85px;">
+          <button onclick="nextMeme()" style="
+            width: 44px;
+            height: 44px;
+            background-color: #ff69b4;
+            border: none;
+            border-radius: 50%;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+          ">❤️</button>
+        </div>
+      </div>
+
+      <div class="feature-block">
+        <h3>🔒 Go Blind (On Purpose)</h3>
+        <p>
+          No filters. No bios. No profile paralysis.<br>
+          At D8Sync, you skip the scroll<br>
+          and jump straight into something real.
+        </p>
+      </div>
+    </div>
+
+    <script src="https://f.convertkit.com/ckjs/ck.5.js"></script>
+    <div class="form-wrapper">
+      <div class="form-left">
+        <h2>Join the Beta Waitlist</h2>
+        <p>First access. First laughs. First dates. Drop your email now:</p>
+        <form action="https://app.kit.com/forms/8193604/subscriptions" method="post" data-sv-form="8193604">
+          <input type="email" name="email_address" placeholder="Email Address" required />
+          <button type="submit">Get In Early</button>
+        </form>
+        <div class="disclaimer">No spam. No cringe. Unmatch anytime.</div>
+      </div>
+      <div class="form-right">
+        <img src="https://raw.githubusercontent.com/astrobehr/d8sync-landing/main/assets/d8sync-banner.jpg" alt="D8Sync Art">
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const memes = [
+      "meme1.jpg",
+      "meme2.jpg",
+      "meme3.jpg",
+      "meme4.jpg",
+      "meme5.jpg",
+      "meme6.jpg"
+    ];
+
+    let currentMeme = 0;
+
+    function updateMeme() {
+      document.getElementById("memeImage").src =
+        `https://raw.githubusercontent.com/astrobehr/d8sync-landing/main/memes/${memes[currentMeme]}`;
+    }
+
+    function prevMeme() {
+      if (currentMeme > 0) {
+        currentMeme--;
+        updateMeme();
+      }
+    }
+
+    function nextMeme() {
+      if (currentMeme < memes.length - 1) {
+        currentMeme++;
+        updateMeme();
+      } else {
+        document.querySelector(".form-wrapper").scrollIntoView({ behavior: "smooth" });
+      }
+    }
+  </script>
+</body>
+</html>
