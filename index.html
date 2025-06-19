@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>D8Sync</title>
-  <meta name="description" content="D8Sync – A swipe-free AI dating app powered by memes, playlists, and vibes." />
+  <meta name="description" content="D8Sync – A swipe-free AI dating app powered by memes, playlists, and vibes. No profiles. No pressure. Just blind dates that hit different." />
   <meta name="keywords" content="D8Sync, dating app, blind dates, meme dating, AI matchmaking, swipe-free, vibe dating" />
   <meta name="author" content="D8Sync Team" />
   <meta property="og:title" content="D8Sync – Swipe-Free Dating. Just Vibes." />
@@ -35,8 +35,12 @@
       padding: 40px 20px;
     }
     .logo img {
-      max-width: 100%;
+      width: 100%;
+      max-width: 800px;
       margin: 60px auto;
+    }
+    h1, h2, h3 {
+      margin-bottom: 20px;
     }
     .feature-block {
       margin-bottom: 60px;
@@ -79,23 +83,20 @@
       font-size: 16px;
       font-weight: bold;
       cursor: pointer;
-      margin: 20px auto;
       display: block;
+      margin: 20px auto;
     }
     #thank-you-message {
       text-align: center;
       margin-top: 20px;
-      display: none;
     }
-    form.ck_subscribe_form .ck_subscribe_button {
-      display: none !important;
-    }
+    form.ck_subscribe_form .ck_subscribe_button { display: none !important; }
     #matchPopup {
       display: none;
       position: fixed;
       top: 0; left: 0;
       width: 100%; height: 100%;
-      background: rgba(0, 0, 0, 0.85);
+      background: rgba(0,0,0,0.85);
       z-index: 9999;
       color: #fff;
       padding: 40px;
@@ -109,11 +110,12 @@
       padding: 30px;
       border-radius: 16px;
     }
+    #matchPopup h2, #matchPopup p { text-align: center; }
     #feedback-response {
+      display: none;
+      text-align: center;
       color: #4caf50;
       font-weight: bold;
-      margin-top: 15px;
-      display: none;
     }
     @media (max-width: 768px) {
       .flipper-btn { bottom: 65px; }
@@ -177,7 +179,6 @@
     ];
     let current = 0;
     const memeImage = document.getElementById("memeImage");
-
     function updateMeme() {
       memeImage.src = memes[current];
     }
