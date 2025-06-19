@@ -324,17 +324,19 @@
     }
  </script> 
 
-<!-- ConvertKit Email Embed -->
 <div id="waitlist" style="position: relative;">
   <script async data-uid="0ebbef2018" src="https://d8sync.kit.com/0ebbef2018/index.js"></script>
+
   <style>
+    /* Hide CK default button */
     form.ck_subscribe_form .ck_subscribe_button {
       display: none !important;
     }
 
+    /* Align custom button exactly where CK button would be */
     #customSubmitBtn {
       position: absolute;
-      top: 0;
+      bottom: 12px; /* Adjusted for proper alignment */
       left: 50%;
       transform: translateX(-50%);
       background-color: #6e38f7;
@@ -349,9 +351,12 @@
     }
   </style>
 
+  <!-- Custom Button Aligned to Hidden CK Button -->
   <button id="customSubmitBtn">
     🚀 Join the Waitlist
   </button>
+</div>
+
 
   <!-- Visual Confirmation Message -->
   <div id="thank-you-message" style="display:none; text-align: center; margin-top: 20px;">
