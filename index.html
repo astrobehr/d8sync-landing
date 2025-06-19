@@ -474,27 +474,24 @@
       if (popup) popup.style.display = 'block';
     }, 3500);
   });
-</script>
-
-<div style="text-align:center; margin-top: 20px;">
-  <a href="#" onclick="closeAndScrollToWaitlist()" style="color:#999; text-decoration: underline;">
-    Not feeling it? Close
-  </a>
-</div>
-<script>
+ <script>
   document.addEventListener("DOMContentLoaded", function () {
     const customBtn = document.getElementById("customSubmitBtn");
 
-    const waitForCK = setInterval(() => {
+    const waitForConvertKit = setInterval(() => {
       const realButton = document.querySelector(".ck_subscribe_button");
-      if (realButton && customBtn) {
-        clearInterval(waitForCK);
+      if (realButton && realButton.offsetParent !== null && customBtn) {
+        clearInterval(waitForConvertKit);
+
+        // Click the real CK button when custom button is clicked
         customBtn.addEventListener("click", function () {
           realButton.click();
         });
       }
     }, 300);
   });
+</script>
+
 </script>
 
 </body>
