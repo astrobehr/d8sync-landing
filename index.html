@@ -1,46 +1,184 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>D8Sync</title>
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:title" content="D8Sync – Swipe-Free Dating. Just Vibes." />
+  <meta property="og:description" content="No profiles. No awkward openings. No rejection drama. Just vibes. Real ones." />
+  <meta property="og:image" content="https://d8sync.com/assets/preview.png" />
+  <meta property="og:url" content="https://d8sync.com/" />
+  <meta property="og:type" content="website" />
+
+  <!-- Meta Tags for SEO -->
+  <meta name="description" content="D8Sync – A swipe-free AI dating app powered by memes, playlists, and vibes. No profiles. No pressure. Just blind dates that hit different." />
+  <meta name="keywords" content="D8Sync, dating app, blind dates, meme dating, AI matchmaking, swipe-free, vibe dating" />
+  <meta name="author" content="D8Sync Team" />
+
+  <!-- Favicon & Fonts -->
+  <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/astrobehr/d8sync-landing/main/assets/d8sync-icon.png" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <!-- Favicon + Mobile Icons -->
+<link rel="icon" href="/favicon.ico" type="image/x-icon" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+<link rel="manifest" href="/site.webmanifest" />
+<!-- Twitter Card Meta Tags -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="D8Sync – AI Dating. No Profiles. Just Vibes.">
+<meta name="twitter:description" content="The anti-dating app. Built for humor, media, and real connections.">
+<meta name="twitter:image" content="https://d8sync.com/assets/preview.png">
+<!-- Typeform Feedback -->
+<script src="https://embed.typeform.com/embed.js"></script>
+<!-- Plausible Analytics -->
+<script defer data-domain="d8sync.com" src="https://plausible.io/js/script.js"></script>
   <style>
+
     body {
       font-family: 'Inter', sans-serif;
-      background: #000;
-      color: #fff;
       margin: 0;
       padding: 0;
+      background: #000;
+      color: #fff;
       text-align: center;
+      overflow-x: hidden;
     }
+
     .container {
       max-width: 800px;
       margin: auto;
       padding: 40px 20px;
     }
+
     .logo img {
-      width: 100%;
-      max-width: 800px;
+      width: 800px;
+      max-width: 100%;
+      height: auto;
+      display: block;
       margin: 60px auto;
     }
-    .feature-block {
-      margin-bottom: 60px;
+
+    h1 {
+      font-size: 2.8rem;
+      margin: 0 0 20px 0;
     }
-    .feature-block p {
+
+    .intro, .section, .feature-block {
       font-size: 1.2rem;
       line-height: 1.6;
-      max-width: 600px;
-      margin: auto;
+      margin-bottom: 60px;
+      text-align: center;
     }
+
+    .section h2 {
+      font-size: 1.6rem;
+      color: #fff;
+      margin-bottom: 20px;
+    }
+
+    .feature-block h3 {
+      font-size: 1.3rem;
+      margin-bottom: 10px;
+    }
+
+    .feature-block p {
+      margin: 0 auto;
+      max-width: 600px;
+    }
+
+    .form-wrapper {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: stretch;
+      width: 700px;
+      margin: 0 auto 60px auto;
+      background: #fff;
+      color: #000;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .form-left, .form-right {
+      flex: 1;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      text-align: center;
+    }
+
+    .form-left {
+      padding: 30px;
+    }
+
+    .form-left h2 {
+      font-size: 1.6rem;
+      margin-bottom: 12px;
+    }
+
+    .form-left p {
+      font-size: 1rem;
+      margin-bottom: 16px;
+    }
+
+    .form-left input {
+      width: 100%;
+      padding: 12px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      margin-bottom: 12px;
+      font-size: 1rem;
+    }
+
+    .form-left button {
+      width: 100%;
+      padding: 12px;
+      border-radius: 6px;
+      background: #6e38f7;
+      color: #fff;
+      font-weight: bold;
+      border: none;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+
+    .form-left .disclaimer {
+      font-size: 0.85rem;
+      color: #666;
+      margin-top: 12px;
+    }
+
+    .form-right {
+      background: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .form-right img {
+      width: 100%;
+      max-width: 300px;
+      height: auto;
+      object-fit: contain;
+      background: #fff;
+      padding: 10px;
+      border-radius: 10px;
+    }
+
     .meme-flipper {
       position: relative;
       width: 320px;
       margin: 40px auto;
     }
+
     .meme-flipper img {
       width: 100%;
       border-radius: 20px;
     }
+
     .flipper-btn {
       width: 44px;
       height: 44px;
@@ -49,59 +187,36 @@
       border-radius: 50%;
       color: white;
       font-size: 1.5rem;
+      cursor: pointer;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
       position: absolute;
       bottom: 85px;
-      cursor: pointer;
-    }
-    .btn-left { left: 70px; }
-    .btn-right { right: 70px; background-color: #ff69b4; }
-
-    #matchPopup {
-      display: none;
-      position: fixed;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background: rgba(0,0,0,0.85);
-      z-index: 9999;
-      color: #fff;
-      padding: 40px;
-      box-sizing: border-box;
-      overflow-y: auto;
     }
 
-    #matchPopupContent {
-      max-width: 600px;
-      margin: 40px auto;
-      background: #111;
-      padding: 30px;
-      border-radius: 16px;
+    .btn-left {
+      left: 70px;
     }
 
-    #popup-btn {
-      background:#fff;
-      color:#000;
-      padding:12px 24px;
-      border-radius:30px;
-      font-weight:bold;
-      border:none;
-      cursor:pointer;
-      display:inline-block;
-      margin: 10px auto;
+    .btn-right {
+      right: 70px;
+      background-color: #ff69b4;
     }
 
-    #popup-close {
-      color: #999;
-      text-decoration: underline;
-      cursor: pointer;
-    }
+    @media (max-width: 768px) {
+      .form-wrapper {
+        flex-direction: column;
+        width: 90%;
+      }
+  .ck_form {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+}
 
-    #feedback-response {
-      display: none;
-      text-align: center;
-      color: #4caf50;
-      font-weight: bold;
-      margin-top: 10px;
-    }
+.ck_form_content {
+  max-width: 100%;
+  text-align: center;
+}
   </style>
 </head>
 <body>
@@ -111,46 +226,266 @@
     </div>
     <div class="feature-block">
       <h3>🎯 AI Matches That Actually Hit</h3>
-      <p>Imagine this: You send a meme, and someone laughs the exact way you do. That’s not chance — it’s sync.</p>
+      <p>Imagine this: You send a meme,<br>
+      and someone laughs the exact way you do.<br><br>
+      That’s not chance — it’s sync.<br>
+      We read between your media likes, playlists, and punchlines
+      to pair you with people on your wavelength.<br><br>
+      No swiping roulette. No dead-end matches.<br>
+      Just real connection, fueled by your sense of humor.</p>
     </div>
-  </div>
-
-  <div id="matchPopup">
-    <div id="matchPopupContent">
-      <h2>🔗 You Just Got Synced</h2>
-      <p style="color:#aaa;">(Sample match preview)</p>
-      <p><strong>🧠 Shared Meme Energy:</strong> “Me pretending I don’t care, but secretly watching the group chat implode.”</p>
-      <p><strong>🎧 Audio Match:</strong> Late 2000s indie drama with main character syndrome</p>
-      <p><strong>🍝 First Date Prompt:</strong> You meet outside a thrift store. One of you is holding soup. The other is not.</p>
-      <p><strong>🫣 Vibe Alignment:</strong><br>84% emotionally aligned<br>72% chaos compatibility<br>92% meme fluency</p>
-      <p>🧠 Did this vibe feel accurate?</p>
-      <button onclick="handleFeedback('yes')" style="margin-right: 10px;" id="popup-btn">Yup, spooky</button>
-      <button onclick="handleFeedback('no')" id="popup-btn">Not really</button>
-      <div id="feedback-response">✅ Thanks for your feedback!</div>
-      <div style="margin-top:30px;">
-        <button onclick="closeAndScrollToWaitlist()" id="popup-btn">🔥 Join the Waitlist</button><br><br>
-        <span id="popup-close" onclick="closeAndScrollToWaitlist()">Not feeling it? Close</span>
+    <div class="feature-block">
+        <h3>🎭 Swipe Memes, Not Faces</h3>
+        <p>
+          What if your dating feed was memes instead of mugshots?<br>
+          No more trying to decode mirror selfies or gym pics.<br><br>
+          Just scroll, laugh, and react to the memes that hit hardest.<br>
+          Every swipe helps build your Comedy Graph™ —<br>
+          our algorithm that learns your humor DNA<br>
+          and matches you with someone who *actually gets it*<br><br>
+          Weirdly accurate. Dangerously fun.
+        </p>
+    <!-- Meme Flipper Component -->
+    <div class="meme-flipper">
+      <img id="memeImage" src="https://raw.githubusercontent.com/astrobehr/d8sync-landing/main/memes/meme1.jpg" alt="Meme" />
+      <button class="flipper-btn btn-left" onclick="prevMeme()">✘</button>
+      <button class="flipper-btn btn-right" onclick="nextMeme()">❤️</button>
+    </div>
+    <div class="feature-block">
+      <h3>✨ Unfiltered. Unscripted. Unexpected.</h3>
+       <p>
+          No filters. No bios. No profile paralysis.<br>
+          At D8Sync, you skip the scroll<br>
+          and jump straight into something real.<br><br>
+          Just you and someone new — on an actual blind date.<br> 
+          No pressure. No pretending.<br>
+          And yes, we even give you the perfect icebreaker.
+        </p>
+    </div>
+     <div class="feature-block">
+        <h3>🕵️ How D8Sync Blind Dates Actually Work</h3>
+        <p>
+          You tap the “Sync Me!” button<br>
+          D8Sync scans your Comedy Graph™, vibe data, and availability<br>
+          — and matches you with someone on your wavelength.<br><br>
+          Our Matchmaker AI then sends you both:<br>
+          🕓 A time 📍 A public place & 🧩 “The Tell” —<br>
+          a phrase or shared order to find your match.<br><br>
+          You pull up, scan the scene, and look for the signal...<br>
+          like someone lowkey ordering the same drink<br><br>
+          In a crowded cafe or busy bookstore? Not sure it’s them?<br>
+          Tap the <em>“Is That You?"</em> button in-app for a private match confirm.<br>
+          If the chemistry's there, drop the icebreaker we gave you<br>
+          — it's the perfect nudge.<br><br>
+          Not feeling it? That’s cool too.<br> 
+          Take a breath, enjoy the moment, & the match will fade away.<br>
+          No profiles. No awkward openings. No rejection drama.<br>
+          <em>Just vibes. Real ones.</em><br><br> 
+         <div class="feature-block">
+        <h3>💬 Need to talk it out? We got you.</h3>
+        <p>After every date, the judgment-free vibe check continues.<br>
+         Our AI Dating Coach is here to help you debrief — <br>
+         like a relationship therapist in your pocket.<br><br>
+         Whether it sparked or fizzled, talk through<br> 
+          what worked, what didn’t, and how it made you feel.<br>
+        <em>Get clarity. Spot patterns. Grow faster.</em><br>
+        </p>
       </div>
+  <script>
+    const memes = [
+      "https://raw.githubusercontent.com/astrobehr/d8sync-landing/main/memes/meme1.jpg",
+      "https://raw.githubusercontent.com/astrobehr/d8sync-landing/main/memes/meme2.jpg",
+      "https://raw.githubusercontent.com/astrobehr/d8sync-landing/main/memes/meme3.jpg",
+      "https://raw.githubusercontent.com/astrobehr/d8sync-landing/main/memes/meme4.jpg",
+      "https://raw.githubusercontent.com/astrobehr/d8sync-landing/main/memes/meme5.jpg",
+      "https://raw.githubusercontent.com/astrobehr/d8sync-landing/main/memes/meme6.jpg"
+    ];
+    let current = 0;
+    const memeImage = document.getElementById("memeImage");
+
+    function updateMeme() {
+      memeImage.src = memes[current];
+    }
+
+    function nextMeme() {
+      if (current < memes.length - 1) {
+        current++;
+        updateMeme();
+      } else {
+        document.getElementById("waitlist").scrollIntoView({ behavior: "smooth" });
+      }
+    }
+
+    function prevMeme() {
+      if (current > 0) {
+        current--;
+        updateMeme();
+      }
+    }
+ </script> 
+
+<!-- ConvertKit Email Embed -->
+<div id="waitlist">
+  <script async data-uid="0ebbef2018" src="https://d8sync.kit.com/0ebbef2018/index.js"></script>
+<style>
+  /* Hide ConvertKit's default submit button */
+  form.ck_subscribe_form .ck_subscribe_button {
+    display: none !important;
+  }
+</style>
+  <!-- Custom Submit Button -->
+<button id="customSubmitBtn" style="
+  background-color: #6e38f7;
+  color: white;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 30px;
+  font-size: 16px;
+  cursor: pointer;
+  font-weight: bold;
+  display: block;
+  margin: 20px auto;
+">
+  🚀 Join the Waitlist
+</button>
+  <!-- Visual Confirmation Message -->
+  <div id="thank-you-message" style="display:none; text-align: center; margin-top: 20px;">
+    ✅ You're in. Thanks for vibing with us.
+  </div>
+</div>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const form = document.querySelector('form');
+    if (form) {
+      form.addEventListener('submit', () => {
+        setTimeout(() => {
+          document.getElementById('thank-you-message').style.display = 'block';
+        }, 1000);
+      });
+    }
+  });
+</script>
+<!-- Feedback Button -->
+<div id="typeform-feedback" style="position:fixed;bottom:20px;right:20px;z-index:999;">
+<a href="https://YOUR_TYPEFORM_URL" target="_blank" style="background:#9147ff;color:#fff;padding:12px 20px;border-radius:30px;text-decoration:none;font-weight:bold;font-family:Inter,sans-serif;">Give Feedback</a>
+</div>
+<!-- Feedback Button -->
+<div id="typeform-feedback" style="position:fixed;bottom:20px;right:20px;z-index:999;">
+  <a href="https://form.typeform.com/to/aDNMMWAn" target="_blank" style="background:#9147ff;color:#fff;padding:12px 20px;border-radius:30px;text-decoration:none;font-weight:bold;font-family:Inter,sans-serif;">Give Feedback</a>
+</div>
+<!-- Fake Match Reveal Popup -->
+<div id="matchPopup" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.85); z-index:9999; color:#fff; font-family:Inter,sans-serif; padding:40px; box-sizing:border-box; overflow-y:auto;">
+  <div style="max-width:600px; margin:40px auto; background:#111; padding:30px; border-radius:16px; box-shadow:0 0 30px rgba(0,0,0,0.4);">
+   <div style="text-align: center; margin-bottom: 20px;">
+  <h2 style="margin: 0;">🔗 You Just Got Synced</h2>
+  <p style="margin-top: 5px; font-size: 0.95em; color: #888;">(Sample match preview)</p>
+</div>
+    <p style="margin-bottom:20px;">This is a taste of what matching on D8Sync might feel like. No swiping. No bios. Just pure vibe alignment.</p>
+
+    <p><strong>🧠 Shared Meme Energy:</strong><br>
+    “Me pretending I don’t care, but secretly watching the group chat implode.”</p><br>
+
+    <p><strong>🎧 Audio Match:</strong><br>
+    Late 2000s indie drama with main character syndrome</p><br>
+
+    <p><strong>🍝 First Date Prompt:</strong><br>
+    You meet outside a thrift store. One of you is holding soup. The other is not.</p><br>
+
+    <p><strong>🫣 Vibe Alignment:</strong><br>
+    84% emotionally aligned<br>
+    72% chaos compatibility<br>
+    92% meme fluency</p>
+  
+   <!-- Popup Buttons -->
+<div style="margin: 30px 0; text-align: center;">
+  <p style="margin-bottom: 10px;">🧠 Did this vibe feel accurate?</p>
+  <button onclick="handleFeedback('yes')" style="margin-right: 10px; padding: 8px 20px; border: none; border-radius: 30px; background: #6e38f7; color: #fff; font-weight: bold; cursor: pointer;">
+    Yup, spooky
+  </button>
+  <button onclick="handleFeedback('no')" style="padding: 8px 20px; border: none; border-radius: 30px; background: #444; color: #fff; font-weight: bold; cursor: pointer;">
+    Not really
+  </button>
+</div>
+
+<!-- Confirmation Message -->
+<div id="feedback-response" style="display:none; text-align:center; margin-top:10px; font-weight:bold; color:#4caf50;">
+  ✅ Thanks for your feedback!
+</div>
+
+<script>
+  function handleFeedback(response) {
+    console.log("User response:", response); // Optional: log for testing
+    const responseBox = document.getElementById('feedback-response');
+    if (responseBox) {
+      responseBox.style.display = 'block';
+    }
+  }
+
+  function closeAndScrollToWaitlist() {
+    const popup = document.getElementById('matchPopup');
+    const waitlist = document.getElementById('waitlist');
+    if (popup) popup.style.display = 'none';
+    if (waitlist) waitlist.scrollIntoView({ behavior: 'smooth' });
+  }
+
+  window.addEventListener('load', function () {
+    setTimeout(() => {
+      const popup = document.getElementById('matchPopup');
+      if (popup) popup.style.display = 'block';
+    }, 3500);
+  });
+</script>
+
+
+<!-- Join the Waitlist CTA -->
+<div style="margin:30px 0; text-align:center;">
+      <button onclick="closeAndScrollToWaitlist()" style="background:#fff; color:#000; padding:12px 24px; border-radius:30px; font-weight:bold; border:none; cursor:pointer;">
+        🔥 Join the Waitlist
+      </button>
+    </div>
+
+    <div style="text-align:center;">
+      <a href="#" onclick="document.getElementById('matchPopup').style.display='none'" style="color:#999;">Not feeling it? Close</a>
     </div>
   </div>
+</div>
 
-  <script>
-    function handleFeedback(response) {
-      const responseBox = document.getElementById("feedback-response");
-      if (responseBox) responseBox.style.display = "block";
-    }
+<script>
+  function closeAndScrollToWaitlist() {
+    const popup = document.getElementById('matchPopup');
+    const waitlist = document.getElementById('waitlist');
+    if (popup) popup.style.display = 'none';
+    if (waitlist) waitlist.scrollIntoView({ behavior: 'smooth' });
+  }
 
-    function closeAndScrollToWaitlist() {
-      const popup = document.getElementById("matchPopup");
-      if (popup) popup.style.display = "none";
-    }
+  window.addEventListener('load', function () {
+    setTimeout(() => {
+      const popup = document.getElementById('matchPopup');
+      if (popup) popup.style.display = 'block';
+    }, 3500);
+  });
+</script>
 
-    window.addEventListener("load", function () {
-      setTimeout(function () {
-        const popup = document.getElementById("matchPopup");
-        if (popup) popup.style.display = "block";
-      }, 3500);
-    });
-  </script>
+<div style="text-align:center; margin-top: 20px;">
+  <a href="#" onclick="closeAndScrollToWaitlist()" style="color:#999; text-decoration: underline;">
+    Not feeling it? Close
+  </a>
+</div>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const customBtn = document.getElementById("customSubmitBtn");
+
+    const waitForCK = setInterval(() => {
+      const realButton = document.querySelector(".ck_subscribe_button");
+      if (realButton && customBtn) {
+        clearInterval(waitForCK);
+        customBtn.addEventListener("click", function () {
+          realButton.click();
+        });
+      }
+    }, 300);
+  });
+</script>
+
 </body>
 </html>
