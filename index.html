@@ -330,6 +330,23 @@
   </script>
       <!-- ConvertKit Email Embed -->
 <script async data-uid="0ebbef2018" src="https://f.convertkit.com/0ebbef2018.js"></script>
+<!-- Visual Confirmation Message -->
+<div id="thank-you-message" style="display:none; text-align: center; margin-top: 20px;">
+  ✅ You're in. Thanks for vibing with us.
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const form = document.querySelector('form');
+    if (form) {
+      form.addEventListener('submit', () => {
+        setTimeout(() => {
+          document.getElementById('thank-you-message').style.display = 'block';
+        }, 1000);
+      });
+    }
+  });
+</script>
 
 </body>
 </html>
