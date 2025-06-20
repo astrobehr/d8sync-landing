@@ -64,169 +64,219 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
-  <style>
-    .hidden { display: none !important; }
-    body {
-      font-family: 'Inter', sans-serif;
-      margin: 0;
-      padding: 0;
-      background: #000;
-      color: #fff;
-      text-align: center;
-      overflow-x: hidden;
-    }
-    .container {
-      max-width: 800px;
-      margin: auto;
-      padding: 40px 20px;
-    }
-    .logo img {
-      width: 800px;
-      max-width: 100%;
-      height: auto;
-      display: block;
-      margin: 60px auto;
-    }
-    h1 {
-      font-size: 2.8rem;
-      margin: 0 0 20px 0;
-    }
-    .intro, .section, .feature-block {
-      font-size: 1.2rem;
-      line-height: 1.6;
-      margin-bottom: 60px;
-      text-align: center;
-    }
-    .section h2 {
-      font-size: 1.6rem;
-      color: #fff;
-      margin-bottom: 20px;
-    }
-    .feature-block h3 {
-      font-size: 1.3rem;
-      margin-bottom: 10px;
-    }
-    .feature-block p {
-      margin: 0 auto;
-      max-width: 600px;
-    }
+ 
+<style>
+  .hidden { display: none !important; }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #000;
+    color: #fff;
+    text-align: center;
+    overflow-x: hidden;
+  }
+
+  .container {
+    max-width: 800px;
+    margin: auto;
+    padding: 40px 20px;
+  }
+
+  .logo img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 60px auto 40px;
+  }
+
+  h1 {
+    font-size: 2.8rem;
+    margin: 0 0 20px;
+  }
+
+  .intro, .section, .feature-block {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin-bottom: 60px;
+    text-align: center;
+  }
+
+  .section h2 {
+    font-size: 1.6rem;
+    color: #fff;
+    margin-bottom: 20px;
+  }
+
+  .feature-block h3 {
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+  }
+
+  .feature-block p {
+    margin: 0 auto;
+    max-width: 600px;
+  }
+
+  .form-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: stretch;
+    width: 700px;
+    margin: 0 auto 60px;
+    background: #fff;
+    color: #000;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  }
+
+  .form-left, .form-right {
+    flex: 1;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .form-left {
+    padding: 30px;
+  }
+
+  .form-left h2 {
+    font-size: 1.6rem;
+    margin-bottom: 12px;
+  }
+
+  .form-left p {
+    font-size: 1rem;
+    margin-bottom: 16px;
+  }
+
+  .form-left input {
+    width: 100%;
+    padding: 12px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    margin-bottom: 12px;
+    font-size: 1rem;
+  }
+
+  .form-left button {
+    width: 100%;
+    padding: 12px;
+    border-radius: 6px;
+    background: #6e38f7;
+    color: #fff;
+    font-weight: bold;
+    border: none;
+    font-size: 1rem;
+    cursor: pointer;
+  }
+
+  .form-left .disclaimer {
+    font-size: 0.85rem;
+    color: #666;
+    margin-top: 12px;
+  }
+
+  .form-right {
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+  }
+
+  .form-right img {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    object-fit: contain;
+    background: #fff;
+    padding: 10px;
+    border-radius: 10px;
+  }
+
+  .meme-flipper {
+    position: relative;
+    width: 320px;
+    margin: 40px auto;
+  }
+
+  .meme-flipper img {
+    width: 100%;
+    border-radius: 20px;
+  }
+
+  .flipper-btn {
+    width: 44px;
+    height: 44px;
+    background-color: #ff3e6c;
+    border: none;
+    border-radius: 50%;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    position: absolute;
+    bottom: 85px;
+  }
+
+  .btn-left {
+    left: 70px;
+  }
+
+  .btn-right {
+    right: 70px;
+    background-color: #ff69b4;
+  }
+
+  @media (max-width: 768px) {
     .form-wrapper {
-      display: flex;
-      flex-direction: row;
-      justify-content: center;
-      align-items: stretch;
-      width: 700px;
-      margin: 0 auto 60px auto;
-      background: #fff;
-      color: #000;
-      border-radius: 20px;
-      overflow: hidden;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-    }
-    .form-left, .form-right {
-      flex: 1;
-      box-sizing: border-box;
-      display: flex;
       flex-direction: column;
-      justify-content: center;
-      text-align: center;
+      width: 90%;
     }
-    .form-left {
-      padding: 30px;
-    }
-    .form-left h2 {
-      font-size: 1.6rem;
-      margin-bottom: 12px;
-    }
-    .form-left p {
-      font-size: 1rem;
-      margin-bottom: 16px;
-    }
-    .form-left input {
-      width: 100%;
-      padding: 12px;
-      border-radius: 6px;
-      border: 1px solid #ccc;
-      margin-bottom: 12px;
-      font-size: 1rem;
-    }
-    .form-left button {
-      width: 100%;
-      padding: 12px;
-      border-radius: 6px;
-      background: #6e38f7;
-      color: #fff;
-      font-weight: bold;
-      border: none;
-      font-size: 1rem;
-      cursor: pointer;
-    }
-    .form-left .disclaimer {
-      font-size: 0.85rem;
-      color: #666;
-      margin-top: 12px;
-    }
-    .form-right {
-      background: #fff;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 20px;
-    }
-    .form-right img {
-      width: 100%;
-      max-width: 300px;
-      height: auto;
-      object-fit: contain;
-      background: #fff;
-      padding: 10px;
-      border-radius: 10px;
-    }
-    .meme-flipper {
-      position: relative;
-      width: 320px;
-      margin: 40px auto;
-    }
-    .meme-flipper img {
-      width: 100%;
-      border-radius: 20px;
-    }
-    .flipper-btn {
-      width: 44px;
-      height: 44px;
-      background-color: #ff3e6c;
-      border: none;
-      border-radius: 50%;
-      color: white;
-      font-size: 1.5rem;
-      cursor: pointer;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-      position: absolute;
-      bottom: 85px;
-    }
-    .btn-left {
-      left: 70px;
-    }
-    .btn-right {
-      right: 70px;
-      background-color: #ff69b4;
-    }
-    @media (max-width: 768px) {
-      .form-wrapper {
-        flex-direction: column;
-        width: 90%;
-      }
-    }
-    .ck_form {
-      display: flex;
-      justify-content: center;
-      margin-top: 40px;
-    }
-    .ck_form_content {
-      max-width: 100%;
-      text-align: center;
-    }
-  </style>
+  }
+
+  .ck_form {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+  }
+
+  .ck_form_content {
+    max-width: 100%;
+    text-align: center;
+  }
+
+  /* Hero Text */
+  .hero h1 {
+    font-size: 6vw;
+  }
+
+  .hero p {
+    font-size: 4vw;
+  }
+
+  /* CTA Button */
+  .cta-button {
+    width: 80%;
+    max-width: 300px;
+    font-size: 1rem;
+  }
+
+  /* Meme Container */
+  .meme-container img {
+    max-width: 100%;
+    height: auto;
+  }
+</style>
+
+  
   <!-- Plausible Analytics -->
 <script defer data-domain="d8sync.com" src="https://plausible.io/js/script.js"></script>
 
