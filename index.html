@@ -307,6 +307,7 @@
       memeImage.src = memes[current];
     }
 
+
 function nextMeme() {
   if (current < memes.length - 1) {
     current++;
@@ -317,6 +318,12 @@ function nextMeme() {
         const popup = document.getElementById('matchPopup');
         if (popup) popup.style.display = 'block';
       }, 1500);
+    }
+  } else {
+    document.getElementById("waitlist").scrollIntoView({ behavior: "smooth" });
+  }
+}
+, 1500);
     }
   } else {
     document.getElementById("waitlist").scrollIntoView({ behavior: "smooth" });
