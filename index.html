@@ -493,4 +493,26 @@
       }
     }, 300);
   });
+  <script>
+  // Hide Join Button when success message appears
+  const hideJoinBtnWhenSuccess = () => {
+    const joinBtn = document.getElementById("customSubmitBtn");
+
+    const observer = new MutationObserver(() => {
+      const successBox = document.querySelector(".formkit-alert-success");
+      if (successBox && successBox.offsetParent !== null) {
+        if (joinBtn) joinBtn.style.display = "none";
+      }
+    });
+
+    observer.observe(document.body, {
+      childList: true,
+      subtree: true
+    });
+  };
+
+  document.addEventListener("DOMContentLoaded", hideJoinBtnWhenSuccess);
 </script>
+</script>
+</body>
+</html>
