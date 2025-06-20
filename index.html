@@ -400,12 +400,12 @@ F<!DOCTYPE html>
       name="email_address" 
       placeholder="Enter your email" 
       required 
-      style="padding: 10px; font-size: 16px; width: 100%; max-width: 300px; border: 1px solid #ccc; border-radius: 6px; margin-bottom: 10px;"
+      style="padding: 12px 18px; font-size: 16px; width: 100%; max-width: 300px; border: none; border-radius: 8px; margin-bottom: 12px;"
     >
     <br>
     <button 
       type="submit" 
-      style="background-color: #FF4081; color: white; padding: 10px 20px; font-size: 16px; border: none; border-radius: 6px; cursor: pointer;"
+      style="background-color: #ff2d75; color: white; padding: 12px 24px; font-size: 16px; border: none; border-radius: 8px; cursor: pointer;"
     >
       Join the Vibe Queue
     </button>
@@ -417,11 +417,12 @@ F<!DOCTYPE html>
   </div>
 </div>
 
+<!-- 📦 ConvertKit Script (optional but safe to include) -->
 <script src="https://f.convertkit.com/ckjs/ck.5.js"></script>
 
 <script>
   document.addEventListener('DOMContentLoaded', () => {
-    const form = document.querySelector('form');
+    const form = document.querySelector('#waitlist form');
     if (form) {
       form.addEventListener('submit', () => {
         setTimeout(() => {
@@ -609,3 +610,10 @@ F<!DOCTYPE html>
     }
   }
 </script>
+  <script>
+  function handleFeedback(answer) {
+    const response = document.getElementById("feedback-response");
+    if (response) response.style.display = "block";
+  }
+</script>
+</body>
