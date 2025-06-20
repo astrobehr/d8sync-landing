@@ -601,7 +601,6 @@ F<!DOCTYPE html>
       closeAndScrollToWaitlist();
     }
   }
-
   function prevMeme() {
     if (current > 0) {
       current--;
@@ -610,14 +609,9 @@ F<!DOCTYPE html>
       if (popup) popup.style.display = 'none';
     }
   }
-</script>
-  <script>
-  function handleFeedback(answer) {
-    const response = document.getElementById("feedback-response");
-    if (response) response.style.display = "block";
-  }
-</script>
-  <hr style="margin: 60px 0; border: none; border-top: 2px dashed #ff2d75;">
+</script> <!-- ✅ This closes the previous JavaScript block -->
+
+<hr style="margin: 60px 0; border: none; border-top: 2px dashed #ff2d75;">
 
 <h3 style="text-align: center; color: white;">[ FORM TEST BLOCK ]</h3>
 
