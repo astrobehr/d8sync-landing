@@ -291,14 +291,6 @@
         </p>
       </div>
   <script>
-  // Handle popup show/hide
-  function closeAndScrollToWaitlist() {
-    const popup = document.getElementById('matchPopup');
-    const waitlist = document.getElementById('waitlist');
-    if (popup) popup.style.display = 'none';
-    if (waitlist) waitlist.scrollIntoView({ behavior: 'smooth' });
-  }
-
   document.addEventListener("DOMContentLoaded", function () {
     const customBtn = document.getElementById("customSubmitBtn");
     const memeImage = document.getElementById("memeImage");
@@ -310,7 +302,7 @@
       "https://raw.githubusercontent.com/astrobehr/d8sync-landing/main/memes/meme3.jpg",
       "https://raw.githubusercontent.com/astrobehr/d8sync-landing/main/memes/meme4.jpg",
       "https://raw.githubusercontent.com/astrobehr/d8sync-landing/main/memes/meme5.jpg",
-      "https://raw.githubusercontent.com/astrobehr/d8sync-landing/main/memes/meme6.jpg", // start of sync sequence
+      "https://raw.githubusercontent.com/astrobehr/d8sync-landing/main/memes/meme6.jpg",
       "https://raw.githubusercontent.com/astrobehr/d8sync-landing/main/memes/meme7.jpg",
       "https://raw.githubusercontent.com/astrobehr/d8sync-landing/main/memes/meme8.jpg",
       "https://raw.githubusercontent.com/astrobehr/d8sync-landing/main/memes/meme9.jpg"
@@ -323,9 +315,8 @@
     }
 
     function startSyncSequence() {
-      buttons.style.display = "none"; // hide buttons
-
-      const sequence = [5, 6, 7, 8]; // meme indices for 6–9
+      if (buttons) buttons.style.display = "none";
+      const sequence = [5, 6, 7, 8]; // Meme 6–9
       let step = 0;
 
       function nextStep() {
@@ -337,9 +328,8 @@
         } else {
           setTimeout(() => {
             const popup = document.getElementById("matchPopup");
-            if (popup) popup.style.display = 'block';
+            if (popup) popup.style.display = "block";
 
-            // Allow click to reset after popup
             memeImage.addEventListener("click", resetAll);
           }, 3000);
         }
@@ -352,12 +342,12 @@
       current = 0;
       updateMeme();
       const popup = document.getElementById("matchPopup");
-      if (popup) popup.style.display = 'none';
-      buttons.style.display = "flex"; // show buttons again
+      if (popup) popup.style.display = "none";
+      if (buttons) buttons.style.display = "flex";
       memeImage.removeEventListener("click", resetAll);
     }
 
-    function nextMeme() {
+    window.nextMeme = function () {
       if (current === 4) {
         startSyncSequence();
       } else if (current < memes.length - 1) {
@@ -368,29 +358,34 @@
       }
     }
 
-    function prevMeme() {
+    window.prevMeme = function () {
       if (current > 0) {
         current--;
         updateMeme();
         const popup = document.getElementById("matchPopup");
-        if (popup) popup.style.display = 'none';
+        if (popup) popup.style.display = "none";
       }
     }
 
-    // Attach button logic
+    // Join button logic
     const waitForCK = setInterval(() => {
       const realSubmit = document.querySelector(".formkit-submit");
       if (realSubmit && customBtn) {
         clearInterval(waitForCK);
         customBtn.addEventListener("click", function () {
           realSubmit.click();
-          console.log("✅ Custom Join triggered ConvertKit submit");
         });
       }
     }, 300);
   });
-</script>
 
+  function closeAndScrollToWaitlist() {
+    const popup = document.getElementById("matchPopup");
+    const waitlist = document.getElementById("waitlist");
+    if (popup) popup.style.display = 'none';
+    if (waitlist) waitlist.scrollIntoView({ behavior: 'smooth' });
+  }
+</script>
 <!-- Feedback Button -->
 <div id="typeform-feedback" style="position:fixed;bottom:20px;right:20px;z-index:999;">
 <a href="https://YOUR_TYPEFORM_URL" target="_blank" style="background:#9147ff;color:#fff;padding:12px 20px;border-radius:30px;text-decoration:none;font-weight:bold;font-family:Inter,sans-serif;">Give Feedback</a>
