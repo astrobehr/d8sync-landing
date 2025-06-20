@@ -651,31 +651,25 @@ function closeAndScrollToWaitlist() {
 <button onclick="handleFeedback('no')" style="padding: 12px 28px; border: none; border-radius: 30px; background: #444; color: #fff; font-weight: bold; font-size: 1rem; cursor: pointer;">
   Not really
 </button>
+    
+<!-- Feedback response message -->
+<div id="feedback-response" style="display:none; text-align:center; margin-top:10px; font-weight:bold; color:#00cc66;"></div>
 
-<!-- Response text -->
-<div id="feedback-response" style="display:none; text-align:center; margin-top:10px; font-weight:bold; color:#4caf50;">
-  ✅ Thanks for your feedback!
+<!-- Newsletter Join Button -->
+<div style="margin-top: 30px; text-align: center;">
+  <button id="customSubmitBtn" style="padding: 12px 28px; border: none; border-radius: 30px; background: #00cc66; color: #fff; font-weight: bold; font-size: 1rem; cursor: pointer;">
+    Join the Newsletter
+  </button>
 </div>
 
-    <!-- Join Button -->
-    <div style="margin-top: 30px; text-align:center;">
-      <a href="#waitlist" onclick="event.stopPropagation(); closeAndScrollToWaitlist();" style="display: inline-block; padding: 12px 30px; background: #6e38f7; color: white; font-size: 1.1rem; font-weight: bold; border-radius: 30px; text-decoration: none; cursor: pointer;">
-        Join the Newsletter
-      </a>
-    </div>
-
-    <!-- Close Option -->
-    <div style="margin-top: 20px; text-align:center;">
-      <a href="#" onclick="resetMemeSequence(); return false;" style="color: #ccc; font-size: 14px; text-decoration: underline;">
-        Not feeling it? Close
-      </a>
-    </div>
-
-  </div>
+<!-- Optional exit link -->
+<div style="margin-top: 20px; text-align:center;">
+  <a href="https://www.tinder.com" onclick="alert('Bye Felicia 👋');" style="color: #ccc; font-size: 14px; text-decoration: underline;">
+    Not feeling it? Close
+  </a>
 </div>
 
 <script>
-  
   // Handles feedback button click
  function handleFeedback(response) {
   console.log("User response:", response);
