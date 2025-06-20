@@ -1,4 +1,4 @@
-<!DOCTYPE html> 
+memeImage.src =<!DOCTYPE html> 
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -249,7 +249,7 @@
         </p>
     <!-- Meme Flipper Component -->
     <div class="meme-flipper">
-      <img id="memeImage" src="https://raw.githubusercontent.com/astrobehr/d8sync-landing/main/memes/meme1.jpg" alt="Meme" />
+      <img id="memeImage" onclick="resetMemeSequence()" src="https://raw.githubusercontent.com/astrobehr/d8sync-landing/main/memes/meme1.jpg" alt="Meme" />
       <button class="flipper-btn btn-left" onclick="prevMeme()">✘</button>
       <button class="flipper-btn btn-right" onclick="nextMeme()">❤️</button>
     </div>
@@ -310,7 +310,16 @@
 
   function updateMeme() {
     memeImage.src = memes[current];
+    // Hide buttons during meme6–9
+  if (current >= 5 && current <= 8) {
+    btnLeft.classList.add("hidden");
+    btnRight.classList.add("hidden");
+  } else {
+    btnLeft.classList.remove("hidden");
+    btnRight.classList.remove("hidden");
   }
+}
+
 
   function nextMeme() {
   if (current < memes.length - 1) {
@@ -368,21 +377,19 @@
     }
   });
 </script>
-
-      
 <!-- Feedback Button -->
 <div id="typeform-feedback" style="position:fixed;bottom:20px;right:20px;z-index:999;">
 <a href="https://YOUR_TYPEFORM_URL" target="_blank" style="background:#9147ff;color:#fff;padding:12px 20px;border-radius:30px;text-decoration:none;font-weight:bold;font-family:Inter,sans-serif;">Give Feedback</a>
 </div>
 <!-- Feedback Button -->
 <div id="typeform-feedback" style="position:fixed;bottom:20px;right:20px;z-index:999;">
-  <a href="https://form.typeform.com/to/aDNMMWAn" target="_blank" style="background:#9147ff;color:#fff;padding:12px 20px;border-radius:30px;text-decoration:none;font-weight:bold;font-family:Inter,sans-serif;">Give Feedback</a>
+<a href="https://form.typeform.com/to/aDNMMWAn" target="_blank" style="background:#9147ff;color:#fff;padding:12px 20px;border-radius:30px;text-decoration:none;font-weight:bold;font-family:Inter,sans-serif;">Give Feedback</a>
 </div>
 <!-- Fake Match Reveal Popup -->
-<div id="matchPopup" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.85); z-index:9999; color:#fff; font-family:Inter,sans-serif; padding:40px; box-sizing:border-box; overflow-y:auto;">
-  <div style="max-width:600px; margin:40px auto; background:#111; padding:30px; border-radius:16px; box-shadow:0 0 30px rgba(0,0,0,0.4);">
-   <div style="text-align: center; margin-bottom: 20px;">
-  <h2 style="margin: 0;">🔗 You Just Got Synced 🔗 </h2>
+<div id="matchPopup" onclick="resetMemeSequence()" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.85); z-index:9999; color:#fff; font-family:Inter,sans-serif; padding:40px; box-sizing:border-box; overflow-y:auto;">
+<div style="max-width:600px; margin:40px auto; background:#111; padding:30px; border-radius:16px; box-shadow:0 0 30px rgba(0,0,0,0.4);">
+<div style="text-align: center; margin-bottom: 20px;">
+<h2 style="margin: 0;">🔗 You Just Got Synced 🔗 </h2>
   <p style="margin-top: 5px; font-size: 0.95em; color: #888;">(Sample Match Preview)</p>
 </div>
     <p style="margin-bottom:20px;">This is a taste of what matching on D8Sync might feel like.<br>
@@ -477,44 +484,69 @@
       }
     }, 300);
   });
+// Handle meme navigation
+const memes = [
+  onclick="resetMemeSequence()""https://raw.githubusercontent.com/astrobehr/d8sync-landing/main/memes/meme1.jpg",
+  "https://raw.githubusercontent.com/astrobehr/d8sync-landing/main/memes/meme2.jpg",
+  "https://raw.githubusercontent.com/astrobehr/d8sync-landing/main/memes/meme3.jpg",
+  "https://raw.githubusercontent.com/astrobehr/d8sync-landing/main/memes/meme4.jpg",
+  "https://raw.githubusercontent.com/astrobehr/d8sync-landing/main/memes/meme5.jpg",
+  "https://raw.githubusercontent.com/astrobehr/d8sync-landing/main/memes/meme6.jpg",
+  "https://raw.githubusercontent.com/astrobehr/d8sync-landing/main/memes/meme7.jpg",
+  "https://raw.githubusercontent.com/astrobehr/d8sync-landing/main/memes/meme8.jpg",
+  "https://raw.githubusercontent.com/astrobehr/d8sync-landing/main/memes/meme9.jpg"
+];
 
-  // Handle meme navigation
-  const memes = [
-    "https://raw.githubusercontent.com/astrobehr/d8sync-landing/main/memes/meme1.jpg",
-    "https://raw.githubusercontent.com/astrobehr/d8sync-landing/main/memes/meme2.jpg",
-    "https://raw.githubusercontent.com/astrobehr/d8sync-landing/main/memes/meme3.jpg",
-    "https://raw.githubusercontent.com/astrobehr/d8sync-landing/main/memes/meme4.jpg",
-    "https://raw.githubusercontent.com/astrobehr/d8sync-landing/main/memes/meme5.jpg",
-    "https://raw.githubusercontent.com/astrobehr/d8sync-landing/main/memes/meme6.jpg",
-    "https://raw.githubusercontent.com/astrobehr/d8sync-landing/main/memes/meme7.jpg"
-  ];
-
-  let current = 0;
+   let current = 0;
+  let autoPlaying = false;
   const memeImage = document.getElementById("memeImage");
 
   function updateMeme() {
     memeImage.src = memes[current];
+    if (current >= 5 && current <= 8) {
+      btnLeft.classList.add("hidden");
+      btnRight.classList.add("hidden");
+    } else {
+      btnLeft.classList.remove("hidden");
+      btnRight.classList.remove("hidden");
+    }
+  }
+
+  function resetMemeSequence() {
+    const popup = document.getElementById("matchPopup");
+    popup.style.display = 'none';
+    current = 0;
+    autoPlaying = false;
+    updateMeme();
   }
 
   function nextMeme() {
     if (current < memes.length - 1) {
-      // Special behavior on 6th meme (index 5)
       if (current === 4) {
-        current++;
+        current++; // meme6
         updateMeme();
+        autoPlaying = true;
 
-        // Wait 5 sec, then show meme7
         setTimeout(() => {
-          current++;
+          current = 6;
           updateMeme();
 
-          // Wait 3 sec, then show match popup
           setTimeout(() => {
-            const popup = document.getElementById("matchPopup");
-            if (popup) popup.style.display = 'block';
-          }, 3000);
+            current = 7;
+            updateMeme();
 
-        }, 5000);
+            setTimeout(() => {
+              current = 8;
+              updateMeme();
+
+              setTimeout(() => {
+                const popup = document.getElementById("matchPopup");
+                if (popup) popup.style.display = 'flex';
+              }, 2000); // popup delay
+
+            }, 3000);
+          }, 3000);
+        }, 3000);
       } else {
         current++;
         updateMeme();
@@ -528,10 +560,9 @@
     if (current > 0) {
       current--;
       updateMeme();
-
-      // Hide popup if going back
       const popup = document.getElementById("matchPopup");
       if (popup) popup.style.display = 'none';
     }
   }
 </script>
+
