@@ -679,7 +679,8 @@
       }
     }, 300);
   });
-   let current = 0;
+
+  let current = 0;
   let autoPlaying = false;
   const memeImage = document.getElementById("memeImage");
 
@@ -747,3 +748,26 @@
     }
   }
 </script>
+
+<!-- ✅ ADDITIONAL SCRIPT TO FIX GREEN TEXT TIMING -->
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const popupButtons = document.querySelectorAll('.popup-button');
+    const popup = document.getElementById('matchPopup');
+    const thanksMessage = document.getElementById('thanksMessage');
+
+    popupButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        if (thanksMessage) {
+          thanksMessage.classList.remove('hidden');
+        }
+
+        setTimeout(() => {
+          if (popup) popup.style.display = 'none';
+          if (thanksMessage) thanksMessage.classList.add('hidden');
+        }, 1500);
+      });
+    });
+  });
+</script>
+
