@@ -306,16 +306,23 @@
     function updateMeme() {
       memeImage.src = memes[current];
     }
+
 function nextMeme() {
   if (current < memes.length - 1) {
     current++;
     updateMeme();
-    // Show popup only if it's the 6th meme (index 5)
-    if (current === 5) {
+    if (current === 5 && !popupShown) {
+      popupShown = true;
       setTimeout(() => {
         const popup = document.getElementById('matchPopup');
         if (popup) popup.style.display = 'block';
-      }, 1500); // 1.5 second delay
+      }, 1500);
+    }
+  } else {
+    document.getElementById("waitlist").scrollIntoView({ behavior: "smooth" });
+  }
+}
+, 1500); // 1.5 second delay
     }
   } else {
     document.getElementById("waitlist").scrollIntoView({ behavior: "smooth" });
@@ -428,12 +435,7 @@ function nextMeme() {
 </div>
 <script>
   // Handle popup show/hide
-  window.addEventListener('load', function () {
-    setTimeout(() => {
-      const popup = document.getElementById('matchPopup');
-      if (popup) popup.style.display = 'block';
-    }, 3500);
-  });
+  
 
   function closeAndScrollToWaitlist() {
     const popup = document.getElementById('matchPopup');
