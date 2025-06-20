@@ -311,29 +311,32 @@
   }
 
   function nextMeme() {
-    if (current < memes.length - 1) {
+  if (current < memes.length - 1) {
+    // If currently on meme 5 (about to show meme 6)
+    if (current === 4) {
       current++;
       updateMeme();
 
-      if (current === 5 && !popupShown) {
-        popupShown = true;
-        setTimeout(() => {
-          const popup = document.getElementById('matchPopup');
-          if (popup) popup.style.display = 'block';
-        }, 1500);
-      }
-    } else {
-      document.getElementById("waitlist").scrollIntoView({ behavior: "smooth" });
-    }
-  }
+      // Wait 5 seconds before showing fake phone screen (meme 7)
+      setTimeout(() => {
+        current++;
+        updateMeme();
 
-  function prevMeme() {
-    if (current > 0) {
-      current--;
+        // Wait 3 more seconds then show match popup
+        setTimeout(() => {
+          const popup = document.getElementById("matchPopup");
+          if (popup) popup.style.display = 'block';
+        }, 3000);
+
+      }, 5000);
+    } else {
+      current++;
       updateMeme();
     }
+  } else {
+    document.getElementById("waitlist").scrollIntoView({ behavior: "smooth" });
   }
-
+}
   // Initialize first meme
   updateMeme();
 </script>
