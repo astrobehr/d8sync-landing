@@ -411,13 +411,6 @@ function nextMeme() {
     if (popup) popup.style.display = 'none';
     if (waitlist) waitlist.scrollIntoView({ behavior: 'smooth' });
   }
-
-  window.addEventListener('load', function () {
-    setTimeout(() => {
-      const popup = document.getElementById('matchPopup');
-      if (popup) popup.style.display = 'block';
-    }, 3500);
-  });
 </script>
 
 
