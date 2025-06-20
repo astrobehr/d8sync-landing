@@ -689,41 +689,34 @@ function closeAndScrollToWaitlist() {
 </div>
 
 <script>
+  // Handles feedback button click
   function handleFeedback(response) {
-    console.log("User response:", response); // optional for debugging
+    console.log("User response:", response);
 
-    const responseBox = document.querySelector('.response-text');
-    const thanksBox = document.getElementById('feedback-response');
+    const thanksMessage = document.getElementById("thanksMessage");
+    if (thanksMessage) {
+      thanksMessage.textContent = response === "yes"
+        ? "✅ You’re our kind of people."
+        : "✅ All good — not for everyone.";
+      thanksMessage.classList.remove("hidden");
 
-    if (responseBox) {
-      responseBox.style.display = 'block';
-      responseBox.textContent = response === 'yes'
-        ? "You’re our kind of people."
-        : "All good — not for everyone.";
-    }
-
-    if (thanksBox) {
-      thanksBox.style.display = 'block';
+      setTimeout(() => {
+        thanksMessage.classList.add("hidden");
+        const popup = document.getElementById("matchPopup");
+        if (popup) popup.style.display = 'none';
+      }, 2000);
     }
   }
 
+  // Close popup and scroll to waitlist
   function closeAndScrollToWaitlist() {
-    const popup = document.getElementById('matchPopup');
-    const waitlist = document.getElementById('waitlist');
-    if (popup) popup.style.display = 'none';
-    if (waitlist) waitlist.scrollIntoView({ behavior: 'smooth' });
-  }
-</script>
-  
-  // Handle popup show/hide and scroll
-  function closeAndScrollToWaitlist() {
-    const popup = document.getElementById('matchPopup');
-    const waitlist = document.getElementById('waitlist');
+    const popup = document.getElementById("matchPopup");
+    const waitlist = document.getElementById("waitlist");
     if (popup) popup.style.display = 'none';
     if (waitlist) waitlist.scrollIntoView({ behavior: 'smooth' });
   }
 
-  // Handle custom ConvertKit form submit
+  // Handle ConvertKit button replacement
   document.addEventListener("DOMContentLoaded", function () {
     const customBtn = document.getElementById("customSubmitBtn");
 
@@ -740,6 +733,7 @@ function closeAndScrollToWaitlist() {
     }, 300);
   });
 
+  // Meme slideshow logic
   let current = 0;
   let autoPlaying = false;
   const memeImage = document.getElementById("memeImage");
@@ -766,7 +760,7 @@ function closeAndScrollToWaitlist() {
   function nextMeme() {
     if (current < memes.length - 1) {
       if (current === 4) {
-        current++; // meme6
+        current++;
         updateMeme();
         autoPlaying = true;
 
@@ -785,7 +779,7 @@ function closeAndScrollToWaitlist() {
               setTimeout(() => {
                 const popup = document.getElementById("matchPopup");
                 if (popup) popup.style.display = 'flex';
-              }, 2000); // popup delay
+              }, 2000);
 
             }, 3000);
           }, 3000);
@@ -807,27 +801,5 @@ function closeAndScrollToWaitlist() {
       if (popup) popup.style.display = 'none';
     }
   }
-</script>
-
-<!-- ✅ ADDITIONAL SCRIPT TO FIX GREEN TEXT TIMING -->
-<script>
-  document.addEventListener("DOMContentLoaded", function () {
-    const popupButtons = document.querySelectorAll('.popup-button');
-    const popup = document.getElementById('matchPopup');
-    const thanksMessage = document.getElementById('thanksMessage');
-
-    popupButtons.forEach(button => {
-      button.addEventListener('click', () => {
-        if (thanksMessage) {
-          thanksMessage.classList.remove('hidden');
-        }
-
-        setTimeout(() => {
-          if (popup) popup.style.display = 'none';
-          if (thanksMessage) thanksMessage.classList.add('hidden');
-        }, 1500);
-      });
-    });
-  });
 </script>
 
