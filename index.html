@@ -497,43 +497,44 @@
   }
 
   function nextMeme() {
-    if (current < memes.length - 1) {
-      if (current === 4) {
-        current++; // Go to meme6
+  if (current < memes.length - 1) {
+    if (current === 4) {
+      current++; // meme6
+      updateMeme();
+      autoPlaying = true;
+
+      setTimeout(() => {
+        current = 6;
         updateMeme();
-        autoPlaying = true;
 
         setTimeout(() => {
-          current = 6;
+          current = 7;
           updateMeme();
 
           setTimeout(() => {
-            current = 7;
+            current = 8;
             updateMeme();
 
             setTimeout(() => {
-              current = 8;
-              updateMeme();
+              const popup = document.getElementById("matchPopup");
+              if (popup) {
+                popup.style.display = 'flex';
+                const response = document.querySelector('.response-text');
+                if (response) response.style.display = 'block';
+              }
+            }, 2000); // popup delay
 
-              setTimeout(() => {
-                const popup = document.getElementById("matchPopup");
-                if (popup && !popupShown) {
-                  popup.style.display = "flex";
-                  popupShown = true;
-                }
-              }, 2000);
-
-            }, 3000);
           }, 3000);
         }, 3000);
-      } else {
-        current++;
-        updateMeme();
-      }
+      }, 3000);
     } else {
-      closeAndScrollToWaitlist();
+      current++;
+      updateMeme();
     }
+  } else {
+    closeAndScrollToWaitlist();
   }
+}
 
   function prevMeme() {
     if (current > 0) {
