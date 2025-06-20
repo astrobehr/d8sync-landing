@@ -369,12 +369,13 @@
     const form = document.querySelector('form');
     if (form) {
       form.addEventListener('submit', () => {
-        setTimeout(() => {
-          document.getElementById('thank-you-message').style.display = 'block';
-        }, 1000);
-      });
-    }
-  });
+     setTimeout(() => {
+    document.getElementById('thank-you-message').style.display = 'block';
+    const joinBtn = document.getElementById('customSubmitBtn');
+    if (joinBtn) joinBtn.style.display = 'none';
+  }, 1000);
+});
+
 </script>
 <!-- Feedback Button -->
 <div id="typeform-feedback" style="position:fixed;bottom:20px;right:20px;z-index:999;">
