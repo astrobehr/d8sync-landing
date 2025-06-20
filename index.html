@@ -314,28 +314,31 @@
   if (current < memes.length - 1) {
     // If currently on meme 5 (about to show meme 6)
     if (current === 4) {
-      current++;
+  current++; // Goes to meme6
+  updateMeme();
+  autoPlaying = true;
+
+  setTimeout(() => {
+    current = 6;
+    updateMeme();
+
+    setTimeout(() => {
+      current = 7;
       updateMeme();
 
-      // Wait 5 seconds before showing fake phone screen (meme 7)
       setTimeout(() => {
-        current++;
+        current = 8;
         updateMeme();
 
-        // Wait 3 more seconds then show match popup
         setTimeout(() => {
-          const popup = document.getElementById("matchPopup");
-          if (popup) popup.style.display = 'block';
-        }, 3000);
+          popup.style.display = 'flex';
+        }, 2000); // 2 second pause after meme9
 
-      }, 5000);
-    } else {
-      current++;
-      updateMeme();
-    }
-  } else {
-    document.getElementById("waitlist").scrollIntoView({ behavior: "smooth" });
-  }
+      }, 3000); // meme8 → meme9
+
+    }, 3000); // meme7 → meme8
+
+  }, 3000); // meme6 → meme7
 }
   // Initialize first meme
   updateMeme();
