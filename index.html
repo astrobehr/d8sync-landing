@@ -495,39 +495,22 @@
 
 </script>
 <script>
-  // Show popup on load
-  window.addEventListener('load', function () {
-    setTimeout(() => {
-      const popup = document.getElementById('matchPopup');
-      if (popup) popup.style.display = 'block';
-    }, 3500);
-  });
-
-  // Scroll when popup closes
-  function closeAndScrollToWaitlist() {
-    const popup = document.getElementById('matchPopup');
-    const waitlist = document.getElementById('waitlist');
-    if (popup) popup.style.display = 'none';
-    if (waitlist) waitlist.scrollIntoView({ behavior: 'smooth' });
-  }
-
-  // Link custom button to ConvertKit after form loads
   document.addEventListener("DOMContentLoaded", function () {
     const customBtn = document.getElementById("customSubmitBtn");
 
-    const waitForConvertKit = setInterval(() => {
-      const realButton = document.querySelector(".ck_subscribe_button");
-      if (realButton && realButton.offsetParent !== null && customBtn) {
-        clearInterval(waitForConvertKit);
+    const waitForCK = setInterval(() => {
+      const ckForm = document.querySelector('form.ck_subscribe_form');
+
+      if (ckForm && customBtn) {
+        clearInterval(waitForCK);
 
         customBtn.addEventListener("click", function () {
-          realButton.click();
-          console.log("✅ Custom Join triggered ConvertKit submit");
+          console.log("🚀 Submitting real CK form...");
+          ckForm.requestSubmit(); // modern, safe
         });
       }
     }, 300);
   });
 </script>
-
 </body>
 </html>
