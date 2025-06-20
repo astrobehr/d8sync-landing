@@ -614,47 +614,54 @@ function closeAndScrollToWaitlist() {
 <a href="https://form.typeform.com/to/aDNMMWAn" target="_blank" style="background:#9147ff;color:#fff;padding:12px 20px;border-radius:30px;text-decoration:none;font-weight:bold;font-family:Inter,sans-serif;">Give Feedback</a>
 </div>
 
-    <!-- Fake Match Reveal Popup -->
+  <!-- Fake Match Reveal Popup -->
 <div id="matchPopup" onclick="resetMemeSequence()" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.85); z-index:9999; color:#fff; font-family:Inter,sans-serif; padding:40px; box-sizing:border-box; overflow-y:auto;">
-<div style="max-width:600px; margin:40px auto; background:#111; padding:30px; border-radius:16px; box-shadow:0 0 30px rgba(0,0,0,0.4);">
-<div style="text-align: center; margin-bottom: 20px;">
-<h2 style="margin: 0;">🔗 You Just Got Synced 🔗 </h2>
-  <p style="margin-top: 5px; font-size: 0.95em; color: #888;">(Sample Match Preview)</p>
-</div>
+  <div style="max-width:600px; margin:40px auto; background:#111; padding:30px; border-radius:16px; box-shadow:0 0 30px rgba(0,0,0,0.4);">
+    
+    <div style="text-align: center; margin-bottom: 20px;">
+      <h2 style="margin: 0;">🔗 You Just Got Synced 🔗 </h2>
+      <p style="margin-top: 5px; font-size: 0.95em; color: #888;">(Sample Match Preview)</p>
+    </div>
+
     <p style="margin-bottom:20px;">This is a taste of what matching on D8Sync might feel like.<br>
-    No swiping. No bios. Just pure vibe alignment.</p><br>
+      No swiping. No bios. Just pure vibe alignment.</p><br>
+
     <p><strong>🧠 Shared Meme Energy:</strong><br>
-    “Me pretending that I don’t care.<br> 
-    But secretly I'm watching the group chat implode.”</p><br>
+      “Me pretending that I don’t care.<br> 
+      But secretly I'm watching the group chat implode.”</p><br>
+
     <p><strong>🎧 Audio Match:</strong><br>
-    Late 2000s indie drama with main character syndrome</p><br>
+      Late 2000s indie drama with main character syndrome</p><br>
+
     <p><strong>🍝 First Date Prompt:</strong><br>
-    You meet outside a thrift store...<br>
-    One of you is holding a can of soup.<br>
-    The other is holding a spoon.</p><br>
+      You meet outside a thrift store...<br>
+      One of you is holding a can of soup.<br>
+      The other is holding a spoon.</p><br>
+
     <p><strong>🫣 Vibe Alignment:</strong><br>
-84% Emotionally Aligned<br>
-72% Chaos Compatibility<br>
-92% Meme Fluency</p>
+      84% Emotionally Aligned<br>
+      72% Chaos Compatibility<br>
+      92% Meme Fluency</p><br>
 
-<!-- Feedback Buttons -->
-<p style="margin-bottom: 10px;">🧠 Did this vibe feel accurate?</p>
-<button onclick="handleFeedback('yes')" style="margin-right: 10px; padding: 12px 28px; border: none; border-radius: 30px; background: #6e38f7; color: #fff; font-weight: bold; font-size: 1rem; cursor: pointer;">
-  Yup, spooky
-</button>
-<button onclick="handleFeedback('no')" style="padding: 12px 28px; border: none; border-radius: 30px; background: #444; color: #fff; font-weight: bold; font-size: 1rem; cursor: pointer;">
-  Not really
-</button>
-<div id="thanksMessage" class="hidden" style="margin-top: 10px; font-weight: bold; color: #00cc66;"></div>
+    <!-- Feedback Buttons -->
+    <p style="margin-bottom: 10px;">🧠 Did this vibe feel accurate?</p>
+    <button onclick="handleFeedback('yes')" style="margin-right: 10px; padding: 12px 28px; border: none; border-radius: 30px; background: #6e38f7; color: #fff; font-weight: bold; font-size: 1rem; cursor: pointer;">
+      Yup, spooky
+    </button>
+    <button onclick="handleFeedback('no')" style="padding: 12px 28px; border: none; border-radius: 30px; background: #444; color: #fff; font-weight: bold; font-size: 1rem; cursor: pointer;">
+      Not really
+    </button>
 
-<!-- Optional exit link -->
-<div style="margin-top: 20px; text-align:center;">
-  <a href="https://www.tinder.com" onclick="alert('Bye Felicia 👋');" style="color: #ccc; font-size: 14px; text-decoration: underline;">
-    Not feeling it? Close
-  </a>
-<!-- Optional Confirmation Message -->
-<div id="thanksMessage" style="display:none; text-align:center; margin-top:10px; font-weight:bold; color:#4caf50;">
-  ✅ Thanks for your feedback!
+    <div id="thanksMessage" style="display:none; margin-top: 10px; font-weight: bold; color: #00cc66;"></div>
+
+    <!-- Join Button -->
+    <div style="margin-top: 30px; text-align:center;">
+      <a href="#waitlist" onclick="closeAndScrollToWaitlist(); event.stopPropagation();" style="display: inline-block; padding: 12px 30px; background: #6e38f7; color: white; font-size: 1.1rem; font-weight: bold; border-radius: 30px; text-decoration: none; cursor: pointer;">
+        Join the Newsletter
+      </a>
+    </div>
+
+  </div>
 </div>
 
 <script>
