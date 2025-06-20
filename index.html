@@ -393,33 +393,27 @@ F<!DOCTYPE html>
   }
 </script>
 
-<!-- ✅ Waitlist Form Section -->
-<div id="waitlist" style="position: relative; text-align: center; margin-top: 30px;">
+<div id="waitlist" style="text-align: center; margin-top: 40px;">
   <form action="https://app.convertkit.com/forms/ab96e2e1a4/subscriptions" method="post">
     <input 
       type="email" 
       name="email_address" 
       placeholder="Enter your email" 
       required 
-      style="padding: 12px 18px; font-size: 16px; width: 100%; max-wFidth: 300px; border: none; border-radius: 8px; margin-bottom: 12px;"
+      style="padding: 14px 16px; font-size: 16px; max-width: 320px; width: 100%; border: none; border-radius: 8px; margin-bottom: 16px;"
     >
     <br>
     <button 
       type="submit" 
-      style="background-color: #ff2d75; color: white; padding: 12px 24px; font-size: 16px; border: none; border-radius: 8px; cursor: pointer;"
+      style="background-color: #ff2d75; color: white; font-size: 16px; font-weight: bold; padding: 12px 24px; border: none; border-radius: 8px; cursor: pointer;"
     >
       Join the Vibe Queue
     </button>
   </form>
-
-  <!-- 🎉 Visual Confirmation Message -->
-  <div id="thank-you-message" style="display: none; margin-top: 20px;">
+  <div id="thank-you-message" style="display: none; margin-top: 20px; color: #4caf50;">
     ✅ You're in. Thanks for vibing with us.
   </div>
 </div>
-
-<!-- 📦 ConvertKit Script (optional but safe to include) -->
-<script src="https://f.convertkit.com/ckjs/ck.5.js"></script>
 
 <script>
   document.addEventListener('DOMContentLoaded', () => {
@@ -434,6 +428,7 @@ F<!DOCTYPE html>
     }
   });
 </script>
+
 
 <!-- Feedback Button -->
 <div id="typeform-feedback" style="position:fixed;bottom:20px;right:20px;z-index:999;">
