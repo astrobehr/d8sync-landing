@@ -349,6 +349,8 @@
     ✅ You're in. Thanks for vibing with us.
   </div>
 </div>
+
+      
 <script>
   document.addEventListener('DOMContentLoaded', () => {
     const form = document.querySelector('form');
@@ -361,6 +363,8 @@
     }
   });
 </script>
+
+      
 <!-- Feedback Button -->
 <div id="typeform-feedback" style="position:fixed;bottom:20px;right:20px;z-index:999;">
 <a href="https://YOUR_TYPEFORM_URL" target="_blank" style="background:#9147ff;color:#fff;padding:12px 20px;border-radius:30px;text-decoration:none;font-weight:bold;font-family:Inter,sans-serif;">Give Feedback</a>
@@ -444,7 +448,7 @@
   </div>
 </div>
 <script>
-  // Handle popup show/hide
+  // Handle popup show/hide and scroll
   function closeAndScrollToWaitlist() {
     const popup = document.getElementById('matchPopup');
     const waitlist = document.getElementById('waitlist');
@@ -452,12 +456,11 @@
     if (waitlist) waitlist.scrollIntoView({ behavior: 'smooth' });
   }
 
-  // Custom button triggers ConvertKit form submit
+  // Handle custom ConvertKit form submit
   document.addEventListener("DOMContentLoaded", function () {
     const customBtn = document.getElementById("customSubmitBtn");
 
     const waitForCK = setInterval(() => {
-      // You must match the actual form class or button in your loaded HTML
       const realSubmit = document.querySelector(".formkit-submit");
       if (realSubmit && customBtn) {
         clearInterval(waitForCK);
@@ -469,4 +472,61 @@
       }
     }, 300);
   });
+
+  // Handle meme navigation
+  const memes = [
+    "https://raw.githubusercontent.com/astrobehr/d8sync-landing/main/memes/meme1.jpg",
+    "https://raw.githubusercontent.com/astrobehr/d8sync-landing/main/memes/meme2.jpg",
+    "https://raw.githubusercontent.com/astrobehr/d8sync-landing/main/memes/meme3.jpg",
+    "https://raw.githubusercontent.com/astrobehr/d8sync-landing/main/memes/meme4.jpg",
+    "https://raw.githubusercontent.com/astrobehr/d8sync-landing/main/memes/meme5.jpg",
+    "https://raw.githubusercontent.com/astrobehr/d8sync-landing/main/memes/meme6.jpg",
+    "https://raw.githubusercontent.com/astrobehr/d8sync-landing/main/memes/meme7.jpg"
+  ];
+
+  let current = 0;
+  const memeImage = document.getElementById("memeImage");
+
+  function updateMeme() {
+    memeImage.src = memes[current];
+  }
+
+  function nextMeme() {
+    if (current < memes.length - 1) {
+      // Special behavior on 6th meme (index 5)
+      if (current === 4) {
+        current++;
+        updateMeme();
+
+        // Wait 5 sec, then show meme7
+        setTimeout(() => {
+          current++;
+          updateMeme();
+
+          // Wait 3 sec, then show match popup
+          setTimeout(() => {
+            const popup = document.getElementById("matchPopup");
+            if (popup) popup.style.display = 'block';
+          }, 3000);
+
+        }, 5000);
+      } else {
+        current++;
+        updateMeme();
+      }
+    } else {
+      closeAndScrollToWaitlist();
+    }
+  }
+
+  function prevMeme() {
+    if (current > 0) {
+      current--;
+      updateMeme();
+
+      // Hide popup if going back
+      const popup = document.getElementById("matchPopup");
+      if (popup) popup.style.display = 'none';
+    }
+  }
 </script>
