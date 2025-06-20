@@ -365,17 +365,33 @@
   </div>
 </div>
 <script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const form = document.querySelector('form');
-    if (form) {
-      form.addEventListener('submit', () => {
-     setTimeout(() => {
-    document.getElementById('thank-you-message').style.display = 'block';
-    const joinBtn = document.getElementById('customSubmitBtn');
-    if (joinBtn) joinBtn.style.display = 'none';
-  }, 1000);
-});
+  document.addEventListener("DOMContentLoaded", () => {
+    const customBtn = document.getElementById("customSubmitBtn");
+    const thankYouMsg = document.getElementById("thank-you-message");
 
+    const waitForCK = setInterval(() => {
+      const realSubmit = document.querySelector(".formkit-submit");
+      if (realSubmit && customBtn) {
+        clearInterval(waitForCK);
+        customBtn.addEventListener("click", () => {
+          realSubmit.click();
+          const successWatcher = setInterval(() => {
+            const successBox = document.querySelector(".formkit-alert-success");
+            const errorBox = document.querySelector(".formkit-alert-error");
+            if (successBox && successBox.offsetHeight > 0) {
+              thankYouMsg.style.display = "block";
+              customBtn.style.display = "none";
+              clearInterval(successWatcher);
+            }
+            if (errorBox && errorBox.offsetHeight > 0) {
+              thankYouMsg.style.display = "none";
+              // Do NOT hide the join button
+            }
+          }, 300);
+        });
+      }
+    }, 300);
+  });
 </script>
 <!-- Feedback Button -->
 <div id="typeform-feedback" style="position:fixed;bottom:20px;right:20px;z-index:999;">
