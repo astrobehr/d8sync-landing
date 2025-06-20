@@ -495,3 +495,39 @@
     }, 300);
   });
 </script>
+      <script>
+  const customBtn = document.getElementById("customSubmitBtn");
+
+  const observeSuccess = () => {
+    const observer = new MutationObserver(() => {
+      const successMsg = document.querySelector(".formkit-alert-success");
+      if (successMsg && successMsg.offsetHeight > 0) {
+        document.getElementById('thank-you-message').style.display = 'block';
+        if (customBtn) customBtn.style.display = 'none';
+        observer.disconnect();
+      }
+    });
+
+    observer.observe(document.body, {
+      childList: true,
+      subtree: true
+    });
+  };
+
+  document.addEventListener("DOMContentLoaded", () => {
+    observeSuccess();
+
+    // Ensure the custom button still triggers submission
+    const waitForCK = setInterval(() => {
+      const realSubmit = document.querySelector(".formkit-submit");
+      if (realSubmit && customBtn) {
+        clearInterval(waitForCK);
+        customBtn.addEventListener("click", function () {
+          realSubmit.click();
+          console.log("✅ Custom Join triggered ConvertKit submit");
+        });
+      }
+    }, 300);
+  });
+</script>
+
