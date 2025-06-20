@@ -636,25 +636,41 @@ function closeAndScrollToWaitlist() {
    <!-- Popup Buttons -->
 <div style="margin: 30px 0; text-align: center;">
   <p style="margin-bottom: 10px;">🧠 Did this vibe feel accurate?</p>
- <button onclick="handleFeedback('yes')" style="margin-right: 10px; padding: 12px 28px; border: none; border-radius: 30px; background: #6e38f7; color: #fff; font-weight: bold; font-size: 1rem; cursor: pointer;">
-  Yup, spooky
-</button>
-<button onclick="handleFeedback('no')" style="padding: 12px 28px; border: none; border-radius: 30px; background: #444; color: #fff; font-weight: bold; font-size: 1rem; cursor: pointer;">
-  Not really
-</button>
+  <button onclick="handleFeedback('yes')" style="margin-right: 10px; padding: 12px 28px; border: none; border-radius: 30px; background: #6e38f7; color: #fff; font-weight: bold; font-size: 1rem; cursor: pointer;">
+    Yup, spooky
+  </button>
+  <button onclick="handleFeedback('no')" style="padding: 12px 28px; border: none; border-radius: 30px; background: #444; color: #fff; font-weight: bold; font-size: 1rem; cursor: pointer;">
+    Not really
+  </button>
+  <div class="response-text" style="display:none; color:#00cc66; font-weight:bold; margin-top:10px;">
+    You’re our kind of people.
+  </div>
 </div>
-<!-- Confirmation Message -->
+
+<!-- Optional Confirmation Message -->
 <div id="feedback-response" style="display:none; text-align:center; margin-top:10px; font-weight:bold; color:#4caf50;">
   ✅ Thanks for your feedback!
 </div>
+
 <script>
   function handleFeedback(response) {
-    console.log("User response:", response); // Optional: log for testing
-    const responseBox = document.getElementById('feedback-response');
+    console.log("User response:", response); // optional for debugging
+
+    const responseBox = document.querySelector('.response-text');
+    const thanksBox = document.getElementById('feedback-response');
+
     if (responseBox) {
       responseBox.style.display = 'block';
+      responseBox.textContent = response === 'yes'
+        ? "You’re our kind of people."
+        : "All good — not for everyone.";
+    }
+
+    if (thanksBox) {
+      thanksBox.style.display = 'block';
     }
   }
+
   function closeAndScrollToWaitlist() {
     const popup = document.getElementById('matchPopup');
     const waitlist = document.getElementById('waitlist');
@@ -662,6 +678,7 @@ function closeAndScrollToWaitlist() {
     if (waitlist) waitlist.scrollIntoView({ behavior: 'smooth' });
   }
 </script>
+
 <!-- Join the Waitlist CTA -->
 <div style="margin:30px 0; text-align:center;">
       <button onclick="closeAndScrollToWaitlist()" style="background:#fff; color:#000; padding:12px 24px; border-radius:30px; font-weight:bold; border:none; cursor:pointer;">
