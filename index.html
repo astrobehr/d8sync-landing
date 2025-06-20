@@ -633,13 +633,11 @@ function closeAndScrollToWaitlist() {
     One of you is holding a can of soup.<br>
     The other is holding a spoon.</p><br>
     <p><strong>🫣 Vibe Alignment:</strong><br>
-    84% Emotionally Aligned<br>
-    72% Chaos Compatibility<br>
-    92% Meme Fluency</p>
+84% Emotionally Aligned<br>
+72% Chaos Compatibility<br>
+92% Meme Fluency</p>
 
 <!-- Popup Buttons -->
-</div>
-<script>
 <div style="margin: 30px 0; text-align: center;">
   <p style="margin-bottom: 10px;">🧠 Did this vibe feel accurate?</p>
   <button onclick="handleFeedback('yes')" style="margin-right: 10px; padding: 12px 28px; border: none; border-radius: 30px; background: #6e38f7; color: #fff; font-weight: bold; font-size: 1rem; cursor: pointer;">
@@ -648,15 +646,24 @@ function closeAndScrollToWaitlist() {
   <button onclick="handleFeedback('no')" style="padding: 12px 28px; border: none; border-radius: 30px; background: #444; color: #fff; font-weight: bold; font-size: 1rem; cursor: pointer;">
     Not really
   </button>
-  
-  <div class="response-text" style="display:none; color:#00cc66; font-weight:bold; margin-top:10px;">
-    You’re our kind of people.
-  </div>
 
-  <---JS-->
-  
+  <!-- ✅ Thanks message box -->
+  <div id="thanksMessage" class="hidden" style="margin-top: 10px; font-weight: bold; color: #00cc66;">
+    ✅ Thanks for your feedback!
+  </div>
+</div>
+
+<!-- ✅ JavaScript should NOT be placed inside HTML comments or with broken comment tags -->
+<script>
   function handleFeedback(response) {
     console.log("User response:", response); // optional for debugging
+    const message = document.getElementById("thanksMessage");
+    if (message) {
+      message.classList.remove("hidden");
+    }
+  }
+</script>
+
 
     const responseBox = document.querySelector('.response-text');
     const thanksBox = document.getElementById('feedback-response');
