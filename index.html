@@ -307,6 +307,8 @@
   let current = 0;
   let popupShown = false; // ✅ Required so it only triggers once
   const memeImage = document.getElementById("memeImage");
+  const btnLeft = document.querySelector(".btn-left");
+  const btnRight = document.querySelector(".btn-right");
 
   function updateMeme() {
     memeImage.src = memes[current];
