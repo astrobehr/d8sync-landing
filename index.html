@@ -477,26 +477,25 @@
     "https://raw.githubusercontent.com/astrobehr/d8sync-landing/main/memes/meme8.jpg",
     "https://raw.githubusercontent.com/astrobehr/d8sync-landing/main/memes/meme9.jpg"
   ];
+let current = 0;
+let popupShown = false;
+let autoPlaying = false;
+const memeImage = document.getElementById("memeImage");
+const btnLeft = document.querySelector(".btn-left");
+const btnRight = document.querySelector(".btn-right");
 
-  let current = 0;
-  let popupShown = false;
-  let autoPlaying = false;
-  const memeImage = document.getElementById("memeImage");
-  const btnLeft = document.querySelector(".btn-left");
-  const btnRight = document.querySelector(".btn-right");
-
-  function updateMeme() {
-    memeImage.src = memes[current];
-    if (current >= 5 && current <= 8) {
-      btnLeft.classList.add("hidden");
-      btnRight.classList.add("hidden");
-    } else {
-      btnLeft.classList.remove("hidden");
-      btnRight.classList.remove("hidden");
-    }
+function updateMeme() {
+  memeImage.src = memes[current];
+  if (current >= 5 && current <= 8) {
+    btnLeft.classList.add("hidden");
+    btnRight.classList.add("hidden");
+  } else {
+    btnLeft.classList.remove("hidden");
+    btnRight.classList.remove("hidden");
   }
+}
 
-  function nextMeme() {
+function nextMeme() {
   if (current < memes.length - 1) {
     if (current === 4) {
       current++; // meme6
@@ -519,11 +518,11 @@
               const popup = document.getElementById("matchPopup");
               if (popup) {
                 popup.style.display = 'flex';
+                popupShown = true;
                 const response = document.querySelector('.response-text');
-                if (response) response.style.display = 'block';
+                if (response) response.style.display = 'none'; // clear any previous state
               }
-            }, 2000); // popup delay
-
+            }, 2000);
           }, 3000);
         }, 3000);
       }, 3000);
@@ -536,25 +535,45 @@
   }
 }
 
-  function prevMeme() {
-    if (current > 0) {
-      current--;
-      updateMeme();
-
-      const popup = document.getElementById("matchPopup");
-      if (popup) popup.style.display = "none";
-      popupShown = false;
-    }
-  }
-
-  function resetMemeSequence() {
-    const popup = document.getElementById("matchPopup");
-    if (popup) popup.style.display = "none";
-    current = 0;
-    autoPlaying = false;
-    popupShown = false;
+function prevMeme() {
+  if (current > 0) {
+    current--;
     updateMeme();
   }
+}
+
+// 🚫 Disable phone image click from restarting flow
+memeImage.onclick = null;
+
+// ✅ Handle popup button responses (green message shows without closing)
+document.addEventListener("DOMContentLoaded", function () {
+  const buttons = document.querySelectorAll('.popup-button');
+  const response = document.querySelector('.response-text');
+
+  buttons.forEach(btn => {
+    btn.addEventListener('click', function () {
+      if (response) response.style.display = 'block';
+    });
+  });
+
+  // ✅ Replace "Not feeling it?" link behavior
+  const closeLink = document.getElementById('popup-close');
+  if (closeLink) {
+    closeLink.addEventListener('click', function (e) {
+      e.preventDefault();
+      window.location.href = "https://www.tinder.com?msg=Bye%20Felicia";
+    });
+  }
+});
+
+// ✅ Only close popup when user presses CTA
+function closeAndScrollToWaitlist() {
+  const popup = document.getElementById('matchPopup');
+  const waitlist = document.getElementById('waitlist');
+  if (popup) popup.style.display = 'none';
+  if (waitlist) waitlist.scrollIntoView({ behavior: 'smooth' });
+}
+
 </script>
 <!-- ✅ Now okay to place HTML below -->
 <div id="waitlist" style="position: relative;"></div>
