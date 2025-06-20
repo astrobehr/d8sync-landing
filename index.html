@@ -393,8 +393,9 @@ F<!DOCTYPE html>
   }
 </script>
 
+<!-- ✅ FINAL FIXED WAITLIST FORM BLOCK -->
 <div id="waitlist" style="text-align: center; margin-top: 40px;">
-  <form action="https://app.convertkit.com/forms/ab96e2e1a4/subscriptions" method="post">
+  <form action="https://app.convertkit.com/forms/ab96e2e1a4/subscriptions" method="post" style="margin-bottom: 20px;">
     <input 
       type="email" 
       name="email_address" 
@@ -410,11 +411,14 @@ F<!DOCTYPE html>
       Join the Vibe Queue
     </button>
   </form>
+
+  <!-- ✅ Confirmation Message -->
   <div id="thank-you-message" style="display: none; margin-top: 20px; color: #4caf50;">
     ✅ You're in. Thanks for vibing with us.
   </div>
 </div>
 
+<!-- ✅ JS Logic to Show Confirmation -->
 <script>
   document.addEventListener('DOMContentLoaded', () => {
     const form = document.querySelector('#waitlist form');
@@ -428,7 +432,6 @@ F<!DOCTYPE html>
     }
   });
 </script>
-
 
 <!-- Feedback Button -->
 <div id="typeform-feedback" style="position:fixed;bottom:20px;right:20px;z-index:999;">
