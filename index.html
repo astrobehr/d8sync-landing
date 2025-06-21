@@ -51,6 +51,18 @@
         target.scrollIntoView({ behavior: "smooth" });
       }
     }
+    
+
+    function closeAndScrollToWaitlist() {
+      const popup = document.getElementById('matchPopup');
+      if (popup) popup.style.display = 'none';
+      const target = document.getElementById("waitlist");
+      if (target) {
+        setTimeout(() => {
+          target.scrollIntoView({ behavior: "smooth" });
+        }, 300);
+      }
+    }
     </script>
 <!--- SCRIPT_START --->
 <script>
@@ -794,7 +806,7 @@ function closeAndScrollToWaitlist() {
 <!--- DIV_START --->
 <div style="margin-top: 30px; text-align: center;">
 <!--- BUTTON_START --->
-<a class="btn-flat btn-flat" href="https://d8sync.ck.page" id="customSubmitBtn" onclick="scrollToWaitlist()" target="_blank">Join the Newsletter</a>
+<button class="btn-flat" id="customSubmitBtn" onclick="closeAndScrollToWaitlist()">Join the Newsletter</button>
 <!--- DIV_END --->
 </div>
 <!-- Optional exit link -->
