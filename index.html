@@ -381,7 +381,23 @@
     height: auto;
   }
 <!--- STYLE_END --->
-</style>
+
+
+    .btn-purple {
+      background-color: #8000ff;
+      color: #fff;
+      padding: 12px 24px;
+      font-size: 1rem;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .btn-purple:hover {
+      background-color: #6a00cc;
+    }
+    </style>
 <!-- Plausible Analytics -->
 <!--- SCRIPT_START --->
 <script data-domain="d8sync.com" defer="" src="https://plausible.io/js/script.js"><!--- SCRIPT_END --->
@@ -758,7 +774,7 @@ function closeAndScrollToWaitlist() {
 <!--- DIV_START --->
 <div style="margin-top: 30px; text-align: center;">
 <!--- BUTTON_START --->
-<button id="customSubmitBtn" style="padding: 12px 28px; border: none; border-radius: 30px; background: #00ff88;; color: #fff; font-weight: bold; font-size: 1rem; cursor: pointer;">
+<button class="btn-purple" id="customSubmitBtn" style="padding: 12px 28px; border: none; border-radius: 30px; background: #00cc66; color: #fff; font-weight: bold; font-size: 1rem; cursor: pointer;">
     Join the Newsletter
   <!--- BUTTON_END --->
 </button>
