@@ -160,6 +160,7 @@
       border-radius: 16px; 
       box-shadow: 0 0 30px rgba(0,0,0,0.4);
       text-align: center;
+      position: relative;
     }
     
     #feedback-response {
@@ -185,7 +186,32 @@
       gap: 12px;
       margin-bottom: 6px;
     }
-    
+
+    /* Close button styles */
+    #popupCloseBtn {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      width: 28px;
+      height: 28px;
+      background: #6e38f7;
+      border: none;
+      border-radius: 4px;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+      font-size: 20px;
+      line-height: 28px;
+      text-align: center;
+      padding: 0;
+      user-select: none;
+      transition: background-color 0.3s ease;
+      z-index: 10000;
+    }
+    #popupCloseBtn:hover {
+      background: #5300cc;
+    }
+
   </style>
   
   <!-- Structured Data (JSON-LD) -->
@@ -262,7 +288,7 @@
 
       <!-- Meme Flipper Component -->
       <div class="meme-flipper">
-        <img alt="Meme" id="memeImage" onclick="resetMemeSequence()" src="https://raw.githubusercontent.com/astrobehr/d8sync-landing/main/memes/meme1.jpg"/>
+        <img alt="Meme" id="memeImage" src="https://raw.githubusercontent.com/astrobehr/d8sync-landing/main/memes/meme1.jpg" />
         <button class="flipper-btn btn-left" onclick="prevMeme()">✘</button>
         <button class="flipper-btn btn-right" onclick="nextMeme()">❤</button>
       </div>
@@ -353,6 +379,7 @@
     <!-- Feedback Popup -->
     <div id="matchPopup">
       <div onclick="event.stopPropagation();">
+        <button id="popupCloseBtn" title="Close Popup" aria-label="Close Popup">&times;</button>
         <h2 style="margin: 0;">🔗 You Just Got Synced 🔗</h2>
         <p style="margin-top: 45px; font-size: 0.95em; color: #888;">(Sample Match Preview)</p>
         <p style="margin-bottom: 20px;">
@@ -493,6 +520,15 @@
           });
         }
       }, 300);
+
+      // Add close button functionality for popup
+      const popupCloseBtn = document.getElementById("popupCloseBtn");
+      if(popupCloseBtn) {
+        popupCloseBtn.addEventListener("click", () => {
+          const popup = document.getElementById("matchPopup");
+          if (popup) popup.style.display = "none";
+        });
+      }
     });
 
     // Popup close and scroll to waitlist
@@ -503,7 +539,7 @@
       if (waitlist) waitlist.scrollIntoView({ behavior: 'smooth' });
     }
 
-    // Meme flipper logic
+    // Meme flipper logic with meme10 support and extra timing
     document.addEventListener("DOMContentLoaded", () => {
       const memes = [
         "https://raw.githubusercontent.com/astrobehr/d8sync-landing/main/memes/meme1.jpg",
@@ -514,19 +550,23 @@
         "https://raw.githubusercontent.com/astrobehr/d8sync-landing/main/memes/meme6.jpg",
         "https://raw.githubusercontent.com/astrobehr/d8sync-landing/main/memes/meme7.jpg",
         "https://raw.githubusercontent.com/astrobehr/d8sync-landing/main/memes/meme8.jpg",
-        "https://raw.githubusercontent.com/astrobehr/d8sync-landing/main/memes/meme9.jpg"
+        "https://raw.githubusercontent.com/astrobehr/d8sync-landing/main/memes/meme9.jpg",
+        "https://raw.githubusercontent.com/astrobehr/d8sync-landing/main/memes/meme10.jpg"
       ];
       let current = 0;
       const memeImage = document.getElementById("memeImage");
       const btnLeft = document.querySelector(".btn-left");
       const btnRight = document.querySelector(".btn-right");
+      const popup = document.getElementById("matchPopup");
+      let meme10Timeout1, meme10Timeout2;
+      let isMeme10Displayed = false;
 
       function updateMeme() {
         if (memeImage) {
           memeImage.src = memes[current];
         }
         if (btnLeft && btnRight) {
-          if (current >= 5 && current <= 8) {
+          if (current >= 5 && current <= 9) {
             btnLeft.classList.add("hidden");
             btnRight.classList.add("hidden");
           } else {
@@ -534,6 +574,7 @@
             btnRight.classList.remove("hidden");
           }
         }
+        isMeme10Displayed = (current === 9);
       }
 
       window.nextMeme = function() {
@@ -548,8 +589,17 @@
                 setTimeout(() => {
                   current = 8; updateMeme();
                   setTimeout(() => {
-                    const popup = document.getElementById("matchPopup");
-                    if (popup) popup.style.display = "flex";
+                    if (popup) {
+                      popup.style.display = "flex";
+
+                      // After popup opens, wait 5s, then 3s, then show meme10 in flipper
+                      meme10Timeout1 = setTimeout(() => {
+                        meme10Timeout2 = setTimeout(() => {
+                          current = 9;
+                          updateMeme();
+                        }, 3000); // wait 3 seconds after first 5
+                      }, 5000); // wait 5 seconds after popup open
+                    }
                   }, 2000);
                 }, 3000);
               }, 3000);
@@ -567,19 +617,31 @@
         if (current > 0) {
           current--;
           updateMeme();
-          const popup = document.getElementById("matchPopup");
           if (popup) popup.style.display = "none";
+
+          // Clear any meme10 scheduled updates if user goes back
+          clearTimeout(meme10Timeout1);
+          clearTimeout(meme10Timeout2);
         }
       };
 
       window.resetMemeSequence = function() {
-        const popup = document.getElementById("matchPopup");
         if (popup) popup.style.display = "none";
         current = 0;
         updateMeme();
+
+        // Clear any meme10 timeouts when resetting
+        clearTimeout(meme10Timeout1);
+        clearTimeout(meme10Timeout2);
       };
 
-      if (memeImage) memeImage.onclick = resetMemeSequence;
+      if (memeImage) {
+        memeImage.onclick = () => {
+          if (isMeme10Displayed) {
+            window.resetMemeSequence();
+          }
+        };
+      }
 
       updateMeme();
 
