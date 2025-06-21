@@ -3,118 +3,146 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Feedback Button Fix</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>D8Sync – Vibe-Based Blind Dates</title>
   <style>
     body {
-      background: #111;
-      color: #fff;
-      font-family: Arial, sans-serif;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
       margin: 0;
-    }
-    .popup {
-      background: #1c1c1c;
-      padding: 40px 20px;
-      border-radius: 10px;
-      text-align: center;
-      width: 90%;
-      max-width: 400px;
-      position: relative;
-    }
-    .feedback-text {
-      font-size: 1rem;
-      margin-bottom: 10px;
-    }
-    #response-box {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #111;
       color: white;
-      font-size: 1.3rem;
-      font-weight: bold;
-      opacity: 0;
-      transition: opacity 0.3s ease;
-      height: 2.4rem;
       display: flex;
+      flex-direction: column;
       align-items: center;
-      justify-content: center;
-      margin-bottom: 10px;
     }
-    .button-row {
-      display: flex;
-      justify-content: center;
-      gap: 12px;
-      margin-bottom: 20px;
+
+    header {
+      text-align: center;
+      padding: 3rem 1rem 2rem;
     }
-    .popup button {
+
+    h1 {
+      font-size: 2rem;
+      color: #fff;
+    }
+
+    .modal {
+      background-color: #1a1a1a;
+      border-radius: 10px;
+      padding: 2rem;
+      text-align: center;
+      margin-top: 2rem;
+      max-width: 400px;
+    }
+
+    .btn {
       background-color: #a020f0;
+      color: white;
       border: none;
       border-radius: 8px;
-      padding: 10px 16px;
+      padding: 0.6rem 1.2rem;
+      margin: 0.3rem;
+      font-size: 0.9rem;
+      cursor: pointer;
+    }
+
+    #feedback-response {
+      font-size: 1.3rem;
       color: white;
       font-weight: bold;
-      cursor: pointer;
-      font-size: 1rem;
+      margin-top: 1rem;
+      height: 1.5em;
+      transition: opacity 0.5s;
     }
-    .newsletter-btn {
-      margin-top: 10px;
+
+    .link {
+      margin-top: 1rem;
+      font-size: 0.85rem;
     }
-    .popup a {
-      color: #ccc;
-      font-size: 0.9rem;
-      text-decoration: underline;
+
+    .hidden {
+      opacity: 0;
+    }
+
+    .shown {
+      opacity: 1;
     }
   </style>
 </head>
 <body>
-  <div class="popup">
-    <div class="feedback-text">🧠 Did this vibe feel accurate?</div>
-    <div id="response-box"></div>
-    <div class="button-row">
-      <button onclick="handleResponse('yes')">Yup... Spooky!</button>
-      <button onclick="handleResponse('no')">Nah... Not Really.</button>
-    </div>
-    <button class="newsletter-btn">Join the Newsletter</button>
-    <div><a href="#">Not feeling it? Close</a></div>
+
+<header>
+  <h1>D8Sync – Swipe-Free Dating. Just Vibes.</h1>
+  <p>No profiles. No awkward openings. No rejection drama. Just vibes. Real ones.</p>
+</header>
+
+<div class="modal">
+  <p>🧠 Did this vibe feel accurate?</p>
+
+  <div id="feedback-response"></div>
+
+  <div>
+    <button class="btn" onclick="handleFeedback('yes')">Yup... Spooky!</button>
+    <button class="btn" onclick="handleFeedback('no')">Nah... Not Really.</button>
   </div>
 
-  <script>
-    const responseBox = document.getElementById("response-box");
-    const yesResponses = [
-      "Deadass, that hit.",
-      "Bro. I'm seen.",
-      "That’s spooky accurate.",
-      "I feel violently understood.",
-      "It’s giving... truth serum."
-    ];
-    const noResponses = [
-      "Girl, what was that?",
-      "It’s not vibing.",
-      "Nah, try again.",
-      "Literally false.",
-      "Delete this."
-    ];
-    let yesIndex = 0;
-    let noIndex = 0;
+  <div>
+    <button class="btn" onclick="scrollToNewsletter()">Join the Newsletter</button>
+  </div>
 
-    function handleResponse(choice) {
-      let text = "";
-      if (choice === "yes") {
-        text = yesResponses[yesIndex];
-        yesIndex = (yesIndex + 1) % yesResponses.length;
-      } else {
-        text = noResponses[noIndex];
-        noIndex = (noIndex + 1) % noResponses.length;
-      }
+  <div class="link">
+    <a href="#" style="color: #ddd;">Not feeling it? Close</a>
+  </div>
+</div>
 
-      responseBox.textContent = text;
-      responseBox.style.opacity = 1;
+<!-- Dummy newsletter anchor -->
+<div id="waitlist" style="margin-top: 1000px;"></div>
 
-      setTimeout(() => {
-        responseBox.style.opacity = 0;
-      }, 3000);
+<script>
+  const yesResponses = [
+    "Deadass, that hit.",
+    "Spooky accurate fr.",
+    "Vibe check: Passed ✅",
+    "You read me like a meme.",
+    "For real, I felt that in my bones."
+  ];
+
+  const noResponses = [
+    "Nah, chief. That ain't it.",
+    "Big miss 🥲",
+    "Vibe check failed.",
+    "Bro, I’m lost.",
+    "Not my frequency."
+  ];
+
+  let yesIndex = 0;
+  let noIndex = 0;
+
+  function handleFeedback(response) {
+    const responseBox = document.getElementById("feedback-response");
+    let message = "";
+
+    if (response === "yes") {
+      message = yesResponses[yesIndex];
+      yesIndex = (yesIndex + 1) % yesResponses.length;
+    } else {
+      message = noResponses[noIndex];
+      noIndex = (noIndex + 1) % noResponses.length;
     }
-  </script>
+
+    responseBox.textContent = message;
+    responseBox.className = "shown";
+
+    setTimeout(() => {
+      responseBox.className = "hidden";
+    }, 3000);
+  }
+
+  function scrollToNewsletter() {
+    const anchor = document.getElementById("waitlist");
+    anchor.scrollIntoView({ behavior: "smooth" });
+  }
+</script>
+
 </body>
 </html>
