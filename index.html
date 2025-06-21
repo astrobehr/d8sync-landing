@@ -4,17 +4,20 @@
 <head>
   <!-- Favicon and Metadata -->
   <link href="https://d8sync.com/assets/favicon.png" rel="icon" type="image/png" />
+  <link href="https://d8sync.com/assets/favicon.png" rel="shortcut icon" type="image/png" />
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes" />
   <title>D8Sync – Meme-Based Blind Dates, No Swipes</title>
   <link href="https://d8sync.com/" rel="canonical" />
   <link as="image" href="https://d8sync.com/assets/preview.png" rel="preload" />
+  <!-- SEO Meta Tags -->
   <meta name="robots" content="index, follow" />
   <meta name="description"
     content="D8Sync is a swipe-free AI dating app that connects people through memes and comedy. No awkward openings. Just real vibes." />
   <meta name="keywords"
     content="meme dating, blind dates, no swiping, AI dating, funny dating app, Gen Z dating app, comedy matchmaking, D8Sync" />
   <meta name="author" content="D8Sync" />
+  <!-- Open Graph -->
   <meta property="og:title" content="D8Sync – Meme-Based Blind Dates, No Swipes" />
   <meta property="og:description" content="No swiping. No awkward intros. Just memes and vibes." />
   <meta property="og:image" content="https://d8sync.com/assets/preview.png" />
@@ -23,8 +26,7 @@
   <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-SZMQTN31ER"></script>
   <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() {dataLayer.push(arguments);}
+    window.dataLayer = window.dataLayer || [];    function gtag() {dataLayer.push(arguments);}
     gtag('js', new Date());
     gtag('config', 'G-SZMQTN31ER');
   </script>
@@ -32,8 +34,9 @@
   <link href="https://fonts.googleapis.com" rel="preconnect" />
   <link crossorigin href="https://fonts.gstatic.com" rel="preconnect" />
   <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet" />
+  <!-- Inline Styles -->
   <style>
-    /* Reset and base */
+    /* Reset and base styles */
     body {
       font-family: 'Inter', sans-serif;
       margin: 0;
@@ -76,6 +79,7 @@
       margin: 0;
     }
 
+    /* Meme Flipper styles */
     .meme-flipper {
       width: 320px;
       margin: 40px auto;
@@ -121,18 +125,22 @@
       filter: brightness(1.2);
     }
 
+    .hidden {
+      display: none !important;
+    }
+
+    /* Waitlist/Form styles */
     #waitlist {
       margin: 60px auto 100px auto;
       max-width: 740px;
       background: #fff;
-      color: #000;
-      border-radius: 10px;
+      color: #000;      border-radius: 10px;
       display: flex;
       box-shadow: 0 4px 8px rgba(105, 113, 119, 0.2);
       overflow: hidden;
       font-weight: normal;
       align-items: stretch;
-      min-height: 320px;
+      min-height: 320px; /* Ensure a minimum height for the form section */
     }
 
     #waitlist > div {
@@ -147,9 +155,7 @@
       flex-direction: column;
       justify-content: center;
       text-align: left;
-    }
-
-    #waitlist .form-left h2 {
+    }    #waitlist .form-left h2 {
       font-size: 2.4rem;
       font-weight: 700;
       margin-bottom: 18px;
@@ -181,8 +187,7 @@
       flex-grow: 1;
       padding: 14px 16px;
       font-size: 1rem;
-      border: 1px solid #cecece;
-      border-radius: 8px;
+      border: 1px solid #cecece;      border-radius: 8px;
       color: #6e6e6e;
       background-color: #f7f7f7;
       outline-offset: 2px;
@@ -238,17 +243,19 @@
       text-decoration: underline;
     }
 
+    /* iPhone image column using background-image */
     #waitlist .form-right {
       flex: 1 1 45%;
       background-image: url("https://embed.filekitcdn.com/e/7wYRffpBoCKHj7khzQkLM9/ennQvFZ3vfzXK5zwJJW6ty");
       background-repeat: no-repeat;
-      background-size: contain;
-      background-position: center;
+      background-size: contain; /* Ensures the image fits within the div */
+      background-position: center; /* Centers the image */
       border-top-right-radius: 10px;
       border-bottom-right-radius: 10px;
-      min-height: 320px;
+      min-height: 320px; /* Match form-left min-height for consistent layout */
     }
 
+    /* Responsive adjustments for mobile */
     @media (max-width: 767px) {
       #waitlist {
         flex-direction: column;
@@ -280,22 +287,23 @@
       }
     }
 
+    /* Match Popup styles */
     #matchPopup {
-      display: none;
+      display: none; /* Initially hidden */
       position: fixed;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background: rgba(0,0,0,0.85);
-      z-index: 9999;
-      box-sizing: border-box;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.85);
+      z-index: 9999;      box-sizing: border-box;
       padding: 40px;
       overflow-y: auto;
       font-family: 'Inter', sans-serif;
       color: #fff;
       text-align: center;
-      align-items: center;
-      justify-content: center;
-      display: flex;
+      align-items: center; /* Center content vertically */
+      justify-content: center; /* Center content horizontally */
     }
 
     #matchPopup > div {
@@ -304,7 +312,7 @@
       background: #111;
       padding: 30px 40px 40px;
       border-radius: 16px;
-      box-shadow: 0 0 30px rgba(0,0,0,0.4);
+      box-shadow: 0 0 30px rgba(0, 0, 0, 0.4);
       position: relative;
       color: white;
       text-align: center;
@@ -312,14 +320,15 @@
 
     #popupCloseBtn {
       position: absolute;
-      top: 12px; right: 12px;
-      width: 28px; height: 28px;
+      top: 12px;
+      right: 12px;
+      width: 28px;
+      height: 28px;
       background: #6e38f7;
       border: none;
       border-radius: 4px;
       color: white;
-      font-weight: bold;
-      font-size: 22px;
+      font-weight: bold;      font-size: 22px;
       line-height: 26px;
       cursor: pointer;
       user-select: none;
@@ -331,8 +340,7 @@
       background: #5300cc;
     }
 
-    #feedback-response {
-      margin-top: 18px;
+    #feedback-response {      margin-top: 18px;
       margin-bottom: 18px;
       min-height: 1.2em;
       font-weight: bold;
@@ -361,6 +369,24 @@
       gap: 12px;
       margin-bottom: 6px;
     }
+
+    .btn-flat {
+      background-color: #8000ff;
+      color: #fff;
+      padding: 12px 24px;
+      font-size: 1rem;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      margin: 10px;
+      font-weight: 600;
+      transition: background-color 0.3s ease;
+      white-space: nowrap;
+    }
+
+    .btn-flat:hover {
+      background-color: #6a00cc;
+    }
   </style>
 </head>
 
@@ -384,9 +410,8 @@
         that learns your humor DNA<br />and matches you with someone who <em>actually gets it</em><br /><br />Weirdly accurate. Dangerously
         fun.</p>
       <div class="meme-flipper" aria-label="Meme flipper with left and right buttons">
-        <img id="memeImage" alt="Meme" src="https://raw.githubusercontent.com/astrobehr/d8sync-landing/main/memes/meme1.jpg" />
-        <button class="flipper-btn btn-left" aria-label="Show previous meme" onclick="prevMeme()">✘</button>
-        <button class="flipper-btn btn-right" aria-label="Show next meme" onclick="nextMeme()">❤</button>
+        <img id="memeImage" alt="Meme" src="https://raw.githubusercontent.com/astrobehr/d8sync-landing/main/memes/meme1.jpg" />        <button class="flipper-btn btn-left" aria-label="Show previous meme" onclick="prevMeme()" type="button">✘</button>
+        <button class="flipper-btn btn-right" aria-label="Show next meme" onclick="nextMeme()" type="button">❤</button>
       </div>
     </section>
 
@@ -432,8 +457,7 @@
           min-width="400 500 600 700 800"
         >
           <div data-style="full">
-            <div data-element="column" class="formkit-column">
-              <div class="formkit-header" data-element="header" style="color:#3d3d3d; font-weight:700;">
+            <div data-element="column" class="formkit-column">              <div class="formkit-header" data-element="header" style="color:#3d3d3d; font-weight:700;">
                 <h2>Get Notified for D8Sync<br />Beta Waitlist</h2>
               </div>
               <div class="formkit-content" data-element="content" style="color:#6e6e6e; text-align:center;">
@@ -465,8 +489,7 @@
                   <span>Download</span>
                 </button>
               </div>
-              <div class="formkit-disclaimer" data-element="disclaimer" style="color:#6e6e6e;">
-                <p>No spam. No cringe. Unmatch us anytime</p>
+              <div class="formkit-disclaimer" data-element="disclaimer" style="color:#6e6e6e;">                <p>No spam. No cringe. Unmatch us anytime</p>
               </div>
               <div class="formkit-powered-by-convertkit-container">
                 <a
@@ -479,8 +502,7 @@
               </div>
             </div>
             <div
-              data-element="column"
-              class="formkit-background"
+              data-element="column"              class="formkit-background"
               style="background-image: url('https://embed.filekitcdn.com/e/7wYRffpBoCKHj7khzQkLM9/ennQvFZ3vfzXK5zwJJW6ty');
               background-position: center;
               background-size: contain;
@@ -493,7 +515,7 @@
     </section>
 
     <!-- Match Popup -->
-    <div id="matchPopup" role="dialog" aria-modal="true" aria-hidden="true" class="hidden">
+    <div id="matchPopup" role="dialog" aria-modal="true" aria-hidden="true" style="display: none;">
       <div>
         <button id="popupCloseBtn" title="Close Popup" aria-label="Close Popup" type="button">&times;</button>
         <h2>🔗 You Just Got Synced 🔗</h2>
@@ -511,86 +533,69 @@
             <button class="btn-flat" id="nah-button" type="button">Nah... Not Really.</button>
           </div>
           <button class="btn-flat" id="customSubmitBtn" type="button" onclick="closeAndScrollToWaitlist()">Join the Newsletter</button>
-          <a href="#" onclick="closeAndScrollToWaitlist()" style="color: #ccc; font-size: 14px; text-decoration: underline; display: block; margin-top: 20px;" role="button">Not feeling it? Close</a>
+          <a href="#" onclick="closeAndScrollToWaitlist(); return false;" style="color: #ccc; font-size: 14px; text-decoration: underline; display: block; margin-top: 20px;" role="button">Not feeling it? Close</a>
         </div>
       </div>
     </div>
 
   </main>
 
-  <!-- ConvertKit Form Script -->
+  <!-- ConvertKit Form Script (defer for non-blocking load) -->
   <script src="https://f.convertkit.com/ckjs/ck.5.js" defer></script>
 
-  <!-- Custom Scripts -->
+  <!-- Custom JavaScript for interactivity -->
   <script>
     document.addEventListener('DOMContentLoaded', () => {
-      // Referrer input filling
-      const referrerInput = document.getElementById('referrer');
-      if(referrerInput) {
+      // 1. Referrer input filling for ConvertKit      const referrerInput = document.getElementById('referrer');
+      if (referrerInput) {
         referrerInput.value = document.referrer;
       }
 
-      // Popup and feedback responses
+      // 2. Feedback responses for popup buttons
       const responseBox = document.getElementById('feedback-response');
       const spookyBtn = document.getElementById('spooky-button');
       const nahBtn = document.getElementById('nah-button');
 
-      function showGenZResponse(text) {
-        if (!responseBox) return;
-        responseBox.textContent = text;
-        responseBox.style.opacity = '1';
-        setTimeout(() => {
-          responseBox.style.opacity = '0';
-        }, 3000);
-      }
-
-      spookyBtn?.addEventListener('click', () => {
-        showGenZResponse('✨ Fr 😳 That was spooky accurate ✨');
-      });
-
-      nahBtn?.addEventListener('click', () => {
-        showGenZResponse('💀 Deadass? That ain’t it chief 💀');
-      });
-
-      const yupResponses = ["Deadass, that hit.","It’s giving soulmate.","Vibes were vibing.","No cap, this was it.","This match ate 💅"];
-      const nahResponses = ["Hard pass, fam.","Not the vibe 😬","That was… a choice.","Felt like a LinkedIn date.","Respectfully, no."];
+      const yupResponses = ["Deadass, that hit.", "It’s giving soulmate.", "Vibes were vibing.", "No cap, this was it.", "This match ate 💅"];
+      const nahResponses = ["Hard pass, fam.", "Not the vibe 😬", "That was… a choice.", "Felt like a LinkedIn date.", "Respectfully, no."];
 
       function showRandomResponse(type) {
-        if(!responseBox) return;
+        if (!responseBox) return;
         const responses = type === "yup" ? yupResponses : nahResponses;
-        const msg = responses[Math.floor(Math.random()*responses.length)];
+        const msg = responses[Math.floor(Math.random() * responses.length)];
         responseBox.textContent = msg;
-        responseBox.style.display = 'block';
         responseBox.style.opacity = '1';
         setTimeout(() => {
           responseBox.style.opacity = '0';
-        }, 3000);
+        }, 3000); // Response fades out after 3 seconds
       }
 
       spookyBtn?.addEventListener('click', () => showRandomResponse('yup'));
       nahBtn?.addEventListener('click', () => showRandomResponse('nah'));
 
-      // ConvertKit custom submit button trigger
+      // 3. Custom button to trigger ConvertKit form submission
       const customBtn = document.getElementById('customSubmitBtn');
-      const waitForCK = setInterval(() => {
-        const realSubmit = document.querySelector('.formkit-submit');
-        if (realSubmit && customBtn) {
-          clearInterval(waitForCK);
-          customBtn.addEventListener('click', () => {
-            realSubmit.click();
-            console.log("✅ Custom Join triggered ConvertKit submit");
-          });
-        }
-      }, 300);
+      if (customBtn) {
+        // Wait for ConvertKit's JS to load and process the form
+        const waitForCKForm = setInterval(() => {
+          const realSubmit = document.querySelector('#waitlist .formkit-submit');
+          if (realSubmit) {
+            clearInterval(waitForCKForm); // Stop checking once found
+            customBtn.addEventListener('click', () => {
+              realSubmit.click(); // Programmatically click the hidden ConvertKit submit button
+              console.log("✅ Custom Join triggered ConvertKit submit");
+            });
+          }
+        }, 100); // Check every 100ms      }
 
-      // Popup close button
+      // 4. Popup close button functionality
       document.getElementById('popupCloseBtn')?.addEventListener('click', () => {
         const popup = document.getElementById('matchPopup');
         if (popup) popup.style.display = 'none';
       });
     });
 
-    // Helper to close popup and scroll to waitlist
+    // Global helper function to close popup and scroll to waitlist
     function closeAndScrollToWaitlist() {
       const popup = document.getElementById('matchPopup');
       const waitlist = document.getElementById('waitlist');
@@ -598,19 +603,19 @@
       if (waitlist) waitlist.scrollIntoView({ behavior: 'smooth' });
     }
 
-    // Meme flipper functionality
+    // 5. Meme Flipper Logic
     document.addEventListener('DOMContentLoaded', () => {
       const memes = [
         "https://raw.githubusercontent.com/astrobehr/d8sync-landing/main/memes/meme1.jpg",
         "https://raw.githubusercontent.com/astrobehr/d8sync-landing/main/memes/meme2.jpg",
         "https://raw.githubusercontent.com/astrobehr/d8sync-landing/main/memes/meme3.jpg",
         "https://raw.githubusercontent.com/astrobehr/d8sync-landing/main/memes/meme4.jpg",
-        "https://raw.githubusercontent.com/astrobehr/d8sync-landing/main/memes/meme5.jpg",
-        "https://raw.githubusercontent.com/astrobehr/d8sync-landing/main/memes/meme6.jpg",
-        "https://raw.githubusercontent.com/astrobehr/d8sync-landing/main/memes/meme7.jpg",
-        "https://raw.githubusercontent.com/astrobehr/d8sync-landing/main/memes/meme8.jpg",
-        "https://raw.githubusercontent.com/astrobehr/d8sync-landing/main/memes/meme9.jpg",
-        "https://raw.githubusercontent.com/astrobehr/d8sync-landing/main/memes/meme10.jpg"
+        "https://raw.githubusercontent.com/astrobehr/d8sync-landing/main/memes/meme5.jpg", // Meme 5 - before the popup sequence
+        "https://raw.githubusercontent.com/astrobehr/d8sync-landing/main/memes/meme6.jpg", // Meme 6 - hidden, first in sequence after meme 5
+        "https://raw.githubusercontent.com/astrobehr/d8sync-landing/main/memes/meme7.jpg", // Meme 7 - hidden
+        "https://raw.githubusercontent.com/astrobehr/d8sync-landing/main/memes/meme8.jpg", // Meme 8 - hidden
+        "https://raw.githubusercontent.com/astrobehr/d8sync-landing/main/memes/meme9.jpg", // Meme 9 - hidden
+        "https://raw.githubusercontent.com/astrobehr/d8sync-landing/main/memes/meme10.jpg" // Meme 10 - hidden, shown after popup
       ];
 
       let current = 0;
@@ -618,13 +623,20 @@
       const btnLeft = document.querySelector('.btn-left');
       const btnRight = document.querySelector('.btn-right');
       const popup = document.getElementById('matchPopup');
-      let meme10Timeout1, meme10Timeout2;
+
+      // Variables to hold timeouts for clearing if sequence is interrupted
+      let memeSequenceTimeout1, memeSequenceTimeout2, memeSequenceTimeout3, memeSequenceTimeout4;
+
+      // Flag to check if meme 10 is currently displayed
       let isMeme10Displayed = false;
 
+      // Function to update the meme image and button visibility
       function updateMeme() {
-        if(memeImage) memeImage.src = memes[current];
-        if(btnLeft && btnRight) {
-          if(current >= 5 && current <= 9) {
+        if (memeImage) memeImage.src = memes[current];
+
+        // Hide flipper buttons for memes 6 through 10
+        if (btnLeft && btnRight) {
+          if (current >= 5 && current <= 9) {
             btnLeft.classList.add('hidden');
             btnRight.classList.add('hidden');
           } else {
@@ -635,66 +647,79 @@
         isMeme10Displayed = (current === 9);
       }
 
+      // Function to clear all pending timeouts for the meme sequence
+      function clearMemeTimeouts() {
+        clearTimeout(memeSequenceTimeout1);
+        clearTimeout(memeSequenceTimeout2);
+        clearTimeout(memeSequenceTimeout3);
+        clearTimeout(memeSequenceTimeout4);
+      }
+
+      // Go to next meme, with special handling for the popup sequence
       window.nextMeme = function() {
-        if(current < memes.length - 1){
-          if(current === 4){
-            current++;
-            updateMeme();
-            setTimeout(() => {
-              current = 6; updateMeme();
-              setTimeout(() => {
-                current = 7; updateMeme();
-                setTimeout(() => {
-                  current = 8; updateMeme();
-                  setTimeout(() => {
-                    if(popup){
-                      popup.style.display = 'flex';
-                      meme10Timeout1 = setTimeout(() => {
-                        meme10Timeout2 = setTimeout(() => {
-                          current = 9;
-                          updateMeme();
-                        },3000);
-                      },5000);
+        if (current < memes.length - 1) { // If not at the last meme
+          if (current === 4) { // If currently on meme5.jpg (index 4)
+            current++; // Move to meme6.jpg (index 5)
+            updateMeme(); // Update image to meme6 (hidden)
+
+            // Start the timed sequence for memes 6, 7, 8, 9, and popup
+            memeSequenceTimeout1 = setTimeout(() => {
+              current = 6; updateMeme(); // Show meme7.jpg (index 6)
+              memeSequenceTimeout2 = setTimeout(() => {
+                current = 7; updateMeme(); // Show meme8.jpg (index 7)
+                memeSequenceTimeout3 = setTimeout(() => {
+                  current = 8; updateMeme(); // Show meme9.jpg (index 8)
+                  memeSequenceTimeout4 = setTimeout(() => {
+                    if (popup) {
+                      popup.style.display = 'flex'; // Show the popup
+                      // The popup will contain the logic to eventually show meme10.jpg
+                      // For now, it pauses here until the user interacts with the popup.
                     }
-                  }, 2000);
-                }, 3000);
-              }, 3000);
-            }, 3000);
+                  }, 2000); // 2 seconds after meme9, show popup
+                }, 3000); // 3 seconds after meme8, show meme9
+              }, 3000); // 3 seconds after meme7, show meme8
+            }, 3000); // 3 seconds after meme6, show meme7
           } else {
-            current++;
+            current++; // For regular meme progression
             updateMeme();
           }
         } else {
+          // If at the last meme (meme10.jpg or if sequence completed), scroll to waitlist
           closeAndScrollToWaitlist();
         }
       };
 
+      // Go to previous meme, also handles clearing popup/sequence
       window.prevMeme = function() {
-        if(current > 0){
+        if (current > 0) {
           current--;
           updateMeme();
-          if(popup) popup.style.display = 'none';
-          clearTimeout(meme10Timeout1);
-          clearTimeout(meme10Timeout2);
+          if (popup) popup.style.display = 'none'; // Hide popup if going back
+          clearMemeTimeouts(); // Clear any pending sequence timeouts
         }
       };
 
-      window.resetMemeSequence = function(){
-        if(popup) popup.style.display = 'none';
-        current = 0;
+      // Reset meme sequence (e.g., when clicking meme10.jpg)
+      window.resetMemeSequence = function() {
+        if (popup) popup.style.display = 'none'; // Hide popup
+        current = 0; // Go back to the first meme
         updateMeme();
-        clearTimeout(meme10Timeout1);
-        clearTimeout(meme10Timeout2);
+        clearMemeTimeouts(); // Clear any pending sequence timeouts
       };
 
-      if(memeImage) memeImage.onclick = () => {
-        if(isMeme10Displayed) window.resetMemeSequence();
-      };
+      // If meme10.jpg is displayed, clicking it resets the sequence
+      if (memeImage) {
+        memeImage.onclick = () => {
+          if (isMeme10Displayed) window.resetMemeSequence();
+        };
+      }
 
+      // Initial meme update on load
       updateMeme();
 
-      if(btnLeft) btnLeft.addEventListener('click', window.prevMeme);
-      if(btnRight) btnRight.addEventListener('click', window.nextMeme);
+      // Event listeners for flipper buttons
+      if (btnLeft) btnLeft.addEventListener('click', window.prevMeme);
+      if (btnRight) btnRight.addEventListener('click', window.nextMeme);
     });
   </script>
 </body>
