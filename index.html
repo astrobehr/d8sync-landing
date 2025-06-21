@@ -399,6 +399,80 @@ function handleFeedback(response) {
 
 });
   </script>
+  <script>
+   document.addEventListener("DOMContentLoaded", () => {
+  const memes = [
+    "https://raw.githubusercontent.com/astrobehr/d8sync-landing/main/memes/meme1.jpg",
+    "https://raw.githubusercontent.com/astrobehr/d8sync-landing/main/memes/meme2.jpg",
+    "https://raw.githubusercontent.com/astrobehr/d8sync-landing/main/memes/meme3.jpg",
+    "https://raw.githubusercontent.com/astrobehr/d8sync-landing/main/memes/meme4.jpg",
+    "https://raw.githubusercontent.com/astrobehr/d8sync-landing/main/memes/meme5.jpg",
+    "https://raw.githubusercontent.com/astrobehr/d8sync-landing/main/memes/meme6.jpg",
+    "https://raw.githubusercontent.com/astrobehr/d8sync-landing/main/memes/meme7.jpg",
+    "https://raw.githubusercontent.com/astrobehr/d8sync-landing/main/memes/meme8.jpg",
+    "https://raw.githubusercontent.com/astrobehr/d8sync-landing/main/memes/meme9.jpg"
+  ];
+
+  let current = 0;
+  const memeImage = document.getElementById("memeImage");
+  const btnLeft = document.querySelector(".btn-left");
+  const btnRight = document.querySelector(".btn-right");
+
+  function updateMeme() {
+    if (memeImage) {
+      memeImage.src = memes[current];
+    }
+    if (btnLeft && btnRight) {
+      if (current >= 5 && current <= 8) {
+        btnLeft.classList.add("hidden");
+        btnRight.classList.add("hidden");
+      } else {
+        btnLeft.classList.remove("hidden");
+        btnRight.classList.remove("hidden");
+      }
+    }
+  }
+
+  window.nextMeme = function () {
+    if (current < memes.length - 1) {
+      if (current === 4) {
+        current++;
+        updateMeme();
+        setTimeout(() => {
+          current = 6; updateMeme();
+          setTimeout(() => {
+            current = 7; updateMeme();
+            setTimeout(() => {
+              current = 8; updateMeme();
+              setTimeout(() => {
+                const popup = document.getElementById("matchPopup");
+                if (popup) popup.style.display = "flex";
+              }, 2000);
+            }, 2000);
+          }, 2000);
+        }, 2000);
+      } else {
+        current++;
+        updateMeme();
+      }
+    }
+  };
+
+  window.prevMeme = function () {
+    if (current > 0) {
+      current--;
+      updateMeme();
+    }
+  };
+
+  window.resetMemeSequence = function () {
+    current = 0;
+    updateMeme();
+  };
+
+  updateMeme();
+});
+  </script>
  </body>
  <!--- HTML_TAG_CLOSE --->
 </html>
