@@ -80,19 +80,6 @@
 <!--- BODY_CLOSE --->
 
 <script>
-document.querySelectorAll('.btn-flat').forEach((btn) => {
-  if (btn.textContent.includes("Yup... Spooky!")) {
-    btn.addEventListener("click", () => {
-      showResponse("🧃 Real recognize real. You got synced fr.");
-    });
-  }
-  if (btn.textContent.includes("Nah... Not really.")) {
-    btn.addEventListener("click", () => {
-      showResponse("👻 Not your match? Next drop might hit harder.");
-    });
-  }
-});
-
 function showResponse(msg) {
   const box = document.getElementById("feedback-response");
   if (box) {
@@ -103,6 +90,23 @@ function showResponse(msg) {
     }, 3000);
   }
 }
+
+document.addEventListener("DOMContentLoaded", () => {
+  const spookyBtn = Array.from(document.querySelectorAll("button")).find(b => b.textContent.includes("Yup... Spooky!"));
+  const nahBtn = Array.from(document.querySelectorAll("button")).find(b => b.textContent.includes("Nah... Not really."));
+
+  if (spookyBtn) {
+    spookyBtn.addEventListener("click", () => {
+      showResponse("🧃 Real recognize real. You got synced fr.");
+    });
+  }
+
+  if (nahBtn) {
+    nahBtn.addEventListener("click", () => {
+      showResponse("👻 Not your match? Next drop might hit harder.");
+    });
+  }
+});
 </script>
 </body>
 <!--- HTML_TAG_CLOSE --->
@@ -801,7 +805,7 @@ function closeAndScrollToWaitlist() {
       72% Chaos Compatibility<br/>
       92% Meme Fluency</p><br/>
 <!-- Feedback Buttons -->
-<p style="margin-bottom: 10px;">🧠 Did this vibe feel accurate?</p><div id="feedback-response" style="display:none; margin: 10px auto; font-weight:bold; text-align:center; color:#00ff88; font-size: 1.1rem;"></div>
+<p style="margin-bottom: 10px;">🧠 Did this vibe feel accurate?</p>
 <!--- BUTTON_START --->
 
   Yup, spooky
@@ -957,5 +961,5 @@ function handleFeedback(response) {
 <!--- SCRIPT_END --->
 </script>
 <!--- BODY_CLOSE --->
-</div></div></main></body>
+</div></div><div id="feedback-response" style="display:none; margin: 10px auto; font-weight:bold; text-align:center; color:#00ff88; font-size: 1.1rem;"></div></main></body>
 <!--- HTML_TAG_CLOSE --->
