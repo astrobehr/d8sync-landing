@@ -169,6 +169,8 @@
       user-select: none;
       color: #fff;
       text-align: center;
+      padding-left: 10px; /* Added padding-left to shift text right by approx. 10px */
+      box-sizing: border-box;
     }
     .popup-buttons-container {
       margin-top: 18px;
@@ -248,11 +250,11 @@
     <div id="waitlist" style="position: relative;">
       <form action="https://app.kit.com/forms/8193977/subscriptions" method="post" class="seva-form formkit-form" data-format="inline" data-version="5" min-width="400 500 600 700 800">
         <div data-style="full" style="display:flex; flex-wrap:wrap; --bg-border-radius:5px;">
-          <div class="formkit-column" data-element="column" style="flex: 1 1 57%; padding:40px 45px 40px 60px; box-sizing:border-box;">
-            <h2 style="color:#3d3d3d; font-weight:700; margin-top:0; margin-bottom:24px;">
+          <div class="formkit-column" data-element="column" style="flex: 1 1 57%; padding:40px 45px 40px 60px; box-sizing:border-box; color: #000; text-align: center;">
+            <h2 style="font-weight:700; margin-top:0; margin-bottom:24px;">
               Get Notified for D8Sync<br>Beta Waitlist
             </h2>
-            <p style="color:#6e6e6e; margin-bottom:16px; text-align:center;">
+            <p style="margin-bottom:16px;">
               Drop your email and be one of the first to access the meme-powered dating experience
             </p>
             <ul class="formkit-alert formkit-alert-error" data-element="errors" data-group="alert" style="display:none;"></ul>
@@ -271,7 +273,7 @@
       ✅ You're in. Thanks for vibing with us.
     </div>
     <div id="matchPopup">
-      <div onclick="event.stopPropagation();">
+      <div onclick="event.stopPropagation();" style="text-align: center;">
         <button id="popupCloseBtn" title="Close Popup" aria-label="Close Popup">&times;</button>
         <h2 style="margin:0; text-align:center;">🔗 You Just Got Synced 🔗</h2>
         <p style="margin-top:45px; font-size:0.95em; color:#888; text-align:center;">(Sample Match Preview)</p>
@@ -279,21 +281,21 @@
           This is a taste of what matching on D8Sync might feel like.<br>
           No swiping. No bios. Just pure vibe alignment.
         </p>
-        <p style="text-align:center;">
+        <p style="text-align:center; padding-left: 10px; box-sizing: border-box;">
           <strong>🧠 Shared Meme Energy:</strong><br>
           “Me pretending that I don’t care.<br>But secretly I'm watching the group chat implode.”
         </p>
-        <p style="text-align:center;">
+        <p style="text-align:center; padding-left: 10px; box-sizing: border-box;">
           <strong>🎧 Audio Match:</strong><br>
           Late 2000s indie drama with main character syndrome
         </p>
-        <p style="text-align:center;">
+        <p style="text-align:center; padding-left: 10px; box-sizing: border-box;">
           <strong>🍝 First Date Prompt:</strong><br>
           You meet outside a thrift store...<br>
           One of you is holding a can of soup.<br>
           The other is holding a spoon.
         </p>
-        <p style="text-align:center;">
+        <p style="text-align:center; padding-left: 10px; box-sizing: border-box;">
           <strong>🧩 Vibe Alignment:</strong><br>
           84% Emotionally Aligned<br>
           72% Chaos Compatibility<br>
@@ -302,7 +304,7 @@
         <p style="text-align:center; margin-top: 30px;">
           🤠 Did this vibe feel accurate?
         </p>
-        <div id="feedback-response" style="text-align:center;"></div>
+        <div id="feedback-response" style="text-align:center; padding-left:10px; box-sizing:border-box;"></div>
         <div class="popup-buttons-container">
           <div class="popup-buttons-row">
             <button class="btn-flat" id="spooky-button">Yup... Spooky!</button>
