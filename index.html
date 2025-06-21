@@ -59,7 +59,6 @@
       display: block;
     }
 
-    /* Replaced all feature-block sections with provided div content */
     .features-container {
       max-width: 700px;
       margin: 0 auto 60px;
@@ -81,7 +80,6 @@
       max-width: 100%;
     }
 
-    /* Meme flipper styling */
     .meme-flipper {
       width: 320px;
       margin: 40px auto 60px;
@@ -123,11 +121,14 @@
       background-color: #ff69b4;
     }
 
+    .hidden {
+      display: none !important;
+    }
+
     .flipper-btn:hover {
       filter: brightness(1.2);
     }
 
-    /* Waitlist form and image container */
     #waitlist {
       margin: 60px auto 100px auto;
       max-width: 740px;
@@ -278,7 +279,6 @@
       }
     }
 
-    /* Match popup styling */
     #matchPopup {
       display: none;
       position: fixed;
@@ -396,7 +396,6 @@
 
 <body>
   <main class="container" role="main" id="main">
-
     <div class="logo">
       <img alt="D8Sync Logo" src="https://raw.githubusercontent.com/astrobehr/d8sync-landing/main/assets/d8sync-banner.jpg" />
     </div>
@@ -478,7 +477,7 @@
         <form action="https://app.kit.com/forms/8210011/subscriptions" method="post"
           style="background-color: #fff; border-radius: 10px;" class="seva-form formkit-form" data-sv-form="8210011"
           data-uid="ab96e2e1a4" data-format="inline" data-version="5"
-          data-options='{"settings":{"after_subscribe":{"action":"message","success_message":"🎉 You\'re synced. Watch your inbox for vibe alignment.","redirect_url":""},"analytics":{},"modal":{"trigger":"timer","timer":5,"devices":"all","show_once_every":15},"powered_by":{"show":true,"url":"https://kit.com/features/forms?utm_campaign=poweredby&amp;utm_content=form&amp;utm_medium=referral&amp;utm_source=dynamic"},"recaptcha":{"enabled":true},"return_visitor":{"action":"show"},"slide_in":{"display_in":"bottom_right","trigger":"timer","timer":5,"devices":"all","show_once_every":15},"sticky_bar":{"display_in":"top","trigger":"timer","timer":5,"devices":"all","show_once_every":15}},"version":"5"}'
+          data-options='{"settings":{"after_subscribe":{"action":"message","success_message":"🎉 You\'re synced. Watch your inbox for vibe alignment.","redirect_url":""},"analytics":{},"modal":{"trigger":"none"},"powered_by":{"show":true,"url":"https://kit.com/features/forms?utm_campaign=poweredby&amp;utm_content=form&amp;utm_medium=referral&amp;utm_source=dynamic"},"recaptcha":{"enabled":true}},"version":"5"}'
           min-width="400 500 600 700 800">
           <div data-style="full">
             <div data-element="column" class="formkit-column">
@@ -642,10 +641,12 @@
       const popup = document.getElementById('matchPopup');
       const waitlist = document.getElementById('waitlist');
       if (popup) popup.style.display = 'none';
-      if (waitlist) waitlist.scrollIntoView({ behavior: 'smooth' });
+      if (waitlist) waitlist.scrollIntoView({
+        behavior: 'smooth'
+      });
     }
 
-    // Meme flipper functionality with debug logs
+    // Meme flipper functionality
     document.addEventListener('DOMContentLoaded', () => {
       const memes = [
         "https://raw.githubusercontent.com/astrobehr/d8sync-landing/main/memes/meme1.jpg",
@@ -670,8 +671,10 @@
 
       function updateMeme() {
         if (memeImage) memeImage.src = memes[current];
+
+        // Hide buttons on memes 6-10 (indexes 5-9), inclusive
         if (btnLeft && btnRight) {
-          if (current >= 5 && current <= 9) {
+          if (current >= 5) {
             btnLeft.classList.add('hidden');
             btnRight.classList.add('hidden');
           } else {
@@ -680,27 +683,27 @@
           }
         }
         isMeme10Displayed = (current === 9);
-        console.debug("Meme updated to index:", current);
       }
 
       window.nextMeme = function () {
-        console.debug("Next meme clicked. Current index:", current);
         if (current < memes.length - 1) {
+          // Special sequence for memes 5 to 9 with delays and popup
           if (current === 4) {
             current++;
             updateMeme();
             setTimeout(() => {
-              current = 6; updateMeme();
+              current = 5; updateMeme();
               setTimeout(() => {
-                current = 7; updateMeme();
+                current = 6; updateMeme();
                 setTimeout(() => {
-                  current = 8; updateMeme();
+                  current = 7; updateMeme();
                   setTimeout(() => {
                     if (popup) {
+                      // Show popup only here (after meme 8)
                       popup.style.display = 'flex';
                       meme10Timeout1 = setTimeout(() => {
                         meme10Timeout2 = setTimeout(() => {
-                          current = 9;
+                          current = 8;
                           updateMeme();
                         }, 3000);
                       }, 5000);
@@ -719,7 +722,6 @@
       };
 
       window.prevMeme = function () {
-        console.debug("Previous meme clicked. Current index:", current);
         if (current > 0) {
           current--;
           updateMeme();
