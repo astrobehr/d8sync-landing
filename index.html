@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Metadata and favicon links -->
+  <!-- Favicon and Metadata -->
   <link href="https://d8sync.com/assets/favicon.png" rel="icon" type="image/png"/>
   <link href="https://d8sync.com/assets/favicon.png" rel="shortcut icon" type="image/png"/>
   <meta charset="utf-8"/>
@@ -9,7 +9,7 @@
   <title>D8Sync – Meme-Based Blind Dates, No Swipes</title>
   <link href="https://d8sync.com/" rel="canonical"/>
   <link as="image" href="https://d8sync.com/assets/preview.png" rel="preload"/>
-  <!-- SEO meta tags -->
+  <!-- SEO Meta Tags -->
   <meta content="index, follow" name="robots"/>
   <meta content="D8Sync is a swipe-free AI dating app that connects people through memes and comedy. No awkward openings. Just real vibes." name="description"/>
   <meta content="meme dating, blind dates, no swiping, AI dating, funny dating app, Gen Z dating app, comedy matchmaking, D8Sync" name="keywords"/>
@@ -20,7 +20,7 @@
   <meta content="https://d8sync.com/assets/preview.png" property="og:image"/>
   <meta content="https://d8sync.com" property="og:url"/>
   <meta content="website" property="og:type"/>
-  <!-- Google analytics -->
+  <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-SZMQTN31ER"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -32,88 +32,234 @@
   <link href="https://fonts.googleapis.com" rel="preconnect"/>
   <link crossorigin href="https://fonts.gstatic.com" rel="preconnect"/>
   <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet"/>
+  <!-- Styles -->
   <style>
-    body {font-family: 'Inter', sans-serif; margin:0; padding:0; background:#000; color:#fff; overflow-x:hidden; text-align:center;}
-    .container {max-width: 800px; margin: auto; padding: 40px 20px; text-align: center;}
-    .logo img {max-width: 100%; height: auto;margin: 60px auto 40px; display:block;}
-    .feature-block {font-size: 1.2rem; line-height: 1.6; margin-bottom: 60px;}
-    .feature-block h3 {font-size: 1.3rem; margin-bottom: 10px;}
-    .feature-block p {max-width: 600px; margin: 0 auto;}
-    .meme-flipper {width: 320px; margin: 40px auto; position: relative;}
-    .meme-flipper img {width: 100%; border-radius: 20px; cursor: pointer;}
+    body {
+      font-family: 'Inter', sans-serif;
+      margin: 0; padding: 0;
+      background: #000;
+      color: #fff;
+      overflow-x: hidden;
+      text-align: center;
+    }
+    .container {
+      max-width: 800px;
+      margin: auto;
+      padding: 40px 20px;
+      text-align: center;
+    }
+    .logo img {
+      max-width: 100%;
+      height: auto;
+      margin: 60px auto 40px;
+      display: block;
+    }
+    .feature-block {
+      font-size: 1.2rem;
+      line-height: 1.6;
+      margin-bottom: 60px;
+    }
+    .feature-block h3 {
+      font-size: 1.3rem;
+      margin-bottom: 10px;
+    }
+    .feature-block p {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    .meme-flipper {
+      width: 320px;
+      margin: 40px auto;
+      position: relative;
+    }
+    .meme-flipper img {
+      width: 100%;
+      border-radius: 20px;
+      cursor: pointer;
+    }
     .flipper-btn {
-      width: 44px; height: 44px; background-color: #ff3e6c; border: none; border-radius: 50%; color: white; font-size: 1.5rem; cursor: pointer; box-shadow: 0 2px 5px rgba(0,0,0,.2);
-      position: absolute; bottom: 85px; user-select: none;
+      width: 44px;
+      height: 44px;
+      background-color: #ff3e6c;
+      border: none;
+      border-radius: 50%;
+      color: white;
+      font-size: 1.5rem;
+      cursor: pointer;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+      position: absolute;
+      bottom: 85px;
+      user-select: none;
     }
-    .btn-left {left: 70px;}
-    .btn-right {right: 70px; background-color: #ff69b4;}
-    .hidden {display:none !important;}
+    .btn-left { left: 70px; }
+    .btn-right {
+      right: 70px;
+      background-color: #ff69b4;
+    }
+    .hidden { display: none !important; }
     .btn-flat {
-      background-color: #8000ff; color: #fff; padding: 12px 24px; font-size: 1rem; border: none; border-radius: 10px;
-      cursor: pointer; margin: 10px; font-weight: 600; transition: background-color 0.3s ease; white-space: nowrap;
+      background-color: #8000ff;
+      color: #fff;
+      padding: 12px 24px;
+      font-size: 1rem;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      margin: 10px;
+      font-weight: 600;
+      transition: background-color 0.3s ease;
+      white-space: nowrap;
     }
-    .btn-flat:hover {background-color: #6a00cc;}
+    .btn-flat:hover { background-color: #6a00cc; }
     #matchPopup {
-      display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-      background: rgba(0,0,0,0.85); z-index: 9999; box-sizing: border-box; padding: 40px; overflow-y: auto;
-      font-family: 'Inter', sans-serif; color: #fff; text-align: center;
+      display: none;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.85);
+      z-index: 9999;
+      box-sizing: border-box;
+      padding: 40px;
+      overflow-y: auto;
+      font-family: 'Inter', sans-serif;
+      color: #fff;
+      text-align: center;
     }
     #matchPopup > div {
-      max-width: 600px; margin: 40px auto; background: #111;
-      padding: 30px 40px 40px; border-radius: 16px; box-shadow: 0 0 30px rgba(0,0,0,.4);
-      position: relative; color: white; text-align: center;
+      max-width: 600px;
+      margin: 40px auto;
+      background: #111;
+      padding: 30px 40px 40px;
+      border-radius: 16px;
+      box-shadow: 0 0 30px rgba(0,0,0,0.4);
+      position: relative;
+      color: white;
+      text-align: center;
     }
     #popupCloseBtn {
-      position: absolute; top: 12px; right: 12px; width: 28px; height: 28px;
-      background: #6e38f7; border: none; border-radius: 4px; color: white; font-weight: bold;
-      font-size: 22px; line-height: 26px; cursor: pointer; user-select: none; transition: background-color 0.3s ease;
+      position: absolute;
+      top: 12px; right: 12px;
+      width: 28px; height: 28px;
+      background: #6e38f7;
+      border: none;
+      border-radius: 4px;
+      color: white;
+      font-weight: bold;
+      font-size: 22px;
+      line-height: 26px;
+      cursor: pointer;
+      user-select: none;
+      transition: background-color 0.3s ease;
       z-index: 10000;
     }
-    #popupCloseBtn:hover {background: #5300cc;}
+    #popupCloseBtn:hover { background: #5300cc; }
     #feedback-response {
-      margin-top: 18px; margin-bottom: 18px; min-height: 1.2em; font-weight: bold;
-      font-size: 1.5rem; max-width: 90%; opacity: 0; transition: opacity 0.5s ease;
-      user-select: none; color: #fff; text-align: center;
-      margin-left: auto !important; margin-right: auto !important; display: block !important;
-      padding-left: 0 !important; box-sizing: border-box;
+      margin-top: 18px;
+      margin-bottom: 18px;
+      min-height: 1.2em;
+      font-weight: bold;
+      font-size: 1.5rem;
+      max-width: 90%;
+      opacity: 0;
+      transition: opacity 0.5s ease;
+      user-select: none;
+      color: #fff;
+      text-align: center;
+      margin-left: auto !important;
+      margin-right: auto !important;
+      display: block !important;
+      padding-left: 10px !important;
+      box-sizing: border-box;
     }
-    .popup-buttons-container {margin-top: 18px; text-align: center;}
-    .popup-buttons-row {display: flex; justify-content: center; gap: 12px; margin-bottom: 6px;}
+    .popup-buttons-container {
+      margin-top: 18px;
+      text-align: center;
+    }
+    .popup-buttons-row {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      margin-bottom: 6px;
+    }
     #waitlist {
-      margin: 60px auto 100px auto; max-width: 740px; background: #fff; color: #000;
-      border-radius: 10px; display: flex; box-shadow: 0 4px 8px rgba(105,113,119,.2); overflow: hidden; font-weight: normal;
+      margin: 60px auto 100px auto;
+      max-width: 740px;
+      background: #fff;
+      color: #000;
+      border-radius: 10px;
+      display: flex;
+      box-shadow: 0 4px 8px rgba(105,113,119,.2);
+      overflow: hidden;
+      font-weight: normal;
     }
-    #waitlist .form-left, #waitlist .form-right { padding: 40px 40px; box-sizing: border-box;}
+    #waitlist .form-left, #waitlist .form-right {
+      padding: 40px 40px;
+      box-sizing: border-box;
+    }
     #waitlist .form-left {
-      flex: 1 1 55%; text-align: left;
+      flex: 1 1 55%;
+      text-align: left;
     }
     #waitlist .form-left h2 {
-      font-size: 2.4rem; font-weight: 700; margin-bottom: 18px; color: #202020;
+      font-size: 2.4rem;
+      font-weight: 700;
+      margin-bottom: 18px;
+      color: #202020;
     }
     #waitlist .form-left p {
-      font-size: 1rem; margin-bottom: 28px; color: #666;
+      font-size: 1rem;
+      margin-bottom: 28px;
+      color: #666;
     }
-    #waitlist form { max-width: 100%;}
+    #waitlist form {
+      max-width: 100%;
+    }
     #waitlist input.formkit-input {
-      width: 65%; padding: 12px; border: 1px solid #ccc; border-radius: 6px 0 0 6px; font-size: 1rem;
-      color: #202020; outline: none; box-sizing: border-box;
+      width: 65%;
+      padding: 12px;
+      border: 1px solid #ccc;
+      border-radius: 6px 0 0 6px;
+      font-size: 1rem;
+      color: #202020;
+      outline: none;
     }
     #waitlist button.formkit-submit {
-      width: 35%; padding: 12px; border-radius: 0 6px 6px 0; font-weight: 700; color: white; background-color: #8000ff;
-      border: none; font-size: 1rem; cursor: pointer; transition: background-color 0.3s ease; box-sizing: border-box;
+      width: 35%;
+      padding: 12px;
+      border-radius: 0 6px 6px 0;
+      font-weight: 700;
+      color: white;
+      background-color: #8000ff;
+      border: none;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
     }
-    #waitlist button.formkit-submit:hover {background-color: #6a00cc;}
+    #waitlist button.formkit-submit:hover {
+      background-color: #6a00cc;
+    }
     #waitlist .formkit-disclaimer {
-      font-size: 0.85rem; color: #666; margin-top: 24px;
+      font-size: 0.85rem;
+      color: #666;
+      margin-top: 24px;
     }
     #waitlist .formkit-powered-by-convertkit-container {
-      font-size: 14px; color: #666; margin-top: 20px; text-align: left;
+      font-size: 14px;
+      color: #666;
+      margin-top: 20px;
+      text-align: left;
     }
     #waitlist .formkit-powered-by-convertkit {
-      font-weight: 700; font-size: 14px; color: #666; text-decoration: none;
-      display: inline-block; margin-top: 12px;
+      font-weight: 700;
+      font-size: 14px;
+      color: #666;
+      text-decoration: none;
+      display: inline-block;
+      margin-top: 12px;
     }
-    #waitlist .formkit-powered-by-convertkit:hover {text-decoration: underline;}
+    #waitlist .formkit-powered-by-convertkit:hover {
+      text-decoration: underline;
+    }
   </style>
 </head>
 <body>
@@ -129,7 +275,7 @@
       <h3>🎭 Swipe Memes, Not Faces</h3>
       <p>What if your dating feed was memes instead of mugshots?<br>No more trying to decode mirror selfies or gym pics.<br><br>Just scroll, laugh, and react to the memes that hit hardest.<br>Every swipe helps build your Comedy Graph™ —<br>our algorithm that learns your humor DNA<br>and matches you with someone who *actually gets it*<br><br>Weirdly accurate. Dangerously fun.</p>
       <div class="meme-flipper">
-        <img id="memeImage" alt="Meme" src="https://raw.githubusercontent.com/astrobehr/d8sync-landing/main/memes/meme1.jpg" />
+        <img id="memeImage" alt="Meme" src="https://raw.githubusercontent.com/astrobehr/d8sync-landing/main/memes/meme1.jpg"/>
         <button class="flipper-btn btn-left" onclick="prevMeme()">✘</button>
         <button class="flipper-btn btn-right" onclick="nextMeme()">❤</button>
       </div>
@@ -140,13 +286,15 @@
     </section>
     <section class="feature-block">
       <h3>🕵️‍♂️ How D8Sync Blind Dates Actually Work</h3>
-      <p>You tap the “Sync Me!” button<br>D8Sync scans your Comedy Graph™, vibe data, and availability<br>— and matches you with someone on your wavelength.<br><br>Our Matchmaker AI then sends you both:<br>🔓 A time 📍 A public place & 🧩 “The Tell” —<br>a phrase or shared order to find your match.<br><br>You pull up, scan the scene, and look for the signal...<br>like someone lowkey ordering the same drink<br><br>In a crowded cafe or busy bookstore? Not sure it’s them?<br>Tap the <em>“Is That You?"</em> button in-app for a private match confirm.<br>If the chemistry's there, drop the icebreaker we gave you<br>— it's the perfect nudge.<br><br>Not feeling it? That’s cool too.<br>Take a breath, enjoy the moment, & the match will fade away.<br>No profiles. No awkward openings. No rejection drama.<br><em>Just vibes. Real ones.</em>
-      <section class="feature-block" style="margin-top: 40px">
+      <p>You tap the “Sync Me!” button<br>D8Sync scans your Comedy Graph™, vibe data, and availability<br>— and matches you with someone on your wavelength.<br><br>Our Matchmaker AI then sends you both:
+      <br>🔓 A time 📍 A public place & 🧩 “The Tell” —<br>a phrase or shared order to find your match.<br><br>You pull up, scan the scene, and look for the signal...
+      <br>like someone lowkey ordering the same drink<br><br>In a crowded cafe or busy bookstore? Not sure it’s them?<br>Tap the <em>“Is That You?"</em> button in-app for a private match confirm.<br>If the chemistry's there, drop the icebreaker we gave you<br>— it's the perfect nudge.<br><br>Not feeling it? That’s cool too.<br>Take a breath, enjoy the moment, & the match will fade away.<br>No profiles. No awkward openings. No rejection drama.<br><em>Just vibes. Real ones.</em></p>
+      <section class="feature-block" style="margin-top: 40px;">
         <h3>💬 Need to talk it out? We got you.</h3>
         <p>After every date, the judgment-free vibe check continues.<br>Our AI Dating Coach is here to help you debrief —<br>like a relationship therapist in your pocket.<br><br>Whether it sparked or fizzled, talk through<br>what worked, what didn’t, and how it made you feel.<br><em>Get clarity. Spot patterns. Grow faster.</em></p>
       </section>
-      </p>
     </section>
+
     <section id="waitlist">
       <div class="form-left">
         <h2>Get Notified for D8Sync Beta Waitlist</h2>
@@ -166,12 +314,13 @@
       </div>
     </section>
   </main>
+
   <script src="https://f.convertkit.com/ckjs/ck.5.js" defer></script>
   <script>
-    // JS for meme flipper, popup, form behavior ensures same as before
     document.addEventListener('DOMContentLoaded', () => {
       const referrerInput = document.getElementById('referrer');
       if(referrerInput) referrerInput.value = document.referrer;
+
       const form = document.querySelector('#waitlist form');
       const thankYouMsg = document.getElementById('thank-you-message');
       if(form && thankYouMsg) {
@@ -182,6 +331,7 @@
           }, 1000);
         });
       }
+
       const responseBox = document.getElementById('feedback-response');
       function showGenZResponse(text) {
         if(!responseBox) return;
@@ -189,12 +339,15 @@
         responseBox.style.opacity = "1";
         setTimeout(() => responseBox.style.opacity = "0", 3000);
       }
+
       const spookyBtn = document.getElementById('spooky-button');
       const nahBtn = document.getElementById('nah-button');
       if(spookyBtn) spookyBtn.onclick = () => showGenZResponse("✨ Fr 😳 That was spooky accurate ✨");
       if(nahBtn) nahBtn.onclick = () => showGenZResponse("💀 Deadass? That ain’t it chief 💀");
+
       const yupResponses = ["Deadass, that hit.","It’s giving soulmate.","Vibes were vibing.","No cap, this was it.","This match ate 💅"];
       const nahResponses = ["Hard pass, fam.","Not the vibe 😬","That was… a choice.","Felt like a LinkedIn date.","Respectfully, no."];
+
       function showRandomResponse(type) {
         if(!responseBox) return;
         const responses = type === "yup" ? yupResponses : nahResponses;
@@ -204,8 +357,10 @@
         responseBox.style.opacity = "1";
         setTimeout(() => responseBox.style.opacity = "0", 3000);
       }
+
       if(spookyBtn) spookyBtn.addEventListener('click', () => showRandomResponse('yup'));
       if(nahBtn) nahBtn.addEventListener('click', () => showRandomResponse('nah'));
+
       const customBtn = document.getElementById('customSubmitBtn');
       const waitForCK = setInterval(() => {
         const realSubmit = document.querySelector('.formkit-submit');
@@ -217,18 +372,110 @@
           });
         }
       }, 300);
+
       const popupCloseBtn = document.getElementById('popupCloseBtn');
       if(popupCloseBtn) popupCloseBtn.addEventListener('click', () => {
         const popup = document.getElementById('matchPopup');
         if(popup) popup.style.display = 'none';
       });
     });
+
     function closeAndScrollToWaitlist() {
       const popup = document.getElementById('matchPopup');
       const waitlist = document.getElementById('waitlist');
       if(popup) popup.style.display = 'none';
       if(waitlist) waitlist.scrollIntoView({behavior:'smooth'});
     }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const memes = [
+        "https://raw.githubusercontent.com/astrobehr/d8sync-landing/main/memes/meme1.jpg",
+        "https://raw.githubusercontent.com/astrobehr/d8sync-landing/main/memes/meme2.jpg",
+        "https://raw.githubusercontent.com/astrobehr/d8sync-landing/main/memes/meme3.jpg",
+        "https://raw.githubusercontent.com/astrobehr/d8sync-landing/main/memes/meme4.jpg",
+        "https://raw.githubusercontent.com/astrobehr/d8sync-landing/main/memes/meme5.jpg",
+        "https://raw.githubusercontent.com/astrobehr/d8sync-landing/main/memes/meme6.jpg",
+        "https://raw.githubusercontent.com/astrobehr/d8sync-landing/main/memes/meme7.jpg",
+        "https://raw.githubusercontent.com/astrobehr/d8sync-landing/main/memes/meme8.jpg",
+        "https://raw.githubusercontent.com/astrobehr/d8sync-landing/main/memes/meme9.jpg",
+        "https://raw.githubusercontent.com/astrobehr/d8sync-landing/main/memes/meme10.jpg"
+      ];
+      let current = 0;
+      const memeImage = document.getElementById('memeImage');
+      const btnLeft = document.querySelector('.btn-left');
+      const btnRight = document.querySelector('.btn-right');
+      const popup = document.getElementById('matchPopup');
+      let meme10Timeout1, meme10Timeout2;
+      let isMeme10Displayed = false;
+      function updateMeme() {
+        if(memeImage) memeImage.src = memes[current];
+        if(btnLeft && btnRight) {
+          if(current >=5 && current <=9) {
+            btnLeft.classList.add('hidden');
+            btnRight.classList.add('hidden');
+          } else {
+            btnLeft.classList.remove('hidden');
+            btnRight.classList.remove('hidden');
+          }
+        }
+        isMeme10Displayed = (current === 9);
+      }
+      window.nextMeme = function() {
+        if(current < memes.length -1) {
+          if(current === 4) {
+            current++;
+            updateMeme();
+            setTimeout(() => {
+              current = 6; updateMeme();
+              setTimeout(() => {
+                current = 7; updateMeme();
+                setTimeout(() => {
+                  current = 8; updateMeme();
+                  setTimeout(() => {
+                    if(popup) {
+                      popup.style.display = 'flex';
+                      meme10Timeout1 = setTimeout(() => {
+                        meme10Timeout2 = setTimeout(() => {
+                          current = 9;
+                          updateMeme();
+                        }, 3000);
+                      }, 5000);
+                    }
+                  }, 2000);
+                }, 3000);
+              }, 3000);
+            }, 3000);
+          } else {
+            current++;
+            updateMeme();
+          }
+        } else closeAndScrollToWaitlist();
+      };
+      window.prevMeme = function() {
+        if(current > 0) {
+          current--;
+          updateMeme();
+          if(popup) popup.style.display = 'none';
+          clearTimeout(meme10Timeout1);
+          clearTimeout(meme10Timeout2);
+        }
+      };
+      window.resetMemeSequence = function() {
+        if(popup) popup.style.display = 'none';
+        current = 0;
+        updateMeme();
+        clearTimeout(meme10Timeout1);
+        clearTimeout(meme10Timeout2);
+      };
+      if(memeImage) {
+        memeImage.onclick = () => {
+          if(isMeme10Displayed) window.resetMemeSequence();
+        };
+      }
+      updateMeme();
+      if(btnLeft) btnLeft.addEventListener('click', window.prevMeme);
+      if(btnRight) btnRight.addEventListener('click', window.nextMeme);
+    });
   </script>
 </body>
 </html>
