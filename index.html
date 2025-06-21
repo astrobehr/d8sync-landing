@@ -103,7 +103,42 @@ document.addEventListener("DOMContentLoaded", function() {
     nahBtn.onclick = () => showGenZResponse("💀 Deadass? That ain’t it chief 💀");
   }
 });
-</script></body>
+</script>
+<script>
+  const yupResponses = [
+    "Deadass, that hit.",
+    "It’s giving soulmate.",
+    "Vibes were vibing.",
+    "No cap, this was it.",
+    "This match ate 💅"
+  ];
+
+  const nahResponses = [
+    "Hard pass, fam.",
+    "Not the vibe 😬",
+    "That was… a choice.",
+    "Felt like a LinkedIn date.",
+    "Respectfully, no."
+  ];
+
+  function showResponse(type) {
+    const feedbackBox = document.getElementById("feedback-response");
+    if (!feedbackBox) return;
+
+    const responses = type === 'yup' ? yupResponses : nahResponses;
+    const message = responses[Math.floor(Math.random() * responses.length)];
+
+    feedbackBox.textContent = message;
+    feedbackBox.style.display = "block";
+    feedbackBox.style.opacity = 1;
+
+    setTimeout(() => {
+      feedbackBox.style.opacity = 0;
+    }, 3000);
+  }
+</script>
+
+</body>
 <!--- HTML_TAG_CLOSE --->
 </html>
 <!-- Open Graph Meta Tags -->
@@ -949,5 +984,40 @@ function handleFeedback(response) {
 <!--- SCRIPT_END --->
 </script>
 <!--- BODY_CLOSE --->
-</div></div><div id="feedback-response" style="display:none; margin: 10px auto; font-weight:bold; text-align:center; color:#00ff88; font-size: 1.1rem;"></div></main></body>
+</div></div><div id="feedback-response" style="display:none; margin: 10px auto; font-weight:bold; text-align:center; color:#00ff88; font-size: 1.1rem;"></div></main>
+<script>
+  const yupResponses = [
+    "Deadass, that hit.",
+    "It’s giving soulmate.",
+    "Vibes were vibing.",
+    "No cap, this was it.",
+    "This match ate 💅"
+  ];
+
+  const nahResponses = [
+    "Hard pass, fam.",
+    "Not the vibe 😬",
+    "That was… a choice.",
+    "Felt like a LinkedIn date.",
+    "Respectfully, no."
+  ];
+
+  function showResponse(type) {
+    const feedbackBox = document.getElementById("feedback-response");
+    if (!feedbackBox) return;
+
+    const responses = type === 'yup' ? yupResponses : nahResponses;
+    const message = responses[Math.floor(Math.random() * responses.length)];
+
+    feedbackBox.textContent = message;
+    feedbackBox.style.display = "block";
+    feedbackBox.style.opacity = 1;
+
+    setTimeout(() => {
+      feedbackBox.style.opacity = 0;
+    }, 3000);
+  }
+</script>
+
+</body>
 <!--- HTML_TAG_CLOSE --->
