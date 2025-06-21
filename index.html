@@ -78,36 +78,7 @@
 <body>
 <!-- Your content here -->
 <!--- BODY_CLOSE --->
-
-<script>
-function showResponse(msg) {
-  const box = document.getElementById("feedback-response");
-  if (box) {
-    box.textContent = msg;
-    box.style.display = "block";
-    setTimeout(() => {
-      box.style.display = "none";
-    }, 3000);
-  }
-}
-
-document.addEventListener("DOMContentLoaded", () => {
-  const spookyBtn = Array.from(document.querySelectorAll("button")).find(b => b.textContent.includes("Yup... Spooky!"));
-  const nahBtn = Array.from(document.querySelectorAll("button")).find(b => b.textContent.includes("Nah... Not really."));
-
-  if (spookyBtn) {
-    spookyBtn.addEventListener("click", () => {
-      showResponse("🧃 Real recognize real. You got synced fr.");
-    });
-  }
-
-  if (nahBtn) {
-    nahBtn.addEventListener("click", () => {
-      showResponse("👻 Not your match? Next drop might hit harder.");
-    });
-  }
-});
-</script>
+<script></script>
 </body>
 <!--- HTML_TAG_CLOSE --->
 </html>
@@ -806,14 +777,8 @@ function closeAndScrollToWaitlist() {
       92% Meme Fluency</p><br/>
 <!-- Feedback Buttons -->
 <p style="margin-bottom: 10px;">🧠 Did this vibe feel accurate?</p>
-<!--- BUTTON_START --->
-
-  Yup, spooky
-<!--- BUTTON_END --->
-<!--- BUTTON_START --->
-
-  Not really
-<!--- BUTTON_END --->
+<!--- BUTTON_START ---><!--- BUTTON_END --->
+<!--- BUTTON_START ---><!--- BUTTON_END --->
 <!-- Join Newsletter Button -->
 <!--- DIV_START --->
 <div style="margin-top: 20px; text-align:center;">
@@ -822,7 +787,6 @@ function closeAndScrollToWaitlist() {
 </div>
 <!-- Feedback Response Message -->
 <!--- DIV_START --->
-
 <!-- Feedback Response (GEN Z VIBE) -->
 <!--- DIV_START --->
 <div id="feedback-response" style="display:none; margin-top: 20px; font-weight:bold; text-align:center; color:#00ff88; font-size: 1.1rem;">
@@ -833,7 +797,7 @@ function closeAndScrollToWaitlist() {
 <!--- DIV_START --->
 <div style="margin-top: 30px; text-align: center;">
 <!--- BUTTON_START --->
-<br/><br/><div style="display: flex; justify-content: center; gap: 12px; margin-bottom: 20px;"><button class="btn-flat">Yup... Spooky!</button><button class="btn-flat">Nah... Not really.</button></div><button class="btn-flat" id="customSubmitBtn" onclick="closeAndScrollToWaitlist()">Join the Newsletter</button>
+<br/><br/><div style="display: flex; justify-content: center; gap: 12px; margin-bottom: 20px;"><button class="btn-flat">Yup... Spooky!</button><button class="btn-flat"></button></div><button class="btn-flat" id="customSubmitBtn" onclick="closeAndScrollToWaitlist()">Join the Newsletter</button>
 <!--- DIV_END --->
 </div>
 <!-- Optional exit link -->
