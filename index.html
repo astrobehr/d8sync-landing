@@ -30,70 +30,70 @@
     gtag('config', 'G-SZMQTN31ER');
   </script>
   
-  <!-- Styles -->
+  <!-- Fonts -->
   <link href="https://fonts.googleapis.com" rel="preconnect"/>
   <link crossorigin href="https://fonts.gstatic.com" rel="preconnect"/>
   <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet"/>
   
+  <!-- Styles -->
   <style>
-    /* General styles */
     body {
       font-family: 'Inter', sans-serif;
-      margin: 0;
-      padding: 0;
+      margin: 0; padding: 0;
       background: #000;
       color: #fff;
       text-align: center;
       overflow-x: hidden;
     }
-    
+
     .container {
       max-width: 800px;
       margin: auto;
       padding: 40px 20px;
     }
-    
+
     .logo img {
       max-width: 100%;
       height: auto;
       display: block;
       margin: 60px auto 40px;
     }
-    
+
     h1 {
       font-size: 2.8rem;
       margin: 0 0 20px;
     }
-    
+
     .intro, .section, .feature-block {
       font-size: 1.2rem;
       line-height: 1.6;
       margin-bottom: 60px;
       text-align: center;
     }
-    
+
     .feature-block h3 {
       font-size: 1.3rem;
       margin-bottom: 10px;
     }
-    
+
     .feature-block p {
       margin: 0 auto;
       max-width: 600px;
     }
-    
+
+    /* Meme Flipper */
     .meme-flipper {
       position: relative;
       width: 320px;
       margin: 40px auto;
     }
-    
+
     .meme-flipper img {
       width: 100%;
       border-radius: 20px;
       cursor: pointer;
     }
-    
+
     .flipper-btn {
       width: 44px;
       height: 44px;
@@ -108,76 +108,63 @@
       bottom: 85px;
       user-select: none;
     }
-    
+
     .btn-left {
       left: 70px;
     }
-    
     .btn-right {
       right: 70px;
       background-color: #ff69b4;
     }
-    
+
     .hidden {
       display: none !important;
     }
-    
-    .btn-flat {
-      background-color: #8000ff;
-      color: #ffffff;
-      padding: 12px 24px;
-      font-size: 1rem;
-      border: none;
-      border-radius: 10px;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-      margin: 10px;
-    }
-    .btn-flat:hover {
-      background-color: #6a00cc;
-    }
-    
-    /* Popup styles */
+
+    /* Popup Styles */
     #matchPopup {
-      display: none; 
-      position: fixed; 
-      top: 0; left: 0; 
-      width: 100%; 
-      height: 100%; 
-      background: rgba(0,0,0,0.85); 
-      z-index: 9999; 
-      color: #fff; 
-      font-family: Inter, sans-serif; 
-      padding: 40px; 
-      box-sizing: border-box; 
+      display: none;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.85);
+      z-index: 9999;
+      font-family: 'Inter', sans-serif;
+      padding: 40px;
+      box-sizing: border-box;
       overflow-y: auto;
+      color: #fff;
     }
+
     #matchPopup > div {
-      max-width: 600px; 
-      margin: 40px auto; 
-      background: #111; 
-      padding: 30px; 
-      border-radius: 16px; 
-      box-shadow: 0 0 30px rgba(0,0,0,0.4);
+      max-width: 600px;
+      margin: 40px auto;
+      background: #111;
+      padding: 30px 40px 40px;
+      border-radius: 16px;
+      box-shadow: 0 0 30px rgba(0, 0, 0, 0.4);
       text-align: center;
       position: relative;
+      color: white;
     }
-    
+
     #feedback-response {
-      min-height: 1.2em; 
-      color: white; 
-      font-weight: bold; 
-      font-size: 1.5rem; 
+      margin-top: 18px;
+      margin-bottom: 18px;
+      min-height: 1.2em;
+      font-weight: bold;
+      font-size: 1.5rem;
       max-width: 90%;
-      margin-top: 45px; 
-      margin-bottom: 8px;
-      opacity: 0; 
+      color: #fff;
+      text-align: center;
+      opacity: 0;
       transition: opacity 0.5s ease;
+      user-select: none;
     }
-    
-    /* Popup button containers */
+
     .popup-buttons-container {
-      margin-top: 8px;
+      margin-top: 18px;
       text-align: center;
     }
     .popup-buttons-row {
@@ -187,7 +174,24 @@
       margin-bottom: 6px;
     }
 
-    /* Close button styles */
+    /* Buttons */
+    .btn-flat {
+      padding: 12px 24px;
+      font-size: 1rem;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      background-color: #8000ff;
+      color: #fff;
+      font-weight: 600;
+      transition: background-color 0.3s ease;
+      white-space: nowrap;
+    }
+    .btn-flat:hover {
+      background-color: #6a00cc;
+    }
+
+    /* Popup close button */
     #popupCloseBtn {
       position: absolute;
       top: 12px;
@@ -199,10 +203,9 @@
       border-radius: 4px;
       color: white;
       font-weight: bold;
+      font-size: 22px;
+      line-height: 26px;
       cursor: pointer;
-      font-size: 20px;
-      line-height: 28px;
-      text-align: center;
       padding: 0;
       user-select: none;
       transition: background-color 0.3s ease;
@@ -212,11 +215,24 @@
       background: #5300cc;
     }
 
+    /* Newsletter Join button spacing */
+    #customSubmitBtn {
+      margin-top: 0;
+    }
+
+    /* Optional link styling */
+    #popup a {
+      color: #ccc;
+      font-size: 14px;
+      text-decoration: underline;
+      cursor: pointer;
+      display: inline-block;
+      margin-top: 20px;
+    }
   </style>
-  
-  <!-- Structured Data (JSON-LD) -->
-  <script type="application/ld+json">
-  {
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">{
     "@context": "https://schema.org",
     "@type": "Organization",
     "name": "D8Sync",
@@ -226,10 +242,9 @@
       "https://instagram.com/d8sync",
       "https://facebook.com/d8sync"
     ]
-  }
-  </script>
-  <script type="application/ld+json">
-  {
+  }</script>
+
+  <script type="application/ld+json">{
     "@context": "https://schema.org",
     "@type": "WebSite",
     "name": "D8Sync",
@@ -244,130 +259,84 @@
       "target": "https://d8sync.com/?q={search_term_string}",
       "query-input": "required name=search_term_string"
     }
-  }
-  </script>
+  }</script>
 
-  <!-- Plausible Analytics -->
+  <!-- Analytics -->
   <script data-domain="d8sync.com" defer src="https://plausible.io/js/script.js"></script>
 </head>
 <body>
-  <!-- Skip to Main Content Link for Accessibility -->
-  <a class="visually-hidden focusable skip-link" href="#main">Skip to main content</a>
-  
+
   <main class="container" id="main" role="main">
     <!-- Logo -->
     <div class="logo">
       <img alt="D8Sync Logo" src="https://raw.githubusercontent.com/astrobehr/d8sync-landing/main/assets/d8sync-banner.jpg"/>
     </div>
 
-    <!-- Sections -->
-    <div class="feature-block">
+    <!-- Feature sections -->
+    <section class="feature-block">
       <h3>🎯 AI Matches That Actually Hit</h3>
-      <p>
-        Imagine this: You send a meme,<br>
-        and someone laughs the exact way you do.<br><br>
-        That’s not chance — it’s sync.<br>
-        We read between your media likes, playlists, and punchlines<br>
-        to pair you with people on your wavelength.<br><br>
-        No swiping roulette. No dead-end matches.<br>
-        Just real connection, fueled by your sense of humor.
-      </p>
-    </div>
+      <p>Imagine this: You send a meme,<br>and someone laughs the exact way you do.<br><br>That’s not chance — it’s sync.<br>We read between your media likes, playlists, and punchlines<br>to pair you with people on your wavelength.<br><br>No swiping roulette. No dead-end matches.<br>Just real connection, fueled by your sense of humor.</p>
+    </section>
 
-    <div class="feature-block">
+    <section class="feature-block">
       <h3>🎭 Swipe Memes, Not Faces</h3>
-      <p>
-        What if your dating feed was memes instead of mugshots?<br>
-        No more trying to decode mirror selfies or gym pics.<br><br>
-        Just scroll, laugh, and react to the memes that hit hardest.<br>
-        Every swipe helps build your Comedy Graph™ —<br>
-        our algorithm that learns your humor DNA<br>
-        and matches you with someone who *actually gets it*<br><br>
-        Weirdly accurate. Dangerously fun.
-      </p>
+      <p>What if your dating feed was memes instead of mugshots?<br>No more trying to decode mirror selfies or gym pics.<br><br>Just scroll, laugh, and react to the memes that hit hardest.<br>Every swipe helps build your Comedy Graph™ —<br>our algorithm that learns your humor DNA<br>and matches you with someone who *actually gets it*<br><br>Weirdly accurate. Dangerously fun.</p>
 
-      <!-- Meme Flipper Component -->
+      <!-- Meme flipper -->
       <div class="meme-flipper">
-        <img alt="Meme" id="memeImage" src="https://raw.githubusercontent.com/astrobehr/d8sync-landing/main/memes/meme1.jpg" />
+        <img id="memeImage" alt="Meme" src="https://raw.githubusercontent.com/astrobehr/d8sync-landing/main/memes/meme1.jpg" />
         <button class="flipper-btn btn-left" onclick="prevMeme()">✘</button>
         <button class="flipper-btn btn-right" onclick="nextMeme()">❤</button>
       </div>
-    </div>
+    </section>
 
-    <div class="feature-block">
+    <section class="feature-block">
       <h3>✨ Unfiltered. Unscripted. Unexpected.</h3>
-      <p>
-        No filters. No bios. No profile paralysis.<br>
-        At D8Sync, you skip the scroll<br>
-        and jump straight into something real.<br><br>
-        Just you and someone new — on an actual blind date.<br>
-        No pressure. No pretending.<br>
-        And yes, we even give you the perfect icebreaker.
-      </p>
-    </div>
+      <p>No filters. No bios. No profile paralysis.<br>At D8Sync, you skip the scroll<br>and jump straight into something real.<br><br>Just you and someone new — on an actual blind date.<br>No pressure. No pretending.<br>And yes, we even give you the perfect icebreaker.</p>
+    </section>
 
-    <div class="feature-block">
+    <section class="feature-block">
       <h3>🕵️‍♂️ How D8Sync Blind Dates Actually Work</h3>
-      <p>
-        You tap the “Sync Me!” button<br>
-        D8Sync scans your Comedy Graph™, vibe data, and availability<br>
-        — and matches you with someone on your wavelength.<br><br>
-        Our Matchmaker AI then sends you both:<br>
-        🔓 A time 📍 A public place & 🧩 “The Tell” —<br>
-        a phrase or shared order to find your match.<br><br>
-        You pull up, scan the scene, and look for the signal...<br>
-        like someone lowkey ordering the same drink<br><br>
-        In a crowded cafe or busy bookstore? Not sure it’s them?<br>
-        Tap the <em>“Is That You?"</em> button in-app for a private match confirm.<br>
-        If the chemistry's there, drop the icebreaker we gave you<br>
-        — it's the perfect nudge.<br><br>
-        Not feeling it? That’s cool too.<br>
-        Take a breath, enjoy the moment, & the match will fade away.<br>
-        No profiles. No awkward openings. No rejection drama.<br>
-        <em>Just vibes. Real ones.</em><br><br>
-
-        <div class="feature-block">
+      <p>You tap the “Sync Me!” button<br>D8Sync scans your Comedy Graph™, vibe data, and availability<br>— and matches you with someone on your wavelength.<br><br>Our Matchmaker AI then sends you both:<br>🔓 A time 📍 A public place & 🧩 “The Tell” —<br>a phrase or shared order to find your match.<br><br>You pull up, scan the scene, and look for the signal...<br>like someone lowkey ordering the same drink<br><br>In a crowded cafe or busy bookstore? Not sure it’s them?<br>Tap the <em>“Is That You?"</em> button in-app for a private match confirm.<br>If the chemistry's there, drop the icebreaker we gave you<br>— it's the perfect nudge.<br><br>Not feeling it? That’s cool too.<br>Take a breath, enjoy the moment, & the match will fade away.<br>No profiles. No awkward openings. No rejection drama.<br><em>Just vibes. Real ones.</em>
+        <section class="feature-block" style="margin-top: 40px">
           <h3>💬 Need to talk it out? We got you.</h3>
-          <p>
-            After every date, the judgment-free vibe check continues.<br>
-            Our AI Dating Coach is here to help you debrief —<br>
-            like a relationship therapist in your pocket.<br><br>
-            Whether it sparked or fizzled, talk through<br>
-            what worked, what didn’t, and how it made you feel.<br>
-            <em>Get clarity. Spot patterns. Grow faster.</em><br>
-          </p>
-        </div>
+          <p>After every date, the judgment-free vibe check continues.<br>Our AI Dating Coach is here to help you debrief —<br>like a relationship therapist in your pocket.<br><br>Whether it sparked or fizzled, talk through<br>what worked, what didn’t, and how it made you feel.<br><em>Get clarity. Spot patterns. Grow faster.</em></p>
+        </section>
       </p>
-    </div>
+    </section>
 
-    <!-- Waitlist and Signup Form -->
+    <!-- Signup Form -->
     <div id="waitlist" style="position: relative;">
-      <form action="https://app.kit.com/forms/8193977/subscriptions" class="seva-form formkit-form" data-format="inline" data-version="5" method="post" min-width="400 500 600 700 800" style="background-color: #fff; border-radius: 10px;">
-        <div data-style="full" style="--bg-border-radius: 5px;">
-          <div class="formkit-column" data-element="column" style="padding: 20px;">
-            <div class="formkit-header" data-element="header" style="color: #3d3d3d; font-weight: 700;">
-              <h2>Get Notified for D8Sync<br>Beta Waitlist</h2>
-            </div>
-            <div class="formkit-content" data-element="content" style="color: #6e6e6e;">
-              <p style="text-align:center;">Drop your email and be one of the first to access the meme-powered</p>
-              <p style="text-align:center;">dating experience</p>
-            </div>
-            <ul class="formkit-alert formkit-alert-error" data-element="errors" data-group="alert"></ul>
-            <div class="seva-fields formkit-fields" data-element="fields" data-stacked="false" style="display:flex; gap:8px; flex-wrap: wrap;">
-              <div class="formkit-field" style="flex-grow: 1; min-width: 220px;">
-                <input aria-label="Email Address" class="formkit-input" name="email_address" placeholder="Email Address" required type="email" 
-                  style="color: #6e6e6e; background-color: #f7f7f7; border-radius: 5px; font-weight: 400; width: 100%; padding: 12px; font-size: 1rem; border: 1px solid #ccc;"/>
-              </div>
-              <button class="formkit-submit formkit-submit" data-element="submit" style="color: #fff; background-color: rgb(120, 94, 223); border-radius: 8px; font-weight: 700; padding:12px 24px; cursor:pointer; border:none; font-size: 1rem;">
+      <form 
+        action="https://app.kit.com/forms/8193977/subscriptions" method="post"
+        class="seva-form formkit-form" data-format="inline" data-version="5" 
+        style="background-color: #fff; border-radius: 10px; max-width: 740px; margin: 0 auto 60px auto;">
+        <div data-style="full" style="--bg-border-radius: 5px; display: flex; flex-wrap: wrap;">
+          <div class="formkit-column" data-element="column" style="flex: 1 1 57%; padding: 40px 45px 40px 60px; box-sizing: border-box;">
+            <h2 style="color: #3d3d3d; font-weight: 700; margin-top: 0; margin-bottom: 24px;">
+              Get Notified for D8Sync<br>Beta Waitlist
+            </h2>
+            <p style="color: #6e6e6e; margin-bottom: 16px; text-align: center;">Drop your email and be one of the first to access the meme-powered dating experience</p>
+            <ul class="formkit-alert formkit-alert-error" data-element="errors" data-group="alert" style="display:none;"></ul>
+            <div class="seva-fields formkit-fields" data-element="fields" data-stacked="false" style="display:flex; gap:8px;">
+              <input 
+                aria-label="Email Address" class="formkit-input" name="email_address" placeholder="Email Address" required type="email"
+                style="flex-grow: 1; font-size: 1rem; padding: 12px; border-radius: 5px; border: 1px solid #ccc; background: #f7f7f7; color: #6e6e6e;"/>
+              <button
+                class="formkit-submit"
+                style="background-color: rgb(120, 94, 223); padding: 12px 24px; color: #fff; font-weight: 700; border-radius: 8px; border: none; cursor: pointer; font-size: 1rem;"
+                type="submit"
+              >
                 Join
               </button>
             </div>
-            <div class="formkit-disclaimer" data-element="disclaimer" style="font-size: 0.85rem; color: #666; margin-top: 12px;">
-              No spam. No cringe. Unmatch us anytime
-            </div>
-            <input id="referrer" name="referrer" type="hidden" value=""/>
+            <p style="color: #666; font-size: 0.85rem; margin-top: 12px;">No spam. No cringe. Unmatch us anytime</p>
+            <input id="referrer" name="referrer" type="hidden"/>
           </div>
-          <div class="formkit-background" data-element="column" style='background-image: url("https://embed.filekitcdn.com/e/7wYRffpBoCKHj7khzQkLM9/heJanT4eiSvUdUcDsyzStr"); background-position: center; background-size: cover; height: 280px; border-radius: var(--bg-border-radius); margin: 20px;'></div>
+          <div 
+            class="formkit-background" data-element="column" 
+            style="flex: 1 1 43%; background-image: url('https://embed.filekitcdn.com/e/7wYRffpBoCKHj7khzQkLM9/heJanT4eiSvUdUcDsyzStr'); background-position: center; background-size: cover; height: 280px; margin: 20px; border-radius: var(--bg-border-radius);">
+          </div>
         </div>
       </form>
     </div>
@@ -382,13 +351,9 @@
         <button id="popupCloseBtn" title="Close Popup" aria-label="Close Popup">&times;</button>
         <h2 style="margin: 0;">🔗 You Just Got Synced 🔗</h2>
         <p style="margin-top: 45px; font-size: 0.95em; color: #888;">(Sample Match Preview)</p>
-        <p style="margin-bottom: 20px;">
-          This is a taste of what matching on D8Sync might feel like.<br>
-          No swiping. No bios. Just pure vibe alignment.
-        </p>
+        <p style="margin-bottom: 20px;">This is a taste of what matching on D8Sync might feel like.<br>No swiping. No bios. Just pure vibe alignment.</p>
         <p><strong>🧠 Shared Meme Energy:</strong><br>
-          “Me pretending that I don’t care.<br>
-          But secretly I'm watching the group chat implode.”
+          “Me pretending that I don’t care.<br>But secretly I'm watching the group chat implode.”
         </p>
         <p><strong>🎧 Audio Match:</strong><br>
           Late 2000s indie drama with main character syndrome
@@ -404,7 +369,7 @@
           92% Meme Fluency
         </p>
 
-        <p style="margin-bottom: 6px;">🤠 Did this vibe feel accurate?</p>
+        <p>🤠 Did this vibe feel accurate?</p>
         <div id="feedback-response"></div>
 
         <div class="popup-buttons-container">
@@ -415,15 +380,13 @@
           <button class="btn-flat" id="customSubmitBtn" onclick="closeAndScrollToWaitlist()">Join the Newsletter</button>
         </div>
 
-        <div style="margin-top: 20px;">
-          <a href="https://www.tinder.com" onclick="alert('Bye Felicia 👋');" style="color: #ccc; font-size: 14px; text-decoration: underline;">
-            Not feeling it? Close
-          </a>
-        </div>
+        <a href="https://www.tinder.com" onclick="alert('Bye Felicia 👋');" style="color: #ccc; font-size: 14px; text-decoration: underline; display: block; margin-top: 20px;">
+          Not feeling it? Close
+        </a>
       </div>
     </div>
 
-    <!-- Feedback Button for external form -->
+    <!-- Feedback button -->
     <div style="position: fixed; bottom: 20px; right: 20px; z-index: 999;">
       <a href="https://form.typeform.com/to/aDNMMWAn" 
          style="background:#9147ff;color:#fff;padding:12px 20px;border-radius:30px;text-decoration:none;font-weight:bold;font-family:Inter,sans-serif;"
@@ -437,14 +400,11 @@
   <script src="https://f.convertkit.com/ckjs/ck.5.js" defer></script>
 
   <script>
-    // Set referrer value inside the form hidden input
+    // Set referrer hidden input and handle Thank You message
     document.addEventListener('DOMContentLoaded', () => {
       const referrerInput = document.getElementById('referrer');
-      if (referrerInput) {
-        referrerInput.value = document.referrer;
-      }
+      if (referrerInput) referrerInput.value = document.referrer;
 
-      // Show Thank You on signup success
       const form = document.querySelector('#waitlist form');
       const thankYouMsg = document.getElementById('thank-you-message');
       if (form && thankYouMsg) {
@@ -456,28 +416,21 @@
         });
       }
 
-      // Feedback buttons logic in popup
+      // Feedback popup response handlers
       const responseBox = document.getElementById('feedback-response');
       function showGenZResponse(text) {
         if (!responseBox) return;
         responseBox.textContent = text;
         responseBox.style.opacity = "1";
-        setTimeout(() => {
-          responseBox.style.opacity = "0";
-        }, 3000);
+        setTimeout(() => { responseBox.style.opacity = "0"; }, 3000);
       }
 
       const spookyBtn = document.getElementById("spooky-button");
       const nahBtn = document.getElementById("nah-button");
+      if (spookyBtn) spookyBtn.onclick = () => showGenZResponse("✨ Fr 😳 That was spooky accurate ✨");
+      if (nahBtn) nahBtn.onclick = () => showGenZResponse("💀 Deadass? That ain’t it chief 💀");
 
-      if (spookyBtn) {
-        spookyBtn.onclick = () => showGenZResponse("✨ Fr 😳 That was spooky accurate ✨");
-      }
-      if (nahBtn) {
-        nahBtn.onclick = () => showGenZResponse("💀 Deadass? That ain’t it chief 💀");
-      }
-
-      // Randomized responses for popup feedback buttons (alternative)
+      // Alternative randomized feedback responses (optional, you can remove extra handlers if you want)
       const yupResponses = [
         "Deadass, that hit.",
         "It’s giving soulmate.",
@@ -492,23 +445,19 @@
         "Felt like a LinkedIn date.",
         "Respectfully, no."
       ];
-
       function showRandomResponse(type) {
         if (!responseBox) return;
         const responses = type === "yup" ? yupResponses : nahResponses;
-        const randomMessage = responses[Math.floor(Math.random() * responses.length)];
-        responseBox.textContent = randomMessage;
+        const message = responses[Math.floor(Math.random()*responses.length)];
+        responseBox.textContent = message;
         responseBox.style.display = "block";
         responseBox.style.opacity = "1";
-        setTimeout(() => {
-          responseBox.style.opacity = "0";
-        }, 3000);
+        setTimeout(() => { responseBox.style.opacity = "0"; }, 3000);
       }
-
       if (spookyBtn) spookyBtn.addEventListener("click", () => showRandomResponse("yup"));
       if (nahBtn) nahBtn.addEventListener("click", () => showRandomResponse("nah"));
 
-      // Custom Join newsletter button triggers real ConvertKit submit
+      // ConvertKit join button triggers actual submit
       const customBtn = document.getElementById("customSubmitBtn");
       const waitForCK = setInterval(() => {
         const realSubmit = document.querySelector(".formkit-submit");
@@ -521,17 +470,15 @@
         }
       }, 300);
 
-      // Add close button functionality for popup
+      // Close popup on close button click
       const popupCloseBtn = document.getElementById("popupCloseBtn");
-      if(popupCloseBtn) {
-        popupCloseBtn.addEventListener("click", () => {
-          const popup = document.getElementById("matchPopup");
-          if (popup) popup.style.display = "none";
-        });
-      }
+      if (popupCloseBtn) popupCloseBtn.addEventListener("click", () => {
+        const popup = document.getElementById("matchPopup");
+        if (popup) popup.style.display = "none";
+      });
     });
 
-    // Popup close and scroll to waitlist
+    // Close popup and scroll to waitlist
     function closeAndScrollToWaitlist() {
       const popup = document.getElementById('matchPopup');
       const waitlist = document.getElementById('waitlist');
@@ -539,7 +486,7 @@
       if (waitlist) waitlist.scrollIntoView({ behavior: 'smooth' });
     }
 
-    // Meme flipper logic with meme10 support and extra timing
+    // Meme flipper with meme10 and timed popup changes
     document.addEventListener("DOMContentLoaded", () => {
       const memes = [
         "https://raw.githubusercontent.com/astrobehr/d8sync-landing/main/memes/meme1.jpg",
@@ -562,9 +509,7 @@
       let isMeme10Displayed = false;
 
       function updateMeme() {
-        if (memeImage) {
-          memeImage.src = memes[current];
-        }
+        if (memeImage) memeImage.src = memes[current];
         if (btnLeft && btnRight) {
           if (current >= 5 && current <= 9) {
             btnLeft.classList.add("hidden");
@@ -591,14 +536,12 @@
                   setTimeout(() => {
                     if (popup) {
                       popup.style.display = "flex";
-
-                      // After popup opens, wait 5s, then 3s, then show meme10 in flipper
                       meme10Timeout1 = setTimeout(() => {
                         meme10Timeout2 = setTimeout(() => {
                           current = 9;
                           updateMeme();
-                        }, 3000); // wait 3 seconds after first 5
-                      }, 5000); // wait 5 seconds after popup open
+                        }, 3000);
+                      }, 5000);
                     }
                   }, 2000);
                 }, 3000);
@@ -618,8 +561,6 @@
           current--;
           updateMeme();
           if (popup) popup.style.display = "none";
-
-          // Clear any meme10 scheduled updates if user goes back
           clearTimeout(meme10Timeout1);
           clearTimeout(meme10Timeout2);
         }
@@ -629,8 +570,6 @@
         if (popup) popup.style.display = "none";
         current = 0;
         updateMeme();
-
-        // Clear any meme10 timeouts when resetting
         clearTimeout(meme10Timeout1);
         clearTimeout(meme10Timeout2);
       };
@@ -644,10 +583,10 @@
       }
 
       updateMeme();
-
       if (btnLeft) btnLeft.addEventListener("click", window.prevMeme);
       if (btnRight) btnRight.addEventListener("click", window.nextMeme);
     });
   </script>
+  
 </body>
 </html>
