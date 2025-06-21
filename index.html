@@ -652,6 +652,17 @@ function closeAndScrollToWaitlist() {
 <button onclick="handleFeedback('no')" style="padding: 12px 28px; border: none; border-radius: 30px; background: #444; color: #fff; font-weight: bold; font-size: 1rem; cursor: pointer;">
   Not really
 </button>
+<!-- Join Newsletter Button -->
+<div style="margin-top: 20px; text-align:center;">
+  <button id="customSubmitBtn" style="padding: 12px 28px; border: none; border-radius: 30px; background: #ffcc00; color: #000; font-weight: bold; font-size: 1rem; cursor: pointer;">
+    Join the Newsletter
+  </button>
+</div>
+
+<!-- Feedback Response Message -->
+<div id="feedback-response" style="display:none; margin-top: 20px; font-weight:bold; text-align:center; color:#00ff88; font-size: 1.1rem;">
+  <!-- Dynamic feedback message -->
+</div>
 
 <!-- Feedback Response (GEN Z VIBE) -->
 <div id="feedback-response" style="display:none; margin-top: 20px; font-weight:bold; text-align:center; color:#00ff88; font-size: 1.1rem;">
@@ -682,16 +693,16 @@ function handleFeedback(response) {
   if (responseBox) {
     responseBox.style.display = "block";
     responseBox.innerText = response === "yes"
-      ? "🌈 Real recognize real. You got vibe vision. 💚"
-      : "We're not for everyone — but you're still iconic. 💚";
+      ? "🧠 Vibe check passed 💚"
+      : "😅 Not your vibe? We're not for everyone.";
 
-    // Optional: hide after a while
+    // Optional: remove message after 5s
     setTimeout(() => {
       responseBox.style.display = "none";
-    }, 6000);
+    }, 5000);
   }
 }
-  
+
   // Close popup and scroll to waitlist
   function closeAndScrollToWaitlist() {
     const popup = document.getElementById("matchPopup");
