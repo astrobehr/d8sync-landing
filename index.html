@@ -4,6 +4,136 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>D8Sync – Swipe-Free Dating. Just Vibes.</title>
+  <style>
+    body {
+      background-color: #111;
+      color: #fff;
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .feedback-container {
+      background: #1c1c1c;
+      border-radius: 10px;
+      padding: 20px 30px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.3);
+      text-align: center;
+      max-width: 400px;
+    }
+
+    .feedback-response {
+      margin-top: 10px;
+      font-size: 1.2rem;
+      font-weight: bold;
+      color: white;
+      min-height: 1.8em;
+    }
+
+    .feedback-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      margin-top: 1em;
+    }
+
+    .feedback-buttons button {
+      background-color: #a337ff;
+      color: white;
+      border: none;
+      padding: 10px 16px;
+      border-radius: 8px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .newsletter-button {
+      margin-top: 1em;
+      background-color: #b029ff;
+      padding: 10px 20px;
+    }
+
+    a {
+      display: block;
+      margin-top: 1em;
+      color: #ccc;
+      font-size: 0.85rem;
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>D8Sync – Swipe-Free Dating. Just Vibes.</h1>
+    <p>No profiles. No awkward openings. No rejection drama. Just vibes. Real ones.</p>
+  </header>
+
+  <main>
+    <section class="feedback-container">
+      <div>
+        <span style="color: pink;">🧠 Did this vibe feel accurate?</span>
+        <div class="feedback-response" id="feedback-response"></div>
+        <div class="feedback-buttons">
+          <button onclick="handleFeedback('yes')">Yup... Spooky!</button>
+          <button onclick="handleFeedback('no')">Nah... Not Really.</button>
+        </div>
+        <button class="newsletter-button">Join the Newsletter</button>
+        <a href="#">Not feeling it? Close</a>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    const yesPhrases = [
+      "Deadass, that hit.",
+      "Fr fr, vibe matched.",
+      "No cap. That’s scary accurate.",
+      "Lowkey true tho.",
+      "Vibes immaculate. Period."
+    ];
+
+    const noPhrases = [
+      "Mid at best.",
+      "I’m not feelin’ it.",
+      "Nah fam, that ain't it.",
+      "Try again, AI overlord.",
+      "Vibe check failed."
+    ];
+
+    let yesIndex = 0;
+    let noIndex = 0;
+
+    function handleFeedback(type) {
+      const box = document.getElementById('feedback-response');
+      if (type === 'yes') {
+        box.textContent = yesPhrases[yesIndex];
+        yesIndex = (yesIndex + 1) % yesPhrases.length;
+      } else {
+        box.textContent = noPhrases[noIndex];
+        noIndex = (noIndex + 1) % noPhrases.length;
+      }
+    }
+  </script>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>D8Sync – Vibe-Based Blind Dates</title>
   <style>
     body {
