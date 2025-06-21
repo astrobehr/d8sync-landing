@@ -63,7 +63,31 @@
         }, 300);
       }
     }
-    </script>
+    
+document.querySelectorAll('.btn-flat').forEach((btn) => {
+  if (btn.textContent.includes("Yup... Spooky!")) {
+    btn.addEventListener("click", () => {
+      showResponse("🧃 Real recognize real. You got synced fr.");
+    });
+  }
+  if (btn.textContent.includes("Nah... Not really.")) {
+    btn.addEventListener("click", () => {
+      showResponse("👻 Not your match? Next drop might hit harder.");
+    });
+  }
+});
+
+function showResponse(msg) {
+  const box = document.getElementById("feedback-response");
+  if (box) {
+    box.textContent = msg;
+    box.style.display = "block";
+    setTimeout(() => {
+      box.style.display = "none";
+    }, 3000);
+  }
+}
+</script>
 <!--- SCRIPT_START --->
 <script>
     window.dataLayer = window.dataLayer || [];
@@ -752,187 +776,5 @@ function closeAndScrollToWaitlist() {
 <!--- DIV_START --->
 <div id="matchPopup" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.85); z-index:9999; color:#fff; font-family:Inter,sans-serif; padding:40px; box-sizing:border-box; overflow-y:auto;">
 <!--- DIV_START --->
-<div onclick="event.stopPropagation();" style="max-width:600px; margin:40px auto; background:#111; padding:30px; border-radius:16px; box-shadow:0 0 30px rgba(0,0,0,0.4);">
-<!--- DIV_START --->
-<div style="text-align: center; margin-bottom: 20px;">
-<h2 style="margin: 0;">🔗 You Just Got Synced 🔗 </h2>
-<p style="margin-top: 5px; font-size: 0.95em; color: #888;">(Sample Match Preview)</p>
-<!--- DIV_END --->
-</div>
-<p style="margin-bottom:20px;">This is a taste of what matching on D8Sync might feel like.<br/>
-      No swiping. No bios. Just pure vibe alignment.</p><br/>
-<p><strong>🧠 Shared Meme Energy:</strong><br/>
-      “Me pretending that I don’t care.<br/> 
-      But secretly I'm watching the group chat implode.”</p><br/>
-<p><strong>🎧 Audio Match:</strong><br/>
-      Late 2000s indie drama with main character syndrome</p><br/>
-<p><strong>🍝 First Date Prompt:</strong><br/>
-      You meet outside a thrift store...<br/>
-      One of you is holding a can of soup.<br/>
-      The other is holding a spoon.</p><br/>
-<p><strong>🫣 Vibe Alignment:</strong><br/>
-      84% Emotionally Aligned<br/>
-      72% Chaos Compatibility<br/>
-      92% Meme Fluency</p><br/>
-<!-- Feedback Buttons -->
-<p style="margin-bottom: 10px;">🧠 Did this vibe feel accurate?</p>
-<!--- BUTTON_START --->
-
-  Yup, spooky
-<!--- BUTTON_END --->
-<!--- BUTTON_START --->
-
-  Not really
-<!--- BUTTON_END --->
-<!-- Join Newsletter Button -->
-<!--- DIV_START --->
-<div style="margin-top: 20px; text-align:center;">
-<!--- BUTTON_START --->
-<!--- DIV_END --->
-</div>
-<!-- Feedback Response Message -->
-<!--- DIV_START --->
-<div id="feedback-response" style="display:none; margin-top: 20px; font-weight:bold; text-align:center; color:#00ff88; font-size: 1.1rem;">
-<!-- Dynamic feedback message -->
-<!--- DIV_END --->
-</div>
-<!-- Feedback Response (GEN Z VIBE) -->
-<!--- DIV_START --->
-<div id="feedback-response" style="display:none; margin-top: 20px; font-weight:bold; text-align:center; color:#00ff88; font-size: 1.1rem;">
-<!-- This will get filled by JavaScript -->
-<!--- DIV_END --->
-</div>
-<!-- Newsletter Join Button -->
-<!--- DIV_START --->
-<div style="margin-top: 30px; text-align: center;">
-<!--- BUTTON_START --->
-<br/><br/><div style="display: flex; justify-content: center; gap: 12px; margin-bottom: 20px;"><button class="btn-flat">Yup... Spooky!</button><button class="btn-flat">Nah... Not really.</button></div><button class="btn-flat" id="customSubmitBtn" onclick="closeAndScrollToWaitlist()">Join the Newsletter</button>
-<!--- DIV_END --->
-</div>
-<!-- Optional exit link -->
-<!--- DIV_START --->
-<div style="margin-top: 20px; text-align:center;">
-<a href="https://www.tinder.com" onclick="alert('Bye Felicia 👋');" style="color: #ccc; font-size: 14px; text-decoration: underline;">
-    Not feeling it? Close
-  </a>
-<!--- DIV_END --->
-</div>
-<!--- SCRIPT_START --->
-<script>
-  // Handles feedback button click
-function handleFeedback(response) {
-  console.log("User response:", response);
-
-  const responseBox = document.getElementById("feedback-response");
-
-  if (responseBox) {
-    responseBox.style.display = "block";
-    responseBox.innerText = response === "yes"
-      ? "🧠 Vibe check passed 💚"
-      : "😅 Not your vibe? We're not for everyone.";
-
-    // Optional: remove message after 5s
-    setTimeout(() => {
-      responseBox.style.display = "none";
-    }, 5000);
-  }
-}
-
-  // Close popup and scroll to waitlist
-  function closeAndScrollToWaitlist() {
-    const popup = document.getElementById("matchPopup");
-    const waitlist = document.getElementById("waitlist");
-    if (popup) popup.style.display = 'none';
-    if (waitlist) waitlist.scrollIntoView({ behavior: 'smooth' });
-  }
-
-  // Handle ConvertKit button replacement
-  document.addEventListener("DOMContentLoaded", function () {
-    const customBtn = document.getElementById("customSubmitBtn");
-
-    const waitForCK = setInterval(() => {
-      const realSubmit = document.querySelector(".formkit-submit");
-      if (realSubmit && customBtn) {
-        clearInterval(waitForCK);
-
-        customBtn.addEventListener("click", function () {
-          realSubmit.click();
-          console.log("✅ Custom Join triggered ConvertKit submit");
-        });
-      }
-    }, 300);
-  });
-
-  // Meme slideshow logic
-  let current = 0;
-  let autoPlaying = false;
-  const memeImage = document.getElementById("memeImage");
-
-  function updateMeme() {
-    memeImage.src = memes[current];
-    if (current >= 5 && current <= 8) {
-      btnLeft.classList.add("hidden");
-      btnRight.classList.add("hidden");
-    } else {
-      btnLeft.classList.remove("hidden");
-      btnRight.classList.remove("hidden");
-    }
-  }
-
-  function resetMemeSequence() {
-    const popup = document.getElementById("matchPopup");
-    popup.style.display = 'none';
-    current = 0;
-    autoPlaying = false;
-    updateMeme();
-  }
-
-  function nextMeme() {
-    if (current < memes.length - 1) {
-      if (current === 4) {
-        current++;
-        updateMeme();
-        autoPlaying = true;
-
-        setTimeout(() => {
-          current = 6;
-          updateMeme();
-
-          setTimeout(() => {
-            current = 7;
-            updateMeme();
-
-            setTimeout(() => {
-              current = 8;
-              updateMeme();
-
-              setTimeout(() => {
-                const popup = document.getElementById("matchPopup");
-                if (popup) popup.style.display = 'flex';
-              }, 2000);
-
-            }, 3000);
-          }, 3000);
-        }, 3000);
-      } else {
-        current++;
-        updateMeme();
-      }
-    } else {
-      closeAndScrollToWaitlist();
-    }
-  }
-
-  function prevMeme() {
-    if (current > 0) {
-      current--;
-      updateMeme();
-      const popup = document.getElementById("matchPopup");
-      if (popup) popup.style.display = 'none';
-    }
-  }
-<!--- SCRIPT_END --->
-</script>
-<!--- BODY_CLOSE --->
-</div></div></main></body>
+</div></main></body>
 <!--- HTML_TAG_CLOSE --->
