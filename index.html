@@ -24,7 +24,9 @@
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-SZMQTN31ER"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
-    function gtag() {dataLayer.push(arguments);}
+    function gtag() {
+      dataLayer.push(arguments);
+    }
     gtag('js', new Date());
     gtag('config', 'G-SZMQTN31ER');
   </script>
@@ -57,27 +59,32 @@
       display: block;
     }
 
-    .feature-block {
-      font-size: 1.2rem;
+    /* Replaced all feature-block sections with provided div content */
+    .features-container {
+      max-width: 700px;
+      margin: 0 auto 60px;
+      font-family: 'Inter', sans-serif;
+      color: #fff;
       line-height: 1.6;
-      margin-bottom: 60px;
-      max-width: 600px;
-      margin-left: auto;
-      margin-right: auto;
+      font-size: 1.1rem;
+      text-align: center;
     }
 
-    .feature-block h3 {
-      font-size: 1.3rem;
+    .features-container h2 {
+      margin-top: 40px;
       margin-bottom: 10px;
+      font-weight: 700;
     }
 
-    .feature-block p {
-      margin: 0;
+    .features-container p {
+      margin: 12px 0;
+      max-width: 100%;
     }
 
+    /* Meme flipper styling */
     .meme-flipper {
       width: 320px;
-      margin: 40px auto;
+      margin: 40px auto 60px;
       position: relative;
     }
 
@@ -120,6 +127,7 @@
       filter: brightness(1.2);
     }
 
+    /* Waitlist form and image container */
     #waitlist {
       margin: 60px auto 100px auto;
       max-width: 740px;
@@ -132,10 +140,12 @@
       font-weight: normal;
       align-items: stretch;
       min-height: 320px;
+      flex-wrap: wrap;
     }
 
     #waitlist > div {
       box-sizing: border-box;
+      min-width: 280px;
     }
 
     #waitlist .form-left {
@@ -238,14 +248,20 @@
     }
 
     #waitlist .form-right {
-      flex: 1 1 45%;
-      background-image: url("https://embed.filekitcdn.com/e/7wYRffpBoCKHj7khzQkLM9/ennQvFZ3vfzXK5zwJJW6ty");
-      background-repeat: no-repeat;
-      background-size: contain;
-      background-position: center;
-      border-top-right-radius: 10px;
-      border-bottom-right-radius: 10px;
-      min-height: 320px;
+      flex: 1 1 40%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      min-width: 280px;
+    }
+
+    #waitlist .form-right img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 10px;
+      user-select: none;
+      -webkit-user-drag: none;
     }
 
     @media (max-width: 767px) {
@@ -255,30 +271,14 @@
       }
 
       #waitlist .form-right {
+        width: 100%;
         height: 220px;
-        border-radius: 0 0 10px 10px;
-        width: 100%;
-      }
-
-      #waitlist .form-left {
-        padding: 20px;
-      }
-
-      #waitlist form.seva-form > div[data-style="full"] {
-        flex-direction: column;
-      }
-
-      #waitlist input.formkit-input,
-      #waitlist button.formkit-submit {
-        width: 100%;
-        border-radius: 6px;
-      }
-
-      #waitlist button.formkit-submit {
-        margin-top: 10px;
+        padding: 0;
+        margin-top: 20px;
       }
     }
 
+    /* Match popup styling */
     #matchPopup {
       display: none;
       position: fixed;
@@ -396,55 +396,81 @@
 
 <body>
   <main class="container" role="main" id="main">
+
     <div class="logo">
       <img alt="D8Sync Logo" src="https://raw.githubusercontent.com/astrobehr/d8sync-landing/main/assets/d8sync-banner.jpg" />
     </div>
 
-    <section class="feature-block">
-      <h3>🎯 AI Matches That Actually Hit</h3>
-      <p>Imagine this: You send a meme,<br />and someone laughs the exact way you do.<br /><br />That’s not chance — it’s sync.<br />We
-        read between your media likes, playlists, and punchlines<br />to pair you with people on your wavelength.<br /><br />No
-        swiping roulette. No dead-end matches.<br />Just real connection, fueled by your sense of humor.</p>
-    </section>
+    <div class="features-container" aria-label="D8Sync Features and Benefits">
+      <h2>🎯 AI Matches That Actually Hit</h2>
+      <p>Imagine this: You send a meme,<br>
+        and someone laughs the exact way you do.</p>
 
-    <section class="feature-block">
-      <h3>🎭 Swipe Memes, Not Faces</h3>
-      <p>What if your dating feed was memes instead of mugshots?<br />No more trying to decode mirror selfies or gym pics.<br /><br />Just
-        scroll, laugh, and react to the memes that hit hardest.<br />Every swipe helps build your Comedy Graph™ —<br />our algorithm
-        that learns your humor DNA<br />and matches you with someone who <em>actually gets it</em><br /><br />Weirdly accurate. Dangerously
-        fun.</p>
-      <div class="meme-flipper" aria-label="Meme flipper with left and right buttons">
-        <img id="memeImage" alt="Meme" src="https://raw.githubusercontent.com/astrobehr/d8sync-landing/main/memes/meme1.jpg" />
-        <button class="flipper-btn btn-left" aria-label="Show previous meme" onclick="prevMeme()">✘</button>
-        <button class="flipper-btn btn-right" aria-label="Show next meme" onclick="nextMeme()">❤</button>
-      </div>
-    </section>
+      <p>That’s not chance — it’s sync.<br>
+        We read between your media likes, playlists, and punchlines<br>
+        to pair you with people on your wavelength.</p>
 
-    <section class="feature-block">
-      <h3>✨ Unfiltered. Unscripted. Unexpected.</h3>
-      <p>No filters. No bios. No profile paralysis.<br />At D8Sync, you skip the scroll<br />and jump straight into something real.<br /><br />Just
-        you and someone new — on an actual blind date.<br />No pressure. No pretending.<br />And yes, we even give you the perfect
-        icebreaker.</p>
-    </section>
+      <p>No swiping roulette. No dead-end matches.<br>
+        Just real connection, fueled by your sense of humor.</p>
 
-    <section class="feature-block">
-      <h3>🕵️‍♂️ How D8Sync Blind Dates Actually Work</h3>
-      <p>You tap the “Sync Me!” button<br />D8Sync scans your Comedy Graph™, vibe data, and availability<br />— and matches you
-        with someone on your wavelength.<br /><br />Our Matchmaker AI then sends you both:<br />🔓 A time 📍 A public place & 🧩
-        “The Tell” —<br />a phrase or shared order to find your match.<br /><br />You pull up, scan the scene, and look for the signal...<br />like
-        someone lowkey ordering the same drink<br /><br />In a crowded cafe or busy bookstore? Not sure it’s them?<br />Tap the
-        <em>“Is That You?"</em> button in-app for a private match confirm.<br />If the chemistry's there, drop the icebreaker
-        we gave you<br />— it's the perfect nudge.<br /><br />Not feeling it? That’s cool too.<br />Take a breath, enjoy the
-        moment, & the match will fade away.<br />No profiles. No awkward openings. No rejection drama.<br /><em>Just vibes.
-          Real ones.</em>
-      </p>
-      <section class="feature-block" style="margin-top: 40px;">
-        <h3>💬 Need to talk it out? We got you.</h3>
-        <p>After every date, the judgment-free vibe check continues.<br />Our AI Dating Coach is here to help you debrief —<br />like
-          a relationship therapist in your pocket.<br /><br />Whether it sparked or fizzled, talk through<br />what worked,
-          what didn’t, and how it made you feel.<br /><em>Get clarity. Spot patterns. Grow faster.</em></p>
-      </section>
-    </section>
+      <h2>🎭 Swipe Memes, Not Faces</h2>
+      <p>What if your dating feed was memes instead of mugshots?<br>
+        No more trying to decode mirror selfies or gym pics.</p>
+
+      <p>Just scroll, laugh, and react to the memes that hit hardest.<br>
+        Every swipe helps build your Comedy Graph™ —<br>
+        our algorithm that learns your humor DNA<br>
+        and matches you with someone who actually gets it.</p>
+
+      <p>Weirdly accurate. Dangerously fun.</p>
+
+      <h2>✨ Unfiltered. Unscripted. Unexpected.</h2>
+      <p>No filters. No bios. No profile paralysis.<br>
+        At D8Sync, you skip the scroll<br>
+        and jump straight into something real.</p>
+
+      <p>Just you and someone new — on an actual blind date.<br>
+        No pressure. No pretending.<br>
+        And yes, we even give you the perfect icebreaker.</p>
+
+      <h2>🕵️‍♂️ How D8Sync Blind Dates Actually Work</h2>
+      <p>You tap the “Sync Me!” button<br>
+        D8Sync scans your Comedy Graph™, vibe data, and availability<br>
+        — and matches you with someone on your wavelength.</p>
+
+      <p>Our Matchmaker AI then sends you both:<br>
+        🔓 A time 📍 A public place & 🧩 “The Tell” —<br>
+        a phrase or shared order to find your match.</p>
+
+      <p>You pull up, scan the scene, and look for the signal...<br>
+        like someone lowkey ordering the same drink</p>
+
+      <p>In a crowded cafe or busy bookstore? Not sure it’s them?<br>
+        Tap the “Is That You?" button in-app for a private match confirm.<br>
+        If the chemistry's there, drop the icebreaker we gave you<br>
+        — it's the perfect nudge.</p>
+
+      <p>Not feeling it? That’s cool too.<br>
+        Take a breath, enjoy the moment, & the match will fade away.<br>
+        No profiles. No awkward openings. No rejection drama.<br>
+        <strong>Just vibes. Real ones.</strong></p>
+
+      <h2>💬 Need to talk it out? We got you.</h2>
+      <p>After every date, the judgment-free vibe check continues.<br>
+        Our AI Dating Coach is here to help you debrief —<br>
+        like a relationship therapist in your pocket.</p>
+
+      <p>Whether it sparked or fizzled, talk through<br>
+        what worked, what didn’t, and how it made you feel.</p>
+
+      <p><strong>Get clarity. Spot patterns. Grow faster.</strong></p>
+    </div>
+
+    <div class="meme-flipper" aria-label="Meme flipper with left and right buttons">
+      <img id="memeImage" alt="Meme" src="https://raw.githubusercontent.com/astrobehr/d8sync-landing/main/memes/meme1.jpg" />
+      <button class="flipper-btn btn-left" aria-label="Show previous meme" onclick="prevMeme()">✘</button>
+      <button class="flipper-btn btn-right" aria-label="Show next meme" onclick="nextMeme()">❤</button>
+    </div>
 
     <!-- Waitlist signup form with side image -->
     <section id="waitlist" aria-label="Signup for beta waitlist">
@@ -488,28 +514,30 @@
                   with Kit</a>
               </div>
             </div>
-            <div data-element="column" class="formkit-background"
-              style="background-image: url('https://embed.filekitcdn.com/e/7wYRffpBoCKHj7khzQkLM9/ennQvFZ3vfzXK5zwJJW6ty'); background-position: center; background-size: contain; background-repeat: no-repeat;"
-              aria-hidden="true"></div>
+            <div class="form-right" role="presentation">
+              <img alt="D8Sync App on iPhone"
+                src="https://raw.githubusercontent.com/astrobehr/d8sync-landing/main/assets/d8sync-phone.png"
+                loading="lazy" decoding="async" />
+            </div>
           </div>
         </form>
       </div>
     </section>
 
     <!-- Match Popup -->
-    <div id="matchPopup" role="dialog" aria-modal="true" aria-hidden="true" class="hidden">
+    <div id="matchPopup" role="dialog" aria-modal="true" aria-hidden="true" class="hidden" style="display:none;">
       <div>
         <button id="popupCloseBtn" title="Close Popup" aria-label="Close Popup" type="button">&times;</button>
         <h2>🔗 You Just Got Synced 🔗</h2>
         <p style="margin-top: 20px; color: #888;">(Sample Match Preview)</p>
         <p>This is a taste of what matching on D8Sync might feel like.<br />No swiping. No bios. Just pure vibe alignment.</p>
-        <p><strong>🧠 Shared Meme Energy:</strong><br />“Me pretending that I don’t care.<br />But secretly I'm
-          watching the group chat implode.”</p>
+        <p><strong>🧠 Shared Meme Energy:</strong><br />“Me pretending that I don’t care.<br />But secretly I'm watching the
+          group chat implode.”</p>
         <p><strong>🎧 Audio Match:</strong><br />Late 2000s indie drama with main character syndrome</p>
-        <p><strong>🍝 First Date Prompt:</strong><br />You meet outside a thrift store...<br />One of you is holding a
-          can of soup.<br />The other is holding a spoon.</p>
-        <p><strong>🧩 Vibe Alignment:</strong><br />84% Emotionally Aligned<br />72% Chaos Compatibility<br />92% Meme
-          Fluency</p>
+        <p><strong>🍝 First Date Prompt:</strong><br />You meet outside a thrift store...<br />One of you is holding a can
+          of soup.<br />The other is holding a spoon.</p>
+        <p><strong>🧩 Vibe Alignment:</strong><br />84% Emotionally Aligned<br />72% Chaos Compatibility<br />92% Meme Fluency
+        </p>
         <p>🤠 Did this vibe feel accurate?</p>
         <div id="feedback-response" aria-live="polite" role="status"></div>
         <div class="popup-buttons-container">
@@ -519,8 +547,7 @@
           </div>
           <button class="btn-flat" id="customSubmitBtn" type="button" onclick="closeAndScrollToWaitlist()">Join the
             Newsletter</button>
-          <a href="#" onclick="closeAndScrollToWaitlist()" style="color: #ccc; font-size: 14px; text-decoration: underline; display: block; margin-top: 20px;"
-            role="button">Not feeling it? Close</a>
+          <a href="#" onclick="closeAndScrollToWaitlist()" class="close-popup-link" role="button">Not feeling it? Close</a>
         </div>
       </div>
     </div>
@@ -530,7 +557,6 @@
   <!-- ConvertKit Form Script -->
   <script src="https://f.convertkit.com/ckjs/ck.5.js" defer></script>
 
-  <!-- Custom Scripts -->
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       // Referrer input filling
@@ -539,7 +565,7 @@
         referrerInput.value = document.referrer;
       }
 
-      // Popup and feedback responses
+      // Feedback response handlers
       const responseBox = document.getElementById('feedback-response');
       const spookyBtn = document.getElementById('spooky-button');
       const nahBtn = document.getElementById('nah-button');
@@ -561,8 +587,20 @@
         showGenZResponse('💀 Deadass? That ain’t it chief 💀');
       });
 
-      const yupResponses = ["Deadass, that hit.", "It’s giving soulmate.", "Vibes were vibing.", "No cap, this was it.", "This match ate 💅"];
-      const nahResponses = ["Hard pass, fam.", "Not the vibe 😬", "That was… a choice.", "Felt like a LinkedIn date.", "Respectfully, no."];
+      const yupResponses = [
+        "Deadass, that hit.",
+        "It’s giving soulmate.",
+        "Vibes were vibing.",
+        "No cap, this was it.",
+        "This match ate 💅"
+      ];
+      const nahResponses = [
+        "Hard pass, fam.",
+        "Not the vibe 😬",
+        "That was… a choice.",
+        "Felt like a LinkedIn date.",
+        "Respectfully, no."
+      ];
 
       function showRandomResponse(type) {
         if (!responseBox) return;
@@ -607,7 +645,7 @@
       if (waitlist) waitlist.scrollIntoView({ behavior: 'smooth' });
     }
 
-    // Meme flipper functionality
+    // Meme flipper functionality with debug logs
     document.addEventListener('DOMContentLoaded', () => {
       const memes = [
         "https://raw.githubusercontent.com/astrobehr/d8sync-landing/main/memes/meme1.jpg",
@@ -631,9 +669,9 @@
       let isMeme10Displayed = false;
 
       function updateMeme() {
-        if(memeImage) memeImage.src = memes[current];
-        if(btnLeft && btnRight) {
-          if(current >= 5 && current <= 9) {
+        if (memeImage) memeImage.src = memes[current];
+        if (btnLeft && btnRight) {
+          if (current >= 5 && current <= 9) {
             btnLeft.classList.add('hidden');
             btnRight.classList.add('hidden');
           } else {
@@ -642,11 +680,13 @@
           }
         }
         isMeme10Displayed = (current === 9);
+        console.debug("Meme updated to index:", current);
       }
 
-      window.nextMeme = function() {
-        if(current < memes.length - 1){
-          if(current === 4){
+      window.nextMeme = function () {
+        console.debug("Next meme clicked. Current index:", current);
+        if (current < memes.length - 1) {
+          if (current === 4) {
             current++;
             updateMeme();
             setTimeout(() => {
@@ -656,14 +696,14 @@
                 setTimeout(() => {
                   current = 8; updateMeme();
                   setTimeout(() => {
-                    if(popup){
+                    if (popup) {
                       popup.style.display = 'flex';
                       meme10Timeout1 = setTimeout(() => {
                         meme10Timeout2 = setTimeout(() => {
                           current = 9;
                           updateMeme();
-                        },3000);
-                      },5000);
+                        }, 3000);
+                      }, 5000);
                     }
                   }, 2000);
                 }, 3000);
@@ -678,32 +718,35 @@
         }
       };
 
-      window.prevMeme = function() {
-        if(current > 0){
+      window.prevMeme = function () {
+        console.debug("Previous meme clicked. Current index:", current);
+        if (current > 0) {
           current--;
           updateMeme();
-          if(popup) popup.style.display = 'none';
+          if (popup) popup.style.display = 'none';
           clearTimeout(meme10Timeout1);
           clearTimeout(meme10Timeout2);
         }
       };
 
-      window.resetMemeSequence = function(){
-        if(popup) popup.style.display = 'none';
+      window.resetMemeSequence = function () {
+        if (popup) popup.style.display = 'none';
         current = 0;
         updateMeme();
         clearTimeout(meme10Timeout1);
         clearTimeout(meme10Timeout2);
       };
 
-      if(memeImage) memeImage.onclick = () => {
-        if(isMeme10Displayed) window.resetMemeSequence();
-      };
+      if (memeImage) {
+        memeImage.onclick = () => {
+          if (isMeme10Displayed) window.resetMemeSequence();
+        };
+      }
 
       updateMeme();
 
-      if(btnLeft) btnLeft.addEventListener('click', window.prevMeme);
-      if(btnRight) btnRight.addEventListener('click', window.nextMeme);
+      if (btnLeft) btnLeft.addEventListener('click', window.prevMeme);
+      if (btnRight) btnRight.addEventListener('click', window.nextMeme);
     });
   </script>
 </body>
