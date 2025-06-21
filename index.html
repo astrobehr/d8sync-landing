@@ -43,6 +43,7 @@
       color: #fff;
       overflow-x: hidden;
       text-align: center;
+      line-height: 1.6;
     }
 
     main.container {
@@ -59,27 +60,29 @@
       display: block;
     }
 
+    /* Features section */
     .features-container {
       max-width: 700px;
       margin: 0 auto 60px;
-      font-family: 'Inter', sans-serif;
       color: #fff;
-      line-height: 1.6;
       font-size: 1.1rem;
-      text-align: center;
+      text-align: left;
     }
 
     .features-container h2 {
       margin-top: 40px;
       margin-bottom: 10px;
       font-weight: 700;
+      color: #fff;
     }
 
     .features-container p {
-      margin: 12px 0;
-      max-width: 100%;
+      margin: 10px 0;
+      white-space: pre-line;
+      color: #ddd;
     }
 
+    /* Meme flipper styling */
     .meme-flipper {
       width: 320px;
       margin: 40px auto 60px;
@@ -91,6 +94,7 @@
       border-radius: 20px;
       cursor: pointer;
       user-select: none;
+      display: block;
     }
 
     .flipper-btn {
@@ -110,6 +114,7 @@
       align-items: center;
       justify-content: center;
       transition: background-color 0.3s ease;
+      z-index: 10;
     }
 
     .btn-left {
@@ -129,6 +134,7 @@
       filter: brightness(1.2);
     }
 
+    /* Waitlist form and image container */
     #waitlist {
       margin: 60px auto 100px auto;
       max-width: 740px;
@@ -255,6 +261,8 @@
       justify-content: center;
       padding: 20px;
       min-width: 280px;
+      background: #f7f7f7;
+      border-radius: 0 10px 10px 0;
     }
 
     #waitlist .form-right img {
@@ -276,9 +284,12 @@
         height: 220px;
         padding: 0;
         margin-top: 20px;
+        border-radius: 0 0 10px 10px;
+        background: none;
       }
     }
 
+    /* Match Popup styling */
     #matchPopup {
       display: none;
       position: fixed;
@@ -297,6 +308,10 @@
       align-items: center;
       justify-content: center;
       display: flex;
+    }
+
+    #matchPopup[aria-hidden="true"] {
+      display: none !important;
     }
 
     #matchPopup > div {
@@ -363,6 +378,7 @@
       justify-content: center;
       gap: 12px;
       margin-bottom: 6px;
+      flex-wrap: wrap;
     }
 
     .btn-flat {
@@ -390,6 +406,7 @@
       display: block;
       margin-top: 20px;
       cursor: pointer;
+      user-select: none;
     }
   </style>
 </head>
@@ -467,8 +484,8 @@
 
     <div class="meme-flipper" aria-label="Meme flipper with left and right buttons">
       <img id="memeImage" alt="Meme" src="https://raw.githubusercontent.com/astrobehr/d8sync-landing/main/memes/meme1.jpg" />
-      <button class="flipper-btn btn-left" aria-label="Show previous meme" onclick="prevMeme()">✘</button>
-      <button class="flipper-btn btn-right" aria-label="Show next meme" onclick="nextMeme()">❤</button>
+      <button class="flipper-btn btn-left hidden" aria-label="Show previous meme" type="button">✘</button>
+      <button class="flipper-btn btn-right" aria-label="Show next meme" type="button">❤</button>
     </div>
 
     <!-- Waitlist signup form with side image -->
@@ -496,7 +513,7 @@
                 </div>
                 <button data-element="submit" class="formkit-submit"
                   style="color:#fff; background-color:#7c5ede; border-radius:5px; font-weight:700;" type="submit">
-                  <div class="formkit-spinner">
+                  <div class="formkit-spinner" aria-hidden="true">
                     <div></div>
                     <div></div>
                     <div></div>
@@ -524,7 +541,7 @@
     </section>
 
     <!-- Match Popup -->
-    <div id="matchPopup" role="dialog" aria-modal="true" aria-hidden="true" class="hidden" style="display:none;">
+    <div id="matchPopup" role="dialog" aria-modal="true" aria-hidden="true" style="display:none;">
       <div>
         <button id="popupCloseBtn" title="Close Popup" aria-label="Close Popup" type="button">&times;</button>
         <h2>🔗 You Just Got Synced 🔗</h2>
@@ -538,19 +555,18 @@
         <p><strong>🧩 Vibe Alignment:</strong><br />84% Emotionally Aligned<br />72% Chaos Compatibility<br />92% Meme Fluency
         </p>
         <p>🤠 Did this vibe feel accurate?</p>
-        <div id="feedback-response" aria-live="polite" role="status"></div>
+        <div id="feedback-response" aria-live="polite" role="status" aria-atomic="true" style="opacity: 0;"></div>
         <div class="popup-buttons-container">
           <div class="popup-buttons-row">
             <button class="btn-flat" id="spooky-button" type="button">Yup... Spooky!</button>
             <button class="btn-flat" id="nah-button" type="button">Nah... Not Really.</button>
           </div>
-          <button class="btn-flat" id="customSubmitBtn" type="button" onclick="closeAndScrollToWaitlist()">Join the
+          <button class="btn-flat" id="customSubmitBtn" type="button" aria-label="Join the Newsletter">Join the
             Newsletter</button>
-          <a href="#" onclick="closeAndScrollToWaitlist()" class="close-popup-link" role="button">Not feeling it? Close</a>
+          <a href="#" onclick="closeAndScrollToWaitlist()" class="close-popup-link" role="button" tabindex="0">Not feeling it? Close</a>
         </div>
       </div>
     </div>
-
   </main>
 
   <!-- ConvertKit Form Script -->
@@ -564,12 +580,14 @@
         referrerInput.value = document.referrer;
       }
 
-      // Feedback response handlers
+      // Popup feedback handlers
       const responseBox = document.getElementById('feedback-response');
       const spookyBtn = document.getElementById('spooky-button');
       const nahBtn = document.getElementById('nah-button');
+      const popup = document.getElementById('matchPopup');
+      const customBtn = document.getElementById('customSubmitBtn');
 
-      function showGenZResponse(text) {
+      function showFeedbackMessage(text) {
         if (!responseBox) return;
         responseBox.textContent = text;
         responseBox.style.opacity = '1';
@@ -579,13 +597,14 @@
       }
 
       spookyBtn?.addEventListener('click', () => {
-        showGenZResponse('✨ Fr 😳 That was spooky accurate ✨');
+        showFeedbackMessage("✨ Fr 😳 That was spooky accurate ✨");
       });
 
       nahBtn?.addEventListener('click', () => {
-        showGenZResponse('💀 Deadass? That ain’t it chief 💀');
+        showFeedbackMessage("💀 Deadass? That ain’t it chief 💀");
       });
 
+      // Randomized feedback messages on button click (optionally)
       const yupResponses = [
         "Deadass, that hit.",
         "It’s giving soulmate.",
@@ -601,49 +620,40 @@
         "Respectfully, no."
       ];
 
-      function showRandomResponse(type) {
-        if (!responseBox) return;
-        const responses = type === "yup" ? yupResponses : nahResponses;
-        const msg = responses[Math.floor(Math.random() * responses.length)];
-        responseBox.textContent = msg;
-        responseBox.style.display = 'block';
-        responseBox.style.opacity = '1';
-        setTimeout(() => {
-          responseBox.style.opacity = '0';
-        }, 3000);
-      }
+      spookyBtn?.addEventListener('click', () => {
+        const rand = yupResponses[Math.floor(Math.random() * yupResponses.length)];
+        showFeedbackMessage(rand);
+      });
 
-      spookyBtn?.addEventListener('click', () => showRandomResponse('yup'));
-      nahBtn?.addEventListener('click', () => showRandomResponse('nah'));
+      nahBtn?.addEventListener('click', () => {
+        const rand = nahResponses[Math.floor(Math.random() * nahResponses.length)];
+        showFeedbackMessage(rand);
+      });
 
-      // ConvertKit custom submit button trigger
-      const customBtn = document.getElementById('customSubmitBtn');
+      // Trigger ConvertKit form submit when custom button clicked
       const waitForCK = setInterval(() => {
         const realSubmit = document.querySelector('.formkit-submit');
         if (realSubmit && customBtn) {
           clearInterval(waitForCK);
           customBtn.addEventListener('click', () => {
             realSubmit.click();
-            console.log("✅ Custom Join triggered ConvertKit submit");
           });
         }
       }, 300);
 
       // Popup close button
       document.getElementById('popupCloseBtn')?.addEventListener('click', () => {
-        const popup = document.getElementById('matchPopup');
         if (popup) popup.style.display = 'none';
       });
+
     });
 
-    // Helper to close popup and scroll to waitlist
+    // Close popup and scroll to waitlist form
     function closeAndScrollToWaitlist() {
       const popup = document.getElementById('matchPopup');
       const waitlist = document.getElementById('waitlist');
       if (popup) popup.style.display = 'none';
-      if (waitlist) waitlist.scrollIntoView({
-        behavior: 'smooth'
-      });
+      if (waitlist) waitlist.scrollIntoView({ behavior: 'smooth' });
     }
 
     // Meme flipper functionality
@@ -666,14 +676,15 @@
       const btnLeft = document.querySelector('.btn-left');
       const btnRight = document.querySelector('.btn-right');
       const popup = document.getElementById('matchPopup');
-      let meme10Timeout1, meme10Timeout2;
+      let memeTimeout1 = null;
+      let memeTimeout2 = null;
       let isMeme10Displayed = false;
 
       function updateMeme() {
         if (memeImage) memeImage.src = memes[current];
 
-        // Hide buttons on memes 6-10 (indexes 5-9), inclusive
         if (btnLeft && btnRight) {
+          // Hide left/right buttons starting at meme index 5 (meme6 displayed)
           if (current >= 5) {
             btnLeft.classList.add('hidden');
             btnRight.classList.add('hidden');
@@ -687,28 +698,36 @@
 
       window.nextMeme = function () {
         if (current < memes.length - 1) {
-          // Special sequence for memes 5 to 9 with delays and popup
           if (current === 4) {
             current++;
             updateMeme();
-            setTimeout(() => {
-              current = 5; updateMeme();
-              setTimeout(() => {
-                current = 6; updateMeme();
+            // Sequentially advance memes 6,7,8 with delays, then show popup
+            memeTimeout1 = setTimeout(() => {
+              current = 5;
+              updateMeme();
+              memeTimeout2 = setTimeout(() => {
+                current = 6;
+                updateMeme();
                 setTimeout(() => {
-                  current = 7; updateMeme();
+                  current = 7;
+                  updateMeme();
                   setTimeout(() => {
-                    if (popup) {
-                      // Show popup only here (after meme 8)
-                      popup.style.display = 'flex';
-                      meme10Timeout1 = setTimeout(() => {
-                        meme10Timeout2 = setTimeout(() => {
-                          current = 8;
+                    current = 8;
+                    updateMeme();
+
+                    // Show popup after meme #9 logic
+                    setTimeout(() => {
+                      if (popup) {
+                        popup.style.display = 'flex';
+                        // After a delay, show meme10 (index 9)
+                        setTimeout(() => {
+                          current = 9;
                           updateMeme();
                         }, 3000);
-                      }, 5000);
-                    }
-                  }, 2000);
+                      }
+                    }, 2000);
+
+                  }, 3000);
                 }, 3000);
               }, 3000);
             }, 3000);
@@ -725,9 +744,10 @@
         if (current > 0) {
           current--;
           updateMeme();
+
           if (popup) popup.style.display = 'none';
-          clearTimeout(meme10Timeout1);
-          clearTimeout(meme10Timeout2);
+          clearTimeout(memeTimeout1);
+          clearTimeout(memeTimeout2);
         }
       };
 
@@ -735,8 +755,8 @@
         if (popup) popup.style.display = 'none';
         current = 0;
         updateMeme();
-        clearTimeout(meme10Timeout1);
-        clearTimeout(meme10Timeout2);
+        clearTimeout(memeTimeout1);
+        clearTimeout(memeTimeout2);
       };
 
       if (memeImage) {
