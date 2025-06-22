@@ -4,50 +4,217 @@
   <meta charset="utf-8" />
   <meta content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes" name="viewport" />
   <title>D8Sync – Meme-Based Blind Dates, No Swipes</title>
-  <link href="https://d8sync.com/assets/favicon.png" rel="icon" type="image/png"/>
-  <link href="https://d8sync.com/assets/favicon.png" rel="shortcut icon" type="image/png"/>
+  <link href="https://d8sync.com/assets/favicon.png" rel="icon" type="image/png" />
+  <link href="https://d8sync.com/assets/favicon.png" rel="shortcut icon" type="image/png" />
   <link href="https://d8sync.com/" rel="canonical" />
-  <meta content="index, follow" name="robots"/>
-  <meta content="D8Sync is a swipe-free AI dating app that connects people through memes and comedy. No awkward openings. Just real vibes." name="description"/>
-  <meta content="meme dating, blind dates, no swiping, AI dating, funny dating app, Gen Z dating app, comedy matchmaking, D8Sync" name="keywords"/>
-  <meta content="D8Sync" name="author"/>
-  <meta content="D8Sync – Meme-Based Blind Dates, No Swipes" property="og:title"/>
-  <meta content="No swiping. No awkward intros. Just memes and vibes." property="og:description"/>
-  <meta content="https://d8sync.com/assets/preview.png" property="og:image"/>
-  <meta content="https://d8sync.com" property="og:url"/>
-  <meta content="website" property="og:type"/>
-  <link href="https://fonts.googleapis.com" rel="preconnect"/>
-  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-  <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet"/>
+  <meta content="index, follow" name="robots" />
+  <meta content="D8Sync is a swipe-free AI dating app that connects people through memes and comedy. No awkward openings. Just real vibes." name="description" />
+  <meta content="meme dating, blind dates, no swiping, AI dating, funny dating app, Gen Z dating app, comedy matchmaking, D8Sync" name="keywords" />
+  <meta content="D8Sync" name="author" />
+  <meta content="D8Sync – Meme-Based Blind Dates, No Swipes" property="og:title" />
+  <meta content="No swiping. No awkward intros. Just memes and vibes." property="og:description" />
+  <meta content="https://d8sync.com/assets/preview.png" property="og:image" />
+  <meta content="https://d8sync.com" property="og:url" />
+  <meta content="website" property="og:type" />
+  <link href="https://fonts.googleapis.com" rel="preconnect" />
+  <link crossorigin href="https://fonts.gstatic.com" rel="preconnect" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet" />
   <style>
-    body { font-family: 'Inter', sans-serif; margin: 0; padding: 0; background: #000; color: #fff; overflow-x: hidden; text-align: center; }
-    .container { max-width: 800px; margin: auto; padding: 40px 20px; text-align: center; }
-    .logo { margin: 40px auto; max-width: 600px; }
-    .logo img { max-width: 100%; height: auto; border-radius: 16px; box-shadow: 0 0 25px #9147ff55; }
-    .feature-block { font-size: 1.2rem; line-height: 1.6; margin-bottom: 60px; max-width: 650px; margin-left: auto; margin-right: auto; }
-    .feature-block h3 { font-size: 1.3rem; margin-bottom: 10px; font-weight: 600; }
-    .feature-block p { max-width: 600px; margin: 0.6em auto; font-weight: 400; }
-    .meme-flipper { width: 320px; margin: 40px auto; position: relative; }
-    .meme-flipper img { width: 100%; border-radius: 20px; cursor: pointer; box-shadow: 0 0 20px #9147ffaa; user-select: none; }
-    .flipper-btn { width: 44px; height: 44px; border: none; border-radius: 50%; color: #fff; font-size: 1.5rem; cursor: pointer; position: absolute; bottom: 85px; user-select: none; background: linear-gradient(135deg, #ff3e6c, #ff69b4); display: flex; align-items: center; justify-content: center; font-weight: bold; }
-    .btn-left { left: 70px; }
-    .btn-right { right: 70px; }
-    .hidden { display: none !important; }
-    .btn-flat { background-color: #8000ff; color: #fff; padding: 12px 24px; font-size: 1rem; border: none; border-radius: 10px; cursor: pointer; margin: 10px; font-weight: 600; white-space: nowrap; }
-    .btn-flat:hover { background-color: #6a00cc; }
-    #matchPopup { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.85); z-index: 9999; padding: 40px; overflow-y: auto; text-align: center; align-items: center; justify-content: center; flex-direction: column; }
-    #matchPopup > div { max-width: 600px; margin: 40px auto; background: #111; padding: 30px 40px 40px; border-radius: 16px; box-shadow: 0 0 30px rgba(0,0,0,0.4); position: relative; color: white; text-align: center; }
-    #popupCloseBtn { position: absolute; top: 12px; right: 12px; width: 28px; height: 28px; background: #6e38f7; border: none; border-radius: 4px; color: white; font-weight: bold; font-size: 22px; line-height: 26px; cursor: pointer; z-index: 10000; }
-    .popup-buttons-container { margin-top: 18px; text-align: center; }
-    .popup-buttons-row { display: flex; justify-content: center; gap: 12px; margin-bottom: 6px; }
-    #waitlist { max-width: 480px; margin: 3rem auto; color: #000; background: #fff; padding: 2rem; border-radius: 12px; }
-    #waitlist h2 { color: #000; margin-bottom: 0.5rem; }
-    #waitlist p { color: #333; margin-bottom: 1.5rem; }
+    body {
+      font-family: 'Inter', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #000;
+      color: #fff;
+      overflow-x: hidden;
+      text-align: center;
+    }
+    .container {
+      max-width: 800px;
+      margin: auto;
+      padding: 40px 20px;
+      text-align: center;
+    }
+    .logo {
+      margin: 40px auto;
+      max-width: 600px;
+    }
+    .logo img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 16px;
+      box-shadow: 0 0 25px #9147ff55;
+    }
+    .feature-block {
+      font-size: 1.2rem;
+      line-height: 1.6;
+      margin-bottom: 60px;
+      max-width: 650px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .feature-block h3 {
+      font-size: 1.3rem;
+      margin-bottom: 10px;
+      font-weight: 600;
+    }
+    .feature-block p {
+      max-width: 600px;
+      margin: 0.6em auto;
+      font-weight: 400;
+    }
+    .meme-flipper {
+      width: 320px;
+      margin: 40px auto;
+      position: relative;
+    }
+    .meme-flipper img {
+      width: 100%;
+      border-radius: 20px;
+      cursor: pointer;
+      box-shadow: 0 0 20px #9147ffaa;
+      user-select: none;
+    }
+    .flipper-btn {
+      width: 44px;
+      height: 44px;
+      border: none;
+      border-radius: 50%;
+      color: #fff;
+      font-size: 1.5rem;
+      cursor: pointer;
+      position: absolute;
+      bottom: 85px;
+      user-select: none;
+      background: linear-gradient(135deg, #ff3e6c, #ff69b4);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+    }
+    .btn-left {
+      left: 70px;
+    }
+    .btn-right {
+      right: 70px;
+    }
+    .hidden {
+      display: none !important;
+    }
+    .btn-flat {
+      background-color: #8000ff;
+      color: #fff;
+      padding: 12px 24px;
+      font-size: 1rem;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      margin: 10px;
+      font-weight: 600;
+      white-space: nowrap;
+      user-select: none;
+      transition: background-color 0.3s ease;
+    }
+    .btn-flat:hover {
+      background-color: #6a00cc;
+    }
+    #matchPopup {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.85);
+      z-index: 9999;
+      padding: 40px;
+      overflow-y: auto;
+      text-align: center;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+    }
+    #matchPopup > div {
+      max-width: 600px;
+      margin: 40px auto;
+      background: #111;
+      padding: 30px 40px 40px;
+      border-radius: 16px;
+      box-shadow: 0 0 30px rgba(0,0,0,0.4);
+      position: relative;
+      color: white;
+      text-align: center;
+    }
+    #popupCloseBtn {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      width: 28px;
+      height: 28px;
+      background: #6e38f7;
+      border: none;
+      border-radius: 4px;
+      color: white;
+      font-weight: bold;
+      font-size: 22px;
+      line-height: 26px;
+      cursor: pointer;
+      user-select: none;
+      transition: background-color 0.3s ease;
+      z-index: 10000;
+    }
+    #popupCloseBtn:hover {
+      background: #5300cc;
+    }
+    .popup-buttons-container {
+      margin-top: 18px;
+      text-align: center;
+    }
+    .popup-buttons-row {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      margin-bottom: 6px;
+    }
+    #waitlist {
+      max-width: 480px;
+      margin: 3rem auto;
+      background: #fff;
+      padding: 2rem;
+      border-radius: 12px;
+      color: #000;
+    }
+    #waitlist h2 {
+      margin-bottom: 0.5rem;
+      color: #000;
+    }
+    #waitlist p {
+      color: #333;
+      margin-bottom: 1.5rem;
+    }
     #waitlist input[type="email"] {
-      padding: 12px; font-size: 1rem; border-radius: 6px; border: 1px solid #ccc; width: 100%; margin-bottom: 1rem;
+      padding: 12px;
+      font-size: 1rem;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      width: 100%;
+      margin-bottom: 1rem;
+      box-sizing: border-box;
     }
     #waitlist button[type="submit"] {
-      background: #8000ff; color: #fff; padding: 12px; border: none; border-radius: 6px; font-weight: bold; font-size: 1rem; cursor: pointer; width: 100%;
+      background: #8000ff;
+      color: #fff;
+      padding: 12px;
+      border: none;
+      border-radius: 6px;
+      font-weight: bold;
+      font-size: 1rem;
+      cursor: pointer;
+      width: 100%;
+      transition: background-color 0.3s ease;
+    }
+    #waitlist button[type="submit"]:hover {
+      background: #6a00cc;
     }
   </style>
 </head>
@@ -141,13 +308,23 @@
     <div id="waitlist" role="region" aria-label="Join the waitlist form">
       <h2>💌 Stay in the Loop</h2>
       <p>Join our meme-based movement and get notified when D8Sync drops.</p>
-      <form action="https://app.kit.com/forms/8210011/subscriptions" method="post" novalidate>
+      <form
+        action="https://app.kit.com/forms/8210011/subscriptions"
+        method="post"
+        novalidate
+        data-format="inline"
+        data-uid="ab96e2e1a4"
+        data-version="5"
+        data-sv-form="8210011"
+        style="background:#fff; border-radius:10px; padding: 2rem;"
+      >
         <input
           type="email"
           name="email_address"
           aria-label="Email Address"
           placeholder="Enter your email"
           required
+          autocomplete="email"
         />
         <button type="submit">Stay in the Loop</button>
       </form>
@@ -159,19 +336,42 @@
       <button aria-label="Close Popup" id="popupCloseBtn" title="Close Popup" style="position:absolute; top:12px; right:12px; width:28px; height:28px; background:#6e38f7; border:none; border-radius:4px; color:white; font-weight:bold; font-size:22px; line-height:26px; cursor:pointer; user-select:none; transition: background-color 0.3s ease; z-index:10000;">×</button>
       <h2 style="margin:0; text-align:center;">🔗 You Just Got Synced 🔗</h2>
       <p style="margin-top:45px; font-size:0.95em; color:#888;">(Sample Match Preview)</p>
-      <p style="margin-bottom:20px; text-align:center;">This is a taste of what matching on D8Sync might feel like.<br />No swiping. No bios. Just pure vibe alignment.</p>
-      <p style="text-align:center; padding-left: 10px; box-sizing: border-box;"><strong>🧠 Shared Meme Energy:</strong><br />“Me pretending that I don’t care.<br />But secretly I'm watching the group chat implode.”</p>
-      <p style="text-align:center; padding-left: 10px; box-sizing: border-box;"><strong>🎧 Audio Match:</strong><br />Late 2000s indie drama with main character syndrome</p>
-      <p style="text-align:center; padding-left: 10px; box-sizing: border-box;"><strong>🍝 First Date Prompt:</strong><br />You meet outside a thrift store...<br />One of you is holding a can of soup.<br />The other is holding a spoon.</p>
-      <p style="text-align:center; padding-left: 10px; box-sizing: border-box;"><strong>🧙‍♂️ Vibe Alignment:</strong><br />84% Emotionally Aligned<br />72% Chaos Compatibility<br />92% Meme Fluency</p>
-      <p style="text-align:center; margin-top: 30px;">🧟‍♂️ Did this vibe feel accurate?</p>
+      <p style="margin-bottom:20px; text-align:center;">
+        This is a taste of what matching on D8Sync might feel like.<br />
+        No swiping. No bios. Just pure vibe alignment.
+      </p>
+      <p style="text-align:center; padding-left: 10px; box-sizing: border-box;">
+        <strong>🧠 Shared Meme Energy:</strong><br />
+        “Me pretending that I don’t care.<br />But secretly I'm watching the group chat implode.”
+      </p>
+      <p style="text-align:center; padding-left: 10px; box-sizing: border-box;">
+        <strong>🎧 Audio Match:</strong><br />
+        Late 2000s indie drama with main character syndrome
+      </p>
+      <p style="text-align:center; padding-left: 10px; box-sizing: border-box;">
+        <strong>🍝 First Date Prompt:</strong><br />
+        You meet outside a thrift store...<br />
+        One of you is holding a can of soup.<br />
+        The other is holding a spoon.
+      </p>
+      <p style="text-align:center; padding-left: 10px; box-sizing: border-box;">
+        <strong>🧙‍♂️ Vibe Alignment:</strong><br />
+        84% Emotionally Aligned<br />
+        72% Chaos Compatibility<br />
+        92% Meme Fluency
+      </p>
+      <p style="text-align:center; margin-top: 30px;">
+        🧟‍♂️ Did this vibe feel accurate?
+      </p>
       <div id="feedback-response" style="text-align:center; padding-left:10px; box-sizing:border-box;"></div>
       <div class="popup-buttons-container">
         <div class="popup-buttons-row">
           <button class="btn-flat" id="spooky-button">Yup... Spooky!</button>
           <button class="btn-flat" id="nah-button">Nah... Not Really.</button>
         </div>
-        <a href="https://www.tinder.com" onclick="alert('Bye Felicia 👋');" style="color:#ccc; font-size:14px; text-decoration:underline; display:block; margin-top:20px; text-align:center;">Not feeling it? Close</a>
+        <a href="https://www.tinder.com" onclick="alert('Bye Felicia 👋');" style="color:#ccc; font-size:14px; text-decoration:underline; display:block; margin-top:20px; text-align:center;">
+          Not feeling it? Close
+        </a>
       </div>
     </div>
   </div>
@@ -316,7 +516,6 @@
 
       if(spookyBtn) spookyBtn.addEventListener('click', () => showRandomResponse('yup'));
       if(nahBtn) nahBtn.addEventListener('click', () => showRandomResponse('nah'));
-
     });
   </script>
 </body>
