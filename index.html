@@ -30,11 +30,16 @@
       height: auto;
       margin: 60px auto 40px;
       display: block;
+      border-radius: 12px;
+      object-fit: contain;
     }
     .feature-block {
       font-size: 1.2rem;
       line-height: 1.6;
       margin-bottom: 60px;
+      max-width: 740px;
+      margin-left: auto;
+      margin-right: auto;
     }
     .feature-block h3 {
       font-size: 1.3rem;
@@ -189,6 +194,8 @@
       max-width: 800px;
       margin: 60px auto 80px;
       padding: 20px;
+      color: #000;
+      text-align: center;
     }
     #thank-you-message {
       display: none;
@@ -198,14 +205,17 @@
       text-align: center;
     }
   </style>
+  <!-- Google Fonts for Inter -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet" />
 </head>
 <body>
   <main class="container" id="main" role="main">
     <div class="logo">
-      <img src="https://d8sync.com/assets/logo-d8sync.svg" alt="D8Sync Logo" />
+      <!-- Main logo as d8sync-banner.jpg from your assets -->
+      <img src="d8sync-landing/assets/d8sync-banner.jpg" alt="D8Sync Banner Logo" />
     </div>
 
-    <section style="text-align: center; margin-top: 2em; font-size: 1.05rem; line-height: 1.6;">
+    <section class="feature-block" style="text-align: center; margin-top: 2em; font-size: 1.05rem; line-height: 1.6;">
       <h2 style="font-size: 1.6rem; margin-bottom: 0.5em;">
         🎯 Real Vibes Only. No Swipes. No Stress.
       </h2>
@@ -222,7 +232,7 @@
     <section class="feature-block">
       <h3>🎭 Swipe Memes, Not Faces</h3>
       <p>What if your dating feed was memes instead of mugshots? No more trying to decode mirror selfies or gym pics. Just scroll, laugh, and react to the memes that hit hardest.</p>
-      <p>Every meme you react to builds your Comedy Graph™ — a “laughprint&quot; that’s uniquely you. Our AI reads your vibe and syncs you with people who match your frequency.</p>
+      <p>Every meme you react to builds your Comedy Graph™ — a “laughprint" that’s uniquely you. Our AI reads your vibe and syncs you with people who match your frequency.</p>
       <p><strong>Weirdly accurate. Dangerously fun.</strong></p>
     </section>
 
@@ -253,7 +263,7 @@
       <p>You're not “hard to love.” — You’re just hard to algorithm.</p>
     </section>
 
-    <div class="meme-flipper">
+    <div class="meme-flipper" aria-label="Meme flipper gallery" role="region">
       <img id="memeImage" alt="Meme" src="https://raw.githubusercontent.com/astrobehr/d8sync-landing/main/memes/meme1.jpg" />
       <button class="flipper-btn btn-left" aria-label="Previous Meme" title="Previous Meme">&#x2718;</button>
       <button class="flipper-btn btn-right" aria-label="Next Meme" title="Next Meme">&#x2764;</button>
@@ -302,11 +312,11 @@
       </div>
     </div>
 
-    <div id="waitlist">
+    <div id="waitlist" aria-label="Beta waitlist sign-up form">
       <!-- ConvertKit Form Embed -->
       <script src="https://f.convertkit.com/ckjs/ck.5.js"></script>
       <div style="max-width: 480px; margin: 3rem auto;">
-        <form class="seva-form formkit-form" data-uid="ab96e2e1a4" data-version="5" method="post" action="https://app.kit.com/forms/8210011/subscriptions" data-format="inline" data-options='{"settings":{"after_subscribe":{"action":"message","success_message":"🎉 You're synced.  \nWatch your inbox for vibe alignment.","redirect_url":""},"recaptcha":{"enabled":true}},"version":"5"}' style="background-color: #fff; border-radius: 10px;">
+        <form class="seva-form formkit-form" data-uid="ab96e2e1a4" data-version="5" method="post" action="https://app.kit.com/forms/8210011/subscriptions" data-format="inline" data-options='{"settings":{"after_subscribe":{"action":"message","success_message":"🎉 You\'re synced.  \\nWatch your inbox for vibe alignment.","redirect_url":""},"recaptcha":{"enabled":true}},"version":"5"}' style="background-color: #fff; border-radius: 10px; box-sizing: border-box;">
           <div data-style="full" style="--bg-border-radius: 5px;">
             <div class="formkit-column" data-element="column" style="padding: 20px; color: #000;">
               <div class="formkit-header" data-element="header" style="font-weight: 700; font-size: 1.5rem; margin: 0 0 16px 0;">
