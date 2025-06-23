@@ -481,12 +481,7 @@
     </div>
   </div>
 
-  <div id="byeFeliciaPopup" style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.6); z-index:11000; justify-content:center; align-items:center; padding:1rem;">
-    <div style="background:#000; border-radius:16px; padding:2rem 2.5rem; max-width:400px; width:100%; box-shadow:none; text-align:center; font-family: 'Fredoka One', cursive; font-weight:700; color:#fff; font-size:1.4rem; user-select:none; position:relative;">
-      <p class="message" style="margin-bottom:1rem;">Bye Felicia.</p>
-      <button id="btnByeOk" class="ok-btn" type="button" style="background:#a259ff; color:#fff; font-size:1.1rem; padding:0.8rem 1.8rem; border-radius:20px; border:none; cursor:pointer; box-shadow:none; transition:background-color 0.3s ease; user-select:none; font-family: 'Fredoka One', cursive; font-weight:700; min-width:120px;">Ok</button>
-    </div>
-  </div>
+  <!-- Bye Felicia popup removed -->
 
   <script defer src="https://f.convertkit.com/ckjs/ck.5.js"></script>
   <script>
@@ -494,8 +489,6 @@
       const popup = document.getElementById('matchPopup');
       const popupCloseBtn = document.getElementById('popupCloseBtn');
       const feedbackResponse = document.getElementById('feedback-response');
-      const byePopup = document.getElementById('byeFeliciaPopup');
-      const byeOkBtn = document.getElementById('btnByeOk');
       const spookyBtn = document.getElementById('spooky-button');
       const nahBtn = document.getElementById('nah-button');
 
@@ -537,27 +530,7 @@
         popup.style.display = 'none';
       });
 
-      // Open Bye Felicia Popup when the close link is clicked
-      const closeLink = document.querySelector('#matchPopup a');
-      closeLink.addEventListener('click', (e) => {
-        e.preventDefault();
-        popup.style.display = 'none';
-        byePopup.style.display = 'flex';
-        byeOkBtn.focus();
-      });
-
-      // Close Bye Felicia Popup on OK button click
-      byeOkBtn.addEventListener('click', () => {
-        byePopup.style.display = 'none';
-        window.open('https://www.tinder.com', '_blank', 'noopener');
-      });
-
-      // Close Bye Felicia Popup on clicking outside inner div
-      byePopup.addEventListener('click', e => {
-        if (e.target === byePopup) {
-          byePopup.style.display = 'none';
-        }
-      });
+      // Bye Felicia popup logic removed
     });
   </script>
 
