@@ -2,693 +2,201 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5, user-scalable=yes" />
-  <title>D8Sync – Meme-Based Blind Dates, No Swipes</title>
-  <link rel="icon" type="image/png" href="https://d8sync.com/assets/favicon.png" />
-  <meta name="description" content="D8Sync is a swipe-free AI dating app that connects people through memes and comedy. No awkward openings. Just real vibes." />
-  <meta name="keywords" content="meme dating, blind dates, no swiping, AI dating, funny dating app, Gen Z dating app, comedy matchmaking, D8Sync" />
-  <meta name="author" content="D8Sync" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>D8Sync Beta Waitlist Notification</title>
   <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Inter&display=swap" rel="stylesheet" />
   <style>
     body {
       margin: 0;
       min-height: 100vh;
       font-family: 'Inter', sans-serif;
-      background: linear-gradient(135deg, #FFAA3C 10%, #F9A8D4 35%, #FF4FFF 65%, #A259FF 90%);
-      color: #1f1f1f;
-      overflow-x: hidden;
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-    }
-    a, button {
-      font-family: 'Fredoka One', cursive;
-    }
-    a {
-      text-decoration: none;
-      color: #6a0dad;
-      transition: color 0.3s ease;
-    }
-    a:hover,
-    a:focus {
-      color: #ff43a4;
-      outline: none;
-    }
-    h1, h2, h3 {
-      margin: 0;
-      font-family: 'Fredoka One', cursive;
-      letter-spacing: 0.05em;
-    }
-    section h2, section h3 {
-      font-size: 2rem;
-      margin-bottom: 0.4rem;
-      color: #6a0dad;
-      text-shadow: none;
-      text-align: left;
-    }
-    .centered-header {
-      text-align: center !important;
-      font-family: 'Inter', sans-serif !important;
-      font-weight: 700 !important;
-      letter-spacing: normal !important;
-    }
-    p {
-      max-width: 600px;
-      margin: 0.6em auto 1.6em;
-      font-size: 1.05rem;
-      line-height: 1.5;
-      text-align: center;
-    }
-    p.left-align {
-      text-align: left;
-      max-width: 650px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-    main {
-      max-width: 900px;
-      margin: 3rem auto 4rem;
-      background: rgba(255 255 255 / 0.9);
-      padding: 2.5rem 2rem 4rem;
-      border-radius: 2rem;
-      box-shadow: 0 18px 32px rgba(255, 67, 164, 0.38);
-      text-align: center;
-    }
-    .logo {
-      margin-bottom: 2rem;
-    }
-    .logo img {
-      width: 480px;
-      max-width: 85vw;
-      border-radius: 1rem;
-      box-shadow: 0 8px 20px #ff43a480;
-      transition: transform 0.3s ease;
-      cursor: pointer;
-      display: block;
-      margin-left: auto;
-      margin-right: auto;
-    }
-    .logo img:hover,
-    .logo img:focus {
-      transform: scale(1.06);
-      outline: none;
-    }
-    section {
-      padding: 1rem 1.5rem 2rem;
-      margin-bottom: 2rem;
-      border-radius: 1.5rem;
-      background: linear-gradient(90deg, #fff8ee, #fce4ef);
-      box-shadow: 0 10px 25px #ff43a460;
-      text-align: left;
-    }
-    .bullet-list {
-      list-style: none;
-      padding-left: 0;
-      margin-top: 0.5rem;
-      margin-bottom: 1.2rem;
-      max-width: 420px;
-      margin-left: auto;
-      margin-right: auto;
-      text-align: left;
-    }
-    .bullet-list li {
+      background: linear-gradient(135deg, #ff69b4, #db70f3);
       display: flex;
+      justify-content: center;
       align-items: center;
-      gap: 12px;
-      margin-bottom: 1.2em;
+      padding: 2rem;
+      box-sizing: border-box;
+      background-repeat: no-repeat;
+      background-size: cover;
     }
-    .bullet-list li img {
-      width: 28px;
-      height: 28px;
-      flex-shrink: 0;
-    }
-    .bullet-list li span {
-      flex: 1;
-      font-size: 1.1rem;
-      color: #1f1f1f;
-    }
-    .section1-bottom-spacing {
-      margin-bottom: 1rem;
-    }
-    .feature.section4 {
-      box-shadow: 0 10px 25px #ff43a460;
-      border-bottom: none;
-      padding-bottom: 2rem;
-      margin-bottom: 2rem;
-      border-radius: 1.5rem;
-      background: linear-gradient(90deg, #fff8ee, #fce4ef);
-      text-align: left;
-    }
-    .feature.section5 {
-      box-shadow: 0 10px 25px #ff43a460;
-      border-bottom: none;
-      border-radius: 1.5rem;
-      background: linear-gradient(90deg, #fff8ee, #fce4ef);
-      margin-bottom: 2rem;
-      padding: 1rem 1.5rem 2rem;
-      text-align: left;
-    }
-    .meme-flipper {
-      position: relative;
-      max-width: 340px;
-      margin: 2rem auto 2.5rem;
-      border-radius: 1.2rem;
-      box-shadow: 0 0 30px #ff43a4aa;
+    .container {
+      max-width: 440px;
       background: white;
-    }
-    .meme-flipper img {
-      width: 100%;
-      border-radius: 1.2rem;
-      display: block;
-      cursor: pointer;
-      user-select: none;
-    }
-    button.flipper-btn {
-      position: absolute;
-      bottom: 16%;
-      height: 44px;
-      width: 44px;
-      border-radius: 50%;
-      border: none;
-      font-size: 1.5rem;
-      font-weight: 800;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-      user-select: none;
-      transition: background-color 0.3s ease, transform 0.15s ease;
-      box-shadow: 0 4px 12px rgba(255, 67, 164, 0.5);
-      color: white;
-    }
-    button.flipper-btn:focus,
-    button.flipper-btn:hover {
-      outline: none;
-      transform: scale(1.1);
-    }
-    button.btn-left {
-      left: 25%;
-      background: #ff43a4;
-    }
-    button.btn-right {
-      right: 25%;
-      background: #6a0dad;
-    }
-    button.flipper-btn.hidden {
-      display: none !important;
-    }
-    #kit-form-container h2 {
-      display: none !important;
-    }
-    #waitlist {
-      max-width: 740px;
-      margin: 2rem auto 1rem;
-      text-align: center;
-      background: #fff;
-      border-radius: 1rem;
-      padding: 2rem 3rem 3rem;
-      box-shadow: 0 8px 25px rgba(106, 13, 173, 0.3);
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      gap: 1rem;
-      justify-content: center;
-    }
-    #waitlist h2 {
-      flex-basis: 100%;
-      margin-bottom: 0.5rem;
-      font-family: 'Fredoka One', cursive;
-      font-size: 2rem;
-      color: inherit !important;
-      text-shadow: none !important;
-      font-weight: 800;
-      text-align: center;
-    }
-
-    /* Popup */
-    #matchPopup {
-      display: none;
-      position: fixed;
-      inset: 0;
-      z-index: 10000;
-      background: rgba(35, 25, 66, 0.95);
-      backdrop-filter: blur(6px);
-      justify-content: center;
-      align-items: center;
-      padding: 2rem 1rem;
-      overflow-y: auto;
-      text-align: center;
-    }
-    #matchPopup.active {
-      display: flex;
-    }
-    #matchPopup > div {
-      background: #1c1338;
-      border-radius: 2rem;
-      max-width: 600px;
-      width: 100%;
-      padding: 2.5rem 3rem;
-      color: white;
-      font-weight: 600;
-      box-shadow: none; /* Removed purple glow */
-      position: relative;
-      font-family: 'Inter', sans-serif;
-      text-align: center; /* Center text alignment */
-      line-height: 1.5;
-      user-select: none;
-    }
-    #popup-title {
-      font-family: 'Fredoka One', cursive;
-      margin-bottom: 1rem;
-      font-size: 1.5rem;
-      font-weight: 700;
-      color: #dba6ff;
-    }
-    #popupCloseBtn {
-      position: absolute;
-      top: 1.2rem;
-      right: 1.2rem;
-      background: transparent;
-      border: none;
-      font-size: 22px;
-      font-weight: 800;
-      color: #a98cff;
-      cursor: pointer;
-      transition: color 0.3s ease;
-      user-select: none;
-    }
-    #popupCloseBtn:hover,
-    #popupCloseBtn:focus {
-      color: #ff43a4;
-      outline: none;
-    }
-    #matchPopup p {
-      margin-top: 0.4rem;
-      font-size: 1.1rem;
-      color: #d6c1ff;
-      text-align: center;
-    }
-    #matchPopup p strong {
-      color: #f0d9ff;
-    }
-    #matchPopup p em {
-      font-style: normal;
-      color: #d5a6ff;
-    }
-    #feedback-response {
-      margin-top: 1rem;
-      min-height: 1.3em;
-      opacity: 0;
-      transition: opacity 0.4s ease;
-      color: #a059ff;
-      font-family: 'Fredoka One', cursive;
-      text-align: center;
-      font-weight: 700;
-      font-size: 1.1rem;
-    }
-    .popup-buttons-row {
-      margin: 1.5rem 0;
-      display: flex;
-      gap: 1rem;
-      justify-content: center;
-      flex-wrap: wrap;
-    }
-    .btn-flat {
-      background-color: #a259ff;
-      border: none;
-      padding: 1.2rem 2rem;
-      border-radius: 2rem;
-      color: white;
-      font-weight: 800;
-      font-size: 1.25rem;
-      cursor: pointer;
-      box-shadow: none; /* Removed glow */
-      transition: background-color 0.3s ease;
-      min-width: 160px;
-      font-family: 'Fredoka One', cursive;
-      user-select: none;
-    }
-    .btn-flat:hover,
-    .btn-flat:focus {
-      background-color: #ff43a4;
-      outline: none;
-      box-shadow: none; /* Removed glow */
-    }
-    #openByeFelicia {
-      display: block;
-      margin-top: 1.5rem;
-      text-align: center;
-      color: #a259ff;
-      font-weight: 700;
-      font-size: 1rem;
-      text-decoration: underline;
-      cursor: pointer;
-      user-select: none;
-    }
-    #openByeFelicia:hover,
-    #openByeFelicia:focus {
-      color: #ff43a4;
-      outline: none;
-    }
-
-    /* Updated Bye Felicia Popup */
-    #byeFeliciaPopup {
-      display: none;
-      position: fixed;
-      inset: 0;
-      background: black;
-      z-index: 11000;
-      justify-content: center;
-      align-items: center;
-      padding: 1rem;
-    }
-    #byeFeliciaPopup.active {
-      display: flex;
-    }
-    #byeFeliciaPopup > div {
-      background: black;
-      border-radius: 1.5rem;
+      border-radius: 16px;
       padding: 2rem 2.5rem;
-      max-width: 400px;
-      width: 100%;
-      box-shadow: none;
+      box-shadow: 0 12px 40px rgba(255, 105, 180, 0.3);
+      display: flex;
+      gap: 2rem;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    .content {
+      flex: 1 1 200px;
+      min-width: 200px;
       text-align: center;
+    }
+    h2 {
       font-family: 'Fredoka One', cursive;
-      font-weight: 700;
-      color: white;
-      font-size: 1.4rem;
-      user-select: none;
-      position: relative;
+      font-size: 1.9rem;
+      margin-bottom: 1rem;
+      line-height: 1.2;
+      color: #333;
+    }
+    p.description {
+      margin: 0.5rem 0;
+      color: #666;
+      font-size: 1rem;
+      font-weight: 500;
+      line-height: 1.4;
+    }
+    form {
+      margin-top: 1.5rem;
       display: flex;
       flex-direction: column;
+      gap: 1rem;
       align-items: center;
-      gap: 1.5rem;
     }
-    #byeFeliciaPopup p.message {
-      margin: 0;
+    input[type="email"] {
+      width: 100%;
+      max-width: 240px;
+      padding: 0.6rem 0.8rem;
+      font-size: 1rem;
+      border: 1.5px solid #ccc;
+      border-radius: 8px;
+      outline-offset: 2px;
+      transition: border-color 0.3s ease;
+      font-family: 'Inter', sans-serif;
     }
-    #byeFeliciaPopup button.ok-btn {
-      background: #a259ff;
-      color: white;
-      font-size: 1.1rem;
-      padding: 0.8rem 1.8rem;
-      border-radius: 2rem;
-      border: none;
-      cursor: pointer;
-      box-shadow: none;
-      transition: background-color 0.3s ease;
-      user-select: none;
+    input[type="email"]:focus {
+      border-color: #6a0dad;
+      box-shadow: 0 0 6px 2px rgba(106, 13, 173, 0.3);
+    }
+    button {
+      max-width: 240px;
+      padding: 0.8rem;
       font-family: 'Fredoka One', cursive;
       font-weight: 700;
-      min-width: 120px;
+      font-size: 1.1rem;
+      background-color: #6a0dad;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      box-shadow: 0 6px 15px rgba(106, 13, 173, 0.7);
+      transition: background-color 0.3s ease;
+      user-select: none;
+      text-align: center;
     }
-    #byeFeliciaPopup button.ok-btn:hover,
-    #byeFeliciaPopup button.ok-btn:focus {
+    button:hover,
+    button:focus {
       background-color: #ff43a4;
       outline: none;
+      box-shadow: 0 6px 18px #ff43a4cc;
     }
-
-    @media (max-width: 640px) {
-      section h2, section h3 {
-        font-size: 1.6rem;
-      }
-      .meme-flipper {
-        max-width: 90vw;
-      }
-      #waitlist {
-        max-width: 90vw;
-        padding: 2rem 1rem 3rem;
-        flex-direction: column;
-        gap: 1rem;
-        align-items: stretch;
-      }
-      #waitlist h2 {
-        font-size: 1.6rem;
-        margin-bottom: 0.5rem;
-        text-align: center;
-      }
+    .disclaimer {
+      font-size: 0.8rem;
+      color: #999;
+      margin-top: 0.5rem;
+      font-weight: 500;
+    }
+    .footer {
+      margin-top: 1.5rem;
+      font-family: 'Fredoka One', cursive;
+      font-weight: 700;
+      font-size: 1rem;
+      color: #222;
+      text-align: center;
+      user-select: none;
+    }
+    .footer span.kit {
+      font-weight: 900;
+      font-family: 'Fredoka One', cursive;
+      margin-left: 4px;
+    }
+    .image-wrapper {
+      flex: 1 1 140px;
+      min-width: 140px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding-left: 1rem;
+    }
+    .image-wrapper svg, .image-wrapper img {
+      max-width: 120px;
+      height: auto;
     }
   </style>
 </head>
 <body>
-  <script>
-    (function(){
-      const colors = ['#FFAA3C', '#F9A8D4', '#FF4FFF', '#A259FF'];
-      let stops = [];
-      while(stops.length < colors.length) {
-        const p = Math.floor(Math.random() * 101);
-        if (!stops.includes(p)) stops.push(p);
-      }
-      stops.sort((a,b) => a - b);
-      const gradientString = `linear-gradient(135deg, ${colors.map((c,i)=>c + ' ' + stops[i] + '%').join(', ')})`;
-      document.body.style.background = gradientString;
-    })();
-  </script>
-  <main role="main" aria-label="D8Sync Meme-based dating landing page">
-    <div class="logo" tabindex="0">
-      <img src="https://raw.githubusercontent.com/astrobehr/d8sync-landing/main/assets/d8sync-banner.jpg" alt="D8Sync Logo" />
-    </div>
-    <!-- ... other content omitted for brevity ... -->
-
-    <section id="waitlist" aria-labelledby="signup-title" role="region" aria-live="polite" aria-atomic="true" style="margin-top: 3rem;">
-      <script async data-uid="ab96e2e1a4" src="https://d8sync.kit.com/ab96e2e1a4/index.js"></script>
-      <div id="kit-form-container"></div>
-      <style>
-        #kit-form-container h2 {
-          display: none !important;
-        }
-        #kit-form-container {
-          color: #1f1f1f;
-          font-family: 'Fredoka One', cursive, 'Inter', sans-serif;
-          text-align: center;
-          max-width: 740px;
-          margin-left: auto;
-          margin-right: auto;
-          display: block;
-        }
-        #waitlist h2 {
-          color: inherit !important;
-          text-shadow: none !important;
-        }
-      </style>
-    </section>
-  </main>
-
-  <!-- Match Popup -->
-  <div id="matchPopup" aria-hidden="true" role="dialog" aria-modal="true" tabindex="-1" aria-label="Match details popup">
-    <div>
-      <button id="popupCloseBtn" aria-label="Close popup" type="button">&times;</button>
-      <h2 id="popup-title">🔗 You Just Got Synced 🔗</h2>
-      <p style="font-style: italic; color: #d5a6ff; font-size: 1rem; margin-bottom: 1rem;">(Sample Match Preview)</p>
-
-      <p>This is a taste of what matching on D8Sync might feel like.<br>No swiping. No bios. Just pure vibe alignment.</p>
-
-      <p><strong>🧠 Shared Meme Energy:</strong><br>“Me pretending that I don’t care.<br>But secretly I'm watching the group chat implode.”</p>
-      <p><strong>🎧 Audio Match:</strong><br>Late 2000s indie drama with main character syndrome</p>
-      <p><strong>🍵 First Date Prompt:</strong><br>You meet outside a thrift store...<br>One of you is holding a can of soup.<br>The other is holding a spoon.</p>
-      <p><strong>🧩 Vibe Alignment:</strong><br>84% Emotionally Aligned<br>72% Chaos Compatibility<br>92% Meme Fluency</p>
-
-      <p style="margin-top: 1.8rem;">🥰 Did this vibe feel accurate?</p>
-
-      <div id="feedback-response" aria-live="polite" role="status"></div>
-      <div class="popup-buttons-row">
-        <button class="btn-flat" id="spooky-button" type="button">Yup... Spooky!</button>
-        <button class="btn-flat" id="nah-button" type="button">Not really</button>
+  <section class="container" aria-label="Beta waitlist signup for D8Sync">
+    <div class="content">
+      <h2>Get Notified<br>for D8Sync<br>Beta Waitlist</h2>
+      <p class="description">Be One of the First to Experience<br><br>AI Meme-Powered Dating</p>
+      <form id="waitlistForm">
+        <input 
+          aria-label="Email address" 
+          type="email" 
+          name="email_address" 
+          id="email_address" 
+          placeholder="Join the Vibe Queue" 
+          required
+        />
+        <button type="submit">Download</button>
+      </form>
+      <p class="disclaimer">No spam. No cringe. Unmatch us anytime</p>
+      <div class="footer" aria-hidden="true">
+        Built with <span class="kit">Kit</span>
       </div>
-      <a href="#" id="openByeFelicia">Not feeling it? Close</a>
     </div>
-  </div>
-
-  <!-- Updated Bye Felicia Popup -->
-  <div id="byeFeliciaPopup" aria-hidden="true" role="dialog" aria-modal="true" tabindex="-1">
-    <div>
-      <p class="message">Bye Felicia. 👋</p>
-      <button id="btnByeOk" class="ok-btn" type="button">Ok</button>
+    <div class="image-wrapper" aria-hidden="true">
+      <!-- Icon from the provided image: a phone with sync arrows, location pin, and heart -->
+      <svg xmlns="http://www.w3.org/2000/svg" fill="black" viewBox="0 0 64 128" aria-hidden="true" role="img" width="120" height="auto" >
+        <rect x="10" y="4" width="44" height="120" rx="12" ry="12" fill="none" stroke="black" stroke-width="4"/>
+        <circle cx="32" cy="110" r="4" fill="black"/>
+        <path d="M20 40a12 12 0 0118-9" fill="none" stroke="black" stroke-width="5" stroke-linecap="round"/>
+        <path d="M44 70a12 12 0 01-18 9" fill="none" stroke="black" stroke-width="5" stroke-linecap="round"/>
+        <circle cx="32" cy="52" r="6" stroke="black" stroke-width="3" fill="none"/>
+        <path d="M32 62c12 18 12 18 0 36" fill="none" stroke="black" stroke-width="4" stroke-linecap="round"/>
+        <path d="M32 100c-12-18-12-18 0-36" fill="none" stroke="black" stroke-width="4" stroke-linecap="round"/>
+        <path d="M32 72s10-8 14-2-5 10-6 10c-1 0-4-4-8-8z" fill="black"/>
+      </svg>
     </div>
-  </div>
+  </section>
 
-  <script defer src="https://f.convertkit.com/ckjs/ck.5.js"></script>
+  <!-- ConvertKit embed script and configuration -->
+  <script src="https://f.convertkit.com/ckjs/ck.5.js" defer></script>
   <script>
-    (function(){
-      const memes = [
-        'https://raw.githubusercontent.com/astrobehr/d8sync-landing/main/memes/meme1.jpg',
-        'https://raw.githubusercontent.com/astrobehr/d8sync-landing/main/memes/meme2.jpg',
-        'https://raw.githubusercontent.com/astrobehr/d8sync-landing/main/memes/meme3.jpg',
-        'https://raw.githubusercontent.com/astrobehr/d8sync-landing/main/memes/meme4.jpg',
-        'https://raw.githubusercontent.com/astrobehr/d8sync-landing/main/memes/meme5.jpg',
-        'https://raw.githubusercontent.com/astrobehr/d8sync-landing/main/memes/meme6.jpg',
-        'https://raw.githubusercontent.com/astrobehr/d8sync-landing/main/memes/meme7.jpg',
-        'https://raw.githubusercontent.com/astrobehr/d8sync-landing/main/memes/meme8.jpg',
-        'https://raw.githubusercontent.com/astrobehr/d8sync-landing/main/memes/meme9.jpg',
-        'https://raw.githubusercontent.com/astrobehr/d8sync-landing/main/memes/meme10.jpg'
-      ];
-      let current = 0;
-      const memeImage = document.getElementById('memeImage');
-      const btnLeft = document.getElementById('prevMemeBtn');
-      const btnRight = document.getElementById('nextMemeBtn');
-      const popup = document.getElementById('matchPopup');
-      const popupCloseBtn = document.getElementById('popupCloseBtn');
-      const feedbackResponse = document.getElementById('feedback-response');
-      const byePopup = document.getElementById('byeFeliciaPopup');
-      const byeOkBtn = document.getElementById('btnByeOk');
-      const openByeFeliciaLink = document.getElementById('openByeFelicia');
-      let meme10Timeout1 = null;
-      let meme10Timeout2 = null;
-      let isMeme10Displayed = false;
+    document.addEventListener("DOMContentLoaded", function () {
+      // Insert ConvertKit form embed script with your public data-uid
+      // For GitHub, use the official asynchronous embed with your user data-uid
+      // Replace "YOUR_DATA_UID_HERE" with your actual ConvertKit embed UID
+      
+      // Since the user image references "https://d8sync.kit.com/ab96e2e1a4/index.js" from the prior code,
+      // we use the same uid "ab96e2e1a4".
 
-      function updateMeme() {
-        memeImage.src = memes[current];
-        if (current >= 5 && current <= 9) {
-          btnLeft.classList.add('hidden');
-          btnRight.classList.add('hidden');
-        } else {
-          btnLeft.classList.remove('hidden');
-          btnRight.classList.remove('hidden');
-        }
-        isMeme10Displayed = (current === 9);
-      }
+      const dataUid = "ab96e2e1a4";
 
-      function showPopup() {
-        popup.classList.add('active');
-        popup.setAttribute('aria-hidden', 'false');
-        popup.focus();
-      }
+      const ckScript = document.createElement("script");
+      ckScript.setAttribute("src", `https://d8sync.kit.com/${dataUid}/index.js`);
+      ckScript.setAttribute("async", "");
+      ckScript.setAttribute("data-uid", dataUid);
+      document.body.appendChild(ckScript);
 
-      function hidePopup() {
-        popup.classList.remove('active');
-        popup.setAttribute('aria-hidden', 'true');
-      }
+      // Create the ConvertKit form container dynamically inside the form for usage
+      // ConvertKit usually appends in the container but as this is a GitHub paste,
+      // We'll provide a container div inside the form and add it there.
 
-      function nextMeme() {
-        if (current < memes.length - 1) {
-          if (current === 4) {
-            current++;
-            updateMeme();
-            setTimeout(() => {
-              current = 6;
-              updateMeme();
-              setTimeout(() => {
-                current = 7;
-                updateMeme();
-                setTimeout(() => {
-                  current = 8;
-                  updateMeme();
-                  setTimeout(() => {
-                    if (!popup.classList.contains('active')) {
-                      showPopup();
-                      meme10Timeout1 = setTimeout(() => {
-                        meme10Timeout2 = setTimeout(() => {
-                          current = 9;
-                          updateMeme();
-                        }, 3000);
-                      }, 5000);
-                    }
-                  }, 2000);
-                }, 3000);
-              }, 3000);
-            }, 3000);
-          } else {
-            current++;
-            updateMeme();
-          }
-        } else {
-          closeAndScrollToWaitlist();
-        }
-      }
+      const form = document.getElementById('waitlistForm');
 
-      function prevMeme() {
-        if (current > 0) {
-          current--;
-          updateMeme();
-          if (popup.classList.contains('active')) {
-            hidePopup();
-          }
-          clearTimeout(meme10Timeout1);
-          clearTimeout(meme10Timeout2);
-        }
-      }
+      const kitContainer = document.createElement('div');
+      kitContainer.id = "kit-form-container";
+      // Hide the default ConvertKit form title inside the container as per previous style
+      const style = document.createElement('style');
+      style.textContent = `#kit-form-container h2 { display: none !important; }`;
+      document.head.appendChild(style);
 
-      function resetMemeSequence() {
-        if (popup.classList.contains('active')) {
-          hidePopup();
-        }
-        current = 0;
-        updateMeme();
-        clearTimeout(meme10Timeout1);
-        clearTimeout(meme10Timeout2);
-      }
-
-      function closeAndScrollToWaitlist() {
-        if (popup.classList.contains('active')) {
-          hidePopup();
-        }
-        const waitlist = document.getElementById("waitlist");
-        if (waitlist) waitlist.scrollIntoView({ behavior: "smooth" });
-      }
-
-      memeImage.addEventListener("click", () => {
-        if (isMeme10Displayed) resetMemeSequence();
-      });
-
-      btnLeft.addEventListener("click", prevMeme);
-      btnRight.addEventListener("click", nextMeme);
-      popupCloseBtn.addEventListener("click", () => {
-        hidePopup();
-      });
-
-      // Feedback buttons
-      const spookyBtn = document.getElementById("spooky-button");
-      const nahBtn = document.getElementById("nah-button");
-
-      const yupResponses = [
-        "✅ Eerie-level accurate — y’all in my brain?",
-        "✅ Soulmate meme frequency. I felt that.",
-        "✅ They understood the assignment.",
-        "✅ Main character vibes. Fully unlocked.",
-        "✅ That gave multiverse twin energy."
-      ];
-      const nayResponses = [
-        "❌ Felt like a bot typed that.",
-        "❌ Cringe. I flinched.",
-        "❌ That felt like a CAPTCHA test.",
-        "❌ Meme was fire. Match was mid.",
-        "❌ Vibe was off. And so was the Wi-Fi."
-      ];
-
-      function showRandomResponse(type) {
-        if (!feedbackResponse) return;
-        const responses = (type === "yup") ? yupResponses : nayResponses;
-        const msg = responses[Math.floor(Math.random() * responses.length)];
-        feedbackResponse.textContent = msg;
-        feedbackResponse.style.opacity = "1";
-        setTimeout(() => (feedbackResponse.style.opacity = "0"), 3000);
-      }
-
-      spookyBtn.addEventListener("click", () => showRandomResponse("yup"));
-      nahBtn.addEventListener("click", () => showRandomResponse("nay"));
-
-      openByeFeliciaLink.addEventListener('click', (e) => {
-        e.preventDefault();
-        hidePopup();
-        byePopup.classList.add('active');
-        byePopup.setAttribute('aria-hidden', 'false');
-        byeOkBtn.focus();
-      });
-
-      byeOkBtn.addEventListener('click', () => {
-        byePopup.classList.remove('active');
-        byePopup.setAttribute('aria-hidden', 'true');
-        window.open('https://www.tinder.com', '_blank', 'noopener');
-      });
-
-      byePopup.addEventListener('click', (e) => {
-        if (e.target === byePopup) {
-          byePopup.classList.remove('active');
-          byePopup.setAttribute('aria-hidden', 'true');
-        }
-      });
-
-      updateMeme();
-    })();
+      form.appendChild(kitContainer);
+    });
   </script>
 </body>
 </html>
