@@ -238,10 +238,10 @@ D8S Land Final 062325
       margin-left: auto;
       margin-right: auto;
       text-align: center;
-      display: flex !important;           /* changed from block to flex */
-      justify-content: center;            /* added */
-      color: #1f1f1f;
-      font-family: 'Fredoka One', cursive, 'Inter', sans-serif;
+      display: block !important;
+      /* Added below to center form if iframe or block elements inside */
+      margin-left: auto !important;
+      margin-right: auto !important;
     }
 
     /* Popup */
@@ -535,10 +535,15 @@ D8S Land Final 062325
           font-family: 'Fredoka One', cursive, 'Inter', sans-serif;
           text-align: center;
           max-width: 740px;
-          margin-left: auto;
-          margin-right: auto;
-          display: flex !important;
-          justify-content: center;
+          margin-left: auto !important;
+          margin-right: auto !important;
+          display: block !important;
+        }
+        /* Additional centering for iframe or block elements inside the kit form */
+        #kit-form-container > * {
+          margin-left: auto !important;
+          margin-right: auto !important;
+          display: block !important;
         }
         #waitlist h2 {
           color: inherit !important;
