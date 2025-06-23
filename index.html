@@ -10,10 +10,12 @@
   <meta name="author" content="D8Sync" />
   <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Inter&display=swap" rel="stylesheet" />
   <style>
-    /* Base styling from mostdonerightnow.html */
+    /* Base and general styling (taken and adapted from your mostdonerightnow.html) */
+
     *, *::before, *::after {
       box-sizing: border-box;
     }
+
     body {
       margin: 0;
       min-height: 100vh;
@@ -22,21 +24,25 @@
       color: #1f1f1f;
       overflow-x: hidden;
     }
+
     a {
       text-decoration: none;
       color: #6a0dad;
       transition: color 0.3s ease;
     }
+
     a:hover,
     a:focus {
       color: #ff43a4;
       outline: none;
     }
+
     h1, h2, h3 {
       margin: 0;
       font-family: 'Fredoka One', cursive;
       letter-spacing: 0.05em;
     }
+
     p {
       max-width: 600px;
       margin: 0.6em auto 1.6em;
@@ -44,12 +50,14 @@
       line-height: 1.5;
       text-align: center;
     }
+
     p.left-align {
       text-align: left;
       max-width: 650px;
       margin-left: auto;
       margin-right: auto;
     }
+
     main {
       max-width: 900px;
       margin: 3rem auto 4rem;
@@ -59,9 +67,11 @@
       box-shadow: 0 18px 32px rgba(255, 67, 164, 0.38);
       text-align: center;
     }
+
     .logo {
       margin-bottom: 2rem;
     }
+
     .logo img {
       width: 360px;
       max-width: 85vw;
@@ -73,24 +83,66 @@
       margin-left: auto;
       margin-right: auto;
     }
+
     .logo img:hover,
     .logo img:focus {
       transform: scale(1.06);
       outline: none;
     }
+
     section h2 {
       font-size: 2rem;
       margin-bottom: 0.4rem;
       color: #6a0dad;
       text-shadow: 0 0 8px #ff43a4bb;
     }
+
     section {
       padding: 1rem 1.5rem 2rem;
       margin-bottom: 2rem;
       border-radius: 1.5rem;
       background: linear-gradient(90deg, #fff8ee, #fce4ef);
       box-shadow: 0 10px 25px #ff43a460;
+      text-align: left;
+      color: #231942;
     }
+
+    /* Lists inside features */
+    ul.bullet-list {
+      list-style: none;
+      padding-left: 0;
+      margin-top: 0.5rem;
+      margin-bottom: 1.2rem;
+      max-width: 420px;
+      margin-left: auto;
+      margin-right: auto;
+      text-align: left;
+      color: #231942;
+    }
+
+    ul.bullet-list li {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 1.2em;
+    }
+
+    ul.bullet-list li img {
+      width: 28px;
+      height: 28px;
+      flex-shrink: 0;
+    }
+
+    ul.bullet-list li span {
+      flex: 1;
+      font-size: 1.1rem;
+      color: #231942;
+    }
+
+    .section1-bottom-spacing {
+      margin-bottom: 1rem;
+    }
+
     .meme-flipper {
       position: relative;
       max-width: 340px;
@@ -98,7 +150,9 @@
       border-radius: 1.2rem;
       box-shadow: 0 0 30px #ff43a4aa;
       background: white;
+      text-align:center;
     }
+
     .meme-flipper img {
       width: 100%;
       border-radius: 1.2rem;
@@ -106,6 +160,7 @@
       cursor: pointer;
       user-select: none;
     }
+
     button.flipper-btn {
       position: absolute;
       bottom: 16%;
@@ -124,22 +179,27 @@
       box-shadow: 0 4px 12px rgba(255, 67, 164, 0.5);
       color: white;
     }
+
     button.flipper-btn:focus,
     button.flipper-btn:hover {
       outline: none;
       transform: scale(1.1);
     }
+
     button.btn-left {
       left: 37%;
       background: #ff43a4;
     }
+
     button.btn-right {
       right: 37%;
       background: #6a0dad;
     }
+
     button.flipper-btn.hidden {
       display: none !important;
     }
+
     #waitlist {
       max-width: 740px;
       margin: 2rem auto 1rem;
@@ -149,7 +209,7 @@
       padding: 0 1rem;
     }
 
-    /* === Popup styles from goodgood.html === */
+    /* Updated popup styles and markup extracted from goodgood.html */
     #matchPopup {
       display: none;
       position: fixed;
@@ -178,6 +238,8 @@
       box-shadow: 0 10px 40px #6a0dadcc;
       position: relative;
       text-align: left;
+      line-height: 1.6;
+      user-select: none;
     }
     #popup-title {
       text-align: center;
@@ -329,43 +391,84 @@
   </style>
 </head>
 <body>
-
   <main role="main" aria-label="D8Sync Meme-based dating landing page">
     <div class="logo" tabindex="0">
       <img src="https://raw.githubusercontent.com/astrobehr/d8sync-landing/main/assets/d8sync-banner.jpg" alt="D8Sync Logo" />
     </div>
 
-    <!-- Sections omitted for brevity, you can copy all content from mostdonerightnow.html as needed -->
-
     <section class="feature" aria-labelledby="ai-match-title">
       <h3><img class="an1" draggable="false" src="https://fonts.gstatic.com/s/e/notoemoji/16.0/1f3af/32.png" alt="🎯" width="20" height="20" aria-label="Target" /> Real Vibes Only. No Swipes. No Stress.</h3>
       <p><strong>Let’s keep it real — dating apps suck.</strong></p>
-      <ul>
-        <li><img class="an1" draggable="false" src="https://fonts.gstatic.com/s/e/notoemoji/16.0/1f4f1/32.png" alt="📱" aria-label="Mobile" /> Swipe fatigue is real.</li>
-        <li><img class="an1" draggable="false" src="https://fonts.gstatic.com/s/e/notoemoji/16.0/1f47b/32.png" alt="👻" aria-label="Ghost" /> Half your matches ghost.</li>
-        <li><img class="an1" draggable="false" src="https://fonts.gstatic.com/s/e/notoemoji/16.0/1f9e0/32.png" alt="🧠" aria-label="Brain" /> The other half treat it like a job interview.</li>
+      <ul class="bullet-list" aria-label="Dating app struggles list">
+        <li><img class="an1" draggable="false" src="https://fonts.gstatic.com/s/e/notoemoji/16.0/1f4f1/32.png" alt="📱" aria-label="Mobile phone" /><span>Swipe fatigue is real.</span></li>
+        <li><img class="an1" draggable="false" src="https://fonts.gstatic.com/s/e/notoemoji/16.0/1f47b/32.png" alt="👻" aria-label="Ghost" /><span>Half your matches ghost.</span></li>
+        <li class="section1-bottom-spacing"><img class="an1" draggable="false" src="https://fonts.gstatic.com/s/e/notoemoji/16.0/1f9e0/32.png" alt="🧠" aria-label="Brain" /><span>The other half treat it like a job interview.</span></li>
       </ul>
-      <p><strong>This isn’t about <em>“who’s hot.”</em></strong> It’s about <em><strong>“who gets you.”</strong></em></p>
+      <p style="max-width: 320px; margin: 1rem auto 2rem; font-weight: 700; text-align: center;">
+        <strong>This isn’t about “who’s hot.”</strong><br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<em><strong>It’s about “who gets you.”</strong></em>
+      </p>
     </section>
 
-    <!-- Meme Swipe Gallery -->
-    <section class="feature" aria-label="Meme Swipe Gallery" style="margin-bottom: 2rem;">
-      <div class="meme-flipper" role="region" tabindex="0" aria-label="Meme Swipe Gallery">
-        <img id="memeImage" alt="D8Sync meme image" src="https://raw.githubusercontent.com/astrobehr/d8sync-landing/main/memes/meme1.jpg" />
-        <button class="flipper-btn btn-left" id="prevMemeBtn" aria-label="Previous Meme" type="button">&#x2718;</button>
-        <button class="flipper-btn btn-right" id="nextMemeBtn" aria-label="Next Meme" type="button">&#x2764;</button>
+    <section class="feature" aria-labelledby="swipe-memes-title">
+      <h3><img class="an1" draggable="false" src="https://fonts.gstatic.com/s/e/notoemoji/16.0/1f3ad/32.png" alt="🎭" width="20" height="20" aria-label="Performing arts" /> Swipe Memes, Not Faces</h3>
+      <p>What if your dating feed was memes instead of mugshots?<br />No more trying to decode mirror selfies or gym pics.</p>
+      <p>Just scroll, laugh, and react to the memes that hit hardest.</p>
+      <p>Every meme you react to builds your <strong>Comedy Graph™</strong> &mdash; a laughprint that’s uniquely <em>you</em>. Our AI reads your vibe and syncs you with people who match your unique frequency.</p>
+      <p><em><strong>Weirdly accurate. Dangerously fun.</strong></em></p>
+      <div class="meme-flipper" role="region" tabindex="0" aria-label="Meme Swipe Gallery" style="margin: 2rem auto 2.5rem; max-width: 340px; position: relative; background: white; border-radius: 1.2rem; box-shadow: 0 0 30px #ff43a4aa;">
+        <img id="memeImage" alt="D8Sync meme image" src="https://raw.githubusercontent.com/astrobehr/d8sync-landing/main/memes/meme1.jpg" style="width:100%; border-radius: 1.2rem; display: block; user-select: none; cursor: pointer;" />
+        <button class="flipper-btn btn-left" id="prevMemeBtn" aria-label="Previous Meme" type="button" style="position: absolute; bottom: 16%; left: 25%; height:44px; width:44px; border-radius: 50%; border:none; font-size:1.5rem; font-weight:800; background:#ff43a4; color:white; box-shadow: 0 4px 12px rgba(255, 67, 164, 0.5); cursor:pointer;">&#x2718;</button>
+        <button class="flipper-btn btn-right" id="nextMemeBtn" aria-label="Next Meme" type="button" style="position: absolute; bottom: 16%; right: 25%; height:44px; width:44px; border-radius: 50%; border:none; font-size:1.5rem; font-weight:800; background:#6a0dad; color:white; box-shadow: 0 4px 12px rgba(255, 67, 164, 0.5); cursor:pointer;">&#x2764;</button>
       </div>
     </section>
 
-    <!-- Add the waitlist form from mostdonerightnow.html or your choice -->
+    <section class="feature section4" aria-labelledby="unfiltered-title">
+      <h3><img class="an1" draggable="false" src="https://fonts.gstatic.com/s/e/notoemoji/16.0/2728/32.png" alt="✨" width="20" height="20" aria-label="Sparkles" /> Unfiltered. Unscripted. Unexpected.</h3>
+      <p><em><strong>No filters. No bios. No profile paralysis.</strong></em></p>
+      <p>At <strong>D8Sync</strong>, you skip the scroll and jump straight into something real.</p>
+      <p>Just you and someone new &mdash; on an actual blind date.</p>
+      <p><em><strong>No Pressure. No Pretending.</strong></em></p>
+      <p><em><strong>And yes, we even give you the perfect icebreaker</strong></em> <img src="https://fonts.gstatic.com/s/e/notoemoji/16.0/1f9ca/32.png" alt="🧊" width="17" height="17" aria-label="Ice cube" /></p>
+    </section>
 
+    <section class="feature section5" aria-labelledby="how-it-works-title">
+      <h3><img class="an1" draggable="false" src="https://fonts.gstatic.com/s/e/notoemoji/16.0/1f575_fe0f_200d_2642_fe0f/32.png" alt="🕵️‍♂️" width="20" height="20" aria-label="Detective man" /> How D8Sync Blind Dates Actually Work</h3>
+      <p>You tap the <em><strong>“Sync Me!”</strong></em> button:</p>
+      <p><strong>D8Sync</strong> scans your <span style="text-decoration: underline;"><strong>Comedy Graph™</strong></span>, vibe data, and availability &mdash; and matches you with someone on your wavelength.</p>
+      <p>Then Our Matchmaker AI then sends you both:</p>
+      <ul class="bullet-list" aria-label="Matchmaker AI details">
+        <li><img src="https://fonts.gstatic.com/s/e/notoemoji/16.0/23f0/32.png" alt="⏰" aria-label="Alarm clock" /> A Date and Time</li>
+        <li><img src="https://fonts.gstatic.com/s/e/notoemoji/16.0/1f4cd/32.png" alt="📍" aria-label="Round pushpin" /> A public place</li>
+        <li><img src="https://fonts.gstatic.com/s/e/notoemoji/16.0/1f9e9/32.png" alt="🧩" aria-label="Puzzle piece" /> “The Tell” &mdash; a phrase or shared order to find your match.</li>
+      </ul>
+      <p>You pull up, scan the scene, and look for the signal... like someone lowkey ordering the same drink.</p>
+      <p>In a crowded cafe or busy bookstore? Not sure it’s them?<br />Tap the “Is That You?” button in-app <img src="https://fonts.gstatic.com/s/e/notoemoji/16.0/1f440/32.png" alt="👀" width="19" height="19" aria-label="Eyes" /> for a private match confirm.</p>
+      <p>If the chemistry's there, drop the icebreaker we gave you &mdash; it's the perfect nudge <img src="https://fonts.gstatic.com/s/e/notoemoji/16.0/1f449/32.png" alt="👉" width="19" height="19" aria-label="Backhand index pointing right" /><img src="https://fonts.gstatic.com/s/e/notoemoji/16.0/1f448/32.png" alt="👈" width="19" height="19" aria-label="Backhand index pointing left" /></p>
+      <p>Not feeling it? That’s cool too.<br />Take a breath, enjoy the moment, & the match will fade away.</p>
+      <p>No profiles. No awkward openings. No rejection drama.</p>
+      <p><em>Just vibes. Real ones.</em></p>
+    </section>
+
+    <section class="feature" aria-labelledby="talk-it-out-title" style="margin-bottom: 3rem;">
+      <h3><img class="an1" draggable="false" src="https://fonts.gstatic.com/s/e/notoemoji/16.0/1f4ac/32.png" alt="💬" width="20" height="20" aria-label="Speech balloon" /> Need to talk it out? We got you.</h3>
+      <p>After every date, the judgment-free vibe check continues.<br />Our AI Dating Coach is here to help you debrief &mdash; like a relationship therapist in your pocket.</p>
+      <p>Whether it sparked or fizzled, talk through what worked, what didn’t, and how it made you feel.</p>
+      <p><strong>Get clarity <img src="https://fonts.gstatic.com/s/e/notoemoji/16.0/1f9e0/32.png" alt="🧠" aria-label="Brain" />. Spot patterns <img src="https://fonts.gstatic.com/s/e/notoemoji/16.0/1f4c8/32.png" alt="📈" aria-label="Chart increasing" />. Grow faster <img src="https://fonts.gstatic.com/s/e/notoemoji/16.0/1f680/32.png" alt="🚀" aria-label="Rocket" /></strong></p>
+      <p><strong>You’re not “hard to love.”</strong><br />You’re just hard to algorithm.</p>
+    </section>
+
+    <section id="waitlist" aria-labelledby="signup-title" role="region" aria-live="polite" aria-atomic="true" style="margin-top: 3rem;">
+      <script async data-uid="ab96e2e1a4" src="https://d8sync.kit.com/ab96e2e1a4/index.js"></script>
+      <div id="kit-form-container"></div>
+    </section>
   </main>
 
-  <!-- Popup from goodgood.html -->
+  <!-- Working popup (extracted fully from goodgood.html) -->
   <div id="matchPopup" role="dialog" aria-modal="true" aria-labelledby="popup-title" tabindex="-1" aria-hidden="true">
     <div>
       <button id="popupCloseBtn" aria-label="Close Popup" title="Close Popup" type="button">×</button>
-      <h3 id="popup-title">🗝 You Just Got Synced 🗝</h3>
+      <h3 id="popup-title">🔗 You Just Got Synced 🔗</h3>
       <p style="color:#b66eac; font-style: italic; font-size: 0.95rem; margin-bottom:1rem;">(Sample Match Preview)</p>
       <p>This is a taste of what matching on D8Sync might feel like.<br />No swiping. No bios. Just pure vibe alignment.</p>
       <p><strong>🤩 Shared Meme Energy:</strong><br />“Me pretending that I don’t care.<br />But secretly I'm watching the group chat implode.”</p>
@@ -440,6 +543,8 @@
       function hidePopup() {
         popup.classList.remove('active');
         popup.setAttribute('aria-hidden', 'true');
+        feedbackResponse.textContent = "";
+        feedbackResponse.style.opacity = "0";
       }
       function nextMeme() {
         if (current < memes.length - 1) {
