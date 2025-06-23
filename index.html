@@ -36,12 +36,12 @@
     h1, h2, h3 {
       margin: 0;
       font-family: 'Fredoka One', cursive;
-      letter-spacing: normal;           /* Removed letter-spacing effect */
+      letter-spacing: normal;
       color: #6a0dad;
-      text-align: center;               /* Keep headers centered */
+      text-align: center;
       font-weight: 800;
       margin-bottom: 0.5rem;
-      text-shadow: none;                /* Removed text shadow */
+      text-shadow: none;
     }
     p {
       max-width: 600px;
@@ -182,9 +182,8 @@
       background: transparent;
       border-radius: 1rem;
       padding: 0 1rem;
-      /* Removed any special text styles for Kit form */
     }
-    /* Popup styles unchanged from goodgood.html */
+    /* Updated popup styles to match requested look */
     #matchPopup {
       display: none;
       position: fixed;
@@ -203,98 +202,128 @@
       display: flex;
     }
     #matchPopup > div {
-      background: white;
-      border-radius: 2rem;
-      max-width: 600px;
-      width: 100%;
-      padding: 2.5rem 3rem;
-      color: #231942;
+      background: #1c1c1c;
+      color: white;
       font-weight: 600;
       box-shadow: 0 10px 40px #6a0dadcc;
-      position: relative;
-      text-align: left;
-      line-height: 1.6;
+      border-radius: 1.5rem;
+      padding: 2.5rem 3rem;
+      max-width: 600px;
+      width: 100%;
+      font-family: 'Inter', sans-serif;
+      text-align: center;
+      line-height: 1.5;
       user-select: none;
+      position: relative;
     }
     #popup-title {
+      font-family: 'Fredoka One', cursive;
+      font-weight: 800;
+      font-size: 1.5rem;
+      color: white;
+      margin-bottom: 0.7rem;
       text-align: center;
+      letter-spacing: 0.03em;
+    }
+    #matchPopup > div p.subtitle {
+      font-style: italic;
+      color: #bbb;
+      font-size: 0.9rem;
+      margin: 0 0 1.5rem 0;
+    }
+    #matchPopup > div p {
+      font-weight: 600;
+      font-size: 1.05rem;
+      line-height: 1.35;
+      margin-bottom: 1.3rem;
+    }
+    #matchPopup > div p strong {
+      color: #ffca6b;
+      font-weight: 800;
+      font-size: 1.05rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    #matchPopup > div p strong::before {
+      content: attr(data-emoji);
+      font-size: 1.25rem;
+      margin-right: 0.25rem;
+    }
+    #matchPopup > p.feedback-question {
+      margin-top: 2rem;
       margin-bottom: 1rem;
+      font-weight: 600;
+      font-size: 1rem;
+    }
+    #feedback-response {
+      font-family: 'Fredoka One', cursive;
+      font-weight: 700;
+      font-size: 1.1rem;
+      color: #a259ff;
+      min-height: 1.4em;
+      opacity: 0;
+      transition: opacity 0.4s ease;
+      margin-bottom: 1rem;
+    }
+    .popup-buttons-row {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-top: 0.8rem;
+    }
+    .btn-flat {
+      padding: 0.8rem 1.5rem;
+      border-radius: 2.5rem;
+      font-weight: 700;
+      font-family: 'Fredoka One', cursive;
+      cursor: pointer;
+      min-width: 110px;
+      font-size: 1rem;
+      transition: background-color 0.3s ease, color 0.3s ease;
+      border: none;
+      user-select: none;
+      box-shadow: 0 6px 18px #a259ffcc;
+    }
+    #spooky-button {
+      background-color: #7b59ff;
+      color: white;
+    }
+    #spooky-button:hover,
+    #spooky-button:focus {
+      background-color: #a259ff;
+      outline: none;
+      box-shadow: 0 8px 25px #a259ffcc;
+    }
+    #nah-button {
+      background-color: #4a4a4a;
+      color: #ddd;
+    }
+    #nah-button:hover,
+    #nah-button:focus {
+      background-color: #5c5c5c;
+      outline: none;
     }
     #popupCloseBtn {
       position: absolute;
-      top: 1.2rem;
-      right: 1.2rem;
-      background: #ff43a4;
-      border: none;
-      border-radius: 50%;
-      width: 36px;
-      height: 36px;
-      font-size: 22px;
+      top: 1rem;
+      right: 1rem;
+      font-size: 1.5rem;
       font-weight: 800;
-      color: white;
+      color: #ccc;
+      background-color: transparent;
+      border: none;
       cursor: pointer;
-      transition: background-color 0.3s ease;
       user-select: none;
+      transition: color 0.3s ease;
+      z-index: 10;
     }
     #popupCloseBtn:hover,
     #popupCloseBtn:focus {
-      background-color: #6a0dad;
-      outline: none;
-    }
-    #feedback-response {
-      margin-top: 1rem;
-      min-height: 1.3em;
-      opacity: 0;
-      transition: opacity 0.4s ease;
-      color: #6a0dad;
-      font-family: 'Fredoka One', cursive;
-      text-align: center;
-      font-weight: 700;
-      font-size: 1.1rem;
-    }
-    .popup-buttons-row {
-      margin: 1.5rem 0;
-      display: flex;
-      gap: 1rem;
-      justify-content: center;
-      flex-wrap: wrap;
-    }
-    .btn-flat {
-      background-color: #ff43a4;
-      border: none;
-      padding: 1.2rem 2rem;
-      border-radius: 2rem;
       color: white;
-      font-weight: 800;
-      font-size: 1.25rem;
-      cursor: pointer;
-      box-shadow: 0 7px 22px #ff43a4cc;
-      transition: background-color 0.3s ease;
-      min-width: 160px;
-      font-family: 'Fredoka One', cursive;
-      user-select: none;
-    }
-    .btn-flat:hover,
-    .btn-flat:focus {
-      background-color: #6a0dad;
       outline: none;
-      box-shadow: 0 10px 30px #6a0dadcc;
-    }
-    #openByeFelicia {
-      display: block;
-      margin-top: 1.5rem;
-      text-align: center;
-      color: #6a0dad;
-      font-weight: 700;
-      font-size: 1rem;
-      text-decoration: underline;
-      cursor: pointer;
-      user-select: none;
-    }
-    #openByeFelicia:hover,
-    #openByeFelicia:focus {
-      color: #ff43a4;
-      outline: none;
+      transform: scale(1.1);
     }
     #byeFeliciaPopup {
       display: none;
@@ -437,24 +466,23 @@
     </section>
   </main>
 
-  <!-- Working popup from goodgood.html -->
+  <!-- Updated popup with new look -->
   <div id="matchPopup" role="dialog" aria-modal="true" aria-labelledby="popup-title" tabindex="-1" aria-hidden="true">
     <div>
-      <button id="popupCloseBtn" aria-label="Close Popup" title="Close Popup" type="button">×</button>
-      <h3 id="popup-title">🔗 You Just Got Synced 🔗</h3>
-      <p style="color:#b66eac; font-style: italic; font-size: 0.95rem; margin-bottom:1rem;">(Sample Match Preview)</p>
-      <p>This is a taste of what matching on D8Sync might feel like.<br />No swiping. No bios. Just pure vibe alignment.</p>
-      <p><strong>🤩 Shared Meme Energy:</strong><br />“Me pretending that I don’t care.<br />But secretly I'm watching the group chat implode.”</p>
-      <p><strong>🎧 Audio Match:</strong><br />Late 2000s indie drama with main character syndrome</p>
-      <p><strong>🥫 First Date Prompt:</strong><br />You meet outside a thrift store...<br />One of you is holding a can of soup.<br />The other is holding a spoon.</p>
-      <p><strong>🍀 Vibe Alignment:</strong><br />84% Emotionally Aligned<br />72% Chaos Compatibility<br />92% Meme Fluency</p>
-      <p style="margin-top: 1.8rem; margin-bottom: 0.5rem;">🥵 Did this vibe feel accurate?</p>
+      <button id="popupCloseBtn" aria-label="Close Popup" title="Close Popup" type="button">&times;</button>
+      <h2 id="popup-title">&#128279; You Just Got Synced &#128279;</h2>
+      <p class="subtitle">(Sample Match Preview)</p>
+      <p>This is a taste of what matching on D8Sync might feel like.<br>No swiping. No bios. Just pure vibe alignment.</p>
+      <p><strong data-emoji="&#129504;">Shared Meme Energy:</strong><br>“Me pretending that I don’t care.<br>But secretly I'm watching the group chat implode.”</p>
+      <p><strong data-emoji="&#127911;">Audio Match:</strong><br>Late 2000s indie drama with main character syndrome</p>
+      <p><strong data-emoji="&#127860;">First Date Prompt:</strong><br>You meet outside a thrift store...<br>One of you is holding a can of soup.<br>The other is holding a spoon.</p>
+      <p><strong data-emoji="&#129472;">Vibe Alignment:</strong><br>84% Emotionally Aligned<br>72% Chaos Compatibility<br>92% Meme Fluency</p>
+      <p class="feedback-question">&#129504; Did this vibe feel accurate?</p>
       <div id="feedback-response" aria-live="polite" role="status"></div>
       <div class="popup-buttons-row">
-        <button class="btn-flat" id="spooky-button" type="button">Yup... Spooky!</button>
-        <button class="btn-flat" id="nah-button" type="button">Nah... Not Really.</button>
+        <button class="btn-flat" id="spooky-button" type="button">Yup, spooky</button>
+        <button class="btn-flat" id="nah-button" type="button">Not really</button>
       </div>
-      <a href="#" id="openByeFelicia" style="color:#6a0dad; font-weight:700; font-size:0.85rem; text-decoration:underline; display:inline-block;">Not feeling it? Close</a>
     </div>
   </div>
 
