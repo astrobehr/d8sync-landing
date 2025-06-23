@@ -1,93 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="utf-8" />
-  <meta content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes" name="viewport" />
-  <title>D8Sync – Meme-Based Blind Dates, No Swipes</title>
-  <link href="https://d8sync.com/assets/favicon.png" rel="icon" type="image/png" />
-  <link href="https://d8sync.com/assets/favicon.png" rel="shortcut icon" type="image/png" />
-
-  <meta content="index, follow" name="robots" />
-  <meta content="D8Sync is a swipe-free AI dating app that connects people through memes and comedy. No awkward openings. Just real vibes." name="description" />
-  <meta content="meme dating, blind dates, no swiping, AI dating, funny dating app, Gen Z dating app, comedy matchmaking, D8Sync" name="keywords" />
-  <meta content="D8Sync" name="author" />
-
-  <!-- Open Graph -->
-  <meta content="D8Sync – Meme-Based Blind Dates, No Swipes" property="og:title" />
-  <meta content="No swiping. No awkward intros. Just memes and vibes." property="og:description" />
-  <meta content="https://d8sync.com/assets/preview.png" property="og:image" />
-  <meta content="https://d8sync.com" property="og:url" />
-  <meta content="website" property="og:type" />
-
-  <!-- Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-SZMQTN31ER"></script>
-  <script>
+<!-- Favicon and Metadata -->
+<link href="https://raw.githubusercontent.com/astrobehr/d8sync-landing/main/assets/favicon.png" rel="icon" type="image/png"/>
+<link href="https://raw.githubusercontent.com/astrobehr/d8sync-landing/main/assets/favicon.png" rel="shortcut icon" type="image/png"/>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes" name="viewport"/>
+<title>D8Sync – Meme-Based Blind Dates, No Swipes</title>
+<link href="https://d8sync.com/" rel="canonical"/>
+<link as="image" href="https://d8sync.com/assets/preview.png" rel="preload"/>
+<!-- SEO Meta Tags -->
+<meta content="index, follow" name="robots"/>
+<meta content="D8Sync is a swipe-free AI dating app that connects people through memes and comedy. No awkward openings. Just real vibes." name="description"/>
+<meta content="meme dating, blind dates, no swiping, AI dating, funny dating app, Gen Z dating app, comedy matchmaking, D8Sync" name="keywords"/>
+<meta content="D8Sync" name="author"/>
+<!-- Open Graph -->
+<meta content="D8Sync – Meme-Based Blind Dates, No Swipes" property="og:title"/>
+<meta content="No swiping. No awkward intros. Just memes and vibes." property="og:description"/>
+<meta content="https://d8sync.com/assets/preview.png" property="og:image"/>
+<meta content="https://d8sync.com" property="og:url"/>
+<meta content="website" property="og:type"/>
+<!-- Google Analytics -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-SZMQTN31ER"></script>
+<script>
     window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
+    function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
     gtag('config', 'G-SZMQTN31ER');
   </script>
-
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet" />
-
-  <!-- Styles -->
-  <style>
-    /* Your existing styles from almost.html */
-
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter&amp;display=swap" rel="stylesheet"/>
+<!-- Styles -->
+<style>
     body {
       font-family: 'Inter', sans-serif;
-      margin: 0;
-      padding: 0;
+      margin: 0; padding: 0;
       background: #000;
       color: #fff;
       overflow-x: hidden;
       text-align: center;
     }
-
     .container {
       max-width: 800px;
       margin: auto;
       padding: 40px 20px;
       text-align: center;
     }
-
     .logo img {
       max-width: 100%;
       height: auto;
       margin: 60px auto 40px;
       display: block;
     }
-
     .feature-block {
       font-size: 1.2rem;
       line-height: 1.6;
       margin-bottom: 60px;
     }
-
     .feature-block h3 {
       font-size: 1.3rem;
       margin-bottom: 10px;
     }
-
     .feature-block p {
       max-width: 600px;
       margin: 0 auto;
     }
-
     .meme-flipper {
       width: 320px;
       margin: 40px auto;
       position: relative;
     }
-
     .meme-flipper img {
       width: 100%;
       border-radius: 20px;
       cursor: pointer;
     }
-
     .flipper-btn {
       width: 44px;
       height: 44px;
@@ -97,25 +86,17 @@
       color: white;
       font-size: 1.5rem;
       cursor: pointer;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
       position: absolute;
       bottom: 85px;
       user-select: none;
     }
-
-    .btn-left {
-      left: 70px;
-    }
-
+    .btn-left { left: 70px; }
     .btn-right {
       right: 70px;
       background-color: #ff69b4;
     }
-
-    .hidden {
-      display: none !important;
-    }
-
+    .hidden { display: none !important; }
     .btn-flat {
       background-color: #8000ff;
       color: #fff;
@@ -129,19 +110,15 @@
       transition: background-color 0.3s ease;
       white-space: nowrap;
     }
-
     .btn-flat:hover {
       background-color: #6a00cc;
     }
-
     #matchPopup {
       display: none;
       position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.85);
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.85);
       z-index: 9999;
       box-sizing: border-box;
       padding: 40px;
@@ -150,25 +127,21 @@
       color: #fff;
       text-align: center;
     }
-
-    #matchPopup>div {
+    #matchPopup > div {
       max-width: 600px;
       margin: 40px auto;
       background: #111;
       padding: 30px 40px 40px;
       border-radius: 16px;
-      box-shadow: 0 0 30px rgba(0, 0, 0, 0.4);
+      box-shadow: 0 0 30px rgba(0,0,0,0.4);
       position: relative;
       color: white;
       text-align: center;
     }
-
     #popupCloseBtn {
       position: absolute;
-      top: 12px;
-      right: 12px;
-      width: 28px;
-      height: 28px;
+      top: 12px; right: 12px;
+      width: 28px; height: 28px;
       background: #6e38f7;
       border: none;
       border-radius: 4px;
@@ -181,11 +154,9 @@
       transition: background-color 0.3s ease;
       z-index: 10000;
     }
-
     #popupCloseBtn:hover {
       background: #5300cc;
     }
-
     #feedback-response {
       margin-top: 18px;
       margin-bottom: 18px;
@@ -204,1124 +175,214 @@
       padding-left: 0 !important;
       box-sizing: border-box;
     }
-
     .popup-buttons-container {
       margin-top: 18px;
       text-align: center;
     }
-
     .popup-buttons-row {
       display: flex;
       justify-content: center;
       gap: 12px;
       margin-bottom: 6px;
     }
-
-    #waitlist {
-      max-width: 740px;
-      margin: 2rem auto 60px;
-      padding: 0 1rem;
-    }
-
-    /* ConvertKit form container to align with rest */
     #waitlist form {
-      margin: 0 auto;
-      max-width: 480px;
-      padding: 0;
-      background: transparent;
-      border-radius: 0;
-      box-shadow: none;
-    }
-
-    /* Responsive tweaks */
-    @media screen and (max-width: 640px) {
-      .meme-flipper {
-        width: 90vw;
-      }
-
-      #waitlist {
-        max-width: 90vw;
-      }
-
-      section h3 {
-        font-size: 1.1rem;
-      }
+      max-width: 740px;
+      margin: 0 auto 60px auto;
+      background: #fff;
+      border-radius: 10px;
+      padding: 40px 45px 40px 60px;
+      box-sizing: border-box;
+      color: #000;
+      font-weight: normal;
+      text-align: center;
     }
   </style>
-
-  <!-- ConvertKit embed script you provided -->
-  <script async data-uid="ab96e2e1a4" src="https://d8sync.kit.com/ab96e2e1a4/index.js"></script>
-</head>
-
-<body><script id="A360-script-ix1eOk">(() => {
-var te=Object.defineProperty;var ee=(r,d,b)=>d in r?te(r,d,{enumerable:!0,configurable:!0,writable:!0,value:b}):r[d]=b;var i=(r,d,b)=>ee(r,typeof d!="symbol"?d+"":d,b);(function(){"use strict";const r="active",d="open",b="settings-manager-wrapper",J="settings-manager__report-ads--active",K="settings-manager-tooltip",I="settings-manager",tt="settings-manager-main-page",et="settings-manager-settings-page",P="custom-select-option--active",st="custom-select-box-size",it="custom-select-box-position",H="custom-select-box",ot="custom-select-box-active",nt="custom-select-option",at="A360-script-ix1eOk",z="settings-manager-onboarding",Z="next-button",A="skip-button",V="title",F="description",R="step",O="howItWorks",B="_step-",rt="get-domain-data",lt="report-domain",ct="toggle-unblock-domain",dt="toggle-dont-show",gt="update-manager-state",_="https://local.adblock360.com/",pt="https://support.adblock360.com/hc/en-us/categories/25372668929042";class L{static async getDomainData(t){const e={domain:t};return(await this.sendRequest(`${_}${rt}`,e)).json()}static async update(t){const{iconSize:e,iconPosition:s,isManagerAutohideEnabled:n,isPositionLock:a,customPosition:c,onboardingStep:p}=t,h={isManagerAutohideEnabled:n,iconSize:e,iconPosition:s,isPositionLock:a,customPosition:c,onboardingStep:p};await this.sendRequest(`${_}${gt}`,h)}static async reportAds(t){const e={domain:t,url:window.location.href,userAgent:navigator.userAgent};await this.sendRequest(`${_}${lt}`,e)}static async toggleUnblockDomain(t,e){const s={domain:t,shouldAddDomainToWhitelist:e};await this.sendRequest(`${_}${ct}`,s)}static async toggleDontShowDomain(t,e){const s={domain:t,shouldAddDomain:e};await this.sendRequest(`${_}${dt}`,s)}static async sendRequest(t,e){try{const s=await fetch(t,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(e)});if(!s.ok)throw new Error(`HTTP error! status: ${s.status}`);return s}catch(s){throw console.error("Error sending request:",s),s}}}var k=(o=>(o.Big="big",o.Medium="medium",o.Small="small",o))(k||{}),g=(o=>(o.BottomRight="bottom-right",o.BottomLeft="bottom-left",o.TopRight="top-right",o.TopLeft="top-left",o.Custom="custom",o))(g||{}),l=(o=>(o.Empty="",o.First="1",o.Second="2",o.Third="3",o.Four="4",o.Finish="finish",o))(l||{});class ht{constructor(t,e,s,n,a){i(this,"isDragging",!1);i(this,"wasDragged",!1);i(this,"offsetX",0);i(this,"offsetY",0);i(this,"onMouseDown",t=>{if(t.button!==0)return;const e=this.target.getBoundingClientRect();this.offsetX=t.clientX-e.left,this.offsetY=t.clientY-e.top,this.isDragging=!0,this.wasDragged=!1,this.handle.style.cursor="grabbing",document.addEventListener("mousemove",this.onMouseMove),document.addEventListener("mouseup",this.onMouseUp)});i(this,"onMouseMove",t=>{if(!this.isDragging)return;this.wasDragged||(this.wasDragged=!0,this.onDragStart&&this.onDragStart());const{safeX:e,safeY:s}=this.getSafeCoordinates(t.clientX,t.clientY);this.target.style.left=`${e}px`,this.target.style.top=`${s}px`});i(this,"onMouseUp",t=>{if(!this.isDragging||(this.isDragging=!1,this.handle.style.cursor="pointer",document.removeEventListener("mousemove",this.onMouseMove),document.removeEventListener("mouseup",this.onMouseUp),!this.wasDragged))return;const{safeX:e,safeY:s}=this.getSafeCoordinates(t.clientX,t.clientY);this.onDragEnd({x:e,y:s}),this.wasDragged=!1});i(this,"getSafeCoordinates",(t,e,s=this.offsetX,n=this.offsetY)=>{const{innerWidth:p,innerHeight:h}=window,{offsetWidth:u,offsetHeight:m}=this.target,v=p-u-24,Gt=h-m-16,Xt=t-s,Qt=e-n,Jt=this.clamp(Xt,24,v),Kt=this.clamp(Qt,16,Gt);return{safeX:Math.round(Jt),safeY:Math.round(Kt)}});i(this,"checkConstraints",()=>{if(this.state.iconPosition!==g.Custom)return;const t=this.target.getBoundingClientRect(),{safeX:e,safeY:s}=this.getSafeCoordinates(t.left,t.top,0,0);this.target.style.left=`${e}px`,this.target.style.top=`${s}px`});this.target=t,this.handle=e,this.onDragEnd=s,this.onDragStart=n,this.state=a,this.handle.addEventListener("mousedown",this.onMouseDown),window.addEventListener("resize",this.checkConstraints)}destroy(){this.handle.removeEventListener("mousedown",this.onMouseDown),document.removeEventListener("mousemove",this.onMouseMove),document.removeEventListener("mouseup",this.onMouseUp),window.removeEventListener("resize",this.checkConstraints)}clamp(t,e,s){return Math.min(Math.max(t,e),s)}}const W={en:{tooltipText:"Ad Reported Successfully! We’re working on it",enabledText:"Enabled on this website",faqText:"FAQ",settingsText:"Settings",howItWorks:"How it works",iconSizeText:"Icon size",iconPositionText:"Icon position",lockPositionText:"Lock position",iconAutoHideText:"Icon Auto-Hide",dontShowIconText:"Don’t show icon on this domain",backText:"Back",selectSizeBigText:"Big",selectSizeMediumText:"Medium",selectSizeSmallText:"Small",selectPositionBottomRightText:"Bottom Right",selectPositionBottomLeftText:"Bottom Left",selectPositionTopRightText:"Top Right",selectPositionTopLeftText:"Top Left",selectPositionCustomText:"Custom",settingsTooltipText:"When enabled, the icon will automatically disappear after a few seconds of inactivity on the page. You can adjust the auto-hide delay in the application settings"}},j={en:{base:{skip:"Skip onboarding",next:"Next"},steps:[{id:"1",step:"Step 1 of 4",title:"Welcome to AdBlock360 Manager",description:"This icon helps you manage ad blocking directly on the website. You can disable ad blocking, report ads, and customize the icon behavior"},{id:"2",step:"Step 2 of 4",title:"Enable or disable ad blocking",description:"Use this switch to control ad blocking on the current website"},{id:"3",step:"Step 3 of 4",title:"Report ads on this page",description:"If you still see ads, click this button to report them. Your report will be sent to our ad blocking team for review and improvement. Once used, the option will be temporarily disabled for 24 hours on this domain"},{id:"4",step:"Step 4 of 4",title:"Customize your experience",description:"In the settings, you can adjust icon size, position, auto-hide, and more.\u2028<span> Additional icon settings are available in the app: Settings → AdBlock360 Manager</span>",button:"Finish"}]}},ut=" @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600&display=swap&family=Inter:wght@400&display=swap')";function f(o,t={}){const e=document.createElement(o);return t.classList&&e.classList.add(...t.classList),t.html&&(e.innerHTML=t.html),t.attributes&&Object.entries(t.attributes).forEach(([s,n])=>{e.setAttribute(s,n)}),e}const mt=()=>{const o=f("style",{html:ut});document.body.appendChild(o)};function vt(o){return o.replace(/^www\./,"")}function T(o,t=500){return o.setAttribute("disabled","true"),()=>{setTimeout(()=>{o.removeAttribute("disabled")},t)}}const xt=(o,t)=>{const e=f("div",{classList:[K],html:W[t].tooltipText});o==null||o.append(e),setTimeout(()=>{e.style.opacity="0",setTimeout(()=>e.remove(),300)},5e3)},bt=async(o,t)=>{const e=o.target;e.disabled=!0;try{await L.toggleUnblockDomain(t,!e.checked),setTimeout(()=>{window.location.reload()},500)}catch(s){console.log("Error toggle unblock domain",s),e.disabled=!1}},ft=async(o,t,e,s)=>{try{await L.reportAds(o),e.classList.add(J),e.disabled=!0,xt(s,t)}catch(n){console.log("Error send domain report",n)}},w=async o=>{try{await L.update(o)}catch(t){console.log("Error update settings manager state",t)}},wt={left:{top:g.TopLeft,bottom:g.BottomLeft},right:{top:g.TopRight,bottom:g.BottomRight}};function q(o){const t=o.getBoundingClientRect(),e=window.innerWidth/2,s=window.innerHeight/2,n=t.left<e?"left":"right",a=t.top<s?"top":"bottom";o.classList.add(wt[n][a])}class U{constructor(t,e,s){i(this,"box");i(this,"options");i(this,"activeEl");i(this,"listeners",[]);this.root=t,this.currentValue=e,this.onChange=s,this.box=this.root.querySelector(`.${H}`),this.options=this.box.querySelectorAll(`.${nt}`),this.activeEl=this.box.querySelector(`.${ot}`),this.init()}init(){this.setActive(this.currentValue);const t=e=>{e.stopPropagation(),this.box.classList.contains(d)||S.register(this),this.box.classList.toggle(d)};this.root.addEventListener("click",t),this.listeners.push(()=>this.root.removeEventListener("click",t)),this.options.forEach(e=>{const s=async n=>{n.stopPropagation(),await this.onChange(e.dataset.value),this.setActive(e.dataset.value),this.box.classList.remove(d),S.unregister(this)};e.addEventListener("click",s),this.listeners.push(()=>e.removeEventListener("click",s))})}setActive(t){this.options.forEach(s=>s.classList.remove(P));const e=this.box.querySelector(`[data-value="${t}"]`);e&&(e.classList.add(P),this.activeEl.innerText=e.innerText),this.currentValue=t}setValue(t){this.setActive(t)}close(){this.box.classList.remove(d)}destroy(){this.listeners.forEach(t=>t()),this.listeners=[],S.unregister(this)}}class S{static register(t){this.activeBox&&this.activeBox!==t&&this.activeBox.close(),this.activeBox=t}static unregister(t){this.activeBox===t&&(this.activeBox=null)}}i(S,"activeBox",null);class Ct{constructor(t,e){i(this,"ui");i(this,"state");i(this,"dragAndDrop");i(this,"tooltipTimer",null);i(this,"onboardingEventHandler",null);i(this,"addListeners",()=>{var t,e,s,n,a,c,p,h,u,m;(t=this.ui.toggleEnabled)==null||t.addEventListener("change",this.toggleBlockAdsCallback),(e=this.ui.toggleLockPosition)==null||e.addEventListener("change",this.toggleLockPositionCallback),(s=this.ui.toggleAutoHide)==null||s.addEventListener("change",this.toggleAutoHideCallback),(n=this.ui.toggleDontShow)==null||n.addEventListener("change",this.toggleDontShowCallback),(a=this.ui.reportAdsButton)==null||a.addEventListener("click",this.reportAdsCallback),(c=this.ui.settingsButtons)==null||c.forEach(v=>{v.addEventListener("click",this.changePageListener)}),(p=this.ui.settingsPage)==null||p.addEventListener("click",this.settingsPageCloseSelectBox),(h=this.ui.tooltipWrapper)==null||h.addEventListener("mouseover",this.handleTooltipMouseOver),(u=this.ui.tooltipWrapper)==null||u.addEventListener("mouseout",this.handleTooltipMouseOut),(m=this.ui.tooltipWrapper)==null||m.addEventListener("click",this.handleTooltipClick),document.addEventListener("mousedown",this.closeSettingsManager)});i(this,"removeListeners",()=>{var t,e,s,n,a,c,p,h,u,m;(t=this.ui.toggleEnabled)==null||t.removeEventListener("change",this.toggleBlockAdsCallback),(e=this.ui.toggleLockPosition)==null||e.removeEventListener("change",this.toggleLockPositionCallback),(s=this.ui.reportAdsButton)==null||s.removeEventListener("click",this.reportAdsCallback),(n=this.ui.toggleAutoHide)==null||n.removeEventListener("change",this.toggleAutoHideCallback),(a=this.ui.toggleDontShow)==null||a.removeEventListener("change",this.toggleDontShowCallback),(c=this.ui.settingsButtons)==null||c.forEach(v=>{v.removeEventListener("click",this.changePageListener)}),(p=this.ui.tooltipWrapper)==null||p.removeEventListener("mouseover",this.handleTooltipMouseOver),(h=this.ui.tooltipWrapper)==null||h.removeEventListener("mouseout",this.handleTooltipMouseOut),(u=this.ui.tooltipWrapper)==null||u.removeEventListener("click",this.handleTooltipClick),document.removeEventListener("mousedown",this.closeSettingsManager),this.onboardingEventHandler&&((m=this.ui.wrapper)==null||m.removeEventListener("onboarding",this.onboardingEventHandler))});i(this,"initOnboardingEvent",t=>{var e;this.onboardingEventHandler=s=>{const{start:n}=s.detail;({true:()=>clearInterval(t),false:()=>this.hideManager()})[`${n}`]()},(e=this.ui.wrapper)==null||e.addEventListener("onboarding",this.onboardingEventHandler)});i(this,"handleTooltipClick",t=>{t.stopPropagation(),t.preventDefault()});i(this,"removeAllListenersAndClasses",()=>{var t,e;(t=this.ui.settingsPage)==null||t.classList.remove(r),(e=this.ui.mainPage)==null||e.classList.remove(r),this.removeListeners(),this.settingsPageCloseSelectBox()});i(this,"destroyCallback",()=>{var t;(t=this.dragAndDrop)==null||t.destroy(),this.ui.toggleButton.remove(),this.ui.mainPage.remove(),this.ui.settingsPage.remove(),this.removeListeners()});i(this,"handleTooltipMouseOver",()=>{var t;this.tooltipTimer&&(clearTimeout(this.tooltipTimer),this.tooltipTimer=null),(t=this.ui.tooltipText)==null||t.classList.add(r)});i(this,"handleTooltipMouseOut",()=>{this.tooltipTimer&&(clearTimeout(this.tooltipTimer),this.tooltipTimer=null),this.tooltipTimer=setTimeout(()=>{var t;(t=this.ui.tooltipText)==null||t.classList.remove(r),this.tooltipTimer=null},500)});i(this,"updateDragEnabled",()=>{var t;(t=this.dragAndDrop)==null||t.destroy(),this.dragAndDrop=null,!this.state.isPositionLock&&(this.dragAndDrop=new ht(this.ui.wrapper,this.ui.toggleButton,this.dragEndCallback,this.removeAllListenersAndClasses,this.state))});i(this,"toggleDontShowCallback",async t=>{const e=t.target,s=T(e);this.state.update({isDomainDontShow:e.checked}),L.toggleDontShowDomain(this.state.hostname,e.checked).then(s)});i(this,"toggleAutoHideCallback",async t=>{const e=t.target,s=T(e);this.state.update({isManagerAutohideEnabled:e.checked}),await w(this.state).then(s)});i(this,"toggleLockPositionCallback",async t=>{const e=t.target,s=T(e);this.state.update({isPositionLock:e.checked}),this.updateDragEnabled(),await w(this.state).then(s)});i(this,"toggleBlockAdsCallback",t=>bt(t,this.state.hostname));i(this,"reportAdsCallback",()=>ft(this.state.hostname,this.state.language,this.ui.reportAdsButton,this.ui.shadowRoot));i(this,"changePageListener",()=>{var t,e;(t=this.ui.mainPage)==null||t.classList.toggle(r),(e=this.ui.settingsPage)==null||e.classList.toggle(r)});i(this,"closeSettingsManager",t=>{this.shouldCloseOnOutsideClick(t)&&this.hideManager()});i(this,"settingsPageCloseSelectBox",()=>{var t;(t=this.ui.settingsPage)==null||t.querySelectorAll(`.${H}`).forEach(e=>{e.classList.remove(d)})});i(this,"clickSettingsManagerBtn",()=>{var e,s,n;if(this.state.skipNextClick){this.state.update({skipNextClick:!1});return}if(((e=this.ui.mainPage)==null?void 0:e.classList.contains(r))||((s=this.ui.settingsPage)==null?void 0:s.classList.contains(r))){this.removeAllListenersAndClasses();return}this.addListeners(),(n=this.ui.mainPage)==null||n.classList.add(r),clearInterval(this.state.intervalId)});i(this,"dragEndCallback",async t=>{var e;this.state.update({skipNextClick:!0,iconPosition:g.Custom,customPosition:t}),this.updateIconPosition(this.state.iconPosition),q(this.ui.wrapper),(e=this.ui.iconPositionSelect)==null||e.setValue(g.Custom),await w(this.state)});i(this,"updateIconPosition",t=>{var e,s;Object.values(g).forEach(n=>{var a;(a=this.ui.wrapper)==null||a.classList.remove(n)}),t!==g.Custom&&((e=this.ui.wrapper)==null||e.removeAttribute("style")),(s=this.ui.wrapper)==null||s.classList.add(t),this.state.update({iconPosition:t})});i(this,"updateIconSize",t=>{var e;Object.values(k).forEach(s=>{var n;(n=this.ui.wrapper)==null||n.classList.remove(s)}),(e=this.ui.wrapper)==null||e.classList.add(t),this.state.update({iconSize:t})});this.ui=t,this.state=e,this.dragAndDrop=null,this.addListeners()}updateIconPositionSelect(){var s,n;const t=async a=>{this.updateIconPosition(a),await w(this.state)},e=(s=this.ui.settingsPage)==null?void 0:s.querySelector(`#${it}`);(n=this.ui.iconPositionSelect)==null||n.destroy(),this.ui.iconPositionSelect=new U(e,this.state.iconPosition,t)}updateIconSizeSelect(){var s;const t=(s=this.ui.settingsPage)==null?void 0:s.querySelector(`#${st}`),e=async n=>{var a;this.updateIconSize(n),(a=this.dragAndDrop)==null||a.checkConstraints(),await w(this.state)};new U(t,this.state.iconSize,e)}addSelectListeners(){this.updateIconSizeSelect(),this.updateIconPositionSelect()}shouldCloseOnOutsideClick(t){var a;const e=t.target,s=(a=this.ui.mainPage)==null?void 0:a.contains(e),n=[I,et].includes(e.tagName.toLowerCase());return!s&&!n}hideManager(){this.removeAllListenersAndClasses(),this.state.isManagerAutohideEnabled&&this.state.updateIntervalId(this.destroyCallback)}initializeToggleButtonListeners(){var t,e,s;this.updateDragEnabled(),(t=this.ui.toggleButton)==null||t.addEventListener("click",this.clickSettingsManagerBtn),(e=this.ui.toggleButton)==null||e.addEventListener("mouseenter",()=>{clearInterval(this.state.intervalId)}),(s=this.ui.toggleButton)==null||s.addEventListener("mouseleave",()=>{var a,c;const n=((a=this.ui.mainPage)==null?void 0:a.classList.contains(r))||((c=this.ui.settingsPage)==null?void 0:c.classList.contains(r));this.state.isManagerAutohideEnabled&&!n?this.state.updateIntervalId(this.destroyCallback):clearInterval(this.state.intervalId)})}}const _t=(o,t)=>+setTimeout(()=>{o()},t*1e3);class Lt{constructor(){i(this,"language","en");i(this,"onboardingStep",l.Finish);i(this,"isManagerAutohideEnabled",!1);i(this,"autoHideSeconds",5);i(this,"iconSize",k.Medium);i(this,"iconPosition",g.BottomRight);i(this,"intervalId",0);i(this,"customPosition",{x:0,y:0});i(this,"isPositionLock",!1);i(this,"isWhitelistedDomains",!1);i(this,"isDomainReported",!1);i(this,"skipNextClick",!1);i(this,"isDomainDontShow",!1);i(this,"hostname");this.hostname=vt(window.location.hostname)}updateIntervalId(t){return this.intervalId=_t(t,this.autoHideSeconds),this.intervalId}update(t){const e=(s,n)=>s==="onboardingStep"?n!==void 0:n!==void 0&&!(typeof n=="string"&&n.trim()==="")&&n!==0;Object.entries(t).forEach(([s,n])=>{e(s,n)&&(this[s]=n)})}}const kt=`
-    .settings-manager-wrapper.bottom-right {
-        right: 24px;
-        bottom: 16px;
+<script type="application/ld+json">{
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "D8Sync",
+    "url": "https://d8sync.com/",
+    "sameAs": ["https://twitter.com/d8sync","https://instagram.com/d8sync","https://facebook.com/d8sync"]
+  }</script>
+<script type="application/ld+json">{
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "D8Sync",
+    "url": "https://d8sync.com/",
+    "description": "D8Sync is a meme-based blind dating platform powered by AI. No swiping. Just vibes.",
+    "publisher": { "@type": "Organization", "name": "D8Sync" },
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://d8sync.com/?q={search_term_string}",
+      "query-input": "required name=search_term_string"
     }
-    
-    .settings-manager-wrapper.bottom-right .settings-manager-main-page {
-        right: 0;
-        top: -234px;
-    } 
-    
-    .settings-manager-wrapper[class*="bottom"] .settings-manager-main-page:has(#howItWorks:not(.hidden)) {
-        top: -286px;
-    }
-
-    .settings-manager-wrapper.bottom-right .settings-manager-settings-page {
-        right: 0;
-        top: -331px;
-    }
-    
-    .settings-manager-wrapper.bottom-left {
-        left: 24px;
-        bottom: 16px;
-    }
-    
-    .settings-manager-wrapper.bottom-left .settings-manager-main-page {
-        top: -234px;
-    }
-
-    .settings-manager-wrapper.bottom-left .settings-manager-settings-page {
-        top: -331px;
-    }
-
-    .settings-manager-wrapper.top-left {
-        left: 24px;
-        top: 16px;
-    }
-
-    .settings-manager-wrapper.top-right {
-        right: 24px;
-        top: 16px;
-    }
-
-    .settings-manager-wrapper.top-right .settings-manager-main-page {
-        right: 0;
-        bottom: -234px;
-    }
-
-    .settings-manager-wrapper.top-right .settings-manager-settings-page {
-        right: 0;
-        bottom: -331px;
-    }
-
-    .settings-manager-wrapper[class*="top"] .settings-manager-main-page:has(#howItWorks:not(.hidden)) {
-        bottom: -296px;
-    }
-    
-    .settings-manager-wrapper.custom {
-        bottom: initial;
-        right: initial;
-    }
-`,yt="#3AA0D9",x="#FFF",D="#F3F5F5",N="#67C8FF1A",$="#0BA43F",St="#B3C0C8",Mt="#0B1936",At="#7B8998",Y="#05172F4C",Bt="#1B86FA",y="#005DD8",Tt="#09142B",Dt="#09142B",G="#d9dbdf",C="#67C8FF",$t="#05172f",Et="#142233",It="rgba(5, 23, 47, 0.50)",Pt="position: relative; z-index: 2147483647; width: 0!important; height: 0!important; margin: 0; padding: 0;pointer-events:auto!important;",Ht=`
-    .hidden {
-      display: none;
-    }
-    .disable {
-      visibility: hidden;
-      pointer-events: none;
-    }
-    
-    .settings-manager-wrapper *,
-    .settings-manager-wrapper {
-        font-family: "Manrope", sans-serif;
-        font-size: 16px;
-        font-style: normal;
-        font-weight: 400;
-        line-height: 20px;
-        color: ${Mt};
-        
-        margin: 0;
-        padding: 0;
-        background-color: transparent;
-        box-shadow: none;
-        width: revert;
-        text-decoration: none;
-    }
-
-    .settings-manager-wrapper {
-        position: fixed;
-        width: auto;
-        margin: 0;
-        padding: 0;
-        border-radius: 20px;
-        z-index: 10000000;
-    }
-
-    .settings-manager-page {
-        position: absolute;
-        display: none;
-        width: 278px;
-        box-shadow: 0 4px 20px 0 ${Y};
-        border-radius: 8px;
-        overflow: hidden;
-        background-color: ${D};
-        padding-bottom: 8px;
-    }
-    
-    .settings-manager__logo {
-        padding: 8px 0;
-    }
-
-    .settings-manager__logo > svg {
-        display: block;
-        margin: 0 auto;
-    }
-
-    .active {
-        display: block !important;
-    }
-
-    .settings-manager__content {
-        display: flex;
-        flex-direction: column;
-        background-color: ${x};
-    }
-    
-    .settings-manager__content-item {
-        transition: background-color 0.2s ease;
-    }
-    
-    .settings-manager__content-item > :first-child {
-        padding: 12px 16px;
-        width: 100%;
-        display: flex;
-        box-sizing: border-box;
-        height: 48px;
-        align-items: center;
-        cursor: pointer;
-        justify-content: space-between;
-    }
-
-    .settings-manager__content-item:hover {
-        background-color: ${N};
-    }
-
-    .settings-manager__content-item:hover .settings-manager__arrow svg path,
-    .settings-manager__content-item:hover .custom-select-box-arrow svg path {
-        stroke: ${y};
-    }
-
-    .settings-manager__content-item:has(button:disabled) {
-        opacity: .3;
-        pointer-events: none;
-    }
-
-    .settings-manager__content-item:has(.settings-manager__report-ads--active:disabled) {
-        background-color: #0BBE1D1A;
-        opacity: 1;
-    }
-
-    .settings-manager__content-item:has(input:disabled) {
-        pointer-events: none;
-    }
-
-    .settings-manager__report-ads {
-        width: 100%;
-        border: none;
-        outline: none;
-        text-align: left;
-    }
-
-    .settings-manager__report-ads svg, 
-    .settings-manager__report-ads rect {
-        width: 18px;
-    }
-
-    .settings-manager__report-ads svg {
-        margin-right: 9px;
-        display: none;
-    }
-
-    .settings-manager__report-ads:disabled svg {
-        display: revert;
-    }
-
-    .settings-manager__link-wrapper {
-        display: flex;
-    }
-
-    .switch__container {
-        position: relative;
-        display: inline-flex;
-        align-items: center;
-        width: 100%;
-    }
-
-    .switch__slider {
-        display: block;
-    }
-
-    .switch__checkbox {
-        opacity: 0;
-        width: 0;
-        height: 0;
-        position: absolute;
-    }
-
-    .switch__slider {
-        position: relative;
-        width: 36px;
-        height: 20px;
-        background-color: ${St};
-        border-radius: 12px;
-        transition: background-color 0.3s;
-        display: inline-block;
-    }
-
-    .switch__slider::before {
-        content: '';
-        position: absolute;
-        width: 16px;
-        height: 16px;
-        background-color: ${x};
-        border-radius: 50%;
-        top: 50%;
-        transform: translateY(-50%);
-        left: 1px;
-        transition: transform 0.3s;
-        border: 1px solid #bababa;
-        z-index: 10;
-    }
-
-    .switch__checkbox:checked + .switch__slider {
-        background-color: ${$};
-    }
-
-    .switch__checkbox:checked + .switch__slider::before {
-        transform: translate(16px, -50%);
-        border-color: ${$};
-    }
-    
-    .switch__slider::after {
-        content: '';
-        position: absolute;
-        width: 40px;
-        height: 40px;
-        background-color: ${$};
-        border-radius: 50%;
-        top: 50%;
-        transform: translate(-10px, -50%);
-        pointer-events: none;
-        z-index: 5;
-        opacity: 0;
-        transition: transform 0.3s ease, opacity 0.3s ease;
-    }
-
-    .switch__slider:hover::after {
-        opacity: 0.08;
-    }
-
-    .switch__checkbox:checked + .switch__slider::after {
-        transform: translate(6px, -50%);
-    }
-    
-    .settings-manager__arrow {
-        width: 20px;
-        height: 20px;
-        margin-right: 7px;
-    }
-
-    .switch__container label {
-        cursor: pointer;
-    }
-
-    .switch__container:has(input:disabled) {
-        pointer-events: none;
-        opacity: 0.3;
-    }
-
-    .switch__container:has(input:disabled) label {
-        pointer-events: none;
-    }
-
-    .settings-manager-tooltip {
-        position: fixed;
-        bottom: 20px;
-        left: 50%;
-        transform: translateX(-50%);
-        background: #322f35;
-        color: #fff;
-        padding: 14px 10px;
-        border-radius: 8px;
-        font-size: 14px;
-        line-height: 21px;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        z-index: 1000;
-        transition: opacity 0.3s;
-        opacity: 1;
-    }
-
-    .settings-manager-icon {
-        position: absolute;
-        top: 57%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        pointer-events: none;
-    }
-
-    /*.settings-manager-counter {
-        display: none;
-        position: absolute;
-        left: 26px;
-        bottom: 0;
-        
-        min-width: 19px;
-        padding: 2px 4px;
-        justify-content: center;
-        align-items: center;
-        border-radius: 6px;
-        background-color: ${yt};
-
-        text-align: center;
-        font-family: "Manrope", sans-serif;
-        font-size: 12px;
-        font-style: normal;
-        font-weight: 600;
-        line-height: normal;
-        color: ${x};
-    }*/
-
-    /*.settings-manager__toggle-button.active .settings-manager-counter {*/
-    /*    display: flex;*/
-    /*}*/
-`,zt=`
-  .settings-manager-settings-page {
-      display: none;
-      width: 313px;
-      overflow: initial;
-  }
-  
-  .settings-manager__content-item-back {
-      background-color: ${Bt};
-      transition: background-color 0.2s ease;
-  }
-  
-  .settings-manager__content-item-back:hover {
-      background-color: ${y};
-      transition: background-color 0.2s ease;
-  }
-
-  .settings-manager__content-item-back .settings-manager__text {
-      color: ${x} !important;
-  }
-
-  .settings-manager__content-item-back svg {
-      transform: rotate(180deg);
-      margin-left: -5px;
-  }
-
-  .settings-manager__content-item-back svg path {
-      stroke: ${x};
-  }
-  
-  .settings-manager__content-item-back__wrapper {
-      justify-content: flex-start !important;
-      gap: 10px;
-  }
-  /* Custom select можно вынести отдельно */
-  .custom-select {
-      position: relative;
-  }
-
-  .custom-select-box {
-      position: relative;
-      font-size: 14px;
-      border-radius: 4px;
-      background-color: transparent;
-      cursor: pointer;
-      width: 135px;
-      height: 30px;
-
-      display: flex;
-      align-items: center;
-      justify-content: flex-end;
-      gap: 10px;
-      padding-right: 9px;
-  }
-
-  .settings-manager__text {
-      cursor: pointer;
-  }
-  
-  .custom-select-box-active {
-      font-size: 14px;  
-      color: ${At};
-  }
-  
-  .custom-select-box-arrow {
-      width: 20px;
-      height: 20px;
-      transform: rotate(90deg);
-  }
-
-  .custom-select-options {
-      position: absolute;
-      top: -50px;
-      left: 0;
-      width: 100%;
-      background-color: white;
-      border-radius: 4px;
-      box-shadow: 0 2px 4px 0 ${Y};
-      display: none;
-      max-height: 200px;
-      overflow-y: auto;
-      z-index: 15;
-      padding: 4px 0;
-  }
-
-  .custom-select-options.icon-size {
-      max-width: 117px;
-      top: -35px;
-      left: 35px;
-  }
-
-  .custom-select-option {
-      position: relative;
-      padding: 8px 12px;
-      font-size: 14px;
-      cursor: pointer;
-      display: flex;
-      gap: 12px;
-  }
-
-  .custom-select-option[data-value="custom"] {
-      display: none;
-  }
-  
-  .custom-select-box.open > .custom-select-options {
-      display: block;
-  }
-  
-  .custom-select-option:hover {
-      background-color: ${N};
-  }
-  
-  .custom-select-option--active:after {
-      content: '';
-      display: block;
-      width: 20px;
-      height: 20px;
-      background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHZpZXdCb3g9IjAgMCAyMCAyMCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGcgaWQ9IkNoZWNrIj4KPGNpcmNsZSBpZD0iVmVjdG9yIiBjeD0iMTAuMDAwMyIgY3k9IjkuOTk5ODQiIHI9IjcuODMzMzMiIHN0cm9rZT0iIzBCQTQzRiIvPgo8cGF0aCBpZD0iVmVjdG9yXzIiIGQ9Ik02IDkuOUw5LjAxMDIzIDEzLjExMDlDOS4yMDc3NyAxMy4zMjE2IDkuNTQyMjMgMTMuMzIxNiA5LjczOTc3IDEzLjExMDlMMTUgNy41IiBzdHJva2U9IiMwQkE0M0YiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgo8L2c+Cjwvc3ZnPgo=');
-      background-size: contain;
-      background-repeat: no-repeat;
-  }
-  
-  .tooltip__container {
-      display: flex;
-      align-items: center;
-      gap: 5px;
-  }
-  
-  .tooltip__container-icon-wrapper {
-      cursor: pointer;
-      position: relative;
-      width: 18px;
-      height: 18px;
-  }
-  
-  .tooltip__container-icon-wrapper:hover > svg path {
-      stroke: ${y};
-  }
-
-  .tooltip__container-icon-wrapper:hover > svg circle:first-child {
-      stroke: ${y};
-  }
-
-  .tooltip__container-icon-wrapper:hover > svg circle:nth-child(2) {
-      fill: ${y};
-  }
-
-  .tooltip__container-text {
-      cursor: default;
-      
-      display: none;
-      width: 250px;
-      font-size: 12px;
-      
-      color: ${x};
-      background-color: ${Tt};
-
-      border-radius: 4px;
-      padding: 4px 12px 6px 12px;
-      
-      position: absolute;
-      top: 30px;
-      left: -115px;
-      z-index: 15;
-  }
-`,Zt=`
-    .settings-manager__toggle-button {
-        opacity: 0;
-        margin: 0;
-        outline: 0;
-        background: none;
-        border: none;
-        cursor: pointer;
-
-        width: 58px;
-        height: 64px;
-        position: relative;
-        padding: 8px;
-    }
-
-    .js-active-ad-blocking-icon,
-    .js-disabled-ad-blocking-icon {
-        display: none;
-    }
-
-    .settings-manager__toggle-button.active .js-active-ad-blocking-icon {
-        display: block;
-    }
-
-    .settings-manager__toggle-button:not(.active) .js-disabled-ad-blocking-icon {
-        display: block;
-    }
-    
-    /* settings manager icon (button) styles for different sizes */
-    .settings-manager-wrapper.big .settings-manager__toggle-button {
-        width: 72px;
-        height: 80px;
-    }
-
-    .settings-manager-wrapper.big .settings-manager__toggle-button svg {
-        width: 82px;
-        height: 88px;
-    }
-
-    .settings-manager-wrapper.medium .settings-manager__toggle-button {
-        width: 58px;
-        height: 64px;
-    }
-
-    .settings-manager-wrapper.medium .settings-manager__toggle-button svg {
-        width: 60px;
-        height: 72px;
-    }
-
-    .settings-manager-wrapper.small .settings-manager__toggle-button {
-        width: 44px;
-        height: 48px;
-    }
-
-    .settings-manager-wrapper.small .settings-manager__toggle-button svg {
-        width: 40px;
-        height: 44px;
-    }
-`,M=`<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">\r
-  <path d="M6.66667 16.6654L13.3631 10.3628C13.5729 10.1654 13.5729 9.83202 13.3631 9.6346L6.66667 3.33203" stroke="#2E353F" stroke-linecap="round"/>\r
-</svg>\r
-`,X=`<svg width="98" height="18" viewBox="0 0 98 18" fill="none" xmlns="http://www.w3.org/2000/svg">\r
-    <path d="M96.3959 13.0251C95.7202 13.9833 94.7654 14.4624 93.5315 14.4624C92.2976 14.4624 91.3379 13.9833 90.6524 13.0251C89.9766 12.0571 89.6388 10.7664 89.6388 9.15308C89.6388 7.53975 89.9766 6.25397 90.6524 5.29575C91.3379 4.32775 92.2976 3.84375 93.5315 3.84375C94.7654 3.84375 95.7202 4.32775 96.3959 5.29575C97.0814 6.25397 97.4241 7.53975 97.4241 9.15308C97.4241 10.7664 97.0814 12.0571 96.3959 13.0251ZM91.4162 12.3357C91.9254 13.0886 92.6305 13.4651 93.5315 13.4651C94.4324 13.4651 95.1326 13.0886 95.632 12.3357C96.1413 11.5829 96.3959 10.522 96.3959 9.15308C96.3959 7.78419 96.1413 6.72331 95.632 5.97042C95.1326 5.21753 94.4324 4.84108 93.5315 4.84108C92.6305 4.84108 91.9254 5.21753 91.4162 5.97042C90.9168 6.72331 90.667 7.78419 90.667 9.15308C90.667 10.522 90.9168 11.5829 91.4162 12.3357Z" fill="#0B1936"/>\r
-    <path d="M85.0077 7.6862C86.0163 7.6862 86.8438 8.00398 87.4901 8.63953C88.1365 9.26531 88.4596 10.0769 88.4596 11.0742C88.4596 12.0715 88.1365 12.888 87.4901 13.5235C86.8438 14.1493 86.0163 14.4622 85.0077 14.4622C83.999 14.4622 83.1715 14.1493 82.5252 13.5235C81.8788 12.888 81.5557 12.0715 81.5557 11.0742C81.5557 10.3018 81.7662 9.61731 82.1873 9.02086L85.5512 4.01953H86.7116L84.185 7.7742C84.4495 7.71553 84.7237 7.6862 85.0077 7.6862ZM83.2449 12.8049C83.6954 13.2449 84.283 13.4649 85.0077 13.4649C85.7323 13.4649 86.315 13.2449 86.7557 12.8049C87.2061 12.3649 87.4314 11.788 87.4314 11.0742C87.4314 10.3604 87.2061 9.78353 86.7557 9.34353C86.315 8.90353 85.7323 8.68353 85.0077 8.68353C84.283 8.68353 83.6954 8.90353 83.2449 9.34353C82.8043 9.78353 82.5839 10.3604 82.5839 11.0742C82.5839 11.788 82.8043 12.3649 83.2449 12.8049Z" fill="#0B1936"/>\r
-    <path d="M77.6884 8.28753C78.511 8.39509 79.1867 8.71286 79.7155 9.24087C80.2541 9.75909 80.5234 10.4484 80.5234 11.3089C80.5234 12.2866 80.1856 13.0591 79.5099 13.6262C78.844 14.1835 78.0312 14.4622 77.0715 14.4622C76.3076 14.4622 75.627 14.2862 75.0296 13.9342C74.4323 13.5822 74.0112 13.0786 73.7664 12.4235L74.6183 11.9249C74.7848 12.4333 75.0835 12.8195 75.5144 13.0835C75.9453 13.3378 76.4643 13.4649 77.0715 13.4649C77.7765 13.4649 78.3543 13.2791 78.8048 12.9075C79.2651 12.5262 79.4952 11.9933 79.4952 11.3089C79.4952 10.6244 79.2651 10.0964 78.8048 9.72486C78.3543 9.34353 77.7765 9.15286 77.0715 9.15286V9.1382L77.0568 9.15286H76.7777L76.337 8.4782L78.8929 4.98753H74.0601V4.01953H80.0828V4.98753L77.6884 8.28753Z" fill="#0B1936"/>\r
-    <path d="M73.2465 14.2862H71.0431L68.3696 10.9569V14.2862H66.4747V4.01953H68.3696V10.1795L70.8962 6.95287H73.1584L70.2058 10.5755L73.2465 14.2862Z" fill="#0B1936"/>\r
-    <path d="M62.1528 14.4901C61.0462 14.4901 60.1207 14.1185 59.3765 13.3754C58.642 12.6323 58.2748 11.7132 58.2748 10.6181C58.2748 9.52298 58.642 8.60387 59.3765 7.86076C60.1207 7.11765 61.0462 6.74609 62.1528 6.74609C62.8676 6.74609 63.5189 6.9172 64.1064 7.25943C64.694 7.60165 65.1396 8.0612 65.4432 8.63809L63.8126 9.59143C63.6658 9.28832 63.4405 9.04876 63.1369 8.87276C62.8432 8.69676 62.5102 8.60876 62.1381 8.60876C61.5701 8.60876 61.1 8.79943 60.7279 9.18076C60.3558 9.55232 60.1697 10.0314 60.1697 10.6181C60.1697 11.195 60.3558 11.6741 60.7279 12.0554C61.1 12.427 61.5701 12.6128 62.1381 12.6128C62.52 12.6128 62.8578 12.5296 63.1516 12.3634C63.4552 12.1874 63.6804 11.9479 63.8273 11.6448L65.4725 12.5834C65.1494 13.1603 64.694 13.6248 64.1064 13.9768C63.5189 14.319 62.8676 14.4901 62.1528 14.4901Z" fill="#0B1936"/>\r
-    <path d="M56.1925 13.3754C55.4385 14.1185 54.518 14.4901 53.431 14.4901C52.3439 14.4901 51.4234 14.1185 50.6694 13.3754C49.9251 12.6225 49.553 11.7034 49.553 10.6181C49.553 9.53276 49.9251 8.61854 50.6694 7.87543C51.4234 7.12254 52.3439 6.74609 53.431 6.74609C54.518 6.74609 55.4385 7.12254 56.1925 7.87543C56.9466 8.61854 57.3236 9.53276 57.3236 10.6181C57.3236 11.7034 56.9466 12.6225 56.1925 13.3754ZM52.0061 12.0701C52.388 12.4514 52.863 12.6421 53.431 12.6421C53.9989 12.6421 54.4739 12.4514 54.8558 12.0701C55.2377 11.6888 55.4287 11.2048 55.4287 10.6181C55.4287 10.0314 55.2377 9.54743 54.8558 9.16609C54.4739 8.78476 53.9989 8.59409 53.431 8.59409C52.863 8.59409 52.388 8.78476 52.0061 9.16609C51.634 9.54743 51.4479 10.0314 51.4479 10.6181C51.4479 11.2048 51.634 11.6888 52.0061 12.0701Z" fill="#0B1936"/>\r
-    <path d="M46.3057 14.2848V3.57812H48.2006V14.2848H46.3057Z" fill="#0B1936"/>\r
-    <path d="M43.7135 8.9622C44.6144 9.48042 45.0649 10.2626 45.0649 11.3089C45.0649 12.1791 44.7564 12.8929 44.1394 13.4502C43.5225 14.0075 42.7635 14.2862 41.8626 14.2862H37.4999V4.01953H41.5541C42.4355 4.01953 43.1748 4.29331 43.7722 4.84086C44.3794 5.37864 44.6829 6.06798 44.6829 6.90887C44.6829 7.75953 44.3598 8.44398 43.7135 8.9622ZM41.5541 5.91153H39.527V8.1702H41.5541C41.8675 8.1702 42.127 8.06264 42.3327 7.84753C42.5481 7.63242 42.6558 7.36353 42.6558 7.04087C42.6558 6.7182 42.553 6.44931 42.3473 6.2342C42.1417 6.01909 41.8773 5.91153 41.5541 5.91153ZM41.8626 12.3942C42.2054 12.3942 42.4893 12.2818 42.7146 12.0569C42.9398 11.8222 43.0524 11.5289 43.0524 11.1769C43.0524 10.8346 42.9398 10.5511 42.7146 10.3262C42.4893 10.0915 42.2054 9.9742 41.8626 9.9742H39.527V12.3942H41.8626Z" fill="#0B1936"/>\r
-    <path d="M33.7838 4.01953H35.6787V14.2862H33.7838V13.4209C33.2256 14.1346 32.4324 14.4915 31.4041 14.4915C30.4151 14.4915 29.568 14.12 28.8629 13.3769C28.1676 12.624 27.8199 11.7049 27.8199 10.6195C27.8199 9.5342 28.1676 8.61998 28.8629 7.87687C29.568 7.12398 30.4151 6.74753 31.4041 6.74753C32.4324 6.74753 33.2256 7.10442 33.7838 7.8182V4.01953ZM30.2877 12.1155C30.6795 12.4969 31.1691 12.6875 31.7567 12.6875C32.3443 12.6875 32.829 12.4969 33.2109 12.1155C33.5928 11.7244 33.7838 11.2258 33.7838 10.6195C33.7838 10.0133 33.5928 9.51953 33.2109 9.1382C32.829 8.74709 32.3443 8.55153 31.7567 8.55153C31.1691 8.55153 30.6795 8.74709 30.2877 9.1382C29.9058 9.51953 29.7149 10.0133 29.7149 10.6195C29.7149 11.2258 29.9058 11.7244 30.2877 12.1155Z" fill="#0B1936"/>\r
-    <path d="M25.3036 14.2862L24.6867 12.4382H20.5884L19.9714 14.2862H17.7827L21.3816 4.01953H23.8935L27.507 14.2862H25.3036ZM21.2347 10.5462H24.055L22.6449 6.35153L21.2347 10.5462Z" fill="#0B1936"/>\r
-    <path fill-rule="evenodd" clip-rule="evenodd" d="M7.08996 17.0534V13.3984C4.98059 11.6236 3.62405 9.49244 3.42038 6.75026L0.5 5.06641V6.08472C0.525458 10.3471 2.59846 13.6203 5.91162 16.1551L7.08632 17.0534H7.08996Z" fill="#005DD8"/>\r
-    <path fill-rule="evenodd" clip-rule="evenodd" d="M4.03544 5.77504L7.665 4.11664L11.2982 5.77504L14.3677 4.0039L7.665 0.945312L0.965942 4.0039L4.03544 5.77504Z" fill="#005DD8"/>\r
-    <path fill-rule="evenodd" clip-rule="evenodd" d="M11.912 6.75026C11.7083 9.49608 10.3518 11.6273 8.24243 13.3984V17.0534L9.41713 16.1551C12.7303 13.6203 14.8069 10.3435 14.8251 6.08472V5.06641L11.912 6.75026Z" fill="#005DD8"/>\r
-    <path fill-rule="evenodd" clip-rule="evenodd" d="M7.664 12.3731C9.3915 10.8747 10.5407 9.10357 10.748 6.79418L7.664 5.38672L4.57996 6.79418C4.79089 9.09993 5.94013 10.8747 7.664 12.3731Z" fill="#1B86FA"/>\r
-</svg>\r
-`,Vt=`<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">\r
-    <rect width="18" height="18" rx="9" fill="#0BBE1D"/>\r
-    <path d="M7.5 12.3L4.5 9.3L5.55 8.25L7.5 10.2L12.45 5.25L13.5 6.3L7.5 12.3Z" fill="white"/>\r
-</svg>`,Ft=o=>`
-    <div class="settings-manager-page settings-manager-main-page">
-        <div class="settings-manager__logo">${X}</div>
-        <div class="settings-manager__content">
-            <div class="settings-manager__content-item">
-                <label class="switch__container">
-                    <label class="settings-manager__text" for="toggle-enabled">${o.enabledText}</label>
-                    <input id="toggle-enabled" type="checkbox" class="switch__checkbox">
-                    <span class="switch__slider"></span>
-                </label>
-            </div>
-            <div class="settings-manager__content-item">
-                <button id="report-add" class="settings-manager__report-ads">
-                    <span>Report ads</span>
-                    ${Vt}
-                </button>
-            </div>
-            <div class="settings-manager__content-item">
-                <a href=${pt} class="settings-manager__link" target="_blank">
-                    <span class="settings-manager__text">${o.faqText}</span>
-                </a>
-            </div>
-            <div class="settings-manager__content-item">
-                <div class="settings-manager__settings settings-manager__settings-toggle">
-                    <span class="settings-manager__text">${o.settingsText}</span>
-                    <div class="settings-manager__arrow">${M}</div>
-                </div>
-            </div>
-            <div id="${O}" class="settings-manager__content-item hidden">
-                <div class="settings-manager__settings settings-manager__how-it-works">
-                    <span class="settings-manager__text">${o.howItWorks}</span>
-                </div>
-            </div>
-        </div>
+  }</script>
+<script data-domain="d8sync.com" defer="" src="https://plausible.io/js/script.js"></script>
+<link href="https://f.convertkit.com/css/forms.css" rel="stylesheet"/></head>
+<body>
+<main class="container" id="main" role="main">
+<div class="logo">
+<img alt="D8Sync Logo" src="https://raw.githubusercontent.com/astrobehr/d8sync-landing/main/assets/d8sync-banner.jpg"/>
+</div>
+<section class="feature-block">
+<h3>🎯 AI Matches That Actually Hit</h3>
+<p>Imagine this: You send a meme,<br/>and someone laughs the exact way you do.<br/><br/>That’s not chance — it’s sync.<br/>We read between your media likes, playlists, and punchlines<br/>to pair you with people on your wavelength.<br/><br/>No swiping roulette. No dead-end matches.<br/>Just real connection, fueled by your sense of humor.</p>
+</section>
+<section class="feature-block">
+<h3>🎭 Swipe Memes, Not Faces</h3>
+<p>What if your dating feed was memes instead of mugshots?<br/>No more trying to decode mirror selfies or gym pics.<br/><br/>Just scroll, laugh, and react to the memes that hit hardest.<br/>Every swipe helps build your Comedy Graph™ —<br/>our algorithm that learns your humor DNA<br/>and matches you with someone who *actually gets it*<br/><br/>Weirdly accurate. Dangerously fun.</p>
+<div class="meme-flipper">
+<img alt="Meme" id="memeImage" src="https://raw.githubusercontent.com/astrobehr/d8sync-landing/main/memes/meme1.jpg"/>
+<button class="flipper-btn btn-left" onclick="prevMeme()">✘</button>
+<button class="flipper-btn btn-right" onclick="nextMeme()">❤</button>
+</div>
+</section>
+<section class="feature-block">
+<h3>✨ Unfiltered. Unscripted. Unexpected.</h3>
+<p>No filters. No bios. No profile paralysis.<br/>At D8Sync, you skip the scroll<br/>and jump straight into something real.<br/><br/>Just you and someone new — on an actual blind date.<br/>No pressure. No pretending.<br/>And yes, we even give you the perfect icebreaker.</p>
+</section>
+<section class="feature-block">
+<h3>🕵️‍♂️ How D8Sync Blind Dates Actually Work</h3>
+<p>You tap the “Sync Me!” button<br/>D8Sync scans your Comedy Graph™, vibe data, and availability<br/>— and matches you with someone on your wavelength.<br/><br/>Our Matchmaker AI then sends you both:<br/>🔓 A time 📍 A public place & 🧩 “The Tell” —<br/>a phrase or shared order to find your match.<br/><br/>You pull up, scan the scene, and look for the signal...<br/>like someone lowkey ordering the same drink<br/><br/>In a crowded cafe or busy bookstore? Not sure it’s them?<br/>Tap the <em>“Is That You?"</em> button in-app for a private match confirm.<br/>If the chemistry's there, drop the icebreaker we gave you<br/>— it's the perfect nudge.<br/><br/>Not feeling it? That’s cool too.<br/>Take a breath, enjoy the moment, & the match will fade away.<br/>No profiles. No awkward openings. No rejection drama.<br/><em>Just vibes. Real ones.</em>
+<section class="feature-block" style="margin-top: 40px">
+<h3>💬 Need to talk it out? We got you.</h3>
+<p>After every date, the judgment-free vibe check continues.<br/>Our AI Dating Coach is here to help you debrief —<br/>like a relationship therapist in your pocket.<br/><br/>Whether it sparked or fizzled, talk through<br/>what worked, what didn’t, and how it made you feel.<br/><em>Get clarity. Spot patterns. Grow faster.</em></p>
+</section>
+</p>
+</section>
+<div id="waitlist">
+<!-- Start of ConvertKit Form Embed -->
+<script src="https://f.convertkit.com/ckjs/ck.5.js"></script>
+<div style="max-width: 480px; margin: 3rem auto;"></div>
+<!-- End of ConvertKit Form Embed -->
+</div>
+<div id="thank-you-message" style="display:none; margin-top:20px; color:#4caf50; font-weight:bold;">
+      ✅ You're in. Thanks for vibing with us.
     </div>
-`,Rt=`
-    <button id="settings-manager-toggle-button" class="settings-manager__toggle-button">
-        <div class="settings-manager-icon js-disabled-ad-blocking-icon"><svg width="80" height="88" viewBox="0 0 80 88" fill="none" xmlns="http://www.w3.org/2000/svg">\r
-    <g filter="url(#filter0_d_12450_195569)">\r
-        <path opacity="0.8" d="M40.4132 8.18752C40.1506 8.06835 39.8494 8.06835 39.5868 8.18752L12.5868 20.4397C12.2295 20.6018 12 20.9579 12 21.3503V27.2941C12 42.1052 18.9116 56.0508 30.6534 64.9312L39.3968 71.5438C39.7536 71.8137 40.2464 71.8137 40.6032 71.5438L49.3466 64.9312C61.0883 56.0508 68 42.1052 68 27.2941V21.3503C68 20.9579 67.7705 20.6018 67.4132 20.4397L40.4132 8.18752Z" fill="white"/>\r
-        <path fill-rule="evenodd" clip-rule="evenodd" d="M38.093 65.5214V53.406C31.0687 47.5231 26.5513 40.4587 25.8731 31.3691L16.1479 25.7876V29.163C16.2327 43.2917 23.136 54.1413 34.1691 62.5438L38.0809 65.5214H38.093Z" fill="#B3C0C8"/>\r
-        <path fill-rule="evenodd" clip-rule="evenodd" d="M27.9214 28.1382L40.0081 22.641L52.107 28.1382L62.3286 22.2673L40.0081 12.1289L17.6997 22.2673L27.9214 28.1382Z" fill="#B3C0C8"/>\r
-        <path fill-rule="evenodd" clip-rule="evenodd" d="M54.1506 31.3691C53.4724 40.4708 48.955 47.5351 41.9307 53.406V65.5214L45.8425 62.5438C56.8756 54.1413 63.791 43.2796 63.8515 29.163V25.7876L54.1506 31.3691Z" fill="#B3C0C8"/>\r
-        <path fill-rule="evenodd" clip-rule="evenodd" d="M40.005 50.0061C45.7577 45.0394 49.5847 39.1685 50.2751 31.5135L40.005 26.8481L29.7349 31.5135C30.4373 39.1565 34.2644 45.0394 40.005 50.0061Z" fill="#B3C0C8"/>\r
-    </g>\r
-    <defs>\r
-        <filter id="filter0_d_12450_195569" x="0" y="0" width="80" height="88" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">\r
-            <feFlood flood-opacity="0" result="BackgroundImageFix"/>\r
-            <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>\r
-            <feOffset dy="4"/>\r
-            <feGaussianBlur stdDeviation="6"/>\r
-            <feComposite in2="hardAlpha" operator="out"/>\r
-            <feColorMatrix type="matrix" values="0 0 0 0 0.0196078 0 0 0 0 0.0901961 0 0 0 0 0.184314 0 0 0 0.2 0"/>\r
-            <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_12450_195569"/>\r
-            <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_12450_195569" result="shape"/>\r
-        </filter>\r
-    </defs>\r
-</svg></div>
-        <div class="settings-manager-icon js-active-ad-blocking-icon"><svg width="80" height="88" viewBox="0 0 80 88" fill="none" xmlns="http://www.w3.org/2000/svg">\r
-    <g filter="url(#filter0_d_15372_12105)">\r
-        <path opacity="0.8" d="M40.4132 8.18752C40.1506 8.06835 39.8494 8.06835 39.5868 8.18752L12.5868 20.4397C12.2295 20.6018 12 20.9579 12 21.3503V27.2941C12 42.1052 18.9116 56.0508 30.6534 64.9312L39.3968 71.5438C39.7536 71.8137 40.2464 71.8137 40.6032 71.5438L49.3466 64.9312C61.0883 56.0508 68 42.1052 68 27.2941V21.3503C68 20.9579 67.7705 20.6018 67.4132 20.4397L40.4132 8.18752Z" fill="white"/>\r
-        <path fill-rule="evenodd" clip-rule="evenodd" d="M38.0933 65.5229V53.4074C31.0689 47.5245 26.5515 40.4602 25.8733 31.3706L16.1482 25.7891V29.1645C16.233 43.2932 23.1362 54.1428 34.1693 62.5453L38.0812 65.5229H38.0933Z" fill="#005DD8"/>\r
-        <path fill-rule="evenodd" clip-rule="evenodd" d="M27.9217 28.1382L40.0085 22.641L52.1073 28.1382L62.329 22.2673L40.0085 12.1289L17.7001 22.2673L27.9217 28.1382Z" fill="#005DD8"/>\r
-        <path fill-rule="evenodd" clip-rule="evenodd" d="M54.1509 31.3706C53.4727 40.4723 48.9553 47.5366 41.9309 53.4074V65.5229L45.8427 62.5453C56.8758 54.1428 63.7912 43.2811 63.8518 29.1645V25.7891L54.1509 31.3706Z" fill="#005DD8"/>\r
-        <path fill-rule="evenodd" clip-rule="evenodd" d="M40.0051 50.0056C45.7578 45.0389 49.5849 39.168 50.2752 31.513L40.0051 26.8477L29.735 31.513C30.4374 39.156 34.2645 45.0389 40.0051 50.0056Z" fill="#1B86FA"/>\r
-    </g>\r
-    <defs>\r
-        <filter id="filter0_d_15372_12105" x="0" y="0" width="80" height="88" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">\r
-            <feFlood flood-opacity="0" result="BackgroundImageFix"/>\r
-            <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>\r
-            <feOffset dy="4"/>\r
-            <feGaussianBlur stdDeviation="6"/>\r
-            <feComposite in2="hardAlpha" operator="out"/>\r
-            <feColorMatrix type="matrix" values="0 0 0 0 0.0196078 0 0 0 0 0.0901961 0 0 0 0 0.184314 0 0 0 0.2 0"/>\r
-            <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_15372_12105"/>\r
-            <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_15372_12105" result="shape"/>\r
-        </filter>\r
-    </defs>\r
-</svg></div>
-        <!-- <div class="settings-manager-counter"></div> -->
-    </button>
-`,Ot=`<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">\r
-    <circle cx="9" cy="9" r="7" stroke="#7B8998"/>\r
-    <circle cx="9" cy="12.75" r="0.75" transform="rotate(180 9 12.75)" fill="#7B8998"/>\r
-    <path d="M6.75 7.125C6.75 5.88236 7.75736 4.875 9 4.875C10.2426 4.875 11.25 5.88236 11.25 7.125C11.25 7.70755 11.0286 8.2384 10.6654 8.63798C9.96882 9.40424 9 10.2145 9 11.25V11.25" stroke="#7B8998"/>\r
-</svg>`,Wt=o=>`
-    <div class="settings-manager-page settings-manager-settings-page">
-        <div class="settings-manager__logo">${X}</div>
-        <div class="settings-manager__content">
-            <div class="settings-manager__content-item settings-manager__content-item-back">
-                <div class="settings-manager__content-item-back__wrapper settings-manager__settings-toggle">
-                  ${M}
-                  <span class="settings-manager__text">${o.backText}</span>
-                </div>
-            </div>
-            <div class="settings-manager__content-item">
-                <div id="custom-select-box-size" class="custom-select-wrapper">
-                    <label for="size-select">
-                        <span class="settings-manager__text">${o.iconSizeText}</span>
-                    </label>
-                    <div class="custom-select">
-                        <div class="custom-select-box" tabindex="1">
-                            <span class="custom-select-box-active">${o.selectSizeMediumText}</span>
-                            <div class="custom-select-box-arrow">${M}</div>
-                            <div class="custom-select-options icon-size">
-                                <div class="custom-select-option" data-value="big">${o.selectSizeBigText}</div>
-                                <div class="custom-select-option custom-select-option--active" data-value="medium">${o.selectSizeMediumText}</div>
-                                <div class="custom-select-option" data-value="small">${o.selectSizeSmallText}</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="settings-manager__content-item">
-                <div id="custom-select-box-position" class="custom-select-wrapper">
-                    <label for="position-select">
-                        <span class="settings-manager__text">${o.iconPositionText}</span>
-                    </label>
-                    <div class="custom-select">
-                        <div class="custom-select-box" tabindex="1">
-                            <span class="custom-select-box-active">${o.selectSizeMediumText}</span>
-                            <div class="custom-select-box-arrow">${M}</div>
-                            <div class="custom-select-options icon-position">
-                                <div class="custom-select-option custom-select-option--active" data-value="bottom-right">${o.selectPositionBottomRightText}</div>
-                                <div class="custom-select-option" data-value="bottom-left">${o.selectPositionBottomLeftText}</div>
-                                <div class="custom-select-option" data-value="top-right">${o.selectPositionTopRightText}</div>
-                                <div class="custom-select-option" data-value="top-left">${o.selectPositionTopLeftText}</div>
-                                <div class="custom-select-option" data-value="custom">${o.selectPositionCustomText}</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="settings-manager__content-item">
-                <label class="switch__container">
-                    <label class="settings-manager__text" for="toggle-lock-position">${o.lockPositionText}</label>
-                    <input id="toggle-lock-position" type="checkbox" class="switch__checkbox">
-                    <span class="switch__slider"></span>
-                </label>
-            </div>
-             <div class="settings-manager__content-item">
-                <label class="switch__container" for="toggle-auto-hide">
-                    <div class="tooltip__container">
-                        <label class="settings-manager__text" for="toggle-auto-hide">${o.iconAutoHideText}</label>
-                        <div class="tooltip__container-icon-wrapper">
-                            ${Ot}
-                            <div class="tooltip__container-text">${o.settingsTooltipText}</div>
-                        </div>
-                    </div>
-                    <input id="toggle-auto-hide" type="checkbox" class="switch__checkbox">
-                    <span class="switch__slider"></span>
-                </label>
-            </div>
-        <div class="settings-manager__content-item">
-                <label class="switch__container">
-                    <label class="settings-manager__text" for="toggle-dont-show">${o.dontShowIconText}</label>
-                    <input id="toggle-dont-show" type="checkbox" class="switch__checkbox">
-                    <span class="switch__slider"></span>
-                </label>
-            </div>
-        </div>
-    </div>
-`;class jt{constructor(t,e){i(this,"shadowRoot");i(this,"wrapper",null);i(this,"toggleButton",null);i(this,"mainPage",null);i(this,"settingsPage",null);i(this,"toggleEnabled",null);i(this,"toggleLockPosition",null);i(this,"toggleAutoHide",null);i(this,"toggleDontShow",null);i(this,"reportAdsButton",null);i(this,"tooltipWrapper",null);i(this,"tooltipText",null);i(this,"howItWorksButton",null);i(this,"settingsButtons",null);i(this,"iconPositionSelect",null);i(this,"iconSizeSelect",null);this.shadowRoot=t.attachShadow({mode:"closed"}),this.createAndAppendWrapper(e.language),this.getActiveElements()}createAndAppendWrapper(t){var n;const e=W[t];this.wrapper=f("div",{classList:[b,k.Medium],html:Rt+Ft(e)+Wt(e)});const s=f("style",{html:Ht+Zt+zt+kt});(n=this.shadowRoot)==null||n.append(s,this.wrapper)}getActiveElements(){var t,e,s,n,a,c,p,h,u,m,v;this.toggleButton=(t=this.shadowRoot)==null?void 0:t.querySelector("#settings-manager-toggle-button"),this.mainPage=(e=this.shadowRoot)==null?void 0:e.querySelector(`.${tt}`),this.howItWorksButton=this.mainPage.querySelector(`#${O}`),this.toggleEnabled=(s=this.shadowRoot)==null?void 0:s.querySelector("#toggle-enabled"),this.toggleLockPosition=(n=this.shadowRoot)==null?void 0:n.querySelector("#toggle-lock-position"),this.toggleAutoHide=(a=this.shadowRoot)==null?void 0:a.querySelector("#toggle-auto-hide"),this.toggleDontShow=(c=this.shadowRoot)==null?void 0:c.querySelector("#toggle-dont-show"),this.reportAdsButton=(p=this.shadowRoot)==null?void 0:p.querySelector("#report-add"),this.settingsButtons=(h=this.shadowRoot)==null?void 0:h.querySelectorAll(".settings-manager__settings-toggle"),this.settingsPage=(u=this.shadowRoot)==null?void 0:u.querySelector(".settings-manager-settings-page"),this.tooltipWrapper=(m=this.settingsPage)==null?void 0:m.querySelector(".tooltip__container-icon-wrapper"),this.tooltipText=(v=this.tooltipWrapper)==null?void 0:v.querySelector(".tooltip__container-text")}}const qt=o=>`
-<article id="${z}" class="onboarding">
-  <header id="${R}"></header>
-  <h2 id="${V}" ></h2>
-  <p id="${F}">
-  </p>
-  <footer>
-    <button id="${A}" class="reset-button __skip">${o.skip}</button>
-    <button  id="${Z}" class="reset-button __nextStep">${o.next}</button>
-  </footer>
-</article>
-`,Ut=`
- .reset-button {
-    background: none;
-    border: none;
-    padding: 0;
-    margin: 0;
-    cursor: pointer;
-    font-size: 14px;
-    font-weight: 500;
-    line-height: 24px;
-  }
-
-
-  .onboarding {
-      padding-top: 32px;
-      position: absolute;
-      z-index: 15;
-    font-family: Manrope, sans-serif;
-    flex-direction: column;
-    align-items: center;
-    border-radius: 16px;
-    box-shadow: 0 4px 20px 0 var(rgba(5, 23, 47, 0.6));
-    width: var(--step-width);
-    background: ${Dt};
-    box-sizing: border-box;
-      
-
-    &._step-1 {
-      --step-width: 350px;
-        bottom: 0;
-        right: 98px;
-         &:after {
-             content: url("data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20width='49'%20height='128'%20viewBox='0%200%2049%20128'%20fill='none'%3e%3cpath%20d='M0.333333%203C0.333333%204.47276%201.52724%205.66667%203%205.66667C4.47276%205.66667%205.66667%204.47276%205.66667%203C5.66667%201.52724%204.47276%200.333333%203%200.333333C1.52724%200.333333%200.333333%201.52724%200.333333%203ZM49%20125L44%20122.113V127.887L49%20125ZM3%203.5H7V2.5H3V3.5ZM26.5%2023V105H27.5V23H26.5ZM26.5%20105C26.5%20116.322%2035.6782%20125.5%2047%20125.5V124.5C36.2304%20124.5%2027.5%20115.77%2027.5%20105H26.5ZM7%203.5C17.7696%203.5%2026.5%2012.2304%2026.5%2023H27.5C27.5%2011.6782%2018.3218%202.5%207%202.5V3.5Z'%20fill='white'/%3e%3c/svg%3e");
-             position: absolute;
-             top: 46%;
-             right: -46px;
-        }
-    }
-    &._step-2 {
-      --step-width: 313px;
-        bottom: 56px;
-        right: 326px;
-        &:after {
-            content: url("data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20width='49'%20height='70'%20viewBox='0%200%2049%2070'%20fill='none'%3e%3cpath%20d='M0.333333%2067.0002C0.333333%2068.4729%201.52724%2069.6668%203%2069.6668C4.47276%2069.6668%205.66667%2068.4729%205.66667%2067.0002C5.66667%2065.5274%204.47276%2064.3335%203%2064.3335C1.52724%2064.3335%200.333333%2065.5274%200.333333%2067.0002ZM49%203L44%200.113249V5.88675L49%203ZM3%2067.5002H5V66.5002H3V67.5002ZM25.5%2047.0002V23H24.5V47.0002H25.5ZM25.5%2023C25.5%2012.2305%2034.2304%203.5%2045%203.5V2.5C33.6782%202.5%2024.5%2011.6782%2024.5%2023H25.5ZM5%2067.5002C16.3218%2067.5002%2025.5%2058.322%2025.5%2047.0002H24.5C24.5%2057.7697%2015.7696%2066.5002%205%2066.5002V67.5002Z'%20fill='white'/%3e%3c/svg%3e");
-            position: absolute;
-            top: 22%;
-            right: -46px;
-        }
-    }
-    &._step-3 {
-      --step-width: 407px;
-        bottom: 10px;
-        right: 326px;
-        &:after {
-            content: url("data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20width='49'%20height='46'%20viewBox='0%200%2049%2046'%20fill='none'%3e%3cpath%20d='M0.333333%2043C0.333333%2044.4728%201.52724%2045.6667%203%2045.6667C4.47276%2045.6667%205.66667%2044.4728%205.66667%2043C5.66667%2041.5272%204.47276%2040.3333%203%2040.3333C1.52724%2040.3333%200.333333%2041.5272%200.333333%2043ZM49%203L44%200.113249V5.88675L49%203ZM3%2043.5H5V42.5H3V43.5ZM25.5%2023C25.5%2012.2304%2034.2304%203.5%2045%203.5V2.5C33.6782%202.5%2024.5%2011.6782%2024.5%2023H25.5ZM5%2043.5C16.3218%2043.5%2025.5%2034.3218%2025.5%2023H24.5C24.5%2033.7696%2015.7696%2042.5%205%2042.5V43.5Z'%20fill='white'/%3e%3c/svg%3e");
-            position: absolute;
-            top: 35%;
-            right: -46px;
-        }
-    }
-    &._step-4 {
-      --step-width: 342px;
-        bottom: 79px;
-        right: 360px;
-        &:after {
-            content: url("data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20width='49'%20height='50'%20viewBox='0%200%2049%2050'%20fill='none'%3e%3cpath%20d='M0.333333%203C0.333333%204.47276%201.52724%205.66667%203%205.66667C4.47276%205.66667%205.66667%204.47276%205.66667%203C5.66667%201.52724%204.47276%200.333333%203%200.333333C1.52724%200.333333%200.333333%201.52724%200.333333%203ZM49%2047L44%2044.1132V49.8868L49%2047ZM3%203.5H5V2.5H3V3.5ZM24.5%2023V27H25.5V23H24.5ZM24.5%2027C24.5%2038.3218%2033.6782%2047.5%2045%2047.5V46.5C34.2304%2046.5%2025.5%2037.7696%2025.5%2027H24.5ZM5%203.5C15.7696%203.5%2024.5%2012.2304%2024.5%2023H25.5C25.5%2011.6782%2016.3218%202.5%205%202.5V3.5Z'%20fill='white'/%3e%3c/svg%3e");
-            position: absolute;
-            top: 49%;
-            right: -46px;
-        }
-    }
-
-    & > header {
-      color: ${G};
-      font-size: 12px;
-      line-height: 16px;
-        padding: 0 32px;
-    }
-    & > h2 {
-      color: ${x};
-      font-size: 18px;
-      font-weight: 600;
-      line-height: 28px;
-      margin-top: 4px;
-        padding: 0 32px;
-    }
-
-    & > p {
-        margin-top: 16px;
-        color: ${G};
-        font-family: Inter, sans-serif;
-        font-size: 14px;
-        line-height: 24px;
-        padding: 0 32px;
-        
-        &> span {
-            font: inherit;
-            color: inherit;
-            margin-top: 27px;
-            display: inline-block;
-        }
-    }
-    & > footer {
-      background: ${Et};
-      display: flex;
-      padding: 16px 32px;
-      justify-content: space-between;
-      align-items: center;
-      align-self: stretch;
-      margin-top: 23px;
-        border-bottom-left-radius: 16px;
-        border-bottom-right-radius: 16px;
-        
-    }
-
-    & .__skip {
-      color: ${C};
-    }
-
-    & .__nextStep {
-      color: ${$t};
-      background: ${C};
-      padding: 0 12px;
-      height: 40px;
-      border-radius: 8px;
-      min-width: 87px;
-    }
-  }
-`,Nt=`
-    .onboardingWrapper:before {
-        content: '';
-        display: block;
-        position: fixed;
-        z-index: 10;
-        inset: 0;
-        background: ${It};
-    }
-    .settings-manager-wrapper[class*="_step-"] {
-        .settings-manager-icon   {
-            z-index: 15;
-            & > svg {
-                position: relative;
-                filter: drop-shadow(0px 0px 12px  ${C});
-                stroke-width: 0.5px;
-                stroke: ${C};
-              
-            }
-        }
-      .js-active-ad-blocking-icon{
-        display: block!important;
-      }
-      
-      .js-disabled-ad-blocking-icon {
-        display: none!important;
-      }
-      
-      .settings-manager__content-item {
-        pointer-events: none;
-      }
-    }
-    
-    .settings-manager-wrapper:has(._step-2) {
-        .settings-manager__content-item:first-child {
-            z-index: 15;
-            background: ${D};
-            filter: drop-shadow(0px 0px 12px  ${C});
-        }
-    }  
-    .settings-manager-wrapper:has(._step-3) {
-        .settings-manager__content-item:nth-child(2) {
-            z-index: 15;
-            background: ${D};
-            filter: drop-shadow(0px 0px 12px  ${C});
-        }
-    }   
-    .settings-manager-wrapper:has(._step-4) {
-        .settings-manager-settings-page {
-            z-index: 15;
-        }
-    }
-
-`;class E{constructor({initialState:t,onSetState:e,language:s,settingsManagerUi:n}){i(this,"state",l.Finish);i(this,"onSetState");i(this,"steps");i(this,"maxSteps",4);i(this,"html");i(this,"styles");i(this,"settingsManagerUi");this.state=t,this.onSetState=e,this.settingsManagerUi=n,this.steps=j[s].steps,this.html=f("div",{html:qt(j[s].base),classList:["onboardingWrapper"]}),this.styles=f("style",{html:Ut+Nt}),this.start()}dispatchOnboarding({start:t}){var s;const e=new CustomEvent("onboarding",{detail:{start:t}});(s=this.settingsManagerUi.wrapper)==null||s.dispatchEvent(e)}static createInstance(t){const{initialState:e}=t;if(e!==l.Empty&&e!==l.First)return;const s=new E(t);if(e===l.Empty){s.inject();return}s.restartListener()}inject(){var t;this.setState(l.First),this.updateUI(),(t=this.settingsManagerUi.wrapper)==null||t.append(this.styles,this.html),this.dispatchOnboarding({start:!0})}restartListener(){const t=this.settingsManagerUi.howItWorksButton;t&&(t.classList.remove("hidden"),t.addEventListener("click",()=>{var e;(e=this.settingsManagerUi.mainPage)==null||e.classList.remove("active"),this.inject(),t.classList.add("hidden")}))}start(){const t=this.html.querySelector(`#${Z}`),e=this.html.querySelector(`#${A}`);t.addEventListener("click",()=>{var s;if(this.setState(`${Number(this.state)+1}`),this.updateUI(),Number(this.state)===this.maxSteps){const n=(s=this.steps[this.maxSteps-1])==null?void 0:s.button;n&&(t.textContent=n)}}),e.addEventListener("click",()=>{this.restartListener(),this.destroy()})}setState(t){var s,n;const e=Number(t)>this.maxSteps;if(t===l.Four&&((n=(s=this.settingsManagerUi.wrapper)==null?void 0:s.querySelector(`#${A}`))==null||n.classList.add("disable")),this.onSetState(t,e),e){this.destroy(),this.state=l.Finish;return}this.state=t}updateUI(){this.updateStepContent(),this.modifyClasses(),this.handlePageStates()}updateStepContent(){const t=this.steps.find(a=>a.id===this.state);if(!t)return;const e=this.html.querySelector(`#${V}`),s=this.html.querySelector(`#${R}`),n=this.html.querySelector(`#${F}`);s.textContent=t.step,e.textContent=t.title,n.innerHTML=t.description}modifyClasses(){var n,a;const t=(n=this.settingsManagerUi.wrapper)==null?void 0:n.classList,e=(a=this.html.querySelector(`#${z}`))==null?void 0:a.classList;if(!t||!e)return;this.clearModifierClasses(t),this.clearModifierClasses(e);const s=B+this.state;t.add(s),e.add(s)}clearModifierClasses(t){this.filterModifierClasses(t).forEach(e=>t.remove(e))}filterModifierClasses(t){return Array.from(t).filter(e=>e.startsWith(B))}handlePageStates(){const{mainPage:t,settingsPage:e}=this.settingsManagerUi;switch(this.state){case l.Second:case l.Third:t==null||t.classList.add("active");break;case l.Four:t==null||t.classList.remove("active"),e==null||e.classList.add("active");break}}destroy(){this.dispatchOnboarding({start:!1}),this.html.remove(),this.styles.remove();const{wrapper:t,mainPage:e,settingsPage:s}=this.settingsManagerUi;t==null||t.classList.remove(B+this.maxSteps),e==null||e.classList.remove("active"),s==null||s.classList.remove("active")}}class Q extends HTMLElement{constructor(){super();i(this,"ui");i(this,"state");i(this,"listeners");i(this,"domContentLoadHandler",async()=>{var e;await this.getDomainDataAndUpdateState(),!this.state.isDomainDontShow&&(mt(),this.style=Pt,this.listeners.updateIconSize(this.state.iconSize),this.listeners.updateIconPosition(this.state.iconPosition),this.listeners.initializeToggleButtonListeners(),this.updateUIFromState(),this.listeners.addSelectListeners(),this.startOnboarding(),(e=this.listeners.dragAndDrop)==null||e.checkConstraints(),this.ui.toggleButton.style.opacity="1")});i(this,"updateUIFromState",()=>{this.ui.toggleEnabled.checked=!this.state.isWhitelistedDomains,this.ui.toggleLockPosition.checked=this.state.isPositionLock,this.ui.toggleAutoHide.checked=this.state.isManagerAutohideEnabled,this.ui.reportAdsButton.disabled=this.state.isDomainReported;const{x:e,y:s}=this.state.customPosition;if(this.state.iconPosition===g.Custom&&e&&s&&(this.ui.wrapper.style.left=`${e}px`,this.ui.wrapper.style.top=`${s}px`,q(this.ui.wrapper)),this.ui.toggleButton.classList.toggle("active",!this.state.isWhitelistedDomains),this.state.isManagerAutohideEnabled){const n=this.state.updateIntervalId(this.listeners.destroyCallback);this.listeners.initOnboardingEvent(n)}});this.state=new Lt,this.ui=new jt(this,this.state),this.listeners=new Ct(this.ui,this.state),document.addEventListener("DOMContentLoaded",this.domContentLoadHandler)}async getDomainDataAndUpdateState(){try{const e=await L.getDomainData(this.state.hostname);this.state.update(e)}catch(e){console.log("Error get domain data",e)}}startOnboarding(){const e=(s,n)=>{s!==l.First&&!n||(s===l.First&&(this.listeners.updateIconPosition(g.BottomRight),this.listeners.updateIconSize(k.Medium)),this.state.update({onboardingStep:n?l.Finish:s}),w(this.state).catch(console.error))};E.createInstance({initialState:this.state.onboardingStep,onSetState:e,language:this.state.language,settingsManagerUi:this.ui})}}function Yt(){var o;customElements.define(I,Q),document.body.appendChild(new Q),(o=document.querySelector(`#${at}`))==null||o.remove()}Yt()})();
-
-})();</script>
-  <main class="container" role="main">
-
-    <div class="logo">
-      <img alt="D8Sync Logo" src="https://raw.githubusercontent.com/astrobehr/d8sync-landing/main/assets/d8sync-banner.jpg" />
-    </div>
-
-    <!-- Feature blocks -->
-    <section class="feature-block" aria-label="AI Matches That Actually Hit">
-      <h3>🎯 AI Matches That Actually Hit</h3>
-      <p>Imagine this: You send a meme,<br />and someone laughs the exact way you do.<br /><br />That’s not chance — it’s sync.<br />We read between your media likes, playlists, and punchlines<br />to pair you with people on your wavelength.<br /><br />No swiping roulette. No dead-end matches.<br />Just real connection, fueled by your sense of
-        humor.</p>
-    </section>
-
-    <section class="feature-block" aria-label="Swipe Memes Not Faces">
-      <h3>🎭 Swipe Memes, Not Faces</h3>
-      <p>What if your dating feed was memes instead of mugshots?<br />No more trying to decode mirror selfies or gym pics.<br /><br />Just scroll, laugh, and react to the memes that hit hardest.<br />Every swipe helps build your Comedy Graph™ —<br />our algorithm that learns your humor DNA<br />and matches you with someone who <em>actually gets it</em><br /><br />Weirdly accurate. Dangerously fun.</p>
-      <div class="meme-flipper" role="region" aria-label="Meme Gallery">
-        <img alt="Meme" id="memeImage" src="https://raw.githubusercontent.com/astrobehr/d8sync-landing/main/memes/meme1.jpg" />
-        <button class="flipper-btn btn-left" aria-label="Previous Meme" onclick="prevMeme()">×</button>
-        <button class="flipper-btn btn-right" aria-label="Next Meme" onclick="nextMeme()">❤</button>
-      </div>
-    </section>
-
-    <section class="feature-block" aria-label="Unfiltered Dating">
-      <h3>✨ Unfiltered. Unscripted. Unexpected.</h3>
-      <p>No filters. No bios. No profile paralysis.<br />At D8Sync, you skip the scroll<br />and jump straight into something real.<br /><br />Just you and someone new — on an actual blind date.<br />No pressure. No pretending.<br />And yes, we even give you the perfect icebreaker.</p>
-    </section>
-
-    <section class="feature-block" aria-label="How D8Sync Works">
-      <h3>🕵️‍♂️ How D8Sync Blind Dates Actually Work</h3>
-      <p>You tap the “Sync Me!” button<br />D8Sync scans your Comedy Graph™, vibe data, and availability<br />— and matches you with someone on your wavelength.<br /><br />Our Matchmaker AI then sends you both:<br />🔓 A time 📍 A public place & 🧩 “The Tell” —<br />a phrase or shared order to find your match.<br /><br />You pull up, scan the scene, and look for the signal...<br />like someone lowkey ordering the same drink<br /><br />In a crowded cafe or busy bookstore? Not sure it’s
-        them?<br />Tap the <em>“Is That You?"</em> button in-app for a private match confirm.<br />If the chemistry's there, drop the icebreaker we gave you<br />— it's the perfect nudge.<br /><br />Not feeling it? That’s cool too.<br />Take a breath, enjoy the moment, & the match will fade away.<br />No profiles. No awkward openings. No rejection drama.<br /><em>Just vibes. Real ones.</em></p>
-
-      <section class="feature-block" aria-label="Need to talk it out" style="margin-top:40px;">
-        <h3>💬 Need to talk it out? We got you.</h3>
-        <p>After every date, the judgment-free vibe check continues.<br />Our AI Dating Coach is here to help you debrief —<br />like a relationship therapist in your pocket.<br /><br />Whether it sparked or fizzled, talk through<br />what worked, what didn’t, and how it made you feel.<br /><em>Get clarity. Spot patterns. Grow faster.</em></p>
-      </section>
-    </section>
-
-    <!-- Waitlist ConvertKit form -->
-    <section id="waitlist" aria-label="Waitlist Signup">
-      <h3 style="color:#6e38f7; margin-bottom: 1rem;">Get Notified for D8Sync Beta Waitlist</h3>
-
-      <!-- ConvertKit form snippet you provided -->
-      <form action="https://app.kit.com/forms/8210011/subscriptions" class="seva-form formkit-form" method="post"
-        data-sv-form="8210011" data-uid="ab96e2e1a4" data-format="inline" data-version="5"
-        data-options='{"settings":{"after_subscribe":{"action":"message","success_message":"🎉 You\'re synced.  \nWatch your inbox for vibe alignment.","redirect_url":""}},"version":"5"}'
-        min-width="400 500 600 700 800" style="background:#fff; border-radius:10px; padding:40px 45px 40px 60px; max-width:740px; margin:0 auto; color:#000;">
-        <div data-style="full" style="--bg-border-radius: 5px;">
-          <div data-element="column" class="formkit-column" style="padding:0;">
-            <div class="formkit-content" data-element="content" style="color:#6e6e6e; text-align:center; margin-bottom:1rem;">
-              <p>Be One of the First to Experience</p>
-              <p>AI Meme-Powered Dating</p>
-            </div>
-            <ul class="formkit-alert formkit-alert-error" data-element="errors" data-group="alert"></ul>
-            <div class="seva-fields formkit-fields" data-element="fields" data-stacked="false" style="display:flex; gap:10px; flex-wrap:wrap;">
-              <div class="formkit-field" style="flex:1 1 auto;">
-                <input aria-label="Join the Vibe Queue" class="formkit-input" name="email_address" placeholder="Join the Vibe Queue"
-                  required type="email" style="width:100%; color:#6e6e6e; background:#f7f7f7; border-radius:5px; padding:14px 16px; border:none; font-weight:400; font-size:1rem;" />
-              </div>
-              <button class="formkit-submit formkit-submit" data-element="submit"
-                style="background:#785ede; color:#fff; border:none; border-radius:5px; font-weight:700; padding:14px 28px; cursor:pointer; flex-shrink:0; font-size:1rem; white-space:nowrap;">
-                Stay in the Loop
-              </button>
-            </div>
-            <div class="formkit-disclaimer" data-element="disclaimer" style="color:#6e6e6e; text-align:center; margin-top:12px; font-size:0.8rem;">
-              <p>No spam. No cringe. Unmatch us anytime</p>
-            </div>
-            <div class="formkit-powered-by-convertkit-container" style="text-align:center; margin-top:8px;">
-              <a class="formkit-powered-by-convertkit" data-element="powered-by" data-variant="dark"
-                href="https://kit.com/features/forms?utm_campaign=poweredby&amp;utm_content=form&amp;utm_medium=referral&amp;utm_source=dynamic"
-                rel="nofollow" target="_blank" style="font-size:0.85rem; color:#999;">
-                Built with Kit
-              </a>
-            </div>
-          </div>
-        </div>
-      </form>
-    </section>
-  </main>
-
-  <!-- Popup modal -->
-  <div id="matchPopup" role="dialog" aria-modal="true" aria-labelledby="popup-title" tabindex="-1" aria-hidden="true">
-    <div onclick="event.stopPropagation();" style="text-align:center;">
-      <button aria-label="Close Popup" id="popupCloseBtn" title="Close Popup">×</button>
-      <h2 id="popup-title" style="margin:0; text-align:center;">🔗 You Just Got Synced 🔗</h2>
-      <p style="margin-top:45px; font-size:0.95em; color:#888; text-align:center;">(Sample Match Preview)</p>
-      <p style="margin-bottom:20px; text-align:center;">
-        This is a taste of what matching on D8Sync might feel like.<br />
-        No swiping. No bios. Just pure vibe alignment.
-      </p>
-      <p style="text-align:center; padding-left: 10px; box-sizing: border-box;">
-        <strong>🤩 Shared Meme Energy:</strong><br />
-        “Me pretending that I don’t care.<br />But secretly I'm watching the group chat implode.”
-      </p>
-      <p style="text-align:center; padding-left: 10px; box-sizing: border-box;">
-        <strong>🎧 Audio Match:</strong><br />
-        Late 2000s indie drama with main character syndrome
-      </p>
-      <p style="text-align:center; padding-left: 10px; box-sizing: border-box;">
-        <strong>🍵 First Date Prompt:</strong><br />
-        You meet outside a thrift store...<br />
-        One of you is holding a can of soup.<br />
-        The other is holding a spoon.
-      </p>
-      <p style="text-align:center; padding-left: 10px; box-sizing: border-box;">
-        <strong>🧩 Vibe Alignment:</strong><br />
-        84% Emotionally Aligned<br />
-        72% Chaos Compatibility<br />
-        92% Meme Fluency
-      </p>
-      <p style="text-align:center; margin-top:30px;">🥰 Did this vibe feel accurate?</p>
-      <div id="feedback-response" style="text-align:center; padding-left:10px; box-sizing:border-box;"></div>
-      <div class="popup-buttons-container">
-        <div class="popup-buttons-row">
-          <button class="btn-flat" id="spooky-button">Yup... Spooky!</button>
-          <button class="btn-flat" id="nah-button">Nah... Not Really.</button>
-        </div>
-        <a href="https://www.tinder.com" onclick="alert('Bye Felicia 👋');" style="color:#ccc; font-size:14px; text-decoration:underline; display:block; margin-top:20px; text-align:center;">
+<div id="matchPopup">
+<div onclick="event.stopPropagation();" style="text-align: center;">
+<button aria-label="Close Popup" id="popupCloseBtn" title="Close Popup">×</button>
+<h2 style="margin:0; text-align:center;">🔗 You Just Got Synced 🔗</h2>
+<p style="margin-top:45px; font-size:0.95em; color:#888; text-align:center;">(Sample Match Preview)</p>
+<p style="margin-bottom:20px; text-align:center;">
+          This is a taste of what matching on D8Sync might feel like.<br/>
+          No swiping. No bios. Just pure vibe alignment.
+        </p>
+<p style="text-align:center; padding-left: 10px; box-sizing: border-box;">
+<strong>🧡 Shared Meme Energy:</strong><br/>
+          “Me pretending that I don’t care.<br/>But secretly I'm watching the group chat implode.”
+        </p>
+<p style="text-align:center; padding-left: 10px; box-sizing: border-box;">
+<strong>🎧 Audio Match:</strong><br/>
+          Late 2000s indie drama with main character syndrome
+        </p>
+<p style="text-align:center; padding-left: 10px; box-sizing: border-box;">
+<strong>🍵 First Date Prompt:</strong><br/>
+          You meet outside a thrift store...<br/>
+          One of you is holding a can of soup.<br/>
+          The other is holding a spoon.
+        </p>
+<p style="text-align:center; padding-left: 10px; box-sizing: border-box;">
+<strong>🧩 Vibe Alignment:</strong><br/>
+          84% Emotionally Aligned<br/>
+          72% Chaos Compatibility<br/>
+          92% Meme Fluency
+        </p>
+<p style="text-align:center; margin-top: 30px;">
+          🧠 Did this vibe feel accurate?
+        </p>
+<div id="feedback-response" style="text-align:center; padding-left:10px; box-sizing:border-box;"></div>
+<div class="popup-buttons-container">
+<div class="popup-buttons-row">
+<button class="btn-flat" id="spooky-button">Yup... Spooky!</button>
+<button class="btn-flat" id="nah-button">Nah... Not Really.</button>
+</div>
+<!-- Removed Join the Newsletter button -->
+<a href="https://www.tinder.com" onclick="alert('Bye Felicia 👋');" style="color:#ccc; font-size:14px; text-decoration:underline; display:block; margin-top:20px; text-align:center;">
           Not feeling it? Close
-        </a>
-      </div>
-    </div>
-  </div>
-
-  <!-- Fixed Feedback Button -->
-  <div style="position:fixed; bottom:20px; right:20px; z-index:999;">
-    <a href="https://form.typeform.com/to/aDNMMWAn" style="background:#9147ff; color:#fff; padding:12px 20px; border-radius:30px; text-decoration:none; font-weight:bold; font-family:Inter,sans-serif;" target="_blank">
-      Give Feedback
-    </a>
-  </div>
-
-  <script>
+        </a></div>
+</div>
+</div>
+<div style="position:fixed; bottom:20px; right:20px; z-index:999;">
+<a href="https://form.typeform.com/to/aDNMMWAn" style="background:#9147ff; color:#fff; padding:12px 20px; border-radius:30px; text-decoration:none; font-weight:bold; font-family:Inter,sans-serif;" target="_blank">
+        Give Feedback
+      </a>
+</div>
+</main>
+<script defer="" src="https://f.convertkit.com/ckjs/ck.5.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const referrerInput = document.getElementById('referrer');
+      if(referrerInput) referrerInput.value = document.referrer;
+      const form = document.querySelector('#waitlist form');
+      const thankYouMsg = document.getElementById('thank-you-message');
+      if(form && thankYouMsg) {
+        form.addEventListener('submit', () => {
+          setTimeout(() => {
+            thankYouMsg.style.display = 'block';
+            form.style.display = 'none';
+          }, 1000);
+        });
+      }
+      const responseBox = document.getElementById('feedback-response');
+      function showGenZResponse(text) {
+        if(!responseBox) return;
+        responseBox.textContent = text;
+        responseBox.style.opacity = "1";
+        setTimeout(() => responseBox.style.opacity = "0", 3000);
+      }
+      const spookyBtn = document.getElementById('spooky-button');
+      const nahBtn = document.getElementById('nah-button');
+      if(spookyBtn) spookyBtn.onclick = () => showGenZResponse("✨ Fr 😳 That was spooky accurate ✨");
+      if(nahBtn) nahBtn.onclick = () => showGenZResponse("💀 Deadass? That ain’t it chief 💀");
+      const yupResponses = [
+        "✅ Eerie-level accurate — y’all in my brain?",
+        "✅ Soulmate meme frequency. I felt that.",
+        "✅ They understood the assignment.",
+        "✅ Main character vibes. Fully unlocked.",
+        "✅ That gave multiverse twin energy."
+      ];
+      const nahResponses = [
+        "❌ Felt like a bot typed that.",
+        "❌ Cringe. I flinched.",
+        "❌ That felt like a CAPTCHA test.",
+        "❌ Meme was fire. Match was mid.",
+        "❌ Vibe was off. And so was the Wi-Fi."
+      ];
+      function showRandomResponse(type) {
+        if(!responseBox) return;
+        const responses = type === "yup" ? yupResponses : nahResponses;
+        const msg = responses[Math.floor(Math.random()*responses.length)];
+        responseBox.textContent = msg;
+        responseBox.style.display = "block";
+        responseBox.style.opacity = "1";
+        setTimeout(() => responseBox.style.opacity = "0", 3000);
+      }
+      if(spookyBtn) spookyBtn.addEventListener('click', () => showRandomResponse('yup'));
+      if(nahBtn) nahBtn.addEventListener('click', () => showRandomResponse('nah'));
+      const customBtn = document.getElementById('customSubmitBtn');
+      const waitForCK = setInterval(() => {
+        const realSubmit = document.querySelector('.formkit-submit');
+        if(realSubmit && customBtn) {
+          clearInterval(waitForCK);
+          customBtn.addEventListener('click', () => {
+            realSubmit.click();
+            console.log("✅ Custom Join triggered ConvertKit submit");
+          });
+        }
+      }, 300);
+      const popupCloseBtn = document.getElementById('popupCloseBtn');
+      if(popupCloseBtn) popupCloseBtn.addEventListener('click', () => {
+        const popup = document.getElementById('matchPopup');
+        if(popup) popup.style.display = 'none';
+      });
+    });
+    function closeAndScrollToWaitlist() {
+      const popup = document.getElementById('matchPopup');
+      const waitlist = document.getElementById('waitlist');
+      if(popup) popup.style.display = 'none';
+      if(waitlist) waitlist.scrollIntoView({behavior:'smooth'});
+    }
     document.addEventListener('DOMContentLoaded', () => {
       const memes = [
         "https://raw.githubusercontent.com/astrobehr/d8sync-landing/main/memes/meme1.jpg",
@@ -1337,42 +398,40 @@ var te=Object.defineProperty;var ee=(r,d,b)=>d in r?te(r,d,{enumerable:!0,config
       ];
       let current = 0;
       const memeImage = document.getElementById('memeImage');
+      const btnLeft = document.querySelector('.btn-left');
+      const btnRight = document.querySelector('.btn-right');
       const popup = document.getElementById('matchPopup');
-      const popupCloseBtn = document.getElementById('popupCloseBtn');
-      const feedbackResponse = document.getElementById('feedback-response');
-
+      let meme10Timeout1, meme10Timeout2;
+      let isMeme10Displayed = false;
       function updateMeme() {
-        memeImage.src = memes[current];
-        const btnLeft = document.querySelector('.btn-left');
-        const btnRight = document.querySelector('.btn-right');
-        if (current >= 5 && current <= 9) {
-          btnLeft?.classList.add('hidden');
-          btnRight?.classList.add('hidden');
-        } else {
-          btnLeft?.classList.remove('hidden');
-          btnRight?.classList.remove('hidden');
+        if(memeImage) memeImage.src = memes[current];
+        if(btnLeft && btnRight) {
+          if(current >=5 && current <=9) {
+            btnLeft.classList.add('hidden');
+            btnRight.classList.add('hidden');
+          } else {
+            btnLeft.classList.remove('hidden');
+            btnRight.classList.remove('hidden');
+          }
         }
+        isMeme10Displayed = (current === 9);
       }
-
-      window.nextMeme = () => {
-        if (current < memes.length - 1) {
-          if (current === 4) {
+      window.nextMeme = function() {
+        if(current < memes.length -1) {
+          if(current === 4) {
             current++;
             updateMeme();
             setTimeout(() => {
-              current = 6;
-              updateMeme();
+              current = 6; updateMeme();
               setTimeout(() => {
-                current = 7;
-                updateMeme();
+                current = 7; updateMeme();
                 setTimeout(() => {
-                  current = 8;
-                  updateMeme();
+                  current = 8; updateMeme();
                   setTimeout(() => {
-                    if (popup.style.display === 'none' || popup.style.display === '') {
+                    if(popup) {
                       popup.style.display = 'flex';
-                      setTimeout(() => {
-                        setTimeout(() => {
+                      meme10Timeout1 = setTimeout(() => {
+                        meme10Timeout2 = setTimeout(() => {
                           current = 9;
                           updateMeme();
                         }, 3000);
@@ -1386,57 +445,45 @@ var te=Object.defineProperty;var ee=(r,d,b)=>d in r?te(r,d,{enumerable:!0,config
             current++;
             updateMeme();
           }
-        } else {
-          popup.style.display = 'none';
-          const waitlist = document.getElementById('waitlist')
-          if (waitlist) waitlist.scrollIntoView({ behavior: 'smooth' });
-        }
+        } else closeAndScrollToWaitlist();
       };
-
-      window.prevMeme = () => {
-        if (current > 0) {
+      window.prevMeme = function() {
+        if(current > 0) {
           current--;
           updateMeme();
-          if (popup.style.display === 'flex') popup.style.display = 'none';
+          if(popup) popup.style.display = 'none';
+          clearTimeout(meme10Timeout1);
+          clearTimeout(meme10Timeout2);
         }
       };
-
-      popupCloseBtn?.addEventListener('click', () => {
-        popup.style.display = 'none';
-      });
-
-      function showResponse(text) {
-        if (!feedbackResponse) return;
-        feedbackResponse.textContent = text;
-        feedbackResponse.style.opacity = "1";
-        setTimeout(() => feedbackResponse.style.opacity = "0", 3000);
+      window.resetMemeSequence = function() {
+        if(popup) popup.style.display = 'none';
+        current = 0;
+        updateMeme();
+        clearTimeout(meme10Timeout1);
+        clearTimeout(meme10Timeout2);
+      };
+      if(memeImage) {
+        memeImage.onclick = () => {
+          if(isMeme10Displayed) window.resetMemeSequence();
+        };
       }
-
-      document.getElementById('spooky-button')?.addEventListener('click', () => {
-        const spookyResponses = [
-          "✅ Eerie-level accurate — y’all in my brain?",
-          "✅ Soulmate meme frequency. I felt that.",
-          "✅ They understood the assignment.",
-          "✅ Main character vibes. Fully unlocked.",
-          "✅ That gave multiverse twin energy."
-        ];
-        showResponse(spookyResponses[Math.floor(Math.random() * spookyResponses.length)]);
-      });
-
-      document.getElementById('nah-button')?.addEventListener('click', () => {
-        const nahResponses = [
-          "❌ Felt like a bot typed that.",
-          "❌ Cringe. I flinched.",
-          "❌ That felt like a CAPTCHA test.",
-          "❌ Meme was fire. Match was mid.",
-          "❌ Vibe was off. And so was the Wi-Fi."
-        ];
-        showResponse(nahResponses[Math.floor(Math.random() * nahResponses.length)]);
-      });
-
       updateMeme();
+      if(btnLeft) btnLeft.addEventListener('click', window.prevMeme);
+      if(btnRight) btnRight.addEventListener('click', window.nextMeme);
     });
   </script>
-</body>
+  
+<script src="https://f.convertkit.com/ckjs/ck.5.js"></script>
+<div style="display: flex; justify-content: center; align-items: center; padding: 3rem 1rem; background: #000000;"><form action="https://app.kit.com/forms/8210011/subscriptions" class="seva-form formkit-form" data-format="inline" data-options="{&quot;settings&quot;:{&quot;after_subscribe&quot;:{&quot;action&quot;:&quot;message&quot;,&quot;success_message&quot;:&quot;🎉 You're synced.  \nWatch your inbox for vibe alignment.&quot;,&quot;redirect_url&quot;:&quot;&quot;},&quot;analytics&quot;:{&quot;google&quot;:null,&quot;fathom&quot;:null,&quot;facebook&quot;:null,&quot;segment&quot;:null,&quot;pinterest&quot;:null,&quot;sparkloop&quot;:null,&quot;googletagmanager&quot;:null},&quot;modal&quot;:{&quot;trigger&quot;:&quot;timer&quot;,&quot;scroll_percentage&quot;:null,&quot;timer&quot;:5,&quot;devices&quot;:&quot;all&quot;,&quot;show_once_every&quot;:15},&quot;powered_by&quot;:{&quot;show&quot;:true,&quot;url&quot;:&quot;https://kit.com/features/forms?utm_campaign=poweredby&amp;utm_content=form&amp;utm_medium=referral&amp;utm_source=dynamic&quot;},&quot;recaptcha&quot;:{&quot;enabled&quot;:true},&quot;return_visitor&quot;:{&quot;action&quot;:&quot;show&quot;,&quot;custom_content&quot;:&quot;&quot;},&quot;slide_in&quot;:{&quot;display_in&quot;:&quot;bottom_right&quot;,&quot;trigger&quot;:&quot;timer&quot;,&quot;scroll_percentage&quot;:null,&quot;timer&quot;:5,&quot;devices&quot;:&quot;all&quot;,&quot;show_once_every&quot;:15},&quot;sticky_bar&quot;:{&quot;display_in&quot;:&quot;top&quot;,&quot;trigger&quot;:&quot;timer&quot;,&quot;scroll_percentage&quot;:null,&quot;timer&quot;:5,&quot;devices&quot;:&quot;all&quot;,&quot;show_once_every&quot;:15}},&quot;version&quot;:&quot;5&quot;}" data-sv-form="8210011" data-uid="ab96e2e1a4" data-version="5" method="post" min-width="400 500 600 700 800" style="background-color: rgb(255, 255, 255); border-radius: 10px;"><div data-style="full" style="--bg-border-radius: 5px;"><div class="formkit-column" data-element="column"><div class="formkit-header" data-element="header" style="color: rgb(61, 61, 61); font-weight: 700;"><h2>Get Notified for D8Sync<br/>Beta Wait list </h2></div><div class="formkit-content" data-element="content" style="color: rgb(110, 110, 110);"><p style="text-align:center">Be One of the First to Experince</p><p style="text-align:center">AI Meme-Powered Dating</p></div><ul class="formkit-alert formkit-alert-error" data-element="errors" data-group="alert"></ul><div class="seva-fields formkit-fields" data-element="fields" data-stacked="false"><div class="formkit-field"><input aria-label="Join the Vibe Queue" class="formkit-input" name="email_address" placeholder="Join the Vibe Queue" required="" style="color: rgb(110, 110, 110); background-color: rgb(247, 247, 247); border-radius: 5px; font-weight: 400;" type="email"/></div><button class="formkit-submit formkit-submit" data-element="submit" style="color: rgb(255, 255, 255); background-color: rgb(120, 94, 223); border-radius: 5px; font-weight: 700;; padding: 12px 24px; min-width: 160px; font-size: 1rem;">Stay in the Loop</button></div><div class="formkit-disclaimer" data-element="disclaimer" style="color: rgb(110, 110, 110);"><p>No spam. No cringe. Unmatach us anytime</p></div><div class="formkit-powered-by-convertkit-container"><a class="formkit-powered-by-convertkit" data-element="powered-by" data-variant="dark" href="https://kit.com/features/forms?utm_campaign=poweredby&amp;utm_content=form&amp;utm_medium=referral&amp;utm_source=dynamic" rel="nofollow" target="_blank">Built with Kit</a></div></div><div class="formkit-background" data-element="column" style='background-image: url("https://embed.filekitcdn.com/e/7wYRffpBoCKHj7khzQkLM9/ennQvFZ3vfzXK5zwJJW6ty");'></div></div><style>.formkit-form[data-uid="ab96e2e1a4"] *{box-sizing:border-box;}.formkit-form[data-uid="ab96e2e1a4"]{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;}.formkit-form[data-uid="ab96e2e1a4"] legend{border:none;font-size:inherit;margin-bottom:10px;padding:0;position:relative;display:table;}.formkit-form[data-uid="ab96e2e1a4"] fieldset{border:0;padding:0.01em 0 0 0;margin:0;min-width:0;}.formkit-form[data-uid="ab96e2e1a4"] body:not(:-moz-handler-blocked) fieldset{display:table-cell;}.formkit-form[data-uid="ab96e2e1a4"] h1,.formkit-form[data-uid="ab96e2e1a4"] h2,.formkit-form[data-uid="ab96e2e1a4"] h3,.formkit-form[data-uid="ab96e2e1a4"] h4,.formkit-form[data-uid="ab96e2e1a4"] h5,.formkit-form[data-uid="ab96e2e1a4"] h6{color:inherit;font-size:inherit;font-weight:inherit;}.formkit-form[data-uid="ab96e2e1a4"] h2{font-size:1.5em;margin:1em 0;}.formkit-form[data-uid="ab96e2e1a4"] h3{font-size:1.17em;margin:1em 0;}.formkit-form[data-uid="ab96e2e1a4"] p{color:inherit;font-size:inherit;font-weight:inherit;}.formkit-form[data-uid="ab96e2e1a4"] ol:not([template-default]),.formkit-form[data-uid="ab96e2e1a4"] ul:not([template-default]),.formkit-form[data-uid="ab96e2e1a4"] blockquote:not([template-default]){text-align:left;}.formkit-form[data-uid="ab96e2e1a4"] p:not([template-default]),.formkit-form[data-uid="ab96e2e1a4"] hr:not([template-default]),.formkit-form[data-uid="ab96e2e1a4"] blockquote:not([template-default]),.formkit-form[data-uid="ab96e2e1a4"] ol:not([template-default]),.formkit-form[data-uid="ab96e2e1a4"] ul:not([template-default]){color:inherit;font-style:initial;}.formkit-form[data-uid="ab96e2e1a4"] .ordered-list,.formkit-form[data-uid="ab96e2e1a4"] .unordered-list{list-style-position:outside !important;padding-left:1em;}.formkit-form[data-uid="ab96e2e1a4"] .list-item{padding-left:0;}.formkit-form[data-uid="ab96e2e1a4"][data-format="modal"]{display:none;}.formkit-form[data-uid="ab96e2e1a4"][data-format="slide in"]{display:none;}.formkit-form[data-uid="ab96e2e1a4"][data-format="sticky bar"]{display:none;}.formkit-sticky-bar .formkit-form[data-uid="ab96e2e1a4"][data-format="sticky bar"]{display:block;}.formkit-form[data-uid="ab96e2e1a4"] .formkit-input,.formkit-form[data-uid="ab96e2e1a4"] .formkit-select,.formkit-form[data-uid="ab96e2e1a4"] .formkit-checkboxes{width:100%;}.formkit-form[data-uid="ab96e2e1a4"] .formkit-button,.formkit-form[data-uid="ab96e2e1a4"] .formkit-submit{border:0;border-radius:5px;color:#ffffff;cursor:pointer;display:inline-block;text-align:center;font-size:15px;font-weight:500;cursor:pointer;margin-bottom:15px;overflow:hidden;padding:0;position:relative;vertical-align:middle;}.formkit-form[data-uid="ab96e2e1a4"] .formkit-button:hover,.formkit-form[data-uid="ab96e2e1a4"] .formkit-submit:hover,.formkit-form[data-uid="ab96e2e1a4"] .formkit-button:focus,.formkit-form[data-uid="ab96e2e1a4"] .formkit-submit:focus{outline:none;}.formkit-form[data-uid="ab96e2e1a4"] .formkit-button:hover > span,.formkit-form[data-uid="ab96e2e1a4"] .formkit-submit:hover > span,.formkit-form[data-uid="ab96e2e1a4"] .formkit-button:focus > span,.formkit-form[data-uid="ab96e2e1a4"] .formkit-submit:focus > span{background-color:rgba(0,0,0,0.1);}.formkit-form[data-uid="ab96e2e1a4"] .formkit-button > span,.formkit-form[data-uid="ab96e2e1a4"] .formkit-submit > span{display:block;-webkit-transition:all 300ms ease-in-out;transition:all 300ms ease-in-out;padding:12px 24px;}.formkit-form[data-uid="ab96e2e1a4"] .formkit-input{background:#ffffff;font-size:15px;padding:12px;border:1px solid #e3e3e3;-webkit-flex:1 0 auto;-ms-flex:1 0 auto;flex:1 0 auto;line-height:1.4;margin:0;-webkit-transition:border-color ease-out 300ms;transition:border-color ease-out 300ms;}.formkit-form[data-uid="ab96e2e1a4"] .formkit-input:focus{outline:none;border-color:#1677be;-webkit-transition:border-color ease 300ms;transition:border-color ease 300ms;}.formkit-form[data-uid="ab96e2e1a4"] .formkit-input::-webkit-input-placeholder{color:inherit;opacity:0.8;}.formkit-form[data-uid="ab96e2e1a4"] .formkit-input::-moz-placeholder{color:inherit;opacity:0.8;}.formkit-form[data-uid="ab96e2e1a4"] .formkit-input:-ms-input-placeholder{color:inherit;opacity:0.8;}.formkit-form[data-uid="ab96e2e1a4"] .formkit-input::placeholder{color:inherit;opacity:0.8;}.formkit-form[data-uid="ab96e2e1a4"] [data-group="dropdown"]{position:relative;display:inline-block;width:100%;}.formkit-form[data-uid="ab96e2e1a4"] [data-group="dropdown"]::before{content:"";top:calc(50% - 2.5px);right:10px;position:absolute;pointer-events:none;border-color:#4f4f4f transparent transparent transparent;border-style:solid;border-width:6px 6px 0 6px;height:0;width:0;z-index:999;}.formkit-form[data-uid="ab96e2e1a4"] [data-group="dropdown"] select{height:auto;width:100%;cursor:pointer;color:#333333;line-height:1.4;margin-bottom:0;padding:0 6px;-webkit-appearance:none;-moz-appearance:none;appearance:none;font-size:15px;padding:12px;padding-right:25px;border:1px solid #e3e3e3;background:#ffffff;}.formkit-form[data-uid="ab96e2e1a4"] [data-group="dropdown"] select:focus{outline:none;}.formkit-form[data-uid="ab96e2e1a4"] [data-group="checkboxes"]{text-align:left;margin:0;}.formkit-form[data-uid="ab96e2e1a4"] [data-group="checkboxes"] [data-group="checkbox"]{margin-bottom:10px;}.formkit-form[data-uid="ab96e2e1a4"] [data-group="checkboxes"] [data-group="checkbox"] *{cursor:pointer;}.formkit-form[data-uid="ab96e2e1a4"] [data-group="checkboxes"] [data-group="checkbox"]:last-of-type{margin-bottom:0;}.formkit-form[data-uid="ab96e2e1a4"] [data-group="checkboxes"] [data-group="checkbox"] input[type="checkbox"]{display:none;}.formkit-form[data-uid="ab96e2e1a4"] [data-group="checkboxes"] [data-group="checkbox"] input[type="checkbox"] + label::after{content:none;}.formkit-form[data-uid="ab96e2e1a4"] [data-group="checkboxes"] [data-group="checkbox"] input[type="checkbox"]:checked + label::after{border-color:#ffffff;content:"";}.formkit-form[data-uid="ab96e2e1a4"] [data-group="checkboxes"] [data-group="checkbox"] input[type="checkbox"]:checked + label::before{background:#10bf7a;border-color:#10bf7a;}.formkit-form[data-uid="ab96e2e1a4"] [data-group="checkboxes"] [data-group="checkbox"] label{position:relative;display:inline-block;padding-left:28px;}.formkit-form[data-uid="ab96e2e1a4"] [data-group="checkboxes"] [data-group="checkbox"] label::before,.formkit-form[data-uid="ab96e2e1a4"] [data-group="checkboxes"] [data-group="checkbox"] label::after{position:absolute;content:"";display:inline-block;}.formkit-form[data-uid="ab96e2e1a4"] [data-group="checkboxes"] [data-group="checkbox"] label::before{height:16px;width:16px;border:1px solid #e3e3e3;background:#ffffff;left:0px;top:3px;}.formkit-form[data-uid="ab96e2e1a4"] [data-group="checkboxes"] [data-group="checkbox"] label::after{height:4px;width:8px;border-left:2px solid #4d4d4d;border-bottom:2px solid #4d4d4d;-webkit-transform:rotate(-45deg);-ms-transform:rotate(-45deg);transform:rotate(-45deg);left:4px;top:8px;}.formkit-form[data-uid="ab96e2e1a4"] .formkit-alert{background:#f9fafb;border:1px solid #e3e3e3;border-radius:5px;-webkit-flex:1 0 auto;-ms-flex:1 0 auto;flex:1 0 auto;list-style:none;margin:25px auto;padding:12px;text-align:center;width:100%;}.formkit-form[data-uid="ab96e2e1a4"] .formkit-alert:empty{display:none;}.formkit-form[data-uid="ab96e2e1a4"] .formkit-alert-success{background:#d3fbeb;border-color:#10bf7a;color:#0c905c;}.formkit-form[data-uid="ab96e2e1a4"] .formkit-alert-error{background:#fde8e2;border-color:#f2643b;color:#ea4110;}.formkit-form[data-uid="ab96e2e1a4"] .formkit-spinner{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;height:0px;width:0px;margin:0 auto;position:absolute;top:0;left:0;right:0;width:0px;overflow:hidden;text-align:center;-webkit-transition:all 300ms ease-in-out;transition:all 300ms ease-in-out;}.formkit-form[data-uid="ab96e2e1a4"] .formkit-spinner > div{margin:auto;width:12px;height:12px;background-color:#fff;opacity:0.3;border-radius:100%;display:inline-block;-webkit-animation:formkit-bouncedelay-formkit-form-data-uid-ab96e2e1a4- 1.4s infinite ease-in-out both;animation:formkit-bouncedelay-formkit-form-data-uid-ab96e2e1a4- 1.4s infinite ease-in-out both;}.formkit-form[data-uid="ab96e2e1a4"] .formkit-spinner > div:nth-child(1){-webkit-animation-delay:-0.32s;animation-delay:-0.32s;}.formkit-form[data-uid="ab96e2e1a4"] .formkit-spinner > div:nth-child(2){-webkit-animation-delay:-0.16s;animation-delay:-0.16s;}.formkit-form[data-uid="ab96e2e1a4"] .formkit-submit[data-active] .formkit-spinner{opacity:1;height:100%;width:50px;}.formkit-form[data-uid="ab96e2e1a4"] .formkit-submit[data-active] .formkit-spinner ~ span{opacity:0;}.formkit-form[data-uid="ab96e2e1a4"] .formkit-powered-by[data-active="false"]{opacity:0.35;}.formkit-sticky-bar .formkit-form[data-uid="ab96e2e1a4"][data-format="sticky bar"]{display:block;}.formkit-form[data-uid="ab96e2e1a4"] .formkit-powered-by-convertkit-container{margin:20px 0 0 0;}.formkit-form[data-uid="ab96e2e1a4"] .formkit-disclaimer{font-size:12px;opacity:0.6;margin-top:6px;}.formkit-form[data-uid="ab96e2e1a4"] .formkit-field,.formkit-form[data-uid="ab96e2e1a4"] .formkit-submit{margin:0 0 8px 0;-webkit-flex:1 0 100%;-ms-flex:1 0 100%;flex:1 0 100%;}@media screen and (min-width:600px){.formkit-form[data-uid="ab96e2e1a4"] [data-style="full"]{-webkit-flex-direction:row;-ms-flex-direction:row;flex-direction:row;}.formkit-form[data-uid="ab96e2e1a4"] [data-style="full"] .formkit-column{width:57%;}.formkit-form[data-uid="ab96e2e1a4"] [data-style="full"] .formkit-background{width:44%;height:auto;margin-left:0;-webkit-order:2;-ms-flex-order:2;order:2;}.formkit-slide-in,.preview .formkit-form[data-uid="ab96e2e1a4"][data-format="slide in"],.formkit-form[data-uid="ab96e2e1a4"][data-format="slide in-editing"]{max-width:450px !important;}.formkit-slide-in [data-style="full"],.preview .formkit-form[data-uid="ab96e2e1a4"][data-format="slide in"] [data-style="full"],.formkit-form[data-uid="ab96e2e1a4"][data-format="slide in-editing"] [data-style="full"]{-webkit-flex-direction:column !important;-ms-flex-direction:column !important;flex-direction:column !important;max-width:450px !important;}.formkit-slide-in .formkit-background,.preview .formkit-form[data-uid="ab96e2e1a4"][data-format="slide in"] .formkit-background,.formkit-form[data-uid="ab96e2e1a4"][data-format="slide in-editing"] .formkit-background{width:auto !important;height:280px !important;margin:20px !important;-webkit-order:0 !important;-ms-flex-order:0 !important;order:0 !important;}.formkit-slide-in .formkit-column,.preview .formkit-form[data-uid="ab96e2e1a4"][data-format="slide in"] .formkit-column,.formkit-form[data-uid="ab96e2e1a4"][data-format="slide in-editing"] .formkit-column{width:100% !important;-webkit-order:2 !important;-ms-flex-order:2 !important;order:2 !important;padding:20px 20px 30px 20px !important;}.formkit-slide-in .formkit-content,.preview .formkit-form[data-uid="ab96e2e1a4"][data-format="slide in"] .formkit-content,.formkit-form[data-uid="ab96e2e1a4"][data-format="slide in-editing"] .formkit-content{margin-bottom:25px !important;}.formkit-form[data-uid="ab96e2e1a4"] .formkit-column{padding:55px 60px 55px 45px;}} </style></form></div>
+<script>
+  function closePopupAndScroll() {
+    const popup = document.getElementById('matchPopup');
+    if (popup) popup.style.display = 'none';
 
+    const form = document.getElementById('waitlist');
+    if (form) form.scrollIntoView({ behavior: 'smooth' });
+  }
+</script>
+</body>
 </html>
