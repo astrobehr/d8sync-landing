@@ -330,14 +330,16 @@
         responseBox.textContent = text;
         responseBox.style.opacity = "1";
         setTimeout(() => responseBox.style.opacity = "0", 3000);
-      }
-      const spookyBtn = document.getElementById('spooky-button');
-      const nahBtn = document.getElementById('nah-button');
-      if(spookyBtn) spookyBtn.onclick = () => showGenZResponse("✨ Fr 😳 That was spooky accurate ✨");
-      if(nahBtn) nahBtn.onclick = () => showGenZResponse("💀 Deadass? That ain’t it chief 💀");
-      const yupResponses = ["Deadass, that hit.","It’s giving soulmate.","Vibes were vibing.","No cap, this was it.","This match ate 💅"];
-      const nahResponses = ["Hard pass, fam.","Not the vibe 😬","That was… a choice.","Felt like a LinkedIn date.","Respectfully, no."];
-      function showRandomResponse(type) {
+    }
+const spookyBtn = document.getElementById('spooky-button');
+const nahBtn = document.getElementById('nah-button');
+if(spookyBtn) spookyBtn.onclick = () => showGenZResponse(“Eerie-level accurate — y’all in my brain?”
+");
+
+if(nahBtn) nahBtn.onclick = () => showGenZResponse("Felt like a bot typed that.");
+const yupResponses = ["Soulmate meme frequency. I felt that.","hey understood the assignment...","Main character vibes. Fully unlocked.","No cap, this was it.","That gave multiverse twin energy."];
+const nahResponses = ["Cringe. I flinched","Not the vibe 😬","That felt like a CAPTCHA test.","Felt like a LinkedIn date.","Meme was fire. Match was mid"];
+function showRandomResponse(type) {
         if(!responseBox) return;
         const responses = type === "yup" ? yupResponses : nahResponses;
         const msg = responses[Math.floor(Math.random()*responses.length)];
