@@ -436,8 +436,6 @@
     </section>
   </main>
 
-  <!-- === Replaced Popups with OLDER Version === -->
-
   <div id="matchPopup">
     <div onclick="event.stopPropagation();" style="text-align: center;">
       <button aria-label="Close Popup" id="popupCloseBtn" title="Close Popup">×</button>
@@ -483,7 +481,6 @@
     </div>
   </div>
 
-  <!-- Bye Felicia Popup from older version -->
   <div id="byeFeliciaPopup" style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.6); z-index:11000; justify-content:center; align-items:center; padding:1rem;">
     <div style="background:#000; border-radius:16px; padding:2rem 2.5rem; max-width:400px; width:100%; box-shadow:none; text-align:center; font-family: 'Fredoka One', cursive; font-weight:700; color:#fff; font-size:1.4rem; user-select:none; position:relative;">
       <p class="message" style="margin-bottom:1rem;">Bye Felicia. 👋</p>
@@ -562,6 +559,137 @@
         }
       });
     });
+  </script>
+
+  <script>
+    (function(){
+      const memes = [
+        'https://raw.githubusercontent.com/astrobehr/d8sync-landing/main/memes/meme1.jpg',
+        'https://raw.githubusercontent.com/astrobehr/d8sync-landing/main/memes/meme2.jpg',
+        'https://raw.githubusercontent.com/astrobehr/d8sync-landing/main/memes/meme3.jpg',
+        'https://raw.githubusercontent.com/astrobehr/d8sync-landing/main/memes/meme4.jpg',
+        'https://raw.githubusercontent.com/astrobehr/d8sync-landing/main/memes/meme5.jpg',
+        'https://raw.githubusercontent.com/astrobehr/d8sync-landing/main/memes/meme6.jpg',
+        'https://raw.githubusercontent.com/astrobehr/d8sync-landing/main/memes/meme7.jpg',
+        'https://raw.githubusercontent.com/astrobehr/d8sync-landing/main/memes/meme8.jpg',
+        'https://raw.githubusercontent.com/astrobehr/d8sync-landing/main/memes/meme9.jpg',
+        'https://raw.githubusercontent.com/astrobehr/d8sync-landing/main/memes/meme10.jpg'
+      ];
+      let current = 0;
+      const memeImage = document.getElementById('memeImage');
+      const btnLeft = document.getElementById('prevMemeBtn');
+      const btnRight = document.getElementById('nextMemeBtn');
+      const popup = document.getElementById('matchPopup');
+      const popupCloseBtn = document.getElementById('popupCloseBtn');
+      let meme10Timeout1 = null;
+      let meme10Timeout2 = null;
+      let isMeme10Displayed = false;
+
+      function updateMeme() {
+        if (!memeImage) return;
+        memeImage.src = memes[current];
+
+        // Show/hide flipper buttons based on index
+        if (btnLeft && btnRight) {
+          if (current >= 5 && current <= 9) {
+            btnLeft.classList.add('hidden');
+            btnRight.classList.add('hidden');
+          } else {
+            btnLeft.classList.remove('hidden');
+            btnRight.classList.remove('hidden');
+          }
+        }
+
+        isMeme10Displayed = (current === 9);
+      }
+
+      function showPopup() {
+        if (!popup) return;
+        popup.style.display = 'flex';
+        popup.setAttribute('aria-hidden', 'false');
+        popup.focus();
+      }
+
+      function hidePopup() {
+        if (!popup) return;
+        popup.style.display = 'none';
+        popup.setAttribute('aria-hidden', 'true');
+      }
+
+      function nextMeme() {
+        if (current < memes.length - 1) {
+          if (current === 4) {
+            current++;
+            updateMeme();
+
+            // Sequence through memes 6,7,8 then show popup and finally meme 10
+            setTimeout(() => {
+              current = 6;
+              updateMeme();
+              setTimeout(() => {
+                current = 7;
+                updateMeme();
+                setTimeout(() => {
+                  current = 8;
+                  updateMeme();
+                  setTimeout(() => {
+                    if (!popup || popup.style.display !== 'flex') {
+                      showPopup();
+                      meme10Timeout1 = setTimeout(() => {
+                        meme10Timeout2 = setTimeout(() => {
+                          current = 9;
+                          updateMeme();
+                        }, 3000);
+                      }, 5000);
+                    }
+                  }, 2000);
+                }, 3000);
+              }, 3000);
+            }, 3000);
+          } else {
+            current++;
+            updateMeme();
+          }
+        } else {
+          closeAndScrollToWaitlist();
+        }
+      }
+
+      function prevMeme() {
+        if (current > 0) {
+          current--;
+          updateMeme();
+          hidePopup();
+          clearTimeout(meme10Timeout1);
+          clearTimeout(meme10Timeout2);
+        }
+      }
+
+      function resetMemeSequence() {
+        current = 0;
+        updateMeme();
+        hidePopup();
+        clearTimeout(meme10Timeout1);
+        clearTimeout(meme10Timeout2);
+      }
+
+      function closeAndScrollToWaitlist() {
+        hidePopup();
+        const waitlist = document.getElementById("waitlist");
+        if (waitlist) waitlist.scrollIntoView({ behavior: "smooth" });
+      }
+
+      if (memeImage) {
+        memeImage.onclick = () => {
+          if (isMeme10Displayed) resetMemeSequence();
+        };
+      }
+      if (btnLeft) btnLeft.addEventListener('click', prevMeme);
+      if (btnRight) btnRight.addEventListener('click', nextMeme);
+      if (popupCloseBtn) popupCloseBtn.addEventListener('click', hidePopup);
+
+      updateMeme();
+    })();
   </script>
 </body>
 </html>
