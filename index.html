@@ -238,8 +238,12 @@ D8S Land Final 062325
       margin-left: auto;
       margin-right: auto;
       text-align: center;
-      display: block !important;
-      /* Added below to center form if iframe or block elements inside */
+      display: flex !important;
+      justify-content: center !important;
+      align-items: center !important;
+    }
+    /* Ensure iframe or block form content is centered */
+    #kit-form-container > * {
       margin-left: auto !important;
       margin-right: auto !important;
     }
@@ -537,9 +541,12 @@ D8S Land Final 062325
           max-width: 740px;
           margin-left: auto !important;
           margin-right: auto !important;
-          display: block !important;
+          display: flex !important;
+          justify-content: center !important;
+          align-items: center !important;
+          flex-direction: column !important;
         }
-        /* Additional centering for iframe or block elements inside the kit form */
+        /* Ensure iframe or block form content is centered */
         #kit-form-container > * {
           margin-left: auto !important;
           margin-right: auto !important;
