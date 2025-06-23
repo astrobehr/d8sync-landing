@@ -10,6 +10,7 @@
   <meta name="author" content="D8Sync" />
   <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Inter&display=swap" rel="stylesheet" />
   <style>
+    /* Body and base styles */
     body {
       margin: 0;
       min-height: 100vh;
@@ -28,12 +29,12 @@
       color: #6a0dad;
       transition: color 0.3s ease;
     }
-    a:hover,
-    a:focus {
+    a:hover, a:focus {
       color: #ff43a4;
       outline: none;
     }
-    /* *** UPDATED HEADER STYLES *** */
+
+    /* UPDATED HEADERS ONLY - Fonts and center alignment */
     section h2, section h3 {
       font-family: 'Inter', sans-serif;
       font-weight: 700;
@@ -44,12 +45,14 @@
       text-align: center;
       letter-spacing: normal;
     }
-
     h1, h2, h3 {
       margin: 0;
       font-family: 'Inter', sans-serif;
       letter-spacing: normal;
     }
+
+    /* All other styles kept exactly as before to preserve form and layout */
+
     p {
       max-width: 600px;
       margin: 0.6em auto 1.6em;
@@ -86,8 +89,7 @@
       margin-left: auto;
       margin-right: auto;
     }
-    .logo img:hover,
-    .logo img:focus {
+    .logo img:hover, .logo img:focus {
       transform: scale(1.06);
       outline: none;
     }
@@ -352,6 +354,7 @@
 </head>
 <body>
   <script>
+    // Random gradient background on load
     (function(){
       const colors = ['#FFAA3C', '#F9A8D4', '#FF4FFF', '#A259FF'];
       let stops = [];
@@ -454,7 +457,7 @@
   <script defer src="https://f.convertkit.com/ckjs/ck.5.js"></script>
   <script>
     (() => {
-      /* Your existing meme flipper and popup scripts here; omitted for brevity */
+      /* Existing scripts omitted for brevity */
     })();
   </script>
 </body>
