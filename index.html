@@ -1,103 +1,63 @@
-/* Section 1 and 2 backgrounds: keep gradient backgrounds for .feature section */
+<style>
+  /* Update body background to white with haze/underglow */
+  body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: 'Inter', sans-serif;
+    background: #fff; /* White background */
+    /* Add subtle haze/underglow gradient */
+    background: linear-gradient(135deg, #FFAA3C33, #F9A8D433, #FF4FFF33, #A259FF33);
+    color: #1A1A1A; /* dark charcoal body text */
+    letter-spacing: 0.2px;
+    line-height: 1.55;
+    overflow-x: hidden;
+  }
 
-section.feature {
-  /* Ensure gradient stays: e.g. */
-  background: linear-gradient(135deg, #FFAA3C, #F9A8D4, #FF4FFF, #A259FF);
-  color: white;
-  padding: 2rem 1.75rem;
-  border-radius: 1.5rem;
-  box-shadow: 0 8px 24px rgba(162,89,255, 0.3);
-}
+  /* Popup background black */
+  #matchPopup > div {
+    background: #000; /* Changed from white to black */
+    border-radius: 2rem;
+    max-width: 600px;
+    width: 100%;
+    padding: 2.5rem 3rem;
+    color: #eee; /* lighter text for contrast */
+    font-weight: 500;
+    box-shadow: 0 10px 40px rgba(162, 89, 255, 0.8);
+    position: relative;
+    font-family: 'Inter', sans-serif;
+    text-align: left;
+  }
 
-/* Main container and page background */
+  /* Popup text colors update for dark bg */
+  #matchPopup > div p,
+  #matchPopup > div strong {
+    color: #eee;
+  }
 
-body {
-  background: #fff; /* white base */
-  /* optionally add subtle purple/ pinkish glow */
-  box-shadow: inset 0 0 40px rgba(162, 89, 255, 0.1);
-}
+  #popup-title {
+    color: #A259FF;
+  }
 
-main {
-  background: white;
-  box-shadow: 0 0 40px rgba(162, 89, 255, 0.3); /* subtle purple glow */
-}
+  /* Buttons back to purple */
+  .btn-flat.primary-btn {
+    background-color: #A259FF;
+    color: white;
+    box-shadow: 0 6px 18px rgba(162, 89, 255, 0.6);
+  }
+  .btn-flat.primary-btn:hover, .btn-flat.primary-btn:focus {
+    background-color: #7a3dcf;
+    box-shadow: 0 8px 25px rgba(122, 61, 207, 0.8);
+    outline: none;
+    color: white;
+  }
 
-/* Popup adjustments */
-
-#matchPopup > div {
-  background: #121212; /* near black */
-  color: white;
-  border-radius: 1rem;
-  box-shadow: 0 10px 40px rgba(162, 89, 255, 0.9);
-  padding: 2rem 3rem;
-  max-width: 600px;
-  font-weight: 500;
-  text-align: left;
-  font-family: 'Inter', sans-serif;
-  position: relative;
-}
-
-/* Title in popup */
-
-#popup-title {
-  color: #A259FF; /* Use purple text */
-  text-align: center;
-  margin-bottom: 1rem;
-  font-weight: 700;
-  letter-spacing: 0.2px;
-}
-
-/* Close button style */
-
-#popupCloseBtn {
-  position: absolute;
-  top: 1rem;
-  right: 1rem;
-  background: #A259FF; /* purple square */
-  border-radius: 4px;
-  width: 28px;
-  height: 28px;
-  font-size: 20px;
-  font-weight: 700;
-  color: white;
-  border: none;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-  user-select: none;
-  line-height: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-#popupCloseBtn:hover,
-#popupCloseBtn:focus {
-  background-color: #7a3cff; /* darker purple on hover */
-  outline: none;
-}
-
-/* Buttons inside popup: purple background with white text */
-
-.btn-flat.primary-btn {
-  background-color: #A259FF; /* purple */
-  color: white;
-  box-shadow: 0 6px 18px rgba(162, 89, 255, 0.6);
-  font-weight: 600;
-  font-family: 'Inter', sans-serif;
-  border-radius: 8px;
-  padding: 0.8rem 2rem;
-  min-width: 140px;
-  user-select: none;
-  cursor: pointer;
-  font-size: 1.1rem;
-  border: none;
-  transition: background-color 0.3s ease, box-shadow 0.3s ease;
-}
-
-.btn-flat.primary-btn:hover,
-.btn-flat.primary-btn:focus {
-  background-color: #7a3cff;
-  box-shadow: 0 8px 25px rgba(122, 60, 255, 0.7);
-  outline: none;
-  color: white;
-}
+  /* Close button color adjustment for dark bg */
+  #popupCloseBtn {
+    background: #A259FF; /* purple */
+    color: white;
+  }
+  #popupCloseBtn:hover, #popupCloseBtn:focus {
+    background-color: #7a3dcf;
+    outline: none;
+  }
+</style>
