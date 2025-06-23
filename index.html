@@ -367,8 +367,15 @@
       <p style="text-align:center;">
         <em><strong>Weirdly accurate. Dangerously fun.</strong></em>
       </p>
-      <p style="text-align:center;">&nbsp;</p>
-      <hr />
+    </section>
+
+    <!-- Moved Meme Flipper right after 2nd section -->
+    <section class="feature" aria-label="Meme Swipe Gallery" style="margin-bottom: 2rem;">
+      <div class="meme-flipper" role="region" tabindex="0" aria-label="Meme Swipe Gallery">
+        <img id="memeImage" alt="D8Sync meme image" src="https://raw.githubusercontent.com/astrobehr/d8sync-landing/main/memes/meme1.jpg" />
+        <button class="flipper-btn btn-left" id="prevMemeBtn" aria-label="Previous Meme" type="button">&#x2718;</button>
+        <button class="flipper-btn btn-right" id="nextMemeBtn" aria-label="Next Meme" type="button">&#x2764;</button>
+      </div>
     </section>
 
     <section class="feature" aria-labelledby="unfiltered-title">
@@ -465,21 +472,13 @@
       <p>&nbsp;</p>
     </section>
 
-    <section class="feature" aria-labelledby="swipe-memes-title" aria-label="Meme Swipe Gallery" style="margin-bottom: 2rem;">
-      <div class="meme-flipper" role="region" aria-label="Meme Swipe Gallery" tabindex="0">
-        <img id="memeImage" alt="D8Sync meme image" src="https://raw.githubusercontent.com/astrobehr/d8sync-landing/main/memes/meme1.jpg" />
-        <button class="flipper-btn btn-left" id="prevMemeBtn" aria-label="Previous Meme" type="button">&#x2718;</button>
-        <button class="flipper-btn btn-right" id="nextMemeBtn" aria-label="Next Meme" type="button">&#x2764;</button>
-      </div>
-    </section>
-
     <section id="waitlist" aria-labelledby="signup-title">
       <h2 id="signup-title" style="color: #6a0dad; margin-bottom: 1rem;">Get Notified for D8Sync Beta Waitlist</h2>
 
       <!-- Start of ConvertKit Form Embed -->
       <script src="https://f.convertkit.com/ckjs/ck.5.js"></script>
       <div style="max-width: 480px; margin: 0 auto 40px;">
-        <form class="seva-form formkit-form" data-format="inline" data-options="{&quot;settings&quot;:{&quot;after_subscribe&quot;:{&quot;action&quot;:&quot;message&quot;,&quot;success_message&quot;:&quot;🎉 You’re synced. Watch your inbox for vibe alignment.&quot;,&quot;redirect_url&quot;:&quot;&quot;}}}" data-sv-form="8210011" data-uid="ab96e2e1a4" data-version="5" method="post">
+        <form class="seva-form formkit-form" data-format="inline" data-options='{"settings":{"after_subscribe":{"action":"message","success_message":"🎉 You’re synced. Watch your inbox for vibe alignment.","redirect_url":""}}}' data-sv-form="8210011" data-uid="ab96e2e1a4" data-version="5" method="post">
           <div data-style="full" style="--bg-border-radius: 5px;">
             <div class="formkit-column" data-element="column" style="padding: 20px;">
               <div class="formkit-header" data-element="header" style="color: rgb(61, 61, 61); font-weight: 700; margin-bottom: 10px;">
