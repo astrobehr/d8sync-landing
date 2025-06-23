@@ -21,6 +21,9 @@
       overflow-x: hidden;
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
+      background-image: linear-gradient(135deg, #fcb1a2, #f399d7 30%, #ff4dff 68%, #5330ff);
+      background-attachment: fixed;
+      padding: 0 1rem 4rem;
     }
     a, button {
       font-family: 'Fredoka One', cursive;
@@ -370,6 +373,122 @@
       box-shadow: 0 8px 25px #ff43a4cc;
     }
 
+    #beta-waitlist-section {
+      margin-top: 3rem;
+      background: #fff0ff;
+      border-radius: 2rem;
+      box-shadow: 0 8px 25px #c17affcc;
+      padding: 2rem 1.5rem;
+    }
+    #beta-waitlist-section h2 {
+      font-size: 2.5rem;
+      color: #7200e9;
+      text-align: center;
+      text-shadow: 0 0 7px #b574ff;
+      margin-bottom: 0.25rem;
+      font-family: 'Fredoka One', cursive;
+    }
+    #beta-waitlist-section p.subtitle {
+      font-family: 'Inter', sans-serif;
+      font-weight: 500;
+      color: #5332bb;
+      font-size: 1.1rem;
+      text-align: center;
+      margin-bottom: 1.6rem;
+    }
+    #beta-waitlist-content {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
+      max-width: 740px;
+      margin-left: auto;
+      margin-right: auto;
+      background: white;
+      border-radius: 1.8rem;
+      padding: 2rem;
+      box-shadow: 0 12px 30px #b66affcc;
+      color: #381059;
+      font-family: 'Fredoka One', cursive;
+    }
+    #beta-text-block {
+      flex: 1 1 280px;
+      font-size: 1.7rem;
+      line-height: 1.25;
+      letter-spacing: 0.06em;
+      text-shadow: 1px 1px 3px #ff9edb7f;
+      color: #602c7a;
+      white-space: pre-line;
+      max-width: 360px;
+    }
+    #beta-text-block strong {
+      display: block;
+      margin-top: 0.8rem;
+      margin-bottom: 0.5rem;
+      font-size: 1.7rem;
+      color: #9b3cff;
+      text-shadow: 0 0 12px #ff98ffa0;
+    }
+    #beta-img-block {
+      flex: 1 1 280px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      max-width: 360px;
+    }
+    #beta-img-block img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 1.5rem;
+      filter: drop-shadow(0 0 5px #a556ffaa);
+    }
+    #beta-waitlist-form {
+      margin-top: 1rem;
+      width: 100%;
+      max-width: 360px;
+      display: flex;
+      flex-wrap: nowrap;
+      gap: 0.6rem;
+      justify-content: center;
+    }
+    #beta-waitlist-form input[type="email"] {
+      flex: 1 1 auto;
+      padding: 0.75rem 1rem;
+      font-size: 1.12rem;
+      border: 2px solid #b177ff;
+      border-radius: 2rem;
+      outline: none;
+      font-family: 'Inter', sans-serif;
+      font-weight: 600;
+      color: #6a0dad;
+      box-shadow: 0 2px 8px #dbafff80 inset;
+      transition: border-color 0.3s ease;
+      user-select: text;
+    }
+    #beta-waitlist-form input[type="email"]:focus {
+      border-color: #d448a0;
+      box-shadow: 0 0 8px #ff68be;
+    }
+    #beta-waitlist-form button[type="submit"] {
+      background: #7200e9;
+      border: none;
+      color: white;
+      font-weight: 700;
+      font-size: 1.12rem;
+      padding: 0 1.8rem;
+      border-radius: 2rem;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      user-select: none;
+      font-family: 'Fredoka One', cursive;
+      box-shadow: 0 6px 18px #9a48ffcc;
+    }
+    #beta-waitlist-form button[type="submit"]:hover,
+    #beta-waitlist-form button[type="submit"]:focus {
+      background-color: #ff46a3;
+      outline: none;
+      box-shadow: 0 8px 25px #ff48b0cc;
+    }
     @media (max-width: 640px) {
       h2, h3 {
         font-size: 1.6rem;
@@ -377,7 +496,6 @@
       .meme-flipper {
         max-width: 90vw;
       }
-      /* Remove old waitlist styling as that's replaced */
       .logo img {
         width: 90vw;
       }
@@ -390,26 +508,31 @@
         min-width: 140px;
         padding: 1rem 1.5rem;
       }
-    }
-
-    /* Additional Kit form styling if needed */
-    #kit-form-container {
-      color: #1f1f1f;
-      font-family: 'Fredoka One', cursive, 'Inter', sans-serif;
-      text-align: center;
-    }
-    #kit-form-container h2 {
-      color: #6a0dad;
-      text-shadow: 0 0 6px #aa33ccaa;
-      font-size: 2rem;
-      margin-bottom: 0.5rem;
-    }
-    #kit-form-container p {
-      font-weight: 500;
-      color: #666;
-      font-family: 'Inter', sans-serif;
-      font-size: 1rem;
-      margin-bottom: 1rem;
+      #beta-waitlist-content {
+        flex-direction: column;
+        max-width: 90vw;
+      }
+      #beta-text-block {
+        max-width: 100%;
+        font-size: 1.4rem;
+        white-space: normal;
+        text-align: center;
+      }
+      #beta-img-block {
+        max-width: 100%;
+      }
+      #beta-waitlist-form {
+        max-width: 100%;
+        flex-direction: column;
+        gap: 0.8rem;
+      }
+      #beta-waitlist-form input[type="email"],
+      #beta-waitlist-form button[type="submit"] {
+        width: 100%;
+      }
+      #beta-waitlist-form button[type="submit"] {
+        padding: 0.9rem 1rem;
+      }
     }
   </style>
 </head>
@@ -435,7 +558,7 @@
     </div>
 
     <section class="feature" aria-labelledby="ai-match-title">
-      <h3><img class="an1" draggable="false" src="https://fonts.gstatic.com/s/e/notoemoji/16.0/1f3af/32.png" alt="🎯" width="20" aria-label="🎯" />Real Vibes Only. No Swipes. No Stress.</h3>
+      <h3><img class="an1" draggable="false" src="https://fonts.gstatic.com/s/e/notoemoji/16.0/1f3af/32.png" alt="🎯" aria-label="🎯" width="20" />Real Vibes Only. No Swipes. No Stress.</h3>
       <p><strong>Let’s keep it real — dating apps suck.</strong></p>
       <ul class="bullet-list" aria-label="Dating app struggles list">
         <li><img class="an1" draggable="false" src="https://fonts.gstatic.com/s/e/notoemoji/16.0/1f4f1/32.png" alt="📱" aria-label="📱" /><span>Swipe fatigue is real.</span></li>
@@ -452,7 +575,7 @@
       <h3><img class="an1" draggable="false" src="https://fonts.gstatic.com/s/e/notoemoji/16.0/1f3ad/32.png" alt="🎭" aria-label="🎭" />Swipe Memes, Not Faces</h3>
       <p>What if your dating feed was memes instead of mugshots?<br />No more trying to decode mirror selfies or gym pics.</p>
       <p>Just scroll, laugh, and react to the memes that hit hardest.</p>
-      <p>Every meme you react to builds your <strong>Comedy Graph™</strong> &mdash; a laughprint that’s uniquely <em>you</em>. Our AI reads your vibe and syncs you with people who match your unique frequency.</p>
+      <p>Every meme you react to builds your <strong>Comedy Graph™</strong> — a laughprint that’s uniquely <em>you</em>. Our AI reads your vibe and syncs you with people who match your unique frequency.</p>
       <p><em><strong>Weirdly accurate. Dangerously fun.</strong></em></p>
 
       <div class="meme-flipper" role="region" tabindex="0" aria-label="Meme Swipe Gallery" style="margin: 2rem auto 2.5rem; max-width: 340px; position: relative; background: white; border-radius: 1.2rem; box-shadow: 0 0 30px #ff43a4aa;">
@@ -466,7 +589,7 @@
       <h3><img class="an1" draggable="false" src="https://fonts.gstatic.com/s/e/notoemoji/16.0/2728/32.png" alt="✨" aria-label="✨" />Unfiltered. Unscripted. Unexpected.</h3>
       <p><em><strong>No filters. No bios. No profile paralysis.</strong></em></p>
       <p>At <strong>D8Sync</strong>, you skip the scroll and jump straight into something real.</p>
-      <p>Just you and someone new &mdash; on an actual blind date.</p>
+      <p>Just you and someone new — on an actual blind date.</p>
       <p><em><strong>No Pressure. No Pretending.</strong></em></p>
       <p><em><strong>And yes, we even give you the perfect icebreaker</strong></em> <img src="https://fonts.gstatic.com/s/e/notoemoji/16.0/1f9ca/32.png" alt="🧊" width="17" height="17" aria-label="🧊" /></p>
     </section>
@@ -474,45 +597,50 @@
     <section class="feature section5" aria-labelledby="how-it-works-title">
       <h3><img class="an1" draggable="false" src="https://fonts.gstatic.com/s/e/notoemoji/16.0/1f575_fe0f_200d_2642_fe0f/32.png" alt="🕵️‍♂️" aria-label="🕵️‍♂️" />How D8Sync Blind Dates Actually Work</h3>
       <p>You tap the <em><strong>“Sync Me!”</strong></em> button:</p>
-      <p><strong>D8Sync</strong> scans your <span style="text-decoration: underline;"><strong>Comedy Graph™</strong></span>, vibe data, and availability &mdash; and matches you with someone on your wavelength.</p>
+      <p><strong>D8Sync</strong> scans your <span style="text-decoration: underline;"><strong>Comedy Graph™</strong></span>, vibe data, and availability — and matches you with someone on your wavelength.</p>
       <p>Then Our Matchmaker AI then sends you both:</p>
       <ul class="bullet-list" aria-label="Matchmaker AI details">
         <li><img src="https://fonts.gstatic.com/s/e/notoemoji/16.0/23f0/32.png" alt="⏰" aria-label="⏰" /> A Date and Time</li>
         <li><img src="https://fonts.gstatic.com/s/e/notoemoji/16.0/1f4cd/32.png" alt="📍" aria-label="📍" /> A public place</li>
-        <li><img src="https://fonts.gstatic.com/s/e/notoemoji/16.0/1f9e9/32.png" alt="🧩" aria-label="🧩" /> “The Tell” &mdash; a phrase or shared order to find your match.</li>
+        <li><img src="https://fonts.gstatic.com/s/e/notoemoji/16.0/1f9e9/32.png" alt="🧩" aria-label="🧩" /> “The Tell” — a phrase or shared order to find your match.</li>
       </ul>
       <p>You pull up, scan the scene, and look for the signal... like someone lowkey ordering the same drink.</p>
       <p>In a crowded cafe or busy bookstore? Not sure it’s them?<br>Tap the “Is That You?” button in-app <img src="https://fonts.gstatic.com/s/e/notoemoji/16.0/1f440/32.png" alt="👀" aria-label="👀" /> for a private match confirm.</p>
-      <p>If the chemistry's there, drop the icebreaker we gave you &mdash; it's the perfect nudge <img src="https://fonts.gstatic.com/s/e/notoemoji/16.0/1f449/32.png" alt="👉" aria-label="👉" /><img src="https://fonts.gstatic.com/s/e/notoemoji/16.0/1f448/32.png" alt="👈" aria-label="👈" /></p>
+      <p>If the chemistry's there, drop the icebreaker we gave you — it's the perfect nudge <img src="https://fonts.gstatic.com/s/e/notoemoji/16.0/1f449/32.png" alt="👈" aria-label="👈" /><img src="https://fonts.gstatic.com/s/e/notoemoji/16.0/1f448/32.png" alt="👈" aria-label="👈" /></p>
       <p>Not feeling it? That’s cool too.<br>Take a breath, enjoy the moment, & the match will fade away.</p>
       <p>No profiles. No awkward openings. No rejection drama.</p>
       <p><em>Just vibes. Real ones.</em></p>
     </section>
 
-    <section id="talk-it-out-title" class="feature" aria-labelledby="talk-it-out-title" style="margin-bottom: 3rem;">
+    <section class="feature" aria-labelledby="talk-it-out-title" style="margin-bottom: 3rem;">
       <h3><img class="an1" draggable="false" src="https://fonts.gstatic.com/s/e/notoemoji/16.0/1f4ac/32.png" alt="💬" aria-label="💬" />Need to talk it out? We got you.</h3>
-      <p>After every date, the judgment-free vibe check continues.<br>Our AI Dating Coach is here to help you debrief &mdash; like a relationship therapist in your pocket.</p>
+      <p>After every date, the judgment-free vibe check continues.<br>Our AI Dating Coach is here to help you debrief — like a relationship therapist in your pocket.</p>
       <p>Whether it sparked or fizzled, talk through what worked, what didn’t, and how it made you feel.</p>
       <p><strong>Get clarity <img src="https://fonts.gstatic.com/s/e/notoemoji/16.0/1f9e0/32.png" alt="🧠" aria-label="🧠" />. Spot patterns <img src="https://fonts.gstatic.com/s/e/notoemoji/16.0/1f4c8/32.png" alt="📈" aria-label="📈" />. Grow faster <img src="https://fonts.gstatic.com/s/e/notoemoji/16.0/1f680/32.png" alt="🚀" aria-label="🚀" /></strong></p>
       <p><strong>You’re not “hard to love.”</strong><br>You’re just hard to algorithm.</p>
     </section>
 
-    <!-- Updated waitlist section with Kit Embed -->
-    <section id="waitlist" aria-labelledby="signup-title" role="region" aria-live="polite" aria-atomic="true" style="margin-top: 3rem;">
-      <h2 id="signup-title" style="color:#6a0dad; text-align:center; text-shadow: 0 0 8px #aa33ccbb; font-family: 'Fredoka One', cursive; margin-bottom: 0.2rem;">Get Notified for D8Sync Beta Waitlist</h2>
-      <p style="text-align:center; font-family: 'Inter', sans-serif; font-weight: 500; color: #444; margin-bottom: 1rem;">
-        Be one of the first to experience AI Meme-Powered Dating
-      </p>
-      
-      <!-- Kit Embed Script -->
-      <script async data-uid="ab96e2e1a4" src="https://d8sync.kit.com/ab96e2e1a4/index.js"></script>
-
-      <!-- Container div for Kit form will be injected here by the script -->
-      <div id="kit-form-container" style="max-width: 740px; margin: 2rem auto 1rem;" aria-label="Join D8Sync Beta Waitlist Email Form"></div>
-      
-      <p style="text-align:center; font-size: 0.9rem; color: #666; font-family: 'Inter', sans-serif; margin-top: 0.5rem; user-select:none;">
-        No spam. No cringe. Unmatch us anytime.
-      </p>
+    <section id="beta-waitlist-section" aria-labelledby="waitlist-title" role="region" aria-live="polite" aria-atomic="true">
+      <h2 id="waitlist-title">Get Notified for D8Sync Beta Waitlist</h2>
+      <p class="subtitle">Be one of the first to experience AI Meme-Powered Dating</p>
+      <div id="beta-waitlist-content">
+        <div id="beta-text-block" aria-label="Beta Waitlist Invitation">
+          Get<br />
+          Notified<br />
+          for<br />
+          D8Sync<br />
+          Beta Wait<br />
+          list
+          <strong>Be One of the First to Experience<br />AI Meme-Powered Dating</strong>
+          <form id="beta-waitlist-form" action="https://app.convertkit.com/forms/ab96e2e1a4/subscriptions" method="post" target="_blank" novalidate>
+            <input type="email" name="email_address" id="email_address" placeholder="Your email address" aria-label="Email address" required />
+            <button type="submit" aria-label="Subscribe to beta waitlist">Notify Me</button>
+          </form>
+        </div>
+        <div id="beta-img-block" aria-hidden="true">
+          <img src="https://cdn-icons-png.flaticon.com/512/4324/4324649.png" alt="Mobile phone with heart and direction arrows - D8Sync Beta Waitlist" />
+        </div>
+      </div>
     </section>
   </main>
 
@@ -634,10 +762,13 @@
       });
       btnLeft.addEventListener("click", prevMeme);
       btnRight.addEventListener("click", nextMeme);
-      popupCloseBtn.addEventListener("click", () => {
-        hidePopup();
-      });
+      if (popupCloseBtn) {
+        popupCloseBtn.addEventListener("click", () => {
+          hidePopup();
+        });
+      }
       updateMeme();
+
       const spookyBtn = document.getElementById("spooky-button");
       const nahBtn = document.getElementById("nah-button");
       const openByeFeliciaLink = document.getElementById("openByeFelicia");
@@ -664,45 +795,32 @@
         feedbackResponse.style.opacity = "1";
         setTimeout(() => (feedbackResponse.style.opacity = "0"), 3000);
       }
-      spookyBtn.addEventListener("click", () => showRandomResponse("yup"));
-      nahBtn.addEventListener("click", () => showRandomResponse("nah"));
-      openByeFeliciaLink.addEventListener('click', (e) => {
-        e.preventDefault();
-        hidePopup();
-        byePopup.classList.add('active');
-        byePopup.setAttribute('aria-hidden', 'false');
-        byeOkBtn.focus();
-      });
-      byeOkBtn.addEventListener('click', () => {
-        byePopup.classList.remove('active');
-        byePopup.setAttribute('aria-hidden', 'true');
-        window.open('https://www.tinder.com', '_blank', 'noopener');
-      });
-      byePopup.addEventListener('click', (e) => {
-        if (e.target === byePopup) {
+      if (spookyBtn) spookyBtn.addEventListener("click", () => showRandomResponse("yup"));
+      if (nahBtn) nahBtn.addEventListener("click", () => showRandomResponse("nah"));
+      if (openByeFeliciaLink) {
+        openByeFeliciaLink.addEventListener('click', (e) => {
+          e.preventDefault();
+          hidePopup();
+          byePopup.classList.add('active');
+          byePopup.setAttribute('aria-hidden', 'false');
+          if(byeOkBtn) byeOkBtn.focus();
+        });
+      }
+      if (byeOkBtn) {
+        byeOkBtn.addEventListener('click', () => {
           byePopup.classList.remove('active');
           byePopup.setAttribute('aria-hidden', 'true');
-        }
-      });
-
-      // Wait for Kit form to render then update placeholders and button label
-      function updateKitFormElements() {
-        const formContainer = document.getElementById('kit-form-container');
-        if (!formContainer) return;
-        // Look for the input and button inside formContainer
-        const input = formContainer.querySelector('input[type="email"]');
-        if (input) input.placeholder = "Enter your email";
-        const button = formContainer.querySelector('button[type="submit"]');
-        if (button) button.textContent = "Join Waitlist";
+          window.open('https://www.tinder.com', '_blank', 'noopener');
+        });
       }
-      // Poll periodically in case form takes time to load
-      const kitFormInterval = setInterval(() => {
-        const formContainer = document.getElementById('kit-form-container');
-        if (formContainer && formContainer.querySelector('input[type="email"]') && formContainer.querySelector('button[type="submit"]')) {
-          updateKitFormElements();
-          clearInterval(kitFormInterval);
-        }
-      }, 500);
+      if (byePopup) {
+        byePopup.addEventListener('click', (e) => {
+          if (e.target === byePopup) {
+            byePopup.classList.remove('active');
+            byePopup.setAttribute('aria-hidden', 'true');
+          }
+        });
+      }
     })();
   </script>
 </body>
