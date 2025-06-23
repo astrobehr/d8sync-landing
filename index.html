@@ -278,7 +278,7 @@
       text-align: center;
     }
     #matchPopup.active {
-      display: flex;
+      display: flex !important;
     }
     #matchPopup > div {
       background: #1c1338;
@@ -547,7 +547,7 @@
     </section>
   </main>
 
-  <!-- Match Popup as in your working version -->
+  <!-- Match Popup with fixes -->
   <div id="matchPopup" aria-hidden="true" role="dialog" aria-modal="true" tabindex="-1">
     <div>
       <button id="popupCloseBtn" aria-label="Close popup">&times;</button>
@@ -612,7 +612,8 @@
       function showPopup() {
         popup.classList.add('active');
         popup.setAttribute('aria-hidden', 'false');
-        popup.focus();
+        // Focus popup after small delay to ensure focusable
+        setTimeout(() => popup.focus(), 100);
       }
       function hidePopup() {
         popup.classList.remove('active');
@@ -688,6 +689,12 @@
       btnRight.addEventListener("click", nextMeme);
       popupCloseBtn.addEventListener("click", () => {
         hidePopup();
+      });
+      
+      popup.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+          hidePopup();
+        }
       });
 
       const spookyBtn = document.getElementById("spooky-button");
