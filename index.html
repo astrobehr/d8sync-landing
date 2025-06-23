@@ -1,4 +1,4 @@
-D8S Land Final 062325 V.2
+D8S Land Final 062325
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -238,7 +238,8 @@ D8S Land Final 062325 V.2
       margin-left: auto;
       margin-right: auto;
       text-align: center;
-      display: block;
+      display: flex !important;           /* changed from block to flex */
+      justify-content: center;            /* added */
       color: #1f1f1f;
       font-family: 'Fredoka One', cursive, 'Inter', sans-serif;
     }
@@ -536,7 +537,8 @@ D8S Land Final 062325 V.2
           max-width: 740px;
           margin-left: auto;
           margin-right: auto;
-          display: block;
+          display: flex !important;
+          justify-content: center;
         }
         #waitlist h2 {
           color: inherit !important;
