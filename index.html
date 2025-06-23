@@ -1,4 +1,4 @@
-<!DOCTYPE html> poundcake
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -10,7 +10,6 @@
   <meta name="author" content="D8Sync" />
   <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Inter&display=swap" rel="stylesheet" />
   <style>
-    /* Full existing styles from your file */
     body {
       margin: 0;
       min-height: 100vh;
@@ -224,24 +223,116 @@
       font-weight: 800;
       text-align: center;
     }
-    #waitlist p.subtitle {
-      flex-basis: 100%;
-      font-weight: 500;
-      color: #666;
+
+    /* === BEGIN OLD POPUP STYLES === */
+
+    #matchPopup {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.85);
+      z-index: 9999;
+      box-sizing: border-box;
+      padding: 40px;
+      overflow-y: auto;
       font-family: 'Inter', sans-serif;
+      color: #fff;
+      text-align: center;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      display: none; /* initially hidden */
+    }
+
+    #matchPopup > div {
+      max-width: 600px;
+      margin: 40px auto;
+      background: #111;
+      padding: 30px 40px 40px;
+      border-radius: 16px;
+      box-shadow: 0 0 30px rgba(0, 0, 0, 0.4);
+      position: relative;
+      color: white;
+      text-align: center;
+    }
+
+    #popupCloseBtn {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      width: 28px;
+      height: 28px;
+      background: #6e38f7;
+      border: none;
+      border-radius: 4px;
+      color: white;
+      font-weight: bold;
+      font-size: 22px;
+      line-height: 26px;
+      cursor: pointer;
+      user-select: none;
+      transition: background-color 0.3s ease;
+      z-index: 10000;
+    }
+
+    #popupCloseBtn:hover {
+      background: #5300cc;
+    }
+
+    #feedback-response {
+      margin-top: 18px;
+      margin-bottom: 18px;
+      min-height: 1.2em;
+      font-weight: bold;
       font-size: 1rem;
-      margin-bottom: 1rem;
+      max-width: 90%;
+      opacity: 0;
+      transition: opacity 0.5s ease;
+      user-select: none;
+      color: #fff;
+      text-align: center;
+      margin-left: auto !important;
+      margin-right: auto !important;
+      display: block !important;
+      padding-left: 0 !important;
+      box-sizing: border-box;
+    }
+
+    .popup-buttons-container {
+      margin-top: 18px;
       text-align: center;
     }
-    #kit-form-container {
-      max-width: 740px;
-      margin-left: auto;
-      margin-right: auto;
-      text-align: center;
-      display: block;
-      color: #1f1f1f;
-      font-family: 'Fredoka One', cursive, 'Inter', sans-serif;
+
+    .popup-buttons-row {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      margin-bottom: 6px;
+      flex-wrap: wrap;
     }
+
+    .btn-flat {
+      background-color: #8000ff;
+      color: #fff;
+      padding: 12px 24px;
+      font-size: 1rem;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      margin: 10px;
+      font-weight: 600;
+      transition: background-color 0.3s ease;
+      white-space: nowrap;
+    }
+
+    .btn-flat:hover {
+      background-color: #6a00cc;
+    }
+    /* === END OLD POPUP STYLES === */
+
     @media (max-width: 640px) {
       section h2, section h3 {
         font-size: 1.6rem;
@@ -261,186 +352,6 @@
         margin-bottom: 0.5rem;
         text-align: center;
       }
-    }
-
-    /* Popup styles from working version */
-    #matchPopup {
-      display: none;
-      position: fixed;
-      inset: 0;
-      z-index: 10000;
-      background: rgba(35, 25, 66, 0.95);
-      backdrop-filter: blur(6px);
-      justify-content: center;
-      align-items: center;
-      padding: 2rem 1rem;
-      overflow-y: auto;
-      text-align: center;
-    }
-    #matchPopup.active {
-      display: flex;
-    }
-    #matchPopup > div {
-      background: #1c1338;
-      border-radius: 2rem;
-      max-width: 600px;
-      width: 100%;
-      padding: 2.5rem 3rem;
-      color: white;
-      font-weight: 600;
-      box-shadow: 0 10px 40px #6a0dadcc;
-      position: relative;
-      font-family: 'Inter', sans-serif;
-      text-align: left;
-      line-height: 1.5;
-      user-select: none;
-    }
-    #popup-title {
-      font-family: 'Fredoka One', cursive;
-      text-align: center;
-      margin-bottom: 1rem;
-      font-size: 1.5rem;
-      font-weight: 700;
-      color: #dba6ff;
-    }
-    #popupCloseBtn {
-      position: absolute;
-      top: 1.2rem;
-      right: 1.2rem;
-      background: transparent;
-      border: none;
-      font-size: 22px;
-      font-weight: 800;
-      color: #a98cff;
-      cursor: pointer;
-      transition: color 0.3s ease;
-      user-select: none;
-    }
-    #popupCloseBtn:hover,
-    #popupCloseBtn:focus {
-      color: #ff43a4;
-      outline: none;
-    }
-    #matchPopup p {
-      margin-top: 0.4rem;
-      font-size: 1.1rem;
-      color: #d6c1ff;
-    }
-    #matchPopup p strong {
-      color: #f0d9ff;
-    }
-    #matchPopup p em {
-      font-style: normal;
-      color: #d5a6ff;
-    }
-    #feedback-response {
-      margin-top: 1rem;
-      min-height: 1.3em;
-      opacity: 0;
-      transition: opacity 0.4s ease;
-      color: #a059ff;
-      font-family: 'Fredoka One', cursive;
-      text-align: center;
-      font-weight: 700;
-      font-size: 1.1rem;
-    }
-    .popup-buttons-row {
-      margin: 1.5rem 0;
-      display: flex;
-      gap: 1rem;
-      justify-content: center;
-      flex-wrap: wrap;
-    }
-    .btn-flat {
-      background-color: #a259ff;
-      border: none;
-      padding: 1.2rem 2rem;
-      border-radius: 2rem;
-      color: white;
-      font-weight: 800;
-      font-size: 1.25rem;
-      cursor: pointer;
-      box-shadow: 0 7px 22px #a259ffcc;
-      transition: background-color 0.3s ease;
-      min-width: 160px;
-      font-family: 'Fredoka One', cursive;
-      user-select: none;
-    }
-    .btn-flat:hover,
-    .btn-flat:focus {
-      background-color: #ff43a4;
-      outline: none;
-      box-shadow: 0 10px 30px #ff43a4cc;
-    }
-    #openByeFelicia {
-      display: block;
-      margin-top: 1.5rem;
-      text-align: center;
-      color: #a259ff;
-      font-weight: 700;
-      font-size: 1rem;
-      text-decoration: underline;
-      cursor: pointer;
-      user-select: none;
-    }
-    #openByeFelicia:hover,
-    #openByeFelicia:focus {
-      color: #ff43a4;
-      outline: none;
-    }
-
-    #byeFeliciaPopup {
-      display: none;
-      position: fixed;
-      inset: 0;
-      background: rgba(0,0,0,0.6);
-      z-index: 11000;
-      justify-content: center;
-      align-items: center;
-      padding: 1rem;
-    }
-    #byeFeliciaPopup.active {
-      display: flex;
-    }
-    #byeFeliciaPopup > div {
-      background: white;
-      border-radius: 1.5rem;
-      padding: 2rem 2.5rem;
-      max-width: 400px;
-      width: 100%;
-      box-shadow: 0 8px 25px rgba(106, 13, 173, 0.7);
-      text-align: center;
-      font-family: 'Fredoka One', cursive;
-      font-weight: 700;
-      color: #6a0dad;
-      font-size: 1.2rem;
-      user-select: none;
-      position: relative;
-    }
-    #byeFeliciaPopup p.message {
-      font-size: 1.4rem;
-      margin-bottom: 1rem;
-      color: #6a0dad;
-    }
-    #byeFeliciaPopup button.ok-btn {
-      background: #6a0dad;
-      color: white;
-      font-size: 1.1rem;
-      padding: 0.8rem 1.8rem;
-      border-radius: 2rem;
-      border: none;
-      cursor: pointer;
-      box-shadow: 0 6px 18px #6a0dadcc;
-      transition: background-color 0.3s ease;
-      user-select: none;
-      font-family: 'Fredoka One', cursive;
-      font-weight: 700;
-    }
-    #byeFeliciaPopup button.ok-btn:hover,
-    #byeFeliciaPopup button.ok-btn:focus {
-      background-color: #ff43a4;
-      outline: none;
-      box-shadow: 0 8px 25px #ff43a4cc;
     }
   </style>
 </head>
@@ -487,7 +398,6 @@
         <button class="flipper-btn btn-right" id="nextMemeBtn" aria-label="Next Meme" type="button" style="position: absolute; bottom: 16%; right: 25%; height:44px; width:44px; border-radius: 50%; border:none; font-size:1.5rem; font-weight:800; background:#6a0dad; color:white; box-shadow: 0 4px 12px rgba(255, 67, 164, 0.5); cursor:pointer;">&#x2764;</button>
       </div>
     </section>
-    <!-- Other sections remain unchanged from your base -->
     <section class="feature section4" aria-labelledby="unfiltered-title">
       <h3 id="unfiltered-title" class="centered-header"><img class="an1" draggable="false" src="https://fonts.gstatic.com/s/e/notoemoji/16.0/2728/32.png" alt="✨" width="20" aria-label="✨" />Unfiltered. Unscripted. Unexpected.</h3>
       <p><em><strong>No filters. No bios. No profile paralysis.</strong></em></p>
@@ -496,7 +406,6 @@
       <p><em><strong>No Pressure. No Pretending.</strong></em></p>
       <p><em><strong>And yes, we even give you the perfect icebreaker</strong></em> <img src="https://fonts.gstatic.com/s/e/notoemoji/16.0/1f9ca/32.png" alt="🧊" width="17" height="17" aria-label="🧊" /></p>
     </section>
-
     <section class="feature section5" aria-labelledby="how-it-works-title">
       <h3 id="how-it-works-title" class="centered-header"><img class="an1" draggable="false" src="https://fonts.gstatic.com/s/e/notoemoji/16.0/1f575_fe0f_200d_2642_fe0f/32.png" alt="🕵️‍♂️" width="20" aria-label="🕵️‍♂️" />How D8Sync Blind Dates Actually Work</h3>
       <p>You tap the <em><strong>“Sync Me!”</strong></em> button:</p>
@@ -514,185 +423,91 @@
       <p>No profiles. No awkward openings. No rejection drama.</p>
       <p><em>Just vibes. Real ones.</em></p>
     </section>
-
     <section class="feature" aria-labelledby="talk-it-out-title" style="margin-bottom: 3rem;">
       <h3 id="talk-it-out-title" class="centered-header"><img class="an1" draggable="false" src="https://fonts.gstatic.com/s/e/notoemoji/16.0/1f4ac/32.png" alt="💬" width="20" aria-label="💬" />Need to talk it out? We got you.</h3>
-      <p>After every date, the judgment-free vibe check continues.<br>Our AI Dating Coach is here to help you debrief &mdash; like a relationship therapist in your pocket.</p>
+      <p>After every date, the judgment-free vibe check continues.<br>Our AI Dating Coach is here to help you debrief — like a relationship therapist in your pocket.</p>
       <p>Whether it sparked or fizzled, talk through what worked, what didn’t, and how it made you feel.</p>
       <p><strong>Get clarity <img src="https://fonts.gstatic.com/s/e/notoemoji/16.0/1f9e0/32.png" alt="🧠" aria-label="🧠" />. Spot patterns <img src="https://fonts.gstatic.com/s/e/notoemoji/16.0/1f4c8/32.png" alt="📈" aria-label="📈" />. Grow faster <img src="https://fonts.gstatic.com/s/e/notoemoji/16.0/1f680/32.png" alt="🚀" aria-label="🚀" /></strong></p>
       <p><strong>You’re not “hard to love.”</strong><br>You’re just hard to algorithm.</p>
     </section>
-
     <section id="waitlist" aria-labelledby="signup-title" role="region" aria-live="polite" aria-atomic="true" style="margin-top: 3rem;">
       <script async data-uid="ab96e2e1a4" src="https://d8sync.kit.com/ab96e2e1a4/index.js"></script>
       <div id="kit-form-container"></div>
-      <style>
-        #kit-form-container h2 {
-          display: none !important;
-        }
-        #kit-form-container {
-          color: #1f1f1f;
-          font-family: 'Fredoka One', cursive, 'Inter', sans-serif;
-          text-align: center;
-          max-width: 740px;
-          margin-left: auto;
-          margin-right: auto;
-          display: block;
-        }
-        #waitlist h2 {
-          color: inherit !important;
-          text-shadow: none !important;
-        }
-      </style>
     </section>
   </main>
 
-  <!-- Match Popup as in your working version -->
-  <div id="matchPopup" aria-hidden="true" role="dialog" aria-modal="true" tabindex="-1">
-    <div>
-      <button id="popupCloseBtn" aria-label="Close popup">&times;</button>
-      <h2 id="popup-title">It's a match!</h2>
-      <p>You're connected based on your meme vibes.</p>
-      <div class="popup-buttons-row">
-        <button id="spooky-button" class="btn-flat">That's spooky!</button>
-        <button id="nah-button" class="btn-flat">Not feeling it</button>
+  <!-- === Replaced Popups with OLDER Version === -->
+
+  <div id="matchPopup">
+    <div onclick="event.stopPropagation();" style="text-align: center;">
+      <button aria-label="Close Popup" id="popupCloseBtn" title="Close Popup">×</button>
+      <h2 style="margin:0; text-align:center;">🔗 You Just Got Synced 🔗</h2>
+      <p style="margin-top:45px; font-size:0.95em; color:#888; text-align:center;">(Sample Match Preview)</p>
+      <p style="margin-bottom:20px; text-align:center;">
+        This is a taste of what matching on D8Sync might feel like.<br />
+        No swiping. No bios. Just pure vibe alignment.
+      </p>
+      <p style="text-align:center; padding-left: 10px; box-sizing: border-box;">
+        <strong>🤩 Shared Meme Energy:</strong><br />
+        “Me pretending that I don’t care.<br />But secretly I'm watching the group chat implode.”
+      </p>
+      <p style="text-align:center; padding-left: 10px; box-sizing: border-box;">
+        <strong>🎧 Audio Match:</strong><br />
+        Late 2000s indie drama with main character syndrome
+      </p>
+      <p style="text-align:center; padding-left: 10px; box-sizing: border-box;">
+        <strong>🍵 First Date Prompt:</strong><br />
+        You meet outside a thrift store...<br />
+        One of you is holding a can of soup.<br />
+        The other is holding a spoon.
+      </p>
+      <p style="text-align:center; padding-left: 10px; box-sizing: border-box;">
+        <strong>🧩 Vibe Alignment:</strong><br />
+        84% Emotionally Aligned<br />
+        72% Chaos Compatibility<br />
+        92% Meme Fluency
+      </p>
+      <p style="text-align:center; margin-top: 30px;">
+        🥰 Did this vibe feel accurate?
+      </p>
+      <div id="feedback-response" style="text-align:center; padding-left:10px; box-sizing:border-box;"></div>
+      <div class="popup-buttons-container">
+        <div class="popup-buttons-row">
+          <button class="btn-flat" id="spooky-button">Yup... Spooky!</button>
+          <button class="btn-flat" id="nah-button">Nah... Not Really.</button>
+        </div>
+        <a href="https://www.tinder.com" onclick="alert('Bye Felicia 👋');" style="color:#ccc; font-size:14px; text-decoration:underline; display:block; margin-top:20px; text-align:center;">
+          Not feeling it? Close
+        </a>
       </div>
-      <p id="feedback-response" aria-live="polite"></p>
-      <a href="#" id="openByeFelicia">Bye Felicia</a>
     </div>
   </div>
 
-  <!-- Bye Felicia Popup -->
-  <div id="byeFeliciaPopup" aria-hidden="true" role="dialog" aria-modal="true" tabindex="-1">
-    <div>
-      <p class="message">See you next time!</p>
-      <button id="btnByeOk" class="ok-btn">Ok</button>
+  <!-- Bye Felicia Popup from older version -->
+  <div id="byeFeliciaPopup" style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.6); z-index:11000; justify-content:center; align-items:center; padding:1rem;">
+    <div style="background:#000; border-radius:16px; padding:2rem 2.5rem; max-width:400px; width:100%; box-shadow:none; text-align:center; font-family: 'Fredoka One', cursive; font-weight:700; color:#fff; font-size:1.4rem; user-select:none; position:relative;">
+      <p class="message" style="margin-bottom:1rem;">Bye Felicia. 👋</p>
+      <button id="btnByeOk" class="ok-btn" type="button" style="background:#a259ff; color:#fff; font-size:1.1rem; padding:0.8rem 1.8rem; border-radius:20px; border:none; cursor:pointer; box-shadow:none; transition:background-color 0.3s ease; user-select:none; font-family: 'Fredoka One', cursive; font-weight:700; min-width:120px;">Ok</button>
     </div>
   </div>
 
   <script defer src="https://f.convertkit.com/ckjs/ck.5.js"></script>
   <script>
-    (function(){
-      const memes = [
-        'https://raw.githubusercontent.com/astrobehr/d8sync-landing/main/memes/meme1.jpg',
-        'https://raw.githubusercontent.com/astrobehr/d8sync-landing/main/memes/meme2.jpg',
-        'https://raw.githubusercontent.com/astrobehr/d8sync-landing/main/memes/meme3.jpg',
-        'https://raw.githubusercontent.com/astrobehr/d8sync-landing/main/memes/meme4.jpg',
-        'https://raw.githubusercontent.com/astrobehr/d8sync-landing/main/memes/meme5.jpg',
-        'https://raw.githubusercontent.com/astrobehr/d8sync-landing/main/memes/meme6.jpg',
-        'https://raw.githubusercontent.com/astrobehr/d8sync-landing/main/memes/meme7.jpg',
-        'https://raw.githubusercontent.com/astrobehr/d8sync-landing/main/memes/meme8.jpg',
-        'https://raw.githubusercontent.com/astrobehr/d8sync-landing/main/memes/meme9.jpg',
-        'https://raw.githubusercontent.com/astrobehr/d8sync-landing/main/memes/meme10.jpg'
-      ];
-      let current = 0;
-      const memeImage = document.getElementById('memeImage');
-      const btnLeft = document.getElementById('prevMemeBtn');
-      const btnRight = document.getElementById('nextMemeBtn');
+    document.addEventListener('DOMContentLoaded', () => {
       const popup = document.getElementById('matchPopup');
       const popupCloseBtn = document.getElementById('popupCloseBtn');
       const feedbackResponse = document.getElementById('feedback-response');
       const byePopup = document.getElementById('byeFeliciaPopup');
       const byeOkBtn = document.getElementById('btnByeOk');
-      let meme10Timeout1 = null;
-      let meme10Timeout2 = null;
-      let isMeme10Displayed = false;
+      const spookyBtn = document.getElementById('spooky-button');
+      const nahBtn = document.getElementById('nah-button');
 
-      function updateMeme() {
-        memeImage.src = memes[current];
-        if (current >= 5 && current <= 9) {
-          btnLeft.classList.add('hidden');
-          btnRight.classList.add('hidden');
-        } else {
-          btnLeft.classList.remove('hidden');
-          btnRight.classList.remove('hidden');
-        }
-        isMeme10Displayed = (current === 9);
+      function showGenZResponse(text) {
+        if (!feedbackResponse) return;
+        feedbackResponse.textContent = text;
+        feedbackResponse.style.opacity = "1";
+        setTimeout(() => feedbackResponse.style.opacity = "0", 3000);
       }
-      function showPopup() {
-        popup.classList.add('active');
-        popup.setAttribute('aria-hidden', 'false');
-        popup.focus();
-      }
-      function hidePopup() {
-        popup.classList.remove('active');
-        popup.setAttribute('aria-hidden', 'true');
-      }
-      function nextMeme() {
-        if (current < memes.length - 1) {
-          if (current === 4) {
-            current++;
-            updateMeme();
-            setTimeout(() => {
-              current = 6;
-              updateMeme();
-              setTimeout(() => {
-                current = 7;
-                updateMeme();
-                setTimeout(() => {
-                  current = 8;
-                  updateMeme();
-                  setTimeout(() => {
-                    if (!popup.classList.contains('active')) {
-                      showPopup();
-                      meme10Timeout1 = setTimeout(() => {
-                        meme10Timeout2 = setTimeout(() => {
-                          current = 9;
-                          updateMeme();
-                        }, 3000);
-                      }, 5000);
-                    }
-                  }, 2000);
-                }, 3000);
-              }, 3000);
-            }, 3000);
-          } else {
-            current++;
-            updateMeme();
-          }
-        } else {
-          closeAndScrollToWaitlist();
-        }
-      }
-      function prevMeme() {
-        if (current > 0) {
-          current--;
-          updateMeme();
-          if (popup.classList.contains('active')) {
-            hidePopup();
-          }
-          clearTimeout(meme10Timeout1);
-          clearTimeout(meme10Timeout2);
-        }
-      }
-      function resetMemeSequence() {
-        if (popup.classList.contains('active')) {
-          hidePopup();
-        }
-        current = 0;
-        updateMeme();
-        clearTimeout(meme10Timeout1);
-        clearTimeout(meme10Timeout2);
-      }
-      function closeAndScrollToWaitlist() {
-        if (popup.classList.contains('active')) {
-          hidePopup();
-        }
-        const waitlist = document.getElementById("waitlist");
-        if (waitlist) waitlist.scrollIntoView({ behavior: "smooth" });
-      }
-      memeImage.addEventListener("click", () => {
-        if (isMeme10Displayed) resetMemeSequence();
-      });
-      btnLeft.addEventListener("click", prevMeme);
-      btnRight.addEventListener("click", nextMeme);
-      popupCloseBtn.addEventListener("click", () => {
-        hidePopup();
-      });
-
-      const spookyBtn = document.getElementById("spooky-button");
-      const nahBtn = document.getElementById("nah-button");
-      const openByeFeliciaLink = document.getElementById("openByeFelicia");
 
       const yupResponses = [
         "✅ Eerie-level accurate — y’all in my brain?",
@@ -708,36 +523,45 @@
         "❌ Meme was fire. Match was mid.",
         "❌ Vibe was off. And so was the Wi-Fi."
       ];
+
       function showRandomResponse(type) {
         if (!feedbackResponse) return;
         const responses = type === "yup" ? yupResponses : nahResponses;
         const msg = responses[Math.floor(Math.random() * responses.length)];
         feedbackResponse.textContent = msg;
         feedbackResponse.style.opacity = "1";
-        setTimeout(() => (feedbackResponse.style.opacity = "0"), 3000);
+        setTimeout(() => feedbackResponse.style.opacity = "0", 3000);
       }
-      spookyBtn.addEventListener("click", () => showRandomResponse("yup"));
-      nahBtn.addEventListener("click", () => showRandomResponse("nah"));
-      openByeFeliciaLink.addEventListener('click', (e) => {
+
+      spookyBtn.addEventListener('click', () => showRandomResponse('yup'));
+      nahBtn.addEventListener('click', () => showRandomResponse('nah'));
+
+      popupCloseBtn.addEventListener('click', () => {
+        popup.style.display = 'none';
+      });
+
+      // Open Bye Felicia Popup when the close link is clicked
+      const closeLink = document.querySelector('#matchPopup a');
+      closeLink.addEventListener('click', (e) => {
         e.preventDefault();
-        hidePopup();
-        byePopup.classList.add('active');
-        byePopup.setAttribute('aria-hidden', 'false');
+        popup.style.display = 'none';
+        byePopup.style.display = 'flex';
         byeOkBtn.focus();
       });
+
+      // Close Bye Felicia Popup on OK button click
       byeOkBtn.addEventListener('click', () => {
-        byePopup.classList.remove('active');
-        byePopup.setAttribute('aria-hidden', 'true');
+        byePopup.style.display = 'none';
         window.open('https://www.tinder.com', '_blank', 'noopener');
       });
-      byePopup.addEventListener('click', (e) => {
+
+      // Close Bye Felicia Popup on clicking outside inner div
+      byePopup.addEventListener('click', e => {
         if (e.target === byePopup) {
-          byePopup.classList.remove('active');
-          byePopup.setAttribute('aria-hidden', 'true');
+          byePopup.style.display = 'none';
         }
       });
-      updateMeme();
-    })();
+    });
   </script>
 </body>
 </html>
