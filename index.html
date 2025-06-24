@@ -10,7 +10,7 @@
   <meta name="author" content="D8Sync" />
   <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Inter&display=swap" rel="stylesheet" />
   <style>
-    /* Retain all original styles except body content related */
+    /* Preserve original body styles */
     body {
       margin: 0;
       min-height: 100vh;
@@ -21,7 +21,7 @@
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
     }
-
+    /* Main container styling to center form at bottom */
     main {
       max-width: 900px;
       margin: 3rem auto 4rem;
@@ -29,42 +29,40 @@
       padding: 2.5rem 2rem 4rem;
       border-radius: 2rem;
       box-shadow: 0 18px 32px rgba(255, 67, 164, 0.38);
-      text-align: center;
       display: flex;
       flex-direction: column;
       justify-content: flex-end;
       min-height: 60vh;
+      text-align: center;
     }
-
+    /* Waitlist section always at bottom */
     #waitlist {
-      max-width: 500px;
-      margin: 0 auto;
+      max-width: 480px;
       width: 100%;
+      margin-left: auto;
+      margin-right: auto;
     }
-
-    /* Form container styles */
+    /* Kit form container to maintain size */
     #kit-form-container {
+      min-height: 300px;
       width: 100%;
-      min-height: 400px;
       box-sizing: border-box;
     }
-
-    /* Additional form styling not to break existing scripts (optional) */
   </style>
 </head>
 <body>
-  <!-- BEGIN body content replacement - preserve all scripts below unchanged -->
-
+  <!-- BODY CONTENT REPLACED: ONLY THE WAITLIST FORM SECTION INCLUDED PER YOUR REQUEST -->
   <main role="main" aria-label="D8Sync Meme-based dating landing page">
     <section id="waitlist" aria-labelledby="signup-title" role="region" aria-live="polite" aria-atomic="true" style="margin-top: auto;">
-      <h2 id="signup-title" style="color: #6a0dad; font-family: 'Fredoka One', cursive; font-weight: 700; font-size: 2rem; margin-bottom: 1rem;">Get Notified for D8Sync Beta Waitlist</h2>
+      <h2 id="signup-title" style="font-family: 'Fredoka One', cursive; color: #6a0dad; font-weight: 700; font-size: 2rem; margin-bottom: 1rem;">
+        Get Notified for D8Sync Beta Waitlist
+      </h2>
       <script async data-uid="ab96e2e1a4" src="https://d8sync.kit.com/ab96e2e1a4/index.js"></script>
-      <div id="kit-form-container" style="width: 100%; max-width: 480px; margin-left: auto; margin-right: auto;"></div>
+      <div id="kit-form-container"></div>
     </section>
   </main>
 
-  <!-- Retain all original <script> tags and logic exactly as in the original file below -->
-
+  <!-- ORIGINAL SCRIPTS START HERE - MUST NOT BE ALTERED -->
   <div id="matchPopup">
     <div onclick="event.stopPropagation();" style="text-align: center;">
       <button aria-label="Close Popup" id="popupCloseBtn" title="Close Popup">×</button>
@@ -359,6 +357,5 @@
       applyFormFixes();
     });
   </script>
-
 </body>
 </html>
