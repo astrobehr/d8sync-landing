@@ -207,13 +207,9 @@
       border-radius: 1rem;
       padding: 2rem 3rem 3rem;
       box-shadow: 0 8px 25px rgba(106, 13, 173, 0.3);
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      gap: 1rem;
-      justify-content: center;
-      min-width: 320px; /* Added to prevent squeezing */
-      box-sizing: border-box; /* Added for proper sizing */
+      display: block; /* Changed from flex to block to prevent squeezing */
+      min-width: 320px; /* Added to prevent form squeeze */
+      box-sizing: border-box; /* Ensures padding is included in width */
     }
     #waitlist h2 {
       flex-basis: 100%;
@@ -390,7 +386,6 @@
     .btn-flat:hover {
       background-color: #8047d1;
     }
-    /* === END OLD POPUP STYLES === */
     @media (max-width: 640px) {
       section h2, section h3 {
         font-size: 1.6rem;
@@ -401,10 +396,8 @@
       #waitlist {
         max-width: 90vw;
         padding: 2rem 1rem 3rem;
-        flex-direction: column;
-        gap: 1rem;
-        align-items: stretch;
-        min-width: auto; /* Override min-width for small screens */
+        display: block !important; /* ensure form is not squeezed on mobile */
+        min-width: auto; /* override min-width on small screens */
       }
       #waitlist h2 {
         font-size: 1.6rem;
@@ -413,34 +406,6 @@
       }
     }
   </style>
-
-<!-- CHANGED -->
-<style>
-  #waitlist {
-    width: 100% !important;
-    max-width: 860px !important;
-    min-width: unset !important;
-    padding: 2rem 3rem 3rem !important;
-    box-sizing: border-box !important;
-    display: flex !important;
-    flex-direction: column !important;
-    justify-content: center;
-    align-items: center;
-  }
-
-  #kit-form-container {
-    width: 100% !important;
-    display: flex !important;
-    justify-content: center !important;
-  }
-
-  #kit-form-container form {
-    width: 100% !important;
-    max-width: 700px !important;
-    box-sizing: border-box !important;
-  }
-</style>
-
 </head>
 <body>
   <script>
@@ -489,10 +454,12 @@
       <p>What if your dating feed was memes instead of mugshots?<br />No more trying to decode mirror selfies or gym pics.</p>
       <p>Just scroll, laugh, and react to the memes that hit hardest.</p>
       <p>Every meme you react to builds your <strong>Comedy Graph™</strong> &mdash; a laughprint that’s uniquely <em>you</em>. Our AI reads your vibe and syncs you with people who match your unique frequency.</p>
+
       <p style="text-align: center; font-size: 1.8rem; font-weight: 600; font-style: italic; margin: 1.2rem auto; line-height: 1.5; color: #222;">
         Weirdly Accurate...<br>
         <span style="display: inline-block; margin-left: 5.2rem;">Dangerously Fun.</span><br>
       </p>
+
       <div class="meme-flipper" role="region" tabindex="0" aria-label="Meme Swipe Gallery" style="margin: 2rem auto 2.5rem; max-width: 340px; position: relative; background: white; border-radius: 1.2rem; box-shadow: 0 0 30px #ff43a4aa;">
         <img id="memeImage" alt="D8Sync meme image" src="https://raw.githubusercontent.com/astrobehr/d8sync-landing/main/memes/meme1.jpg" style="width:100%; border-radius: 1.2rem; display: block; user-select: none; cursor: pointer;" />
         <button class="flipper-btn btn-left" id="prevMemeBtn" aria-label="Previous Meme" type="button" style="position: absolute; bottom: 16%; left: 25%; height:44px; width:44px; border-radius: 50%; border:none; font-size:1.5rem; font-weight:800; background:#ff43a4; color:white; box-shadow: 0 4px 12px rgba(255, 67, 164, 0.5); cursor:pointer;">&#x2718;</button>
@@ -512,29 +479,34 @@
       <p style="text-align:center; font-size:1.1rem; line-height:1.6; margin-bottom: 1.5rem;">
         You hit “<strong>Sync Me!</strong>” — then kick back and let D8Sync do its thing. 
       </p>
+
       <p style="text-align:center; font-size:1.1rem; line-height:1.6;">
         First, our AI dives into your <strong>Comedy Graph™</strong>:<br> 
         what memes crack you up, what songs hit during your weirdest hours, 
         and how your energy syncs with others.
       </p>
+
       <p style="text-align:center; font-size:1.1rem; line-height:1.6;">
         📅 Then it peeks at your calendar: ⏓<br> 
         Leg day Saturdays?<br>
         Emotionally unavailable Thursdays?<br>
         <b><i>No problem.</i></b>
       </p>
+
       <p style="text-align:center; font-size:1.1rem; line-height:1.6;">
         When your vibe profile lights up, our <strong>Matchmaker AI</strong> 🤖<br>
         skips the bios and the never-ending swipe gauntlet.<br>
         No walls of text. No decision fatigue.<br>
         Just a deep read on your timing, tempo, and sense of humor.
       </p>
+
       <p style="text-align:center; font-size:1.1rem; line-height:1.6;">
         It’s not about looks — it’s about resonance.<br>
         Who shares your chaos calendar? <br> 
         Who laughs at the same midnight memes? 😄<br>  
         Who gets your vibe before even hearing your voice?
       </p>
+
       <p style="text-align:center; font-size:1.1rem; line-height:1.6;">
         ✨ Then, you both get a ping — <br>
         a curated meme preview, shared sync stats,<br>
@@ -551,7 +523,6 @@
       <p><strong>You’re not “hard to love.”</strong><br>You’re just hard to algorithm.</p>
     </section>
     <section id="waitlist" aria-labelledby="signup-title" role="region" aria-live="polite" aria-atomic="true" style="margin-top: 3rem;">
-      <!-- Added min-width and box-sizing in CSS to solve squeezing -->
       <script async data-uid="ab96e2e1a4" src="https://d8sync.kit.com/ab96e2e1a4/index.js"></script>
       <div id="kit-form-container"></div>
     </section>
@@ -775,25 +746,25 @@
       updateMeme();
     })();
   </script>
-<script>
-  document.addEventListener("DOMContentLoaded", () => {
-    const logo = document.getElementById("logoBtn");
-    const duck = new Audio("https://d8sync.com/assets/mac-quack.mp3");
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const logo = document.getElementById("logoBtn");
+      const duck = new Audio("https://d8sync.com/assets/mac-quack.mp3");
 
-    duck.preload = 'auto';
+      duck.preload = 'auto';
 
-    logo.addEventListener("click", () => {
-      duck.currentTime = 0; // allows rapid click replay
-      duck.play();
-    });
-
-    logo.addEventListener("keypress", (e) => {
-      if (e.key === "Enter" || e.key === " ") {
-        duck.currentTime = 0;
+      logo.addEventListener("click", () => {
+        duck.currentTime = 0; // allows rapid click replay
         duck.play();
-      }
+      });
+
+      logo.addEventListener("keypress", (e) => {
+        if (e.key === "Enter" || e.key === " ") {
+          duck.currentTime = 0;
+          duck.play();
+        }
+      });
     });
-  });
-</script>
+  </script>
 </body>
 </html>
