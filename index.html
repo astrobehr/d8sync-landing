@@ -224,7 +224,7 @@
       text-align: center;
     }
 
-    /* === BEGIN OLD POPUP STYLES === */
+    /* === BEGIN OLD POPUP STYLES - MODIFIED FOR PURPLE THEME === */
 
     #matchPopup {
       display: none;
@@ -233,30 +233,108 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background: rgba(0, 0, 0, 0.85);
+      background: #2e1a47; /* Dark purple background */
       z-index: 9999;
       box-sizing: border-box;
       padding: 40px;
       overflow-y: auto;
       font-family: 'Inter', sans-serif;
-      color: #fff;
+      color: #e6e0f8; /* Light lavender / soft white */
       text-align: center;
       align-items: center;
       justify-content: center;
       flex-direction: column;
       display: none; /* initially hidden */
+      font-weight: 700;
+      line-height: 1.4;
     }
 
     #matchPopup > div {
       max-width: 600px;
       margin: 40px auto;
-      background: #111;
+      background: #3b2970; /* Slightly lighter purple */
       padding: 30px 40px 40px;
       border-radius: 16px;
-      box-shadow: 0 0 30px rgba(0, 0, 0, 0.4);
+      box-shadow: 0 0 40px rgba(106, 13, 173, 0.75);
       position: relative;
-      color: white;
+      color: #e6e0f8;
       text-align: center;
+      font-weight: 700;
+      font-family: 'Inter', sans-serif;
+    }
+
+    #matchPopup > div h2 {
+      font-weight: 700;
+      font-family: 'Fredoka One', cursive;
+      font-size: 1.8rem;
+      margin: 0 0 0.4em 0;
+      color: #d8c6ff;
+      letter-spacing: 0.06em;
+    }
+
+    #matchPopup > div h2::before,
+    #matchPopup > div h2::after {
+      content: "🔗";
+      margin: 0 6px;
+    }
+
+    #matchPopup > div p {
+      margin-top: 1rem;
+      margin-bottom: 20px;
+      font-size: 1rem;
+      line-height: 1.4;
+      text-align: center;
+      white-space: normal;
+      font-weight: 700;
+    }
+
+    #matchPopup > div p:nth-of-type(2) {
+      font-style: italic;
+      font-weight: 600;
+      color: #c1b7ea;
+      margin-top: 0;
+      margin-bottom: 1.5rem;
+    }
+
+    /* Emoji prefixes for specific paragraphs */
+    #matchPopup > div p strong {
+      display: block;
+      margin-bottom: 6px;
+      font-weight: 700;
+      font-size: 1.1rem;
+      color: #d8c6ff;
+    }
+
+    #matchPopup > div p:nth-of-type(3) strong::before {
+      content: "🧠 ";
+      margin-right: 4px;
+    }
+
+    #matchPopup > div p:nth-of-type(4) strong::before {
+      content: "🎧 ";
+      margin-right: 4px;
+    }
+
+    #matchPopup > div p:nth-of-type(5) strong::before {
+      content: "🗓️ ";
+      margin-right: 4px;
+    }
+
+    #matchPopup > div p:nth-of-type(6) strong::before {
+      content: "☘️ ";
+      margin-right: 4px;
+    }
+
+    /* Add emoji before "Did this vibe feel accurate?" paragraph */
+    #matchPopup > div p:nth-of-type(7)::before {
+      content: "🧠 ";
+      margin-right: 6px;
+      font-weight: 700;
+    }
+
+    /* Adjust for the last prompt paragraph to have no extra margin */
+    #matchPopup > div p:nth-last-of-type(2) {
+      margin-bottom: 30px;
     }
 
     #popupCloseBtn {
@@ -268,7 +346,7 @@
       background: #6e38f7;
       border: none;
       border-radius: 4px;
-      color: white;
+      color: #e6e0f8;
       font-weight: bold;
       font-size: 22px;
       line-height: 26px;
@@ -286,13 +364,13 @@
       margin-top: 18px;
       margin-bottom: 18px;
       min-height: 1.2em;
-      font-weight: bold;
+      font-weight: 700;
       font-size: 1rem;
       max-width: 90%;
       opacity: 0;
       transition: opacity 0.5s ease;
       user-select: none;
-      color: #fff;
+      color: #e6e0f8;
       text-align: center;
       margin-left: auto !important;
       margin-right: auto !important;
@@ -315,7 +393,7 @@
     }
 
     .btn-flat {
-      background-color: #8000ff;
+      background-color: #a17aff;
       color: #fff;
       padding: 12px 24px;
       font-size: 1rem;
@@ -323,14 +401,15 @@
       border-radius: 10px;
       cursor: pointer;
       margin: 10px;
-      font-weight: 600;
+      font-weight: 700;
       transition: background-color 0.3s ease;
       white-space: nowrap;
     }
 
     .btn-flat:hover {
-      background-color: #6a00cc;
+      background-color: #8047d1;
     }
+
     /* === END OLD POPUP STYLES === */
 
     @media (max-width: 640px) {
@@ -424,10 +503,20 @@
     </section>
     <section class="feature section5" aria-labelledby="how-it-works-title">
       <h3 id="how-it-works-title" class="centered-header">How D8Sync Blind Dates Actually Work</h3><br>
-      <p>You hit “Sync Me!” — then kick back and let D8Sync do its thing.</p>
-      <p>First, our AI dives into your Comedy Graph™: what memes crack you up, what songs hit during your weirdest hours, and how your energy syncs with others. Then it peeks at your calendar—flaky Saturdays? emotionally unavailable Thursdays? Got it.</p>
-      <p>When your vibe profile lights up, our Matchmaker AI skips the bios and the endless swipes. It serves up a match based on pure energy, timing, and humor alignment.</p>
-      <p>Then? You both get a ping—with a mini meme preview, your top sync stats, and an oddly specific first date idea to break the ice like it’s meant to be.</p>
+      <p>You tap the <em><strong>“Sync Me!”</strong></em> button:</p>
+      <p><strong>D8Sync</strong> scans your <span style="text-decoration: underline;"><strong>Comedy Graph™</strong></span>, vibe data, and availability &mdash; and matches you with someone on your wavelength.</p>
+      <p>Then Our Matchmaker AI then sends you both:</p>
+      <ul class="bullet-list" aria-label="Matchmaker AI details">
+        <li><img src="https://fonts.gstatic.com/s/e/notoemoji/16.0/23f0/32.png" alt="⏰" aria-label="⏰" /> A Date and Time</li>
+        <li><img src="https://fonts.gstatic.com/s/e/notoemoji/16.0/1f4cd/32.png" alt="📍" aria-label="📍" /> A public place</li>
+        <li><img src="https://fonts.gstatic.com/s/e/notoemoji/16.0/1f9e9/32.png" alt="🧩" aria-label="🧩" /> “The Tell” &mdash; a phrase or shared order to find your match.</li>
+      </ul>
+      <p>You pull up, scan the scene, and look for the signal... like someone lowkey ordering the same drink.</p>
+      <p>In a crowded cafe or busy bookstore? Not sure it’s them?<br>Tap the “Is That You?” button in-app <img src="https://fonts.gstatic.com/s/e/notoemoji/16.0/1f440/32.png" alt="👀" aria-label="👀" /> for a private match confirm.</p>
+      <p>If the chemistry's there, drop the icebreaker we gave you &mdash; it's the perfect nudge <img src="https://fonts.gstatic.com/s/e/notoemoji/16.0/1f449/32.png" alt="👉" aria-label="👉" /><img src="https://fonts.gstatic.com/s/e/notoemoji/16.0/1f448/32.png" alt="👈" aria-label="👈" /></p>
+      <p>Not feeling it? That’s cool too.<br>Take a breath, enjoy the moment, & the match will fade away.</p>
+      <p>No profiles. No awkward openings. No rejection drama.</p>
+      <p><em>Just vibes. Real ones.</em></p>
     </section>
     <section class="feature" aria-labelledby="talk-it-out-title" style="margin-bottom: 3rem;">
       <h3 id="talk-it-out-title" class="centered-header">Need to talk it out? We got you.</h3><br>
@@ -446,41 +535,41 @@
     <div onclick="event.stopPropagation();" style="text-align: center;">
       <button aria-label="Close Popup" id="popupCloseBtn" title="Close Popup">×</button>
       <h2 style="margin:0; text-align:center;">You Just Got Synced</h2>
-      <p style="margin-top:45px; font-size:0.95em; color:#888; text-align:center;">(Sample Match Preview)</p>
-      <p style="margin-bottom:20px; text-align:center;">
+      <p style="margin-top:45px; font-size:0.95em; color:#c1b7ea; font-style: italic; text-align:center;">(Sample Match Preview)</p>
+      <p style="margin-bottom:20px; text-align:center; color:#e6e0f8;">
         This is a taste of what matching on D8Sync might feel like.<br />
         No swiping. No bios. Just pure vibe alignment.
       </p>
-      <p style="text-align:center; padding-left: 10px; box-sizing: border-box;">
+      <p style="text-align:center; padding-left: 10px; box-sizing: border-box; color:#d8c6ff;">
         <strong>Shared Meme Energy:</strong><br />
         “Me pretending that I don’t care.<br />But secretly I'm watching the group chat implode.”
       </p>
-      <p style="text-align:center; padding-left: 10px; box-sizing: border-box;">
+      <p style="text-align:center; padding-left: 10px; box-sizing: border-box; color:#d8c6ff;">
         <strong>Audio Match:</strong><br />
         Late 2000s indie drama with main character syndrome
       </p>
-      <p style="text-align:center; padding-left: 10px; box-sizing: border-box;">
+      <p style="text-align:center; padding-left: 10px; box-sizing: border-box; color:#d8c6ff;">
         <strong>First Date Prompt:</strong><br />
         You meet outside a thrift store...<br />
         One of you is holding a can of soup.<br />
         The other is holding a spoon.
       </p>
-      <p style="text-align:center; padding-left: 10px; box-sizing: border-box;">
+      <p style="text-align:center; padding-left: 10px; box-sizing: border-box; color:#d8c6ff;">
         <strong>Vibe Alignment:</strong><br />
         84% Emotionally Aligned<br />
         72% Chaos Compatibility<br />
         92% Meme Fluency
       </p>
-      <p style="text-align:center; margin-top: 30px;">
+      <p style="text-align:center; margin-top: 30px; color:#d8c6ff; font-weight:700;">
         Did this vibe feel accurate?
       </p>
       <div id="feedback-response" style="text-align:center; padding-left:10px; box-sizing:border-box;"></div>
       <div class="popup-buttons-container">
         <div class="popup-buttons-row">
           <button class="btn-flat" id="spooky-button">Yup... Spooky!</button>
-          <button class="btn-flat" id="nah-button">Nah... Not Really.</button>
+          <button class="btn-flat" id="nah-button">Not really</button>
         </div>
-        <a href="https://www.tinder.com" onclick="alert('Bye Felicia 👋');" style="color:#ccc; font-size:14px; text-decoration:underline; display:block; margin-top:20px; text-align:center;">
+        <a href="https://www.tinder.com" onclick="alert('Bye Felicia 👋');" style="color:#bda9fc; font-size:14px; text-decoration:underline; display:block; margin-top:20px; text-align:center;">
           Not feeling it? Close
         </a>
       </div>
