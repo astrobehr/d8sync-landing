@@ -438,6 +438,47 @@
 #kit-form-container button:hover {
   background-color: #8047d1 !important;
 }
+    #kit-form-container form,
+#kit-form-container form * {
+  box-sizing: border-box;
+}
+
+#kit-form-container form {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  gap: 1.2rem !important;
+  width: 100% !important;
+  max-width: 500px !important;
+  margin: 0 auto !important;
+  padding: 1rem !important;
+}
+
+#kit-form-container form input[type="email"],
+#kit-form-container form input[type="text"],
+#kit-form-container form input[type="name"],
+#kit-form-container form button {
+  width: 100% !important;
+  font-size: 1.1rem !important;
+  padding: 0.8rem 1rem !important;
+  border-radius: 10px !important;
+  font-family: 'Inter', sans-serif !important;
+  border: 1px solid #ccc !important;
+}
+
+#kit-form-container form button {
+  background-color: #a17aff !important;
+  color: white !important;
+  font-family: 'Fredoka One', cursive !important;
+  font-weight: 700 !important;
+  border: none !important;
+  cursor: pointer !important;
+  transition: background-color 0.3s ease !important;
+}
+
+#kit-form-container form button:hover {
+  background-color: #8047d1 !important;
+}
   </style>
 </head>
 <body>
