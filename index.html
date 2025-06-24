@@ -207,12 +207,13 @@
       border-radius: 1rem;
       padding: 2rem 3rem 3rem;
       box-shadow: 0 8px 25px rgba(106, 13, 173, 0.3);
-      /* Center form container with flex */
       display: flex;
       flex-wrap: wrap;
       align-items: center;
       gap: 1rem;
       justify-content: center;
+      min-width: 320px; /* Added to prevent squeezing */
+      box-sizing: border-box; /* Added for proper sizing */
     }
     #waitlist h2 {
       flex-basis: 100%;
@@ -224,21 +225,172 @@
       font-weight: 800;
       text-align: center;
     }
-    /* Wrapped form styles to override Kit's defaults */
-    #kit-form-container {
-      width: 100% !important;
-      max-width: 440px !important;
+    /* === BEGIN OLD POPUP STYLES - MODIFIED FOR PURPLE THEME === */
+    #matchPopup {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: #2e1a47; /* Dark purple background */
+      z-index: 9999;
+      box-sizing: border-box;
+      padding: 40px;
+      overflow-y: auto;
+      font-family: 'Inter', sans-serif;
+      color: #e6e0f8; /* Light lavender / soft white */
+      text-align: center;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      display: none; /* initially hidden */
+      font-weight: 700;
+      line-height: 1.4;
+    }
+    #matchPopup > div {
+      max-width: 600px;
+      margin: 40px auto;
+      background: #3b2970; /* Slightly lighter purple */
+      padding: 30px 40px 40px;
+      border-radius: 16px;
+      box-shadow: 0 0 40px rgba(106, 13, 173, 0.75);
+      position: relative;
+      color: #e6e0f8;
+      text-align: center;
+      font-weight: 700;
+      font-family: 'Inter', sans-serif;
+    }
+    #matchPopup > div h2 {
+      font-weight: 700;
+      font-family: 'Fredoka One', cursive;
+      font-size: 1.8rem;
+      margin: 0 0 0.4em 0;
+      color: #d8c6ff;
+      letter-spacing: 0.06em;
+    }
+    #matchPopup > div h2::before,
+    #matchPopup > div h2::after {
+      content: "🔗";
+      margin: 0 6px;
+    }
+    #matchPopup > div p {
+      margin-top: 1rem;
+      margin-bottom: 20px;
+      font-size: 1rem;
+      line-height: 1.4;
+      text-align: center;
+      white-space: normal;
+      font-weight: 700;
+    }
+    #matchPopup > div p:nth-of-type(2) {
+      font-style: italic;
+      font-weight: 600;
+      color: #c1b7ea;
+      margin-top: 0;
+      margin-bottom: 1.5rem;
+    }
+    /* Emoji prefixes for specific paragraphs */
+    #matchPopup > div p strong {
+      display: block;
+      margin-bottom: 6px;
+      font-weight: 700;
+      font-size: 1.1rem;
+      color: #d8c6ff;
+    }
+    #matchPopup > div p:nth-of-type(3) strong::before {
+      content: "🥠 ";
+      margin-right: 4px;
+    }
+    #matchPopup > div p:nth-of-type(4) strong::before {
+      content: "🎧 ";
+      margin-right: 4px;
+    }
+    #matchPopup > div p:nth-of-type(5) strong::before {
+      content: "🗓️ ";
+      margin-right: 4px;
+    }
+    #matchPopup > div p:nth-of-type(6) strong::before {
+      content: "☘️ ";
+      margin-right: 4px;
+    }
+    /* Add emoji before "Did this vibe feel accurate?" paragraph */
+    #matchPopup > div p:nth-of-type(7)::before {
+      content: "🤰 ";
+      margin-right: 6px;
+      font-weight: 700;
+    }
+    /* Adjust for the last prompt paragraph to have no extra margin */
+    #matchPopup > div p:nth-last-of-type(2) {
+      margin-bottom: 30px;
+    }
+    #popupCloseBtn {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      width: 28px;
+      height: 28px;
+      background: #6e38f7;
+      border: none;
+      border-radius: 4px;
+      color: #e6e0f8;
+      font-weight: bold;
+      font-size: 22px;
+      line-height: 26px;
+      cursor: pointer;
+      user-select: none;
+      transition: background-color 0.3s ease;
+      z-index: 10000;
+    }
+    #popupCloseBtn:hover {
+      background: #5300cc;
+    }
+    #feedback-response {
+      margin-top: 18px;
+      margin-bottom: 18px;
+      min-height: 1.2em;
+      font-weight: 700;
+      font-size: 1rem;
+      max-width: 90%;
+      opacity: 0;
+      transition: opacity 0.5s ease;
+      user-select: none;
+      color: #e6e0f8;
+      text-align: center;
       margin-left: auto !important;
       margin-right: auto !important;
       display: block !important;
+      padding-left: 0 !important;
+      box-sizing: border-box;
     }
-    #kit-form-container form {
-      width: 100% !important;
-      max-width: none !important;
-      margin: 0 auto !important;
-      display: block !important;
+    .popup-buttons-container {
+      margin-top: 18px;
+      text-align: center;
     }
-    /* Responsive adjustments */
+    .popup-buttons-row {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      margin-bottom: 6px;
+      flex-wrap: wrap;
+    }
+    .btn-flat {
+      background-color: #a17aff;
+      color: #fff;
+      padding: 12px 24px;
+      font-size: 1rem;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      margin: 10px;
+      font-weight: 700;
+      transition: background-color 0.3s ease;
+      white-space: nowrap;
+    }
+    .btn-flat:hover {
+      background-color: #8047d1;
+    }
+    /* === END OLD POPUP STYLES === */
     @media (max-width: 640px) {
       section h2, section h3 {
         font-size: 1.6rem;
@@ -252,6 +404,7 @@
         flex-direction: column;
         gap: 1rem;
         align-items: stretch;
+        min-width: auto; /* Override min-width for small screens */
       }
       #waitlist h2 {
         font-size: 1.6rem;
@@ -286,7 +439,7 @@
       <ul class="bullet-list" aria-label="Dating app struggles list">
         <li><img class="an1" draggable="false" src="https://fonts.gstatic.com/s/e/notoemoji/16.0/1f4f1/32.png" alt="📱" aria-label="📱" /><span>Swipe fatigue is real.</span></li>
         <li><img class="an1" draggable="false" src="https://fonts.gstatic.com/s/e/notoemoji/16.0/1f47b/32.png" alt="👻" aria-label="👻" /><span>Half your matches ghost.</span></li>
-        <li class="section1-bottom-spacing"><img class="an1" draggable="false" src="https://fonts.gstatic.com/s/e/notoemoji/16.0/1f9e0/32.png" alt="🧠" aria-label="🧠" /><span>The other half treat it like a job interview.</span></li><br>
+        <li class="section1-bottom-spacing"><img class="an1" draggable="false" src="https://fonts.gstatic.com/s/e/notoemoji/16.0/1f9e0/32.png" alt="👨‍💼" aria-label="👨‍💼" /><span>The other half treat it like a job interview.</span></li><br>
       </ul>
       <div style="display: flex; justify-content: center;">
         <div style="text-align: left; font-weight: 700; font-size: 1.25rem; line-height: 1.6; color: #222;">
@@ -370,6 +523,7 @@
       <p><strong>You’re not “hard to love.”</strong><br>You’re just hard to algorithm.</p>
     </section>
     <section id="waitlist" aria-labelledby="signup-title" role="region" aria-live="polite" aria-atomic="true" style="margin-top: 3rem;">
+      <!-- Added min-width and box-sizing in CSS to solve squeezing -->
       <script async data-uid="ab96e2e1a4" src="https://d8sync.kit.com/ab96e2e1a4/index.js"></script>
       <div id="kit-form-container"></div>
     </section>
@@ -426,30 +580,41 @@
       const feedbackResponse = document.getElementById('feedback-response');
       const spookyBtn = document.getElementById('spooky-button');
       const nahBtn = document.getElementById('nah-button');
+
+      function showGenZResponse(text) {
+        if (!feedbackResponse) return;
+        feedbackResponse.textContent = text;
+        feedbackResponse.style.opacity = "1";
+        setTimeout(() => feedbackResponse.style.opacity = "0", 3000);
+      }
+
+      const yupResponses = [
+        "Eerie-level accurate — y’all in my brain?",
+        "Soulmate meme frequency. I felt that.",
+        "They understood the assignment.",
+        "Main character vibes. Fully unlocked.",
+        "That gave multiverse twin energy."
+      ];
+      const nahResponses = [
+        "Felt like a bot typed that.",
+        "Cringe. I flinched.",
+        "That felt like a CAPTCHA test.",
+        "Meme was fire. Match was mid.",
+        "Vibe was off. And so was the Wi-Fi."
+      ];
+
       function showRandomResponse(type) {
         if (!feedbackResponse) return;
-        const yupResponses = [
-          "Eerie-level accurate — y’all in my brain?",
-          "Soulmate meme frequency. I felt that.",
-          "They understood the assignment.",
-          "Main character vibes. Fully unlocked.",
-          "That gave multiverse twin energy."
-        ];
-        const nahResponses = [
-          "Felt like a bot typed that.",
-          "Cringe. I flinched.",
-          "That felt like a CAPTCHA test.",
-          "Meme was fire. Match was mid.",
-          "Vibe was off. And so was the Wi-Fi."
-        ];
-        const responses = (type === "yup" ? yupResponses : nahResponses);
+        const responses = type === "yup" ? yupResponses : nahResponses;
         const msg = responses[Math.floor(Math.random() * responses.length)];
         feedbackResponse.textContent = msg;
         feedbackResponse.style.opacity = "1";
         setTimeout(() => feedbackResponse.style.opacity = "0", 3000);
       }
+
       spookyBtn.addEventListener('click', () => showRandomResponse('yup'));
       nahBtn.addEventListener('click', () => showRandomResponse('nah'));
+
       popupCloseBtn.addEventListener('click', () => {
         popup.style.display = 'none';
       });
@@ -478,9 +643,11 @@
       let meme10Timeout1 = null;
       let meme10Timeout2 = null;
       let isMeme10Displayed = false;
+
       function updateMeme() {
         if (!memeImage) return;
         memeImage.src = memes[current];
+
         if (btnLeft && btnRight) {
           if (current >= 5 && current <= 9) {
             btnLeft.classList.add('hidden');
@@ -490,19 +657,23 @@
             btnRight.classList.remove('hidden');
           }
         }
+
         isMeme10Displayed = (current === 9);
       }
+
       function showPopup() {
         if (!popup) return;
         popup.style.display = 'flex';
         popup.setAttribute('aria-hidden', 'false');
         popup.focus();
       }
+
       function hidePopup() {
         if (!popup) return;
         popup.style.display = 'none';
         popup.setAttribute('aria-hidden', 'true');
       }
+
       function nextMeme() {
         if (current < memes.length - 1) {
           if (current === 4) {
@@ -539,6 +710,7 @@
           closeAndScrollToWaitlist();
         }
       }
+
       function prevMeme() {
         if (current > 0) {
           current--;
@@ -548,6 +720,7 @@
           clearTimeout(meme10Timeout2);
         }
       }
+
       function resetMemeSequence() {
         current = 0;
         updateMeme();
@@ -555,11 +728,13 @@
         clearTimeout(meme10Timeout1);
         clearTimeout(meme10Timeout2);
       }
+
       function closeAndScrollToWaitlist() {
         hidePopup();
         const waitlist = document.getElementById("waitlist");
         if (waitlist) waitlist.scrollIntoView({ behavior: "smooth" });
       }
+
       if (memeImage) {
         memeImage.onclick = () => {
           if (isMeme10Displayed) resetMemeSequence();
@@ -568,25 +743,29 @@
       if (btnLeft) btnLeft.addEventListener('click', prevMeme);
       if (btnRight) btnRight.addEventListener('click', nextMeme);
       if (popupCloseBtn) popupCloseBtn.addEventListener('click', hidePopup);
+
       updateMeme();
     })();
   </script>
-  <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      const logo = document.getElementById("logoBtn");
-      const duck = new Audio("https://d8sync.com/assets/mac-quack.mp3");
-      duck.preload = 'auto';
-      logo.addEventListener("click", () => {
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const logo = document.getElementById("logoBtn");
+    const duck = new Audio("https://d8sync.com/assets/mac-quack.mp3");
+
+    duck.preload = 'auto';
+
+    logo.addEventListener("click", () => {
+      duck.currentTime = 0; // allows rapid click replay
+      duck.play();
+    });
+
+    logo.addEventListener("keypress", (e) => {
+      if (e.key === "Enter" || e.key === " ") {
         duck.currentTime = 0;
         duck.play();
-      });
-      logo.addEventListener("keypress", (e) => {
-        if (e.key === "Enter" || e.key === " ") {
-          duck.currentTime = 0;
-          duck.play();
-        }
-      });
+      }
     });
-  </script>
+  });
+</script>
 </body>
 </html>
