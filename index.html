@@ -199,30 +199,6 @@
     #kit-form-container h2 {
       display: none !important;
     }
-    #waitlist {
-      max-width: 740px;
-      margin: 2rem auto 1rem;
-      text-align: center;
-      background: #fff;
-      border-radius: 1rem;
-      padding: 2rem 3rem 3rem;
-      box-shadow: 0 8px 25px rgba(106, 13, 173, 0.3);
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      gap: 1rem;
-      justify-content: center;
-    }
-    #waitlist h2 {
-      flex-basis: 100%;
-      margin-bottom: 0.5rem;
-      font-family: 'Fredoka One', cursive;
-      font-size: 2rem;
-      color: inherit !important;
-      text-shadow: none !important;
-      font-weight: 800;
-      text-align: center;
-    }
     /* === BEGIN OLD POPUP STYLES - MODIFIED FOR PURPLE THEME === */
     #matchPopup {
       display: none;
@@ -269,7 +245,7 @@
     }
     #matchPopup > div h2::before,
     #matchPopup > div h2::after {
-      content: "🔗";
+      content: "\ud83d\udd17";
       margin: 0 6px;
     }
     #matchPopup > div p {
@@ -297,24 +273,24 @@
       color: #d8c6ff;
     }
     #matchPopup > div p:nth-of-type(3) strong::before {
-      content: "🧠 ";
+      content: "\ud83e\udde0 ";
       margin-right: 4px;
     }
     #matchPopup > div p:nth-of-type(4) strong::before {
-      content: "🎧 ";
+      content: "\ud83c\udfa7 ";
       margin-right: 4px;
     }
     #matchPopup > div p:nth-of-type(5) strong::before {
-      content: "🗓️ ";
+      content: "\ud83d\uddd3\ufe0f ";
       margin-right: 4px;
     }
     #matchPopup > div p:nth-of-type(6) strong::before {
-      content: "☘️ ";
+      content: "\u2618\ufe0f ";
       margin-right: 4px;
     }
     /* Add emoji before "Did this vibe feel accurate?" paragraph */
     #matchPopup > div p:nth-of-type(7)::before {
-      content: "🤰 ";
+      content: "\ud83e\udd30 ";
       margin-right: 6px;
       font-weight: 700;
     }
@@ -409,6 +385,35 @@
         text-align: center;
       }
     }
+
+    /* Custom styles to fix ConvertKit form layout */
+    #waitlist {
+      max-width: 740px;
+      margin: 2rem auto 1rem;
+      text-align: center;
+      background: #fff;
+      border-radius: 1rem;
+      padding: 2rem 3rem 3rem;
+      box-shadow: 0 8px 25px rgba(106, 13, 173, 0.3);
+
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 1rem;
+      justify-content: center;
+      min-height: 400px; /* Ensures enough space for the tall form */
+    }
+
+    /* New wrapper for the form to control width and center */
+    .ck-form-wrapper {
+      max-width: 320px;
+      width: 100%;
+      margin: 0 auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
   </style>
 </head>
 <body>
@@ -522,16 +527,14 @@
   </p>
    
 </section>
-    <section class="feature" aria-labelledby="talk-it-out-title" style="margin-bottom: 3rem;">
-      <h3 id="talk-it-out-title" class="centered-header">Need to talk it out? We got you.</h3><br>
-      <p>After every date, the judgment-free vibe check continues.<br>Our AI Dating Coach is here to help you debrief &mdash; like a relationship therapist in your pocket.</p>
-      <p>Whether it sparked or fizzled, talk through what worked, what didn’t, and how it made you feel.</p>
-      <p><strong>Get clarity <img src="https://fonts.gstatic.com/s/e/notoemoji/16.0/1f9e0/32.png" alt="🧠" aria-label="🧠" />. Spot patterns <img src="https://fonts.gstatic.com/s/e/notoemoji/16.0/1f4c8/32.png" alt="📈" aria-label="📈" />. Grow faster <img src="https://fonts.gstatic.com/s/e/notoemoji/16.0/1f680/32.png" alt="🚀" aria-label="🚀" /></strong></p>
-      <p><strong>You’re not “hard to love.”</strong><br>You’re just hard to algorithm.</p>
-    </section>
     <section id="waitlist" aria-labelledby="signup-title" role="region" aria-live="polite" aria-atomic="true" style="margin-top: 3rem;">
-      <script async data-uid="ab96e2e1a4" src="https://d8sync.kit.com/ab96e2e1a4/index.js"></script>
-      <div id="kit-form-container"></div>
+
+      <!-- Added wrapper for ConvertKit form -->
+      <div class="ck-form-wrapper">
+        <script async data-uid="ab96e2e1a4" src="https://d8sync.kit.com/ab96e2e1a4/index.js"></script>
+        <div id="kit-form-container"></div>
+      </div>
+
     </section>
   </main>
   <div id="matchPopup">
