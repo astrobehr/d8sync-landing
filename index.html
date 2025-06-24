@@ -408,34 +408,34 @@
   <div id="matchPopup">
     <div onclick="event.stopPropagation();" style="text-align: center;">
       <button aria-label="Close Popup" id="popupCloseBtn" title="Close Popup">×</button>
-      <h2 style="margin:0; text-align:center;">You Just Got Synced</h2>
+      <h2 style="margin:0; text-align:center;">🔗 You Just Got Synced 🔗</h2>
       <p style="margin-top:45px; font-size:0.95em; color:#888; text-align:center;">(Sample Match Preview)</p>
       <p style="margin-bottom:20px; text-align:center;">
         This is a taste of what matching on D8Sync might feel like.<br />
         No swiping. No bios. Just pure vibe alignment.
       </p>
       <p style="text-align:center; padding-left: 10px; box-sizing: border-box;">
-        <strong>Shared Meme Energy:</strong><br />
+        <strong>💞 Shared Meme Energy:</strong><br />
         “Me pretending that I don’t care.<br />But secretly I'm watching the group chat implode.”
       </p>
       <p style="text-align:center; padding-left: 10px; box-sizing: border-box;">
-        <strong>Audio Match:</strong><br />
+        <strong>🎧 Audio Match:</strong><br />
         Late 2000s indie drama with main character syndrome
       </p>
       <p style="text-align:center; padding-left: 10px; box-sizing: border-box;">
-        <strong>First Date Prompt:</strong><br />
+        <strong>🍵 First Date Prompt:</strong><br />
         You meet outside a thrift store...<br />
         One of you is holding a can of soup.<br />
         The other is holding a spoon.
       </p>
       <p style="text-align:center; padding-left: 10px; box-sizing: border-box;">
-        <strong>Vibe Alignment:</strong><br />
+        <strong>🧩 Vibe Alignment:</strong><br />
         84% Emotionally Aligned<br />
         72% Chaos Compatibility<br />
         92% Meme Fluency
       </p>
       <p style="text-align:center; margin-top: 30px;">
-        Did this vibe feel accurate?
+        🧠 Did this vibe feel accurate?
       </p>
       <div id="feedback-response" style="text-align:center; padding-left:10px; box-sizing:border-box;"></div>
       <div class="popup-buttons-container">
@@ -462,18 +462,18 @@
       function showRandomResponse(type) {
         if (!feedbackResponse) return;
         const yupResponses = [
-          "Eerie-level accurate — y’all in my brain?",
-          "Soulmate meme frequency. I felt that.",
-          "They understood the assignment.",
-          "Main character vibes. Fully unlocked.",
-          "That gave multiverse twin energy."
+          "✨ Eerie-level accurate — y’all in my brain? ✨",
+          "✨ Soulmate meme frequency. I felt that.",
+          "✨ They understood the assignment.",
+          "✨ Main character vibes. Fully unlocked.",
+          "✨ That gave multiverse twin energy."
         ];
         const nahResponses = [
-          "Felt like a bot typed that.",
-          "Cringe. I flinched.",
-          "That felt like a CAPTCHA test.",
-          "Meme was fire. Match was mid.",
-          "Vibe was off. And so was the Wi-Fi."
+          "❌ Felt like a bot typed that.",
+          "❌ Cringe. I flinched.",
+          "❌ That felt like a CAPTCHA test.",
+          "❌ Meme was fire. Match was mid.",
+          "❌ Vibe was off. And so was the Wi-Fi."
         ];
         const responses = type === "yup" ? yupResponses : nahResponses;
         const msg = responses[Math.floor(Math.random() * responses.length)];
