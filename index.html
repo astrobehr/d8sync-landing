@@ -426,9 +426,9 @@
     })();
   </script>
   <main role="main" aria-label="D8Sync Meme-based dating landing page">
-    <div class="logo" tabindex="0">
-      <img src="https://raw.githubusercontent.com/astrobehr/d8sync-landing/main/assets/d8sync-banner.jpg" alt="D8Sync Logo" />
-    </div>
+    <div class="logo" id="logoBtn" role="button" tabindex="0" aria-label="WHAT?!">
+  <img src="https://raw.githubusercontent.com/astrobehr/d8sync-landing/main/assets/d8sync-banner.jpg" alt="D8Sync Logo" />
+</div>
  <section class="feature" aria-labelledby="ai-match-title">
   <h3 id="ai-match-title" class="centered-header">Real Vibes Only. No Swipes. No Stress.</h3><br>
   <p style="font-size: 1.25rem; font-weight: bold;">
@@ -711,5 +711,29 @@
       updateMeme();
     })();
   </script>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const logo = document.getElementById("logoBtn");
+    const duck = new Audio("https://d8sync.com/assets/mac-quack.mp3");
+
+    duck.preload = 'auto';
+
+    logo.addEventListener("click", () => {
+      duck.currentTime = 0; // allows rapid click replay
+      duck.play();
+    });
+
+    logo.addEventListener("keypress", (e) => {
+      if (e.key === "Enter" || e.key === " ") {
+        duck.currentTime = 0;
+        duck.play();
+      }
+    });
+  });
+</script>
+
+
+
+  
 </body>
 </html>
