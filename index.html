@@ -224,7 +224,7 @@
       text-align: center;
     }
 
-    /* === UPDATED POPUP STYLES === */
+    /* === BEGIN UPDATED POPUP STYLES === */
     #matchPopup {
       display: none;
       position: fixed;
@@ -320,7 +320,7 @@
       font-weight: 600;
       font-size: 1.25rem;
       color: #e3ccff;
-      margin-top: 1.3em;
+      margin: 1.3em 0 0.5em;
     }
     #matchPopup > div p:nth-of-type(11)::before {
       content: "🧠 ";
@@ -350,6 +350,26 @@
       font-weight: 500;
       font-size: 1.2rem;
       color: #e3ccff;
+    }
+
+    /* Increase #feedback-response font size to 1.35rem as requested */
+    #feedback-response {
+      margin-top: 18px;
+      margin-bottom: 18px;
+      min-height: 1.2em;
+      font-weight: bold;
+      font-size: 1.35rem;
+      max-width: 90%;
+      opacity: 0;
+      transition: opacity 0.5s ease;
+      user-select: none;
+      color: #fff;
+      text-align: center;
+      margin-left: auto !important;
+      margin-right: auto !important;
+      display: block !important;
+      padding-left: 0 !important;
+      box-sizing: border-box;
     }
 
     #popupCloseBtn {
@@ -740,19 +760,29 @@
                   current = 8;
                   updateMeme();
                   setTimeout(() => {
-                    if (!popup || popup.style.display !== 'flex') {
-                      showPopup();
-                      meme10Timeout1 = setTimeout(() => {
-                        meme10Timeout2 = setTimeout(() => {
-                          current = 9;
-                          updateMeme();
-                        }, 3000);
-                      }, 5000);
-                    }
+                    // Prevent popup auto-show here on meme8 transition
+                    // Show popup only after meme9
+                    // So do NOT call showPopup() here
+                    // Instead, start timer to show popup only after meme9 is displayed
+                    if (false) { /* removed popup show here to prevent auto-opening */ }
+                    // Instead popup shows after meme9 by the next code below
                   }, 2000);
                 }, 3000);
               }, 3000);
             }, 3000);
+          } else if (current === 8) {
+            current++;
+            updateMeme();
+            // Show popup after meme9 is displayed
+            if (popup && popup.style.display !== 'flex') {
+              showPopup();
+              meme10Timeout1 = setTimeout(() => {
+                meme10Timeout2 = setTimeout(() => {
+                  current = 9;
+                  updateMeme();
+                }, 3000);
+              }, 5000);
+            }
           } else {
             current++;
             updateMeme();
