@@ -147,85 +147,58 @@
       padding: 1rem 1.5rem 2rem;
       text-align: left;
     }
+    /* Meme Flipper styles from good pop */
     .meme-flipper {
+      width: 320px;
+      margin: 40px auto;
       position: relative;
-      max-width: 340px;
-      margin: 2rem auto 2.5rem;
-      border-radius: 1.2rem;
-      box-shadow: 0 0 30px #ff43a4aa;
-      background: white;
     }
     .meme-flipper img {
       width: 100%;
-      border-radius: 1.2rem;
+      border-radius: 20px;
+      cursor: pointer;
       display: block;
-      cursor: pointer;
-      user-select: none;
     }
-    button.flipper-btn {
-      position: absolute;
-      bottom: 16%;
-      height: 44px;
+    .flipper-btn {
       width: 44px;
-      border-radius: 50%;
+      height: 44px;
+      background-color: #ff3e6c;
       border: none;
-      font-size: 1.5rem;
-      font-weight: 800;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-      user-select: none;
-      transition: background-color 0.3s ease, transform 0.15s ease;
-      box-shadow: 0 4px 12px rgba(255, 67, 164, 0.5);
+      border-radius: 50%;
       color: white;
+      font-size: 1.5rem;
+      cursor: pointer;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+      position: absolute;
+      bottom: 85px;
+      user-select: none;
     }
-    button.flipper-btn:focus,
-    button.flipper-btn:hover {
-      outline: none;
-      transform: scale(1.1);
+    .btn-left {
+      left: 70px;
     }
-    button.btn-left {
-      left: 25%;
-      background: #ff43a4;
+    .btn-right {
+      right: 70px;
+      background-color: #ff69b4;
     }
-    button.btn-right {
-      right: 25%;
-      background: #6a0dad;
-    }
-    button.flipper-btn.hidden {
+    .hidden {
       display: none !important;
     }
-    #kit-form-container h2 {
-      display: none !important;
+    .btn-flat {
+      background-color: #8000ff;
+      color: #fff;
+      padding: 12px 24px;
+      font-size: 1rem;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      margin: 10px;
+      font-weight: 600;
+      transition: background-color 0.3s ease;
+      white-space: nowrap;
     }
-    #waitlist {
-      max-width: 740px;
-      margin: 2rem auto 1rem;
-      text-align: center;
-      background: #fff;
-      border-radius: 1rem;
-      padding: 2rem 3rem 3rem;
-      box-shadow: 0 8px 25px rgba(106, 13, 173, 0.3);
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      gap: 1rem;
-      justify-content: center;
+    .btn-flat:hover {
+      background-color: #6a00cc;
     }
-    #waitlist h2 {
-      flex-basis: 100%;
-      margin-bottom: 0.5rem;
-      font-family: 'Fredoka One', cursive;
-      font-size: 2rem;
-      color: inherit !important;
-      text-shadow: none !important;
-      font-weight: 800;
-      text-align: center;
-    }
-
-    /* === BEGIN OLD POPUP STYLES === */
-
     #matchPopup {
       display: none;
       position: fixed;
@@ -244,9 +217,7 @@
       align-items: center;
       justify-content: center;
       flex-direction: column;
-      display: none; /* initially hidden */
     }
-
     #matchPopup > div {
       max-width: 600px;
       margin: 40px auto;
@@ -258,7 +229,6 @@
       color: white;
       text-align: center;
     }
-
     #popupCloseBtn {
       position: absolute;
       top: 12px;
@@ -277,11 +247,9 @@
       transition: background-color 0.3s ease;
       z-index: 10000;
     }
-
     #popupCloseBtn:hover {
       background: #5300cc;
     }
-
     #feedback-response {
       margin-top: 18px;
       margin-bottom: 18px;
@@ -300,12 +268,10 @@
       padding-left: 0 !important;
       box-sizing: border-box;
     }
-
     .popup-buttons-container {
       margin-top: 18px;
       text-align: center;
     }
-
     .popup-buttons-row {
       display: flex;
       justify-content: center;
@@ -313,28 +279,9 @@
       margin-bottom: 6px;
       flex-wrap: wrap;
     }
-
-    .btn-flat {
-      background-color: #8000ff;
-      color: #fff;
-      padding: 12px 24px;
-      font-size: 1rem;
-      border: none;
-      border-radius: 10px;
-      cursor: pointer;
-      margin: 10px;
-      font-weight: 600;
-      transition: background-color 0.3s ease;
-      white-space: nowrap;
-    }
-
-    .btn-flat:hover {
-      background-color: #6a00cc;
-    }
-    /* === END OLD POPUP STYLES === */
-
     @media (max-width: 640px) {
-      section h2, section h3 {
+      section h2,
+      section h3 {
         font-size: 1.6rem;
       }
       .meme-flipper {
@@ -357,15 +304,17 @@
 </head>
 <body>
   <script>
-    (function(){
+    (function () {
       const colors = ['#FFAA3C', '#F9A8D4', '#FF4FFF', '#A259FF'];
       let stops = [];
-      while(stops.length < colors.length) {
+      while (stops.length < colors.length) {
         const p = Math.floor(Math.random() * 101);
         if (!stops.includes(p)) stops.push(p);
       }
-      stops.sort((a,b) => a - b);
-      const gradientString = `linear-gradient(135deg, ${colors.map((c,i)=>c + ' ' + stops[i] + '%').join(', ')})`;
+      stops.sort((a, b) => a - b);
+      const gradientString = `linear-gradient(135deg, ${colors
+        .map((c, i) => c + ' ' + stops[i] + '%')
+        .join(', ')})`;
       document.body.style.background = gradientString;
     })();
   </script>
@@ -373,79 +322,89 @@
     <div class="logo" tabindex="0">
       <img src="https://raw.githubusercontent.com/astrobehr/d8sync-landing/main/assets/d8sync-banner.jpg" alt="D8Sync Logo" />
     </div>
-    
- <section class="feature" aria-labelledby="ai-match-title">
-  <h3 id="ai-match-title" class="centered-header">Real Vibes Only. No Swipes. No Stress.</h3><br>
-  <!-- Change this <p> styling for "Let’s keep it real — dating apps suck." -->
-  <p style="font-size: 1.25rem; font-weight: bold;">
-    <strong>Let’s keep it real — dating apps suck.</strong></p>
-  <ul class="bullet-list" aria-label="Dating app struggles list">
-    <li><img class="an1" draggable="false" src="https://fonts.gstatic.com/s/e/notoemoji/16.0/1f4f1/32.png" alt="📱" aria-label="📱" /><span>Swipe fatigue is real.</span></li>
-    <li><img class="an1" draggable="false" src="https://fonts.gstatic.com/s/e/notoemoji/16.0/1f47b/32.png" alt="👻" aria-label="👻" /><span>Half your matches ghost.</span></li>
-    <li class="section1-bottom-spacing"><img class="an1" draggable="false" src="https://fonts.gstatic.com/s/e/notoemoji/16.0/1f9e0/32.png" alt="🧠" aria-label="🧠" /><span>The other half treat it like a job interview.</span></li><br>
-  </ul>
-  <!-- Container for the second text -->
-<div style="display: flex; justify-content: center;">
-  <div style="text-align: left; font-weight: 700; font-size: 1.25rem; line-height: 1.6; color: #222; /* darker color for contrast */">
-    <!-- Make “who’s hot.” italic accented with heavier weight and subtle text-shadow -->
-    <strong>
-      This isn’t about
-      <em style="font-style: italic; font-weight: 900; text-shadow: 0 1px 2px rgba(0,0,0,0.15);">
-        “who’s hot.”
-      </em><br>
-      <!-- Make “who gets you.” italic accented similarly -->
-      <span style="display: inline-block; margin-left: 155px;">
-        <em style="font-style: italic; font-weight: 900; text-shadow: 0 1px 2px rgba(0,0,0,0.15);">
-          It’s about “who gets you.”</em><br>
-      </span>
-    </strong>
-  </div>
-</div>
-</section>
+
+    <section class="feature" aria-labelledby="ai-match-title">
+      <h3 id="ai-match-title" class="centered-header">Real Vibes Only. No Swipes. No Stress.</h3><br />
+      <p style="font-size: 1.25rem; font-weight: bold;">
+        <strong>Let’s keep it real — dating apps suck.</strong>
+      </p>
+      <ul class="bullet-list" aria-label="Dating app struggles list">
+        <li>
+          <img class="an1" draggable="false" src="https://fonts.gstatic.com/s/e/notoemoji/16.0/1f4f1/32.png" alt="📱" aria-label="📱" /><span>Swipe fatigue is real.</span>
+        </li>
+        <li>
+          <img class="an1" draggable="false" src="https://fonts.gstatic.com/s/e/notoemoji/16.0/1f47b/32.png" alt="👻" aria-label="👻" /><span>Half your matches ghost.</span>
+        </li>
+        <li class="section1-bottom-spacing">
+          <img class="an1" draggable="false" src="https://fonts.gstatic.com/s/e/notoemoji/16.0/1f9e0/32.png" alt="🧠" aria-label="🧠" />
+          <span>The other half treat it like a job interview.</span>
+        </li><br />
+      </ul>
+      <div style="display: flex; justify-content: center;">
+        <div style="text-align: left; font-weight: 700; font-size: 1.25rem; line-height: 1.6; color: #222;">
+          <strong>
+            This isn’t about
+            <em style="font-style: italic; font-weight: 900; text-shadow: 0 1px 2px rgba(0,0,0,0.15);">
+              “who’s hot.”
+            </em><br />
+            <span style="display: inline-block; margin-left: 155px;">
+              <em style="font-style: italic; font-weight: 900; text-shadow: 0 1px 2px rgba(0,0,0,0.15);">
+                It’s about “who gets you.”
+              </em><br />
+            </span>
+          </strong>
+        </div>
+      </div>
+    </section>
+
     <section class="feature" aria-labelledby="swipe-memes-title">
-      <h3 id="swipe-memes-title" class="centered-header">Swipe Memes, Not Faces</h3><br>
+      <h3 id="swipe-memes-title" class="centered-header">Swipe Memes, Not Faces</h3><br />
       <p>What if your dating feed was memes instead of mugshots?<br />No more trying to decode mirror selfies or gym pics.</p>
       <p>Just scroll, laugh, and react to the memes that hit hardest.</p>
       <p>Every meme you react to builds your <strong>Comedy Graph™</strong> &mdash; a laughprint that’s uniquely <em>you</em>. Our AI reads your vibe and syncs you with people who match your unique frequency.</p>
       <p><em><strong>Weirdly accurate. Dangerously fun.</strong></em></p>
-      <div class="meme-flipper" role="region" tabindex="0" aria-label="Meme Swipe Gallery" style="margin: 2rem auto 2.5rem; max-width: 340px; position: relative; background: white; border-radius: 1.2rem; box-shadow: 0 0 30px #ff43a4aa;">
-        <img id="memeImage" alt="D8Sync meme image" src="https://raw.githubusercontent.com/astrobehr/d8sync-landing/main/memes/meme1.jpg" style="width:100%; border-radius: 1.2rem; display: block; user-select: none; cursor: pointer;" />
-        <button class="flipper-btn btn-left" id="prevMemeBtn" aria-label="Previous Meme" type="button" style="position: absolute; bottom: 16%; left: 25%; height:44px; width:44px; border-radius: 50%; border:none; font-size:1.5rem; font-weight:800; background:#ff43a4; color:white; box-shadow: 0 4px 12px rgba(255, 67, 164, 0.5); cursor:pointer;">&#x2718;</button>
-        <button class="flipper-btn btn-right" id="nextMemeBtn" aria-label="Next Meme" type="button" style="position: absolute; bottom: 16%; right: 25%; height:44px; width:44px; border-radius: 50%; border:none; font-size:1.5rem; font-weight:800; background:#6a0dad; color:white; box-shadow: 0 4px 12px rgba(255, 67, 164, 0.5); cursor:pointer;">&#x2764;</button>
+      <div class="meme-flipper" role="region" tabindex="0" aria-label="Meme Swipe Gallery">
+        <img id="memeImage" alt="D8Sync meme image" src="https://raw.githubusercontent.com/astrobehr/d8sync-landing/main/memes/meme1.jpg" />
+        <button class="flipper-btn btn-left" aria-label="Previous Meme" type="button">&#x2718;</button>
+        <button class="flipper-btn btn-right" aria-label="Next Meme" type="button">&#x2764;</button>
       </div>
     </section>
+
     <section class="feature section4" aria-labelledby="unfiltered-title">
-      <h3 id="unfiltered-title" class="centered-header">Unfiltered. Unscripted. Unexpected.</h3><br>
+      <h3 id="unfiltered-title" class="centered-header">Unfiltered. Unscripted. Unexpected.</h3><br />
       <p><em><strong>No filters. No bios. No profile paralysis.</strong></em></p>
       <p>At <strong>D8Sync</strong>, you skip the scroll and jump straight into something real.</p>
       <p>Just you and someone new &mdash; on an actual blind date.</p>
       <p><em><strong>No Pressure. No Pretending.</strong></em></p>
       <p><em><strong>And yes, we even give you the perfect icebreaker</strong></em> <img src="https://fonts.gstatic.com/s/e/notoemoji/16.0/1f9ca/32.png" alt="🧊" width="17" height="17" aria-label="🧊" /></p>
     </section>
+
     <section class="feature section5" aria-labelledby="how-it-works-title">
-      <h3 id="how-it-works-title" class="centered-header">How D8Sync Blind Dates Actually Work</h3><br>
+      <h3 id="how-it-works-title" class="centered-header">How D8Sync Blind Dates Actually Work</h3><br />
       <p>You tap the <em><strong>“Sync Me!”</strong></em> button:</p>
       <p><strong>D8Sync</strong> scans your <span style="text-decoration: underline;"><strong>Comedy Graph™</strong></span>, vibe data, and availability &mdash; and matches you with someone on your wavelength.</p>
       <p>Then Our Matchmaker AI then sends you both:</p>
-      <ul class="bullet-list" aria-label="Matchmaker AI details">
-        <li><img src="https://fonts.gstatic.com/s/e/notoemoji/16.0/23f0/32.png" alt="⏰" aria-label="⏰" /> A Date and Time</li>
-        <li><img src="https://fonts.gstatic.com/s/e/notoemoji/16.0/1f4cd/32.png" alt="📍" aria-label="📍" /> A public place</li>
-        <li><img src="https://fonts.gstatic.com/s/e/notoemoji/16.0/1f9e9/32.png" alt="🧩" aria-label="🧩" /> “The Tell” &mdash; a phrase or shared order to find your match.</li>
+      <ul class="bullet-list" aria-label="Matchmaker AI details" style="max-width: 320px; margin-left: auto; margin-right: auto;">
+        <li>📅 A Date and Time</li>
+        <li>📍 A public place</li>
+        <li>🧩 “The Tell” — a phrase or shared order to find your match.</li>
       </ul>
       <p>You pull up, scan the scene, and look for the signal... like someone lowkey ordering the same drink.</p>
-      <p>In a crowded cafe or busy bookstore? Not sure it’s them?<br>Tap the “Is That You?” button in-app <img src="https://fonts.gstatic.com/s/e/notoemoji/16.0/1f440/32.png" alt="👀" aria-label="👀" /> for a private match confirm.</p>
-      <p>If the chemistry's there, drop the icebreaker we gave you &mdash; it's the perfect nudge <img src="https://fonts.gstatic.com/s/e/notoemoji/16.0/1f449/32.png" alt="👉" aria-label="👉" /><img src="https://fonts.gstatic.com/s/e/notoemoji/16.0/1f448/32.png" alt="👈" aria-label="👈" /></p>
-      <p>Not feeling it? That’s cool too.<br>Take a breath, enjoy the moment, & the match will fade away.</p>
+      <p>In a crowded cafe or busy bookstore? Not sure it’s them?<br />Tap the “Is That You?” button in-app <img src="https://fonts.gstatic.com/s/e/notoemoji/16.0/1f440/32.png" alt="👀" aria-label="👀" /> for a private match confirm.</p>
+      <p>If the chemistry's there, drop the icebreaker we gave you — it's the perfect nudge.</p>
+      <p>Not feeling it? That’s cool too.<br />Take a breath, enjoy the moment, & the match will fade away.</p>
       <p>No profiles. No awkward openings. No rejection drama.</p>
-      <p><em>Just vibes. Real ones.</em></p>
+      <p><em><strong>Just vibes. Real ones.</strong></em></p>
     </section>
+
     <section class="feature" aria-labelledby="talk-it-out-title" style="margin-bottom: 3rem;">
-      <h3 id="talk-it-out-title" class="centered-header">Need to talk it out? We got you.</h3><br>
-      <p>After every date, the judgment-free vibe check continues.<br>Our AI Dating Coach is here to help you debrief — like a relationship therapist in your pocket.</p>
+      <h3 id="talk-it-out-title" class="centered-header">Need to talk it out? We got you.</h3><br />
+      <p>After every date, the judgment-free vibe check continues.<br />Our AI Dating Coach is here to help you debrief &mdash; like a relationship therapist in your pocket.</p>
       <p>Whether it sparked or fizzled, talk through what worked, what didn’t, and how it made you feel.</p>
       <p><strong>Get clarity <img src="https://fonts.gstatic.com/s/e/notoemoji/16.0/1f9e0/32.png" alt="🧠" aria-label="🧠" />. Spot patterns <img src="https://fonts.gstatic.com/s/e/notoemoji/16.0/1f4c8/32.png" alt="📈" aria-label="📈" />. Grow faster <img src="https://fonts.gstatic.com/s/e/notoemoji/16.0/1f680/32.png" alt="🚀" aria-label="🚀" /></strong></p>
-      <p><strong>You’re not “hard to love.”</strong><br>You’re just hard to algorithm.</p>
+      <p><strong>You’re not “hard to love.”</strong><br />You’re just hard to algorithm.</p>
     </section>
+
     <section id="waitlist" aria-labelledby="signup-title" role="region" aria-live="polite" aria-atomic="true" style="margin-top: 3rem;">
       <script async data-uid="ab96e2e1a4" src="https://d8sync.kit.com/ab96e2e1a4/index.js"></script>
       <div id="kit-form-container"></div>
@@ -497,8 +456,6 @@
     </div>
   </div>
 
-  <!-- Bye Felicia popup removed -->
-
   <script defer src="https://f.convertkit.com/ckjs/ck.5.js"></script>
   <script>
     document.addEventListener('DOMContentLoaded', () => {
@@ -508,30 +465,22 @@
       const spookyBtn = document.getElementById('spooky-button');
       const nahBtn = document.getElementById('nah-button');
 
-      function showGenZResponse(text) {
-        if (!feedbackResponse) return;
-        feedbackResponse.textContent = text;
-        feedbackResponse.style.opacity = "1";
-        setTimeout(() => feedbackResponse.style.opacity = "0", 3000);
-      }
-
-      const yupResponses = [
-        "Eerie-level accurate — y’all in my brain?",
-        "Soulmate meme frequency. I felt that.",
-        "They understood the assignment.",
-        "Main character vibes. Fully unlocked.",
-        "That gave multiverse twin energy."
-      ];
-      const nahResponses = [
-        "Felt like a bot typed that.",
-        "Cringe. I flinched.",
-        "That felt like a CAPTCHA test.",
-        "Meme was fire. Match was mid.",
-        "Vibe was off. And so was the Wi-Fi."
-      ];
-
       function showRandomResponse(type) {
         if (!feedbackResponse) return;
+        const yupResponses = [
+          "Eerie-level accurate — y’all in my brain?",
+          "Soulmate meme frequency. I felt that.",
+          "They understood the assignment.",
+          "Main character vibes. Fully unlocked.",
+          "That gave multiverse twin energy."
+        ];
+        const nahResponses = [
+          "Felt like a bot typed that.",
+          "Cringe. I flinched.",
+          "That felt like a CAPTCHA test.",
+          "Meme was fire. Match was mid.",
+          "Vibe was off. And so was the Wi-Fi."
+        ];
         const responses = type === "yup" ? yupResponses : nahResponses;
         const msg = responses[Math.floor(Math.random() * responses.length)];
         feedbackResponse.textContent = msg;
@@ -545,39 +494,32 @@
       popupCloseBtn.addEventListener('click', () => {
         popup.style.display = 'none';
       });
-
-      // Bye Felicia popup logic removed
     });
   </script>
-
   <script>
-    (function(){
+    document.addEventListener('DOMContentLoaded', () => {
       const memes = [
-        'https://raw.githubusercontent.com/astrobehr/d8sync-landing/main/memes/meme1.jpg',
-        'https://raw.githubusercontent.com/astrobehr/d8sync-landing/main/memes/meme2.jpg',
-        'https://raw.githubusercontent.com/astrobehr/d8sync-landing/main/memes/meme3.jpg',
-        'https://raw.githubusercontent.com/astrobehr/d8sync-landing/main/memes/meme4.jpg',
-        'https://raw.githubusercontent.com/astrobehr/d8sync-landing/main/memes/meme5.jpg',
-        'https://raw.githubusercontent.com/astrobehr/d8sync-landing/main/memes/meme6.jpg',
-        'https://raw.githubusercontent.com/astrobehr/d8sync-landing/main/memes/meme7.jpg',
-        'https://raw.githubusercontent.com/astrobehr/d8sync-landing/main/memes/meme8.jpg',
-        'https://raw.githubusercontent.com/astrobehr/d8sync-landing/main/memes/meme9.jpg',
-        'https://raw.githubusercontent.com/astrobehr/d8sync-landing/main/memes/meme10.jpg'
+        "https://raw.githubusercontent.com/astrobehr/d8sync-landing/main/memes/meme1.jpg",
+        "https://raw.githubusercontent.com/astrobehr/d8sync-landing/main/memes/meme2.jpg",
+        "https://raw.githubusercontent.com/astrobehr/d8sync-landing/main/memes/meme3.jpg",
+        "https://raw.githubusercontent.com/astrobehr/d8sync-landing/main/memes/meme4.jpg",
+        "https://raw.githubusercontent.com/astrobehr/d8sync-landing/main/memes/meme5.jpg",
+        "https://raw.githubusercontent.com/astrobehr/d8sync-landing/main/memes/meme6.jpg",
+        "https://raw.githubusercontent.com/astrobehr/d8sync-landing/main/memes/meme7.jpg",
+        "https://raw.githubusercontent.com/astrobehr/d8sync-landing/main/memes/meme8.jpg",
+        "https://raw.githubusercontent.com/astrobehr/d8sync-landing/main/memes/meme9.jpg",
+        "https://raw.githubusercontent.com/astrobehr/d8sync-landing/main/memes/meme10.jpg"
       ];
       let current = 0;
       const memeImage = document.getElementById('memeImage');
-      const btnLeft = document.getElementById('prevMemeBtn');
-      const btnRight = document.getElementById('nextMemeBtn');
+      const btnLeft = document.querySelector('.btn-left');
+      const btnRight = document.querySelector('.btn-right');
       const popup = document.getElementById('matchPopup');
-      const popupCloseBtn = document.getElementById('popupCloseBtn');
-      let meme10Timeout1 = null;
-      let meme10Timeout2 = null;
+      let meme10Timeout1, meme10Timeout2;
       let isMeme10Displayed = false;
 
       function updateMeme() {
-        if (!memeImage) return;
-        memeImage.src = memes[current];
-
+        if (memeImage) memeImage.src = memes[current];
         if (btnLeft && btnRight) {
           if (current >= 5 && current <= 9) {
             btnLeft.classList.add('hidden');
@@ -587,24 +529,10 @@
             btnRight.classList.remove('hidden');
           }
         }
-
         isMeme10Displayed = (current === 9);
       }
 
-      function showPopup() {
-        if (!popup) return;
-        popup.style.display = 'flex';
-        popup.setAttribute('aria-hidden', 'false');
-        popup.focus();
-      }
-
-      function hidePopup() {
-        if (!popup) return;
-        popup.style.display = 'none';
-        popup.setAttribute('aria-hidden', 'true');
-      }
-
-      function nextMeme() {
+      window.nextMeme = function () {
         if (current < memes.length - 1) {
           if (current === 4) {
             current++;
@@ -619,8 +547,8 @@
                   current = 8;
                   updateMeme();
                   setTimeout(() => {
-                    if (!popup || popup.style.display !== 'flex') {
-                      showPopup();
+                    if (popup) {
+                      popup.style.display = 'flex';
                       meme10Timeout1 = setTimeout(() => {
                         meme10Timeout2 = setTimeout(() => {
                           current = 9;
@@ -636,47 +564,43 @@
             current++;
             updateMeme();
           }
-        } else {
-          closeAndScrollToWaitlist();
-        }
-      }
+        } else closeAndScrollToWaitlist();
+      };
 
-      function prevMeme() {
+      window.prevMeme = function () {
         if (current > 0) {
           current--;
           updateMeme();
-          hidePopup();
+          if (popup) popup.style.display = 'none';
           clearTimeout(meme10Timeout1);
           clearTimeout(meme10Timeout2);
         }
-      }
+      };
 
-      function resetMemeSequence() {
+      window.resetMemeSequence = function () {
+        if (popup) popup.style.display = 'none';
         current = 0;
         updateMeme();
-        hidePopup();
         clearTimeout(meme10Timeout1);
         clearTimeout(meme10Timeout2);
-      }
-
-      function closeAndScrollToWaitlist() {
-        hidePopup();
-        const waitlist = document.getElementById("waitlist");
-        if (waitlist) waitlist.scrollIntoView({ behavior: "smooth" });
-      }
+      };
 
       if (memeImage) {
         memeImage.onclick = () => {
-          if (isMeme10Displayed) resetMemeSequence();
+          if (isMeme10Displayed) window.resetMemeSequence();
         };
       }
-      if (btnLeft) btnLeft.addEventListener('click', prevMeme);
-      if (btnRight) btnRight.addEventListener('click', nextMeme);
-      if (popupCloseBtn) popupCloseBtn.addEventListener('click', hidePopup);
+      if (btnLeft) btnLeft.addEventListener('click', window.prevMeme);
+      if (btnRight) btnRight.addEventListener('click', window.nextMeme);
 
       updateMeme();
-    })();
+
+      function closeAndScrollToWaitlist() {
+        if (popup) popup.style.display = 'none';
+        const waitlist = document.getElementById("waitlist");
+        if (waitlist) waitlist.scrollIntoView({ behavior: "smooth" });
+      }
+    });
   </script>
 </body>
 </html>
-
