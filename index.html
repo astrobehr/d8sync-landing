@@ -831,7 +831,7 @@
     duck.preload = 'auto';
 
     logo.addEventListener("click", () => {
-      duck.currentTime = 0; // allows rapid click replay
+      duck.currentTime = 0;
       duck.play();
     });
 
@@ -841,6 +841,16 @@
         duck.play();
       }
     });
+
+    const applyKitStyles = () => {
+      const form = document.querySelector("#kit-form-container form");
+      if (form) {
+        form.classList.add("kit-styled");
+      } else {
+        setTimeout(applyKitStyles, 200); // Retry until form is injected
+      }
+    };
+    applyKitStyles();
   });
 </script>
 </body>
