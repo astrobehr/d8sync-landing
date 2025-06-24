@@ -224,7 +224,7 @@
       text-align: center;
     }
 
-    /* === BEGIN UPDATED POPUP STYLES === */
+    /* === BEGIN OLD POPUP STYLES === */
 
     #matchPopup {
       display: none;
@@ -233,140 +233,100 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background: #1a103a; /* dark purple background */
+      background: rgba(17, 17, 34, 0.95); /* slightly darker and transparent for better contrast */
       z-index: 9999;
       box-sizing: border-box;
-      padding: 40px 20px;
+      padding: 40px;
       overflow-y: auto;
-      font-family: 'Fredoka One', cursive;
-      color: #d3c7f3;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: #e0d8ff;
       text-align: center;
       align-items: center;
       justify-content: center;
       flex-direction: column;
       display: none; /* initially hidden */
+      font-size: 1.15rem;
+      line-height: 1.6;
+      font-weight: 600;
+      user-select: text;
     }
 
     #matchPopup > div {
       max-width: 600px;
       margin: 40px auto;
-      background: #2c1f60; /* slightly lighter purple */
+      background: #1a1a3d;
       padding: 30px 40px 40px;
-      border-radius: 24px;
-      box-shadow: 0 0 30px rgba(161, 122, 241, 0.9);
+      border-radius: 16px;
+      box-shadow: 0 0 40px rgba(106, 13, 173, 0.85);
       position: relative;
-      color: #d3c7f3;
+      color: #e0d8ff;
       text-align: center;
-      line-height: 1.5;
-      font-size: 1.1rem;
-      user-select: none;
-    }
-
-    #matchPopup > div h2 {
-      font-size: 1.75rem;
-      font-weight: 900;
-      color: #e0d1ff;
-      margin-bottom: 8px;
-      position: relative;
-    }
-
-    #matchPopup > div h2::before,
-    #matchPopup > div h2::after {
-      content: "🔗";
-      font-size: 1.2rem;
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      color: #bbacff;
-    }
-
-    #matchPopup > div h2::before {
-      left: -28px;
-    }
-    #matchPopup > div h2::after {
-      right: -28px;
-    }
-
-    #matchPopup > div em {
-      font-style: italic;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-size: 1.15rem;
+      line-height: 1.6;
       font-weight: 600;
-      color: #b3a1ff;
-      display: block;
-      margin-bottom: 1.6rem;
     }
 
-    #matchPopup > div p strong {
-      display: block;
-      margin-top: 1.4rem;
-      margin-bottom: 0.2rem;
-      font-weight: 900;
-      color: #d9c9ff;
-      font-size: 1.15rem;
-    }
-
-    /* Emoji and label lines */
-    #matchPopup > div p span.label-emoji {
-      margin-right: 6px;
+    #matchPopup h2 {
       font-weight: 700;
+      font-size: 1.8rem;
+      margin-bottom: 0.2em;
+      color: #c8baff;
+      text-shadow: 0 1px 3px rgba(106, 13, 173, 0.9);
+      user-select: text;
     }
 
-    #matchPopup > div p + p {
-      margin-top: 0.16rem;
-      margin-bottom: 0.8rem;
-      line-height: 1.4;
-      white-space: pre-line;
+    #matchPopup p {
+      color: #d7cfff;
+      text-shadow: 0 0 3px rgba(106, 13, 173, 0.7);
+      user-select: text;
+      margin-top: 1em;
+      padding-left: 10px;
+      box-sizing: border-box;
     }
 
-    #matchPopup > div p.vibe-alignment {
-      margin-bottom: 0.8rem;
-    }
-
-    #matchPopup > div p.vibe-alignment > span {
-      display: block;
-      font-weight: 500;
-      color: #c6b6ff;
-    }
-
-    #matchPopup > div p.accurate-question {
-      margin-top: 2rem;
-      font-weight: 900;
-      font-size: 1.15rem;
-      color: #f1dbff;
+    #matchPopup p:first-of-type {
+      margin-top: 45px;
+      font-size: 1rem;
+      font-style: italic;
+      color: #b0a2ff;
+      text-shadow: 0 0 2px rgba(106, 13, 173, 0.7);
     }
 
     #popupCloseBtn {
       position: absolute;
-      top: 18px;
-      right: 18px;
+      top: 12px;
+      right: 12px;
       width: 28px;
       height: 28px;
-      background: transparent;
+      background: #6e38f7;
       border: none;
-      color: #bbacff;
-      font-weight: 900;
-      font-size: 20px;
-      line-height: 28px;
+      border-radius: 4px;
+      color: white;
+      font-weight: bold;
+      font-size: 22px;
+      line-height: 26px;
       cursor: pointer;
       user-select: none;
-      transition: color 0.3s ease;
+      transition: background-color 0.3s ease;
+      z-index: 10000;
     }
 
     #popupCloseBtn:hover {
-      color: #ffb6ff;
-      outline: none;
+      background: #5300cc;
     }
 
     #feedback-response {
       margin-top: 18px;
       margin-bottom: 18px;
-      min-height: 1.2em;
-      font-weight: bold;
-      font-size: 1rem;
+      min-height: 1.4em;
+      font-weight: 700;
+      font-size: 1.05rem;
       max-width: 90%;
       opacity: 0;
       transition: opacity 0.5s ease;
       user-select: none;
-      color: #e0d1ff;
+      color: #d4cfff;
       text-align: center;
       margin-left: auto !important;
       margin-right: auto !important;
@@ -389,42 +349,25 @@
     }
 
     .btn-flat {
-      background-color: #a270ff;
+      background-color: #8000ff;
       color: #fff;
-      padding: 14px 28px;
-      font-size: 1.1rem;
+      padding: 12px 24px;
+      font-size: 1rem;
       border: none;
-      border-radius: 32px;
+      border-radius: 10px;
       cursor: pointer;
       margin: 10px;
       font-weight: 700;
-      transition: background-color 0.3s ease, box-shadow 0.3s ease;
+      transition: background-color 0.3s ease;
       white-space: nowrap;
-      box-shadow: 0 4px 15px rgba(162, 112, 255, 0.75);
+      font-family: 'Fredoka One', cursive;
       user-select: none;
     }
 
     .btn-flat:hover {
-      background-color: #ca9dff;
-      box-shadow: 0 6px 20px rgba(202, 157, 255, 0.85);
-      outline: none;
+      background-color: #6a00cc;
     }
-
-    #matchPopup a {
-      display: block;
-      margin-top: 0.6rem;
-      font-size: 14px;
-      color: #bbacff;
-      text-decoration: underline;
-      cursor: pointer;
-      user-select: none;
-    }
-    #matchPopup a:hover {
-      color: #e0d1ff;
-      outline: none;
-    }
-
-    /* === END UPDATED POPUP STYLES === */
+    /* === END OLD POPUP STYLES === */
 
     @media (max-width: 640px) {
       section h2, section h3 {
@@ -444,15 +387,6 @@
         font-size: 1.6rem;
         margin-bottom: 0.5rem;
         text-align: center;
-      }
-      #matchPopup > div {
-        margin: 20px 10px 30px;
-      }
-      #matchPopup > div h2::before {
-        left: -18px;
-      }
-      #matchPopup > div h2::after {
-        right: -18px;
       }
     }
   </style>
@@ -554,45 +488,52 @@
     </section>
   </main>
 
-  <div id="matchPopup" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="matchPopupTitle">
-    <div onclick="event.stopPropagation();" tabindex="0">
-      <button aria-label="Close Popup" id="popupCloseBtn" title="Close Popup" type="button">×</button>
-      <h2 id="matchPopupTitle">You Just Got Synced</h2>
-      <em>(Sample Match Preview)</em>
-      <p>
+  <div id="matchPopup">
+    <div onclick="event.stopPropagation();" style="text-align: center;">
+      <button aria-label="Close Popup" id="popupCloseBtn" title="Close Popup">×</button>
+      <h2 style="margin:0; text-align:center;">You Just Got Synced</h2>
+      <p style="margin-top:45px; font-size:0.95em; color:#b0a2ff; font-style: italic; text-align:center;">(Sample Match Preview)</p>
+      <p style="margin-bottom:20px; text-align:center;">
         This is a taste of what matching on D8Sync might feel like.<br />
         No swiping. No bios. Just pure vibe alignment.
       </p>
-      <p><strong><span class="label-emoji">🧠</span>Shared Meme Energy:</strong><br />
-        “Me pretending that I don’t care.<br />
-        But secretly I'm watching the group chat implode.”
+      <p style="text-align:center; padding-left: 10px; box-sizing: border-box;">
+        <strong>Shared Meme Energy:</strong><br />
+        “Me pretending that I don’t care.<br />But secretly I'm watching the group chat implode.”
       </p>
-      <p><strong><span class="label-emoji">🎧</span>Audio Match:</strong><br />
+      <p style="text-align:center; padding-left: 10px; box-sizing: border-box;">
+        <strong>Audio Match:</strong><br />
         Late 2000s indie drama with main character syndrome
       </p>
-      <p><strong><span class="label-emoji">🎬</span>First Date Prompt:</strong><br />
+      <p style="text-align:center; padding-left: 10px; box-sizing: border-box;">
+        <strong>First Date Prompt:</strong><br />
         You meet outside a thrift store...<br />
         One of you is holding a can of soup.<br />
         The other is holding a spoon.
       </p>
-      <p class="vibe-alignment"><strong><span class="label-emoji">🧩</span>Vibe Alignment:</strong>
-        <span>84% Emotionally Aligned</span>
-        <span>72% Chaos Compatibility</span>
-        <span>92% Meme Fluency</span>
+      <p style="text-align:center; padding-left: 10px; box-sizing: border-box;">
+        <strong>Vibe Alignment:</strong><br />
+        84% Emotionally Aligned<br />
+        72% Chaos Compatibility<br />
+        92% Meme Fluency
       </p>
-      <p class="accurate-question">🥵 Did this vibe feel accurate?</p>
+      <p style="text-align:center; margin-top: 30px;">
+        Did this vibe feel accurate?
+      </p>
       <div id="feedback-response" style="text-align:center; padding-left:10px; box-sizing:border-box;"></div>
       <div class="popup-buttons-container">
         <div class="popup-buttons-row">
-          <button class="btn-flat" id="spooky-button" type="button">Yup... Spooky!</button>
-          <button class="btn-flat" id="nah-button" type="button">Not really</button>
+          <button class="btn-flat" id="spooky-button">Yup... Spooky!</button>
+          <button class="btn-flat" id="nah-button">Not really</button>
         </div>
-        <a href="https://www.tinder.com" onclick="alert('Bye Felicia 👋');" tabindex="0" style="color:#bbacff; font-size:14px; text-decoration:underline; display:block; margin-top:20px; text-align:center;">
+        <a href="https://www.tinder.com" onclick="alert('Bye Felicia 👋');" style="color:#ccc; font-size:14px; text-decoration:underline; display:block; margin-top:20px; text-align:center;">
           Not feeling it? Close
         </a>
       </div>
     </div>
   </div>
+
+  <!-- Bye Felicia popup removed -->
 
   <script defer src="https://f.convertkit.com/ckjs/ck.5.js"></script>
   <script>
