@@ -853,5 +853,51 @@
     applyKitStyles();
   });
 </script>
+  <script>
+  document.addEventListener("DOMContentLoaded", function () {
+    function applyFormFixes() {
+      const form = document.querySelector("#kit-form-container form");
+      if (!form) {
+        setTimeout(applyFormFixes, 200); // Retry until form exists
+        return;
+      }
+
+      form.style.display = "flex";
+      form.style.flexDirection = "column";
+      form.style.alignItems = "center";
+      form.style.gap = "1rem";
+      form.style.maxWidth = "500px";
+      form.style.margin = "0 auto";
+      form.style.padding = "1rem";
+      form.style.width = "100%";
+
+      const inputs = form.querySelectorAll("input, button");
+      inputs.forEach(el => {
+        el.style.width = "100%";
+        el.style.fontSize = "1.1rem";
+        el.style.padding = "0.8rem 1rem";
+        el.style.borderRadius = "10px";
+        el.style.fontFamily = "'Inter', sans-serif";
+        el.style.border = "1px solid #ccc";
+      });
+
+      const button = form.querySelector("button");
+      if (button) {
+        button.style.backgroundColor = "#a17aff";
+        button.style.color = "white";
+        button.style.fontFamily = "'Fredoka One', cursive";
+        button.style.fontWeight = "700";
+        button.style.border = "none";
+        button.style.cursor = "pointer";
+        button.addEventListener("mouseover", () => {
+          button.style.backgroundColor = "#8047d1";
+        });
+      }
+    }
+
+    applyFormFixes();
+  });
+</script>
+
 </body>
 </html>
