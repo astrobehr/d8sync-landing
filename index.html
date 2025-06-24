@@ -77,7 +77,7 @@
       margin-bottom: 2rem;
     }
     .logo img {
-      width: 480px;
+      width: 600px;
       max-width: 85vw;
       border-radius: 1rem;
       box-shadow: 0 8px 20px #ff43a480;
@@ -200,50 +200,31 @@
       display: none !important;
     }
     #waitlist {
-      max-width: 460px;
+      max-width: 740px;
       margin: 2rem auto 1rem;
       text-align: center;
       background: #fff;
       border-radius: 1rem;
       padding: 2rem 3rem 3rem;
       box-shadow: 0 8px 25px rgba(106, 13, 173, 0.3);
+      /* Center form container with flex */
       display: flex;
-      flex-direction: column;
-      gap: 1rem;
+      flex-wrap: wrap;
       align-items: center;
+      gap: 1rem;
+      justify-content: center;
     }
     #waitlist h2 {
+      flex-basis: 100%;
+      margin-bottom: 0.5rem;
       font-family: 'Fredoka One', cursive;
-      font-size: 1.8rem;
-      margin-bottom: 1rem;
-      color: #1f1f1f;
+      font-size: 2rem;
+      color: inherit !important;
       text-shadow: none !important;
       font-weight: 800;
       text-align: center;
     }
-    #waitlist p.description {
-      font-family: 'Inter', sans-serif;
-      font-size: 1.1rem;
-      color: #333;
-      margin: 0 0 1rem 0;
-      max-width: 100%;
-      line-height: 1.4;
-      text-align: center;
-    }
-    #waitlist p.note {
-      font-family: 'Inter', sans-serif;
-      font-size: 0.85rem;
-      color: #666;
-      margin: 0;
-      text-align: center;
-    }
-    #waitlist p.built-with {
-      font-family: 'Fredoka One', cursive;
-      font-size: 0.9rem;
-      margin-top: 1rem;
-      color: #6a0dad;
-      text-align: center;
-    }
+    /* Wrapped form styles to override Kit's defaults */
     #kit-form-container {
       width: 100% !important;
       max-width: 440px !important;
@@ -257,6 +238,7 @@
       margin: 0 auto !important;
       display: block !important;
     }
+    /* Responsive adjustments */
     @media (max-width: 640px) {
       section h2, section h3 {
         font-size: 1.6rem;
@@ -267,15 +249,14 @@
       #waitlist {
         max-width: 90vw;
         padding: 2rem 1rem 3rem;
+        flex-direction: column;
+        gap: 1rem;
+        align-items: stretch;
       }
       #waitlist h2 {
         font-size: 1.6rem;
-      }
-      #waitlist p.description {
-        font-size: 1rem;
-      }
-      #waitlist p.built-with {
-        font-size: 0.85rem;
+        margin-bottom: 0.5rem;
+        text-align: center;
       }
     }
   </style>
@@ -377,8 +358,8 @@
         ✨ Then, you both get a ping — <br>
         a curated meme preview, shared sync stats,<br>
         and an oddly specific first date suggestion<br><br>
-         <b>No small talk required.</b> 👉👈<br>
-         <i>Just pure, pre-screened possibility.</i> 
+        <b>No small talk required.</b> 👉👈<br>
+        <i>Just pure, pre-screened possibility.</i> 
       </p>
     </section>
     <section class="feature" aria-labelledby="talk-it-out-title" style="margin-bottom: 3rem;">
@@ -391,87 +372,6 @@
     <section id="waitlist" aria-labelledby="signup-title" role="region" aria-live="polite" aria-atomic="true" style="margin-top: 3rem;">
       <script async data-uid="ab96e2e1a4" src="https://d8sync.kit.com/ab96e2e1a4/index.js"></script>
       <div id="kit-form-container"></div>
-      <style>
-        #kit-form-container {
-          max-width: 440px !important;
-          margin-left: auto !important;
-          margin-right: auto !important;
-          width: 100% !important;
-          display: block !important;
-        }
-        #kit-form-container form {
-          width: 100% !important;
-          max-width: none !important;
-          margin: 0 auto !important;
-          display: block !important;
-        }
-        #waitlist h2 {
-          font-family: 'Fredoka One', cursive !important;
-          font-size: 1.8rem !important;
-          margin-bottom: 1rem !important;
-          color: #1f1f1f !important;
-          text-shadow: none !important;
-          font-weight: 800 !important;
-          text-align: center !important;
-        }
-        #waitlist {
-          max-width: 460px !important;
-          margin: 2rem auto 1rem !important;
-          text-align: center !important;
-          background: #fff !important;
-          border-radius: 1rem !important;
-          padding: 2rem 3rem 3rem !important;
-          box-shadow: 0 8px 25px rgba(106, 13, 173, 0.3) !important;
-          display: flex !important;
-          flex-direction: column !important;
-          gap: 1rem !important;
-          align-items: center !important;
-        }
-        #waitlist p.description {
-          font-family: 'Inter', sans-serif !important;
-          font-size: 1.1rem !important;
-          color: #333 !important;
-          margin: 0 0 1rem 0 !important;
-          max-width: 100% !important;
-          line-height: 1.4 !important;
-          text-align: center !important;
-        }
-        #waitlist p.note {
-          font-family: 'Inter', sans-serif !important;
-          font-size: 0.85rem !important;
-          color: #666 !important;
-          margin: 0 !important;
-          text-align: center !important;
-        }
-        #waitlist p.built-with {
-          font-family: 'Fredoka One', cursive !important;
-          font-size: 0.9rem !important;
-          margin-top: 1rem !important;
-          color: #6a0dad !important;
-          text-align: center !important;
-        }
-        @media (max-width: 640px) {
-          #waitlist {
-            max-width: 90vw !important;
-            padding: 2rem 1rem 3rem !important;
-          }
-          #waitlist h2 {
-            font-size: 1.6rem !important;
-          }
-          #waitlist p.description {
-            font-size: 1rem !important;
-          }
-          #waitlist p.built-with {
-            font-size: 0.85rem !important;
-          }
-        }
-      </style>
-      <div id="waitlist" role="region" aria-label="Beta waitlist signup form" style="margin-top: 2rem;">
-        <h2>Get Notified for D8Sync Beta Wait List</h2>
-        <p class="description">Be One of the First to Experience<br />AI Meme-Powered Dating</p>
-        <p class="note">No Spam. No Cringe.<br />Unmatch Us Anytime</p>
-        <p class="built-with">Built with <strong>Kit</strong></p>
-      </div>
     </section>
   </main>
   <div id="matchPopup">
@@ -671,22 +571,22 @@
       updateMeme();
     })();
   </script>
-<script>
-  document.addEventListener("DOMContentLoaded", () => {
-    const logo = document.getElementById("logoBtn");
-    const duck = new Audio("https://d8sync.com/assets/mac-quack.mp3");
-    duck.preload = 'auto';
-    logo.addEventListener("click", () => {
-      duck.currentTime = 0;
-      duck.play();
-    });
-    logo.addEventListener("keypress", (e) => {
-      if (e.key === "Enter" || e.key === " ") {
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const logo = document.getElementById("logoBtn");
+      const duck = new Audio("https://d8sync.com/assets/mac-quack.mp3");
+      duck.preload = 'auto';
+      logo.addEventListener("click", () => {
         duck.currentTime = 0;
         duck.play();
-      }
+      });
+      logo.addEventListener("keypress", (e) => {
+        if (e.key === "Enter" || e.key === " ") {
+          duck.currentTime = 0;
+          duck.play();
+        }
+      });
     });
-  });
-</script>
+  </script>
 </body>
 </html>
