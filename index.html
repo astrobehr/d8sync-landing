@@ -271,7 +271,7 @@
       letter-spacing: 0.05em;
       user-select: none;
     }
-    /* Title update with emojis */
+    /* Title with emojis */
     #matchPopup > div h2::before {
       content: "🔗 ";
     }
@@ -303,7 +303,6 @@
     }
 
     /* Subsection labels with emojis */
-
     #matchPopup > div p:nth-of-type(5) strong::before {
       content: "💞 ";
     }
@@ -352,7 +351,7 @@
       color: #e3ccff;
     }
 
-    /* Increase #feedback-response font size to 1.35rem as requested */
+    /* Increased #feedback-response font size */
     #feedback-response {
       margin-top: 18px;
       margin-bottom: 18px;
@@ -760,20 +759,14 @@
                   current = 8;
                   updateMeme();
                   setTimeout(() => {
-                    // Prevent popup auto-show here on meme8 transition
-                    // Show popup only after meme9
-                    // So do NOT call showPopup() here
-                    // Instead, start timer to show popup only after meme9 is displayed
-                    if (false) { /* removed popup show here to prevent auto-opening */ }
-                    // Instead popup shows after meme9 by the next code below
+                    // Removed auto popup trigger here to prevent premature popup
                   }, 2000);
                 }, 3000);
               }, 3000);
             }, 3000);
-          } else if (current === 8) {
+          } else if(current === 8) {
             current++;
             updateMeme();
-            // Show popup after meme9 is displayed
             if (popup && popup.style.display !== 'flex') {
               showPopup();
               meme10Timeout1 = setTimeout(() => {
