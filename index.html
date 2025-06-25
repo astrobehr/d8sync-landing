@@ -207,9 +207,9 @@
       border-radius: 1rem;
       padding: 2rem 3rem 3rem;
       box-shadow: 0 8px 25px rgba(106, 13, 173, 0.3);
-      display: block; /* Changed from flex to block to prevent squeezing */
-      min-width: 320px; /* Added to prevent form squeeze */
-      box-sizing: border-box; /* Ensures padding is included in width */
+      display: block;
+      min-width: 320px;
+      box-sizing: border-box;
     }
     #waitlist h2 {
       flex-basis: 100%;
@@ -221,171 +221,6 @@
       font-weight: 800;
       text-align: center;
     }
-    /* === BEGIN OLD POPUP STYLES - MODIFIED FOR PURPLE THEME === */
-    #matchPopup {
-      display: none;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: #2e1a47; /* Dark purple background */
-      z-index: 9999;
-      box-sizing: border-box;
-      padding: 40px;
-      overflow-y: auto;
-      font-family: 'Inter', sans-serif;
-      color: #e6e0f8; /* Light lavender / soft white */
-      text-align: center;
-      align-items: center;
-      justify-content: center;
-      flex-direction: column;
-      display: none; /* initially hidden */
-      font-weight: 700;
-      line-height: 1.4;
-    }
-    #matchPopup > div {
-      max-width: 600px;
-      margin: 40px auto;
-      background: #3b2970; /* Slightly lighter purple */
-      padding: 30px 40px 40px;
-      border-radius: 16px;
-      box-shadow: 0 0 40px rgba(106, 13, 173, 0.75);
-      position: relative;
-      color: #e6e0f8;
-      text-align: center;
-      font-weight: 700;
-      font-family: 'Inter', sans-serif;
-    }
-    #matchPopup > div h2 {
-      font-weight: 700;
-      font-family: 'Fredoka One', cursive;
-      font-size: 1.8rem;
-      margin: 0 0 0.4em 0;
-      color: #d8c6ff;
-      letter-spacing: 0.06em;
-    }
-    #matchPopup > div h2::before,
-    #matchPopup > div h2::after {
-      content: "🔗";
-      margin: 0 6px;
-    }
-    #matchPopup > div p {
-      margin-top: 1rem;
-      margin-bottom: 20px;
-      font-size: 1rem;
-      line-height: 1.4;
-      text-align: center;
-      white-space: normal;
-      font-weight: 700;
-    }
-    #matchPopup > div p:nth-of-type(2) {
-      font-style: italic;
-      font-weight: 600;
-      color: #c1b7ea;
-      margin-top: 0;
-      margin-bottom: 1.5rem;
-    }
-    /* Emoji prefixes for specific paragraphs */
-    #matchPopup > div p strong {
-      display: block;
-      margin-bottom: 6px;
-      font-weight: 700;
-      font-size: 1.1rem;
-      color: #d8c6ff;
-    }
-    #matchPopup > div p:nth-of-type(3) strong::before {
-      content: "🥠 ";
-      margin-right: 4px;
-    }
-    #matchPopup > div p:nth-of-type(4) strong::before {
-      content: "🎧 ";
-      margin-right: 4px;
-    }
-    #matchPopup > div p:nth-of-type(5) strong::before {
-      content: "🗓️ ";
-      margin-right: 4px;
-    }
-    #matchPopup > div p:nth-of-type(6) strong::before {
-      content: "☘️ ";
-      margin-right: 4px;
-    }
-    /* Add emoji before "Did this vibe feel accurate?" paragraph */
-    #matchPopup > div p:nth-of-type(7)::before {
-      content: "🤰 ";
-      margin-right: 6px;
-      font-weight: 700;
-    }
-    /* Adjust for the last prompt paragraph to have no extra margin */
-    #matchPopup > div p:nth-last-of-type(2) {
-      margin-bottom: 30px;
-    }
-    #popupCloseBtn {
-      position: absolute;
-      top: 12px;
-      right: 12px;
-      width: 28px;
-      height: 28px;
-      background: #6e38f7;
-      border: none;
-      border-radius: 4px;
-      color: #e6e0f8;
-      font-weight: bold;
-      font-size: 22px;
-      line-height: 26px;
-      cursor: pointer;
-      user-select: none;
-      transition: background-color 0.3s ease;
-      z-index: 10000;
-    }
-    #popupCloseBtn:hover {
-      background: #5300cc;
-    }
-    #feedback-response {
-      margin-top: 18px;
-      margin-bottom: 18px;
-      min-height: 1.2em;
-      font-weight: 700;
-      font-size: 1rem;
-      max-width: 90%;
-      opacity: 0;
-      transition: opacity 0.5s ease;
-      user-select: none;
-      color: #e6e0f8;
-      text-align: center;
-      margin-left: auto !important;
-      margin-right: auto !important;
-      display: block !important;
-      padding-left: 0 !important;
-      box-sizing: border-box;
-    }
-    .popup-buttons-container {
-      margin-top: 18px;
-      text-align: center;
-    }
-    .popup-buttons-row {
-      display: flex;
-      justify-content: center;
-      gap: 12px;
-      margin-bottom: 6px;
-      flex-wrap: wrap;
-    }
-    .btn-flat {
-      background-color: #a17aff;
-      color: #fff;
-      padding: 12px 24px;
-      font-size: 1rem;
-      border: none;
-      border-radius: 10px;
-      cursor: pointer;
-      margin: 10px;
-      font-weight: 700;
-      transition: background-color 0.3s ease;
-      white-space: nowrap;
-    }
-    .btn-flat:hover {
-      background-color: #8047d1;
-    }
     @media (max-width: 640px) {
       section h2, section h3 {
         font-size: 1.6rem;
@@ -396,8 +231,8 @@
       #waitlist {
         max-width: 90vw;
         padding: 2rem 1rem 3rem;
-        display: block !important; /* ensure form is not squeezed on mobile */
-        min-width: auto; /* override min-width on small screens */
+        display: block !important;
+        min-width: auto;
       }
       #waitlist h2 {
         font-size: 1.6rem;
@@ -425,15 +260,26 @@
     <div class="logo" id="logoBtn" role="button" tabindex="0" aria-label="WHAT?!">
       <img src="https://raw.githubusercontent.com/astrobehr/d8sync-landing/main/assets/d8sync-banner.jpg" alt="D8Sync Logo" />
     </div>
-<!-- Section 1 -->
+    <!--Section 1-->
     <section class="feature" aria-labelledby="ai-match-title">
-      <h3 id="ai-match-title" class="centered-header">Real Vibes Only. No Swipes. No Stress.</h3><br>
+      <h3 id="ai-match-title" class="centered-header">Real Vibes Only. No Swipes. No Stress.</h3><br />
       <p style="font-size: 1.25rem; font-weight: bold;">
-        <strong>Let’s keep it real — dating apps suck.</strong></p>
+        <strong>Let’s keep it real — dating apps suck.</strong>
+      </p>
       <ul class="bullet-list" aria-label="Dating app struggles list">
-        <li><img class="an1" draggable="false" src="https://fonts.gstatic.com/s/e/notoemoji/16.0/1f4f1/32.png" alt="📱" aria-label="📱" /><span>Swipe fatigue is real.</span></li>
-        <li><img class="an1" draggable="false" src="https://fonts.gstatic.com/s/e/notoemoji/16.0/1f47b/32.png" alt="👻" aria-label="👻" /><span>Half your matches ghost.</span></li>
-        <li class="section1-bottom-spacing"><img class="an1" draggable="false" src="https://fonts.gstatic.com/s/e/notoemoji/16.0/1f9e0/32.png" alt="👨‍💼" aria-label="👨‍💼" /><span>The other half treat it like a job interview.</span></li><br>
+        <li>
+          <img class="an1" draggable="false" src="https://fonts.gstatic.com/s/e/notoemoji/16.0/1f4f1/32.png" alt="📱" aria-label="📱" />
+          <span>Swipe fatigue is real.</span>
+        </li>
+        <li>
+          <img class="an1" draggable="false" src="https://fonts.gstatic.com/s/e/notoemoji/16.0/1f47b/32.png" alt="👻" aria-label="👻" />
+          <span>Half your matches ghost.</span>
+        </li>
+        <li class="section1-bottom-spacing">
+          <img class="an1" draggable="false" src="https://fonts.gstatic.com/s/e/notoemoji/16.0/1f9e0/32.png" alt="👨‍💼" aria-label="👨‍💼" />
+          <span>The other half treat it like a job interview.</span>
+        </li>
+        <br />
       </ul>
       <div style="display: flex; justify-content: center;">
         <div style="text-align: left; font-weight: 700; font-size: 1.25rem; line-height: 1.6; color: #222;">
@@ -441,97 +287,131 @@
             This isn’t about
             <em style="font-style: italic; font-weight: 900; text-shadow: 0 1px 2px rgba(0,0,0,0.15);">
               “who’s hot.”
-            </em><br>
+            </em>
+            <br />
             <span style="display: inline-block; margin-left: 155px;">
               <em style="font-style: italic; font-weight: 900; text-shadow: 0 1px 2px rgba(0,0,0,0.15);">
-                It’s about “who gets you.”</em><br>
+                It’s about “who gets you.”
+              </em>
+              <br />
             </span>
           </strong>
         </div>
       </div>
     </section>
-<!-- Section 2 -->
+    <!--Section 2-->
     <section class="feature" aria-labelledby="swipe-memes-title">
-      <h3 id="swipe-memes-title" class="centered-header">Swipe Memes, Not Faces</h3><br>
-      <p>What if your dating feed was memes instead of mugshots?<br />No more trying to decode mirror selfies or gym pics.</p>
+      <h3 id="swipe-memes-title" class="centered-header">Swipe Memes, Not Faces</h3><br />
+      <p>
+        What if your dating feed was memes instead of mugshots?<br />No more trying to decode mirror selfies or gym pics.
+      </p>
       <p>Just scroll, laugh, and react to the memes that hit hardest.</p>
-      <p>Every meme you react to builds your <strong>Comedy Graph™</strong> — a laughprint that’s uniquely <em>you</em>. Our AI reads your vibe and syncs you with people who match your unique frequency.</p>
-
+      <p>
+        Every meme you react to builds your <strong>Comedy Graph™</strong> — a laughprint that’s uniquely <em>you</em>. Our AI reads your vibe and syncs you with people who match your unique frequency.
+      </p>
       <p style="text-align: center; font-size: 1.8rem; font-weight: 600; font-style: italic; margin: 1.2rem auto; line-height: 1.5; color: #222;">
-        Weirdly Accurate...<br>
-        <span style="display: inline-block; margin-left: 5.2rem;">Dangerously Fun.</span><br>
+        Weirdly Accurate...<br />
+        <span style="display: inline-block; margin-left: 5.2rem;">Dangerously Fun.</span><br />
       </p>
     </section>
 
-<!-- Meme Flipper inserted between Sections 2 & 3 -->
-    <div class="meme-flipper" role="region" tabindex="0" aria-label="Meme Swipe Gallery" style="margin: 2rem auto 2.5rem;">
+    <!-- Meme Flipper inserted between Sections 2 & 3 -->
+    <div class="meme-flipper" role="region" tabindex="0" aria-label="Meme Swipe Gallery">
       <img id="memeImage" alt="D8Sync meme image" src="https://raw.githubusercontent.com/astrobehr/d8sync-landing/main/memes/meme1.jpg" />
       <button class="flipper-btn btn-left" id="prevMemeBtn" aria-label="Previous Meme" type="button">&#x2718;</button>
       <button class="flipper-btn btn-right" id="nextMemeBtn" aria-label="Next Meme" type="button">&#x2764;</button>
     </div>
 
-<!-- Section 3 -->
+    <!--Section 3-->
     <section class="feature section4" aria-labelledby="unfiltered-title">
-      <h3 id="unfiltered-title" class="centered-header">Unfiltered. Unscripted. Unexpected.</h3><br>
+      <h3 id="unfiltered-title" class="centered-header">Unfiltered. Unscripted. Unexpected.</h3><br />
       <p><em><strong>No filters. No bios. No profile paralysis.</strong></em></p>
       <p>At <strong>D8Sync</strong>, you skip the scroll and jump straight into something real.</p>
       <p>Just you and someone new — on an actual blind date.</p>
       <p><em><strong>No Pressure. No Pretending.</strong></em></p>
-      <p><em><strong>And yes, we even give you the perfect icebreaker</strong></em> <img src="https://fonts.gstatic.com/s/e/notoemoji/16.0/1f9ca/32.png" alt="🧊" width="17" height="17" aria-label="🧊" /></p>
+      <p>
+        <em><strong>And yes, we even give you the perfect icebreaker</strong></em>
+        <img src="https://fonts.gstatic.com/s/e/notoemoji/16.0/1f9ca/32.png" alt="🧊" width="17" height="17" aria-label="🧊" />
+      </p>
     </section>
-<!-- Section 4 -->
+    <!--Section 4-->
     <section class="feature section5" aria-labelledby="how-it-works-title">
-      <h3 id="how-it-works-title" class="centered-header">How D8Sync Blind Dates Actually Work</h3><br>
+      <h3 id="how-it-works-title" class="centered-header">How D8Sync Blind Dates Actually Work</h3><br />
       <p style="text-align:center; font-size:1.1rem; line-height:1.6; margin-bottom: 1.5rem;">
-        You hit “<strong>Sync Me!</strong>” — then kick back and let D8Sync do its thing. 
+        You hit “<strong>Sync Me!</strong>” — then kick back and let D8Sync do its thing.
       </p>
       <p style="text-align:center; font-size:1.1rem; line-height:1.6;">
-        First, our AI dives into your <strong>Comedy Graph™</strong>:<br> 
-        what memes crack you up, what songs hit during your weirdest hours, 
+        First, our AI dives into your <strong>Comedy Graph™</strong>:<br />
+        what memes crack you up, what songs hit during your weirdest hours,
         and how your energy syncs with others.
       </p>
       <p style="text-align:center; font-size:1.1rem; line-height:1.6;">
-        📅 Then it peeks at your calendar: ⏓<br> 
-        Leg day Saturdays?<br>
-        Emotionally unavailable Thursdays?<br>
+        📅 Then it peeks at your calendar: ⏓<br />
+        Leg day Saturdays?<br />
+        Emotionally unavailable Thursdays?<br />
         <b><i>No problem.</i></b>
       </p>
       <p style="text-align:center; font-size:1.1rem; line-height:1.6;">
-        When your vibe profile lights up, our <strong>Matchmaker AI</strong> 🤖<br>
-        skips the bios and the never-ending swipe gauntlet.<br>
-        No walls of text. No decision fatigue.<br>
+        When your vibe profile lights up, our <strong>Matchmaker AI</strong> 🤖<br />
+        skips the bios and the never-ending swipe gauntlet.<br />
+        No walls of text. No decision fatigue.<br />
         Just a deep read on your timing, tempo, and sense of humor.
       </p>
       <p style="text-align:center; font-size:1.1rem; line-height:1.6;">
-        It’s not about looks — it’s about resonance.<br>
-        Who shares your chaos calendar? <br> 
-        Who laughs at the same midnight memes? 😄<br>  
+        It’s not about looks — it’s about resonance.<br />
+        Who shares your chaos calendar? <br />
+        Who laughs at the same midnight memes? 😄<br />
         Who gets your vibe before even hearing your voice?
       </p>
       <p style="text-align:center; font-size:1.1rem; line-height:1.6;">
-        ✨ Then, you both get a ping — <br>
-        a curated meme preview, shared sync stats,<br>
-        and an oddly specific first date suggestion<br><br>
-        <b>No small talk required.</b> 👉👈<br>
-        <i>Just pure, pre-screened possibility.</i> 
+        ✨ Then, you both get a ping — <br />
+        a curated meme preview, shared sync stats,<br />
+        and an oddly specific first date suggestion<br /><br />
+        <b>No small talk required.</b> 👉👈<br />
+        <i>Just pure, pre-screened possibility.</i>
       </p>
     </section>
-
-<!-- Wrap Sections 6 & 7 in .feature container (styled same as others) -->
-    <section class="feature" style="border-radius: 1.5rem; box-shadow: 0 10px 25px #ff43a460; background: linear-gradient(90deg, #fff8ee, #fce4ef); margin-bottom: 2rem; padding: 1rem 1.5rem 2rem;">
-      <h3 id="talk-it-out-title" class="centered-header">Need to talk it out? We got you.</h3><br>
-      <p>After every date, the judgment-free vibe check continues.<br>Our AI Dating Coach is here to help you debrief — like a relationship therapist in your pocket.</p>
+    <!-- Sections 6 & 7 wrapped in .feature container -->
+    <section class="feature" style="margin-bottom: 3rem;">
+      <h3 id="talk-it-out-title" class="centered-header">Need to talk it out? We got you.</h3><br />
+      <p>
+        After every date, the judgment-free vibe check continues.<br />
+        Our AI Dating Coach is here to help you debrief — like a relationship therapist in your pocket.
+      </p>
       <p>Whether it sparked or fizzled, talk through what worked, what didn’t, and how it made you feel.</p>
-      <p><strong>Get clarity <img src="https://fonts.gstatic.com/s/e/notoemoji/16.0/1f9e0/32.png" alt="🧠" aria-label="🧠" />. Spot patterns <img src="https://fonts.gstatic.com/s/e/notoemoji/16.0/1f4c8/32.png" alt="📈" aria-label="📈" />. Grow faster <img src="https://fonts.gstatic.com/s/e/notoemoji/16.0/1f680/32.png" alt="🚀" aria-label="🚀" /></strong></p>
-      <p><strong>You’re not “hard to love.”</strong><br>You’re just hard to algorithm.</p>
+      <p>
+        <strong
+          >Get clarity
+          <img src="https://fonts.gstatic.com/s/e/notoemoji/16.0/1f9e0/32.png" alt="🧠" aria-label="🧠" />
+          . Spot patterns
+          <img src="https://fonts.gstatic.com/s/e/notoemoji/16.0/1f4c8/32.png" alt="📈" aria-label="📈" />
+          . Grow faster
+          <img src="https://fonts.gstatic.com/s/e/notoemoji/16.0/1f680/32.png" alt="🚀" aria-label="🚀" />
+        </strong>
+      </p>
+      <p>
+        <strong>You’re not “hard to love.”</strong><br />
+        You’re just hard to algorithm.
+      </p>
+    </section>
+    <section class="feature" style="margin-bottom: 3rem;">
+      <!-- This section can store additional content if needed -->
+    </section>
+    <!-- Waitlist / Newsletter Form -->
+    <section id="waitlist" aria-labelledby="signup-title" role="region" aria-live="polite" aria-atomic="true">
+      <script async data-uid="ab96e2e1a4" src="https://d8sync.kit.com/ab96e2e1a4/index.js"></script>
+      <div id="kit-form-container"></div>
     </section>
   </main>
-
   <div id="matchPopup">
     <div onclick="event.stopPropagation();" style="text-align: center;">
       <button aria-label="Close Popup" id="popupCloseBtn" title="Close Popup">×</button>
       <h2 style="margin:0; text-align:center;">You Just Got Synced</h2>
-      <p style="margin-top:45px; font-size:0.95em; color:#c1b7ea; font-style: italic; text-align:center;">(Sample Match Preview)</p>
+      <p
+        style="margin-top:45px; font-size:0.95em; color:#c1b7ea; font-style: italic; text-align:center;"
+      >
+        (Sample Match Preview)
+      </p>
       <p style="margin-bottom:20px; text-align:center; color:#e6e0f8;">
         This is a taste of what matching on D8Sync might feel like.<br />
         No swiping. No bios. Just pure vibe alignment.
@@ -565,13 +445,15 @@
           <button class="btn-flat" id="spooky-button">Yup... Spooky!</button>
           <button class="btn-flat" id="nah-button">Not really</button>
         </div>
-        <a href="https://www.tinder.com" onclick="alert('Bye Felicia 👋');" style="color:#bda9fc; font-size:14px; text-decoration:underline; display:block; margin-top:20px; text-align:center;">
-          Not feeling it? Close
-        </a>
+        <a
+          href="https://www.tinder.com"
+          onclick="alert('Bye Felicia 👋');"
+          style="color:#bda9fc; font-size:14px; text-decoration:underline; display:block; margin-top:20px; text-align:center;"
+          >Not feeling it? Close</a
+        >
       </div>
     </div>
   </div>
-
   <script defer src="https://f.convertkit.com/ckjs/ck.5.js"></script>
   <script>
     document.addEventListener('DOMContentLoaded', () => {
@@ -585,7 +467,9 @@
         if (!feedbackResponse) return;
         feedbackResponse.textContent = text;
         feedbackResponse.style.opacity = "1";
-        setTimeout(() => feedbackResponse.style.opacity = "0", 3000);
+        setTimeout(() => {
+          feedbackResponse.style.opacity = "0";
+        }, 3000);
       }
 
       const yupResponses = [
@@ -609,7 +493,9 @@
         const msg = responses[Math.floor(Math.random() * responses.length)];
         feedbackResponse.textContent = msg;
         feedbackResponse.style.opacity = "1";
-        setTimeout(() => feedbackResponse.style.opacity = "0", 3000);
+        setTimeout(() => {
+          feedbackResponse.style.opacity = "0";
+        }, 3000);
       }
 
       spookyBtn.addEventListener('click', () => showRandomResponse('yup'));
@@ -621,7 +507,7 @@
     });
   </script>
   <script>
-    (function(){
+    (function () {
       const memes = [
         'https://raw.githubusercontent.com/astrobehr/d8sync-landing/main/memes/meme1.jpg',
         'https://raw.githubusercontent.com/astrobehr/d8sync-landing/main/memes/meme2.jpg',
@@ -658,22 +544,19 @@
           }
         }
 
-        isMeme10Displayed = (current === 9);
+        isMeme10Displayed = current === 9;
       }
-
       function showPopup() {
         if (!popup) return;
         popup.style.display = 'flex';
         popup.setAttribute('aria-hidden', 'false');
         popup.focus();
       }
-
       function hidePopup() {
         if (!popup) return;
         popup.style.display = 'none';
         popup.setAttribute('aria-hidden', 'true');
       }
-
       function nextMeme() {
         if (current < memes.length - 1) {
           if (current === 4) {
@@ -710,7 +593,6 @@
           closeAndScrollToWaitlist();
         }
       }
-
       function prevMeme() {
         if (current > 0) {
           current--;
@@ -720,7 +602,6 @@
           clearTimeout(meme10Timeout2);
         }
       }
-
       function resetMemeSequence() {
         current = 0;
         updateMeme();
@@ -728,13 +609,11 @@
         clearTimeout(meme10Timeout1);
         clearTimeout(meme10Timeout2);
       }
-
       function closeAndScrollToWaitlist() {
         hidePopup();
         const waitlist = document.getElementById("waitlist");
         if (waitlist) waitlist.scrollIntoView({ behavior: "smooth" });
       }
-
       if (memeImage) {
         memeImage.onclick = () => {
           if (isMeme10Displayed) resetMemeSequence();
