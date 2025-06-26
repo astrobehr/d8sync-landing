@@ -2,13 +2,13 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5, user-scalable=yes" />
+  <meta content="width=device-width, initial-scale=1, maximum-scale=5, user-scalable=yes" name="viewport" />
   <title>D8Sync – Meme-Based Blind Dates, No Swipes</title>
-  <link rel="icon" type="image/png" href="https://d8sync.com/assets/favicon.png" />
-  <meta name="description" content="D8Sync is a swipe-free AI dating app that connects people through memes and comedy. No awkward openings. Just real vibes." />
-  <meta name="keywords" content="meme dating, blind dates, no swiping, AI dating, funny dating app, Gen Z dating app, comedy matchmaking, D8Sync" />
-  <meta name="author" content="D8Sync" />
-  <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Inter&display=swap" rel="stylesheet" />
+  <link href="https://d8sync.com/assets/favicon.png" rel="icon" type="image/png" />
+  <meta content="D8Sync is a swipe-free AI dating app that connects people through memes and comedy. No awkward openings. Just real vibes." name="description" />
+  <meta content="meme dating, blind dates, no swiping, AI dating, funny dating app, Gen Z dating app, comedy matchmaking, D8Sync" name="keywords" />
+  <meta content="D8Sync" name="author" />
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&amp;family=Inter&amp;display=swap" rel="stylesheet" />
   <style>
     body {
       margin: 0;
@@ -64,9 +64,9 @@
       margin-left: auto;
       margin-right: auto;
     }
-    .bullet-list li span {
+    ul.bullet-list, .bullet-list li span {
       font-size: 1.25rem;
-      color: #1f1f1f;
+      line-height: 1.5;
     }
     main {
       max-width: 900px;
@@ -104,6 +104,27 @@
       box-shadow: 0 10px 25px #ff43a460;
       text-align: left;
     }
+    .bullet-list {
+      list-style: none;
+      padding-left: 0;
+      margin-top: 0.5rem;
+      margin-bottom: 1.2rem;
+      max-width: 420px;
+      margin-left: auto;
+      margin-right: auto;
+      text-align: left;
+    }
+    .bullet-list li {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 1.2em;
+    }
+    .bullet-list li img {
+      width: 28px;
+      height: 28px;
+      flex-shrink: 0;
+    }
     .section1-bottom-spacing {
       margin-bottom: 1rem;
     }
@@ -125,7 +146,264 @@
       padding: 1rem 1.5rem 2rem;
       text-align: left;
     }
-    /* The rest of your styles ... */
+    .meme-flipper {
+      position: relative;
+      max-width: 340px;
+      margin: 2rem auto 2.5rem;
+      border-radius: 1.2rem;
+      box-shadow: 0 0 30px #ff43a4aa;
+      background: white;
+    }
+    .meme-flipper img {
+      width: 100%;
+      border-radius: 1.2rem;
+      display: block;
+      cursor: pointer;
+      user-select: none;
+    }
+    button.flipper-btn {
+      position: absolute;
+      bottom: 16%;
+      height: 44px;
+      width: 44px;
+      border-radius: 50%;
+      border: none;
+      font-size: 1.5rem;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      user-select: none;
+      transition: background-color 0.3s ease, transform 0.15s ease;
+      box-shadow: 0 4px 12px rgba(255, 67, 164, 0.5);
+      color: white;
+    }
+    button.flipper-btn:focus,
+    button.flipper-btn:hover {
+      outline: none;
+      transform: scale(1.1);
+    }
+    button.btn-left {
+      left: 25%;
+      background: #ff43a4;
+    }
+    button.btn-right {
+      right: 25%;
+      background: #6a0dad;
+    }
+    button.flipper-btn.hidden {
+      display: none !important;
+    }
+    #kit-form-container h2 {
+      display: none !important;
+    }
+    #waitlist {
+      max-width: 740px;
+      margin: 2rem auto 1rem;
+      text-align: center;
+      background: #fff;
+      border-radius: 1rem;
+      padding: 2rem 3rem 3rem;
+      box-shadow: 0 8px 25px rgba(106, 13, 173, 0.3);
+      display: block; /* Changed from flex to block to prevent squeezing */
+      min-width: 320px; /* Added to prevent form squeeze */
+      box-sizing: border-box; /* Ensures padding is included in width */
+    }
+    #waitlist h2 {
+      flex-basis: 100%;
+      margin-bottom: 0.5rem;
+      font-family: 'Fredoka One', cursive;
+      font-size: 2rem;
+      color: inherit !important;
+      text-shadow: none !important;
+      font-weight: 800;
+      text-align: center;
+    }
+    /* === BEGIN OLD POPUP STYLES - MODIFIED FOR PURPLE THEME === */
+    #matchPopup {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: #2e1a47; /* Dark purple background */
+      z-index: 9999;
+      box-sizing: border-box;
+      padding: 40px;
+      overflow-y: auto;
+      font-family: 'Inter', sans-serif;
+      color: #e6e0f8; /* Light lavender / soft white */
+      text-align: center;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      display: none; /* initially hidden */
+      font-weight: 700;
+      line-height: 1.4;
+    }
+    #matchPopup > div {
+      max-width: 600px;
+      margin: 40px auto;
+      background: #3b2970; /* Slightly lighter purple */
+      padding: 30px 40px 40px;
+      border-radius: 16px;
+      box-shadow: 0 0 40px rgba(106, 13, 173, 0.75);
+      position: relative;
+      color: #e6e0f8;
+      text-align: center;
+      font-weight: 700;
+      font-family: 'Inter', sans-serif;
+    }
+    #matchPopup > div h2 {
+      font-weight: 700;
+      font-family: 'Fredoka One', cursive;
+      font-size: 1.8rem;
+      margin: 0 0 0.4em 0;
+      color: #d8c6ff;
+      letter-spacing: 0.06em;
+    }
+    #matchPopup > div h2::before,
+    #matchPopup > div h2::after {
+      content: "🔗";
+      margin: 0 6px;
+    }
+    #matchPopup > div p {
+      margin-top: 1rem;
+      margin-bottom: 20px;
+      font-size: 1rem;
+      line-height: 1.4;
+      text-align: center;
+      white-space: normal;
+      font-weight: 700;
+    }
+    #matchPopup > div p:nth-of-type(2) {
+      font-style: italic;
+      font-weight: 600;
+      color: #c1b7ea;
+      margin-top: 0;
+      margin-bottom: 1.5rem;
+    }
+    /* Emoji prefixes for specific paragraphs */
+    #matchPopup > div p strong {
+      display: block;
+      margin-bottom: 6px;
+      font-weight: 700;
+      font-size: 1.1rem;
+      color: #d8c6ff;
+    }
+    #matchPopup > div p:nth-of-type(3) strong::before {
+      content: "🥠 ";
+      margin-right: 4px;
+    }
+    #matchPopup > div p:nth-of-type(4) strong::before {
+      content: "🎧 ";
+      margin-right: 4px;
+    }
+    #matchPopup > div p:nth-of-type(5) strong::before {
+      content: "🗓️ ";
+      margin-right: 4px;
+    }
+    #matchPopup > div p:nth-of-type(6) strong::before {
+      content: "☘️ ";
+      margin-right: 4px;
+    }
+    /* Add emoji before "Did this vibe feel accurate?" paragraph */
+    #matchPopup > div p:nth-of-type(7)::before {
+      content: "🤰 ";
+      margin-right: 6px;
+      font-weight: 700;
+    }
+    /* Adjust for the last prompt paragraph to have no extra margin */
+    #matchPopup > div p:nth-last-of-type(2) {
+      margin-bottom: 30px;
+    }
+    #popupCloseBtn {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      width: 28px;
+      height: 28px;
+      background: #6e38f7;
+      border: none;
+      border-radius: 4px;
+      color: #e6e0f8;
+      font-weight: bold;
+      font-size: 22px;
+      line-height: 26px;
+      cursor: pointer;
+      user-select: none;
+      transition: background-color 0.3s ease;
+      z-index: 10000;
+    }
+    #popupCloseBtn:hover {
+      background: #5300cc;
+    }
+    #feedback-response {
+      margin-top: 18px;
+      margin-bottom: 18px;
+      min-height: 1.2em;
+      font-weight: 700;
+      font-size: 1rem;
+      max-width: 90%;
+      opacity: 0;
+      transition: opacity 0.5s ease;
+      user-select: none;
+      color: #e6e0f8;
+      text-align: center;
+      margin-left: auto !important;
+      margin-right: auto !important;
+      display: block !important;
+      padding-left: 0 !important;
+      box-sizing: border-box;
+    }
+    .popup-buttons-container {
+      margin-top: 18px;
+      text-align: center;
+    }
+    .popup-buttons-row {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      margin-bottom: 6px;
+      flex-wrap: wrap;
+    }
+    .btn-flat {
+      background-color: #a17aff;
+      color: #fff;
+      padding: 12px 24px;
+      font-size: 1rem;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      margin: 10px;
+      font-weight: 700;
+      transition: background-color 0.3s ease;
+      white-space: nowrap;
+    }
+    .btn-flat:hover {
+      background-color: #8047d1;
+    }
+    @media (max-width: 640px) {
+      section h2, section h3 {
+        font-size: 1.6rem;
+      }
+      .meme-flipper {
+        max-width: 90vw;
+      }
+      #waitlist {
+        max-width: 90vw;
+        padding: 2rem 1rem 3rem;
+        display: block !important;
+        min-width: auto;
+      }
+      #waitlist h2 {
+        font-size: 1.6rem;
+        margin-bottom: 0.5rem;
+        text-align: center;
+      }
+    }
   </style>
 </head>
 <body>
@@ -146,10 +424,10 @@
     <div aria-label="WHAT?!" class="logo" id="logoBtn" role="button" tabindex="0">
       <img alt="D8Sync Logo" src="https://raw.githubusercontent.com/astrobehr/d8sync-landing/main/assets/d8sync-banner.jpg"/>
     </div>
-
+    
     <section aria-labelledby="ai-match-title" class="feature">
       <h3 class="centered-header" id="ai-match-title">Real Vibes Only. No Swipes. No Stress.</h3><br/>
-      <p style="font-weight: bold;">
+      <p style="font-weight:bold;">
         <strong>Let’s keep it real — dating apps suck.</strong>
       </p>
       <ul aria-label="Dating app struggles list" class="bullet-list">
@@ -161,13 +439,9 @@
         <div style="text-align: left; font-weight: 700; font-size: 1.25rem; line-height: 1.6; color: #222;">
           <strong>
             This isn’t about
-            <em style="font-style: italic; font-weight: 900; text-shadow: 0 1px 2px rgba(0,0,0,0.15);">
-              “who’s hot.”
-            </em><br/>
+            <em style="font-style: italic; font-weight: 900; text-shadow: 0 1px 2px rgba(0,0,0,0.15);">“who’s hot.”</em><br/>
             <span style="display: inline-block; margin-left: 155px;">
-              <em style="font-style: italic; font-weight: 900; text-shadow: 0 1px 2px rgba(0,0,0,0.15);">
-                It’s about “who gets you.”
-              </em><br/>
+              <em style="font-style: italic; font-weight: 900; text-shadow: 0 1px 2px rgba(0,0,0,0.15);">It’s about “who gets you.”</em><br/>
             </span>
           </strong>
         </div>
@@ -179,19 +453,15 @@
       <p>What if your dating feed was memes instead of mugshots?<br/>No more trying to decode mirror selfies or gym pics.</p>
       <p>Just scroll, laugh, and react to the memes that hit hardest.</p>
       <p>Every meme you react to builds your <strong>Comedy Graph™</strong> — a laughprint that’s uniquely <em>you</em>. Our AI reads your vibe and syncs you with people who match your unique frequency.</p>
-
-      <!-- Left-aligned line -->
       <p style="position: relative; left: calc(50% - 160px); width: 400px; text-align: left; margin: 0 0 0.25rem 0; font-style: italic; font-weight: 900; font-size: 1.25rem;">
         Weirdly Accurate...
       </p>
-
-      <!-- Right-aligned line -->
       <p style="position: relative; left: calc(50% - 240px); width: 400px; text-align: right; margin: 0 0 1rem 0; font-style: italic; font-weight: 900; font-size: 1.25rem;">
         Dangerously Fun.
       </p>
     </section>
 
-    <!-- Meme flipper, popup and scripts remain untouched as requested -->
+    <!-- Meme Flipper and popup code untouched -->
 
     <section aria-labelledby="unfiltered-title" class="feature section4">
       <h3 class="centered-header" id="unfiltered-title">Unfiltered. Unscripted. Unexpected.</h3><br/>
@@ -217,7 +487,8 @@
         Need to talk it out? We got you.
       </h3>
       <p style="font-size: 1.25rem; text-align: center;">
-        After every date, the judgment-free vibe check continues.<br/> Our AI Dating Coach is here to help you debrief —<br/> like a relationship therapist in your pocket.
+        After every date, the judgment-free vibe check continues.<br/>
+        Our AI Dating Coach is here to help you debrief — like a relationship therapist in your pocket.
       </p>
       <p style="font-size: 1.25rem; text-align: center;">
         Whether it sparked or fizzled, talk through what worked,<br/> what didn’t, and how it made you feel.
@@ -288,12 +559,9 @@
     </section>
 
     <section aria-atomic="true" aria-labelledby="signup-title" aria-live="polite" id="waitlist" role="region" style="margin-top: 3rem;">
-      <script async data-uid="ab96e2e1a4" src="https://d8sync.kit.com/ab96e2e1a4/index.js"></script>
+      <script async="" data-uid="ab96e2e1a4" src="https://d8sync.kit.com/ab96e2e1a4/index.js"></script>
       <div id="kit-form-container"></div>
     </section>
   </main>
-
-  <!-- Popups, Meme Flipper, and scripts remain exactly as in the original; unchanged -->
-
-</body>
-</html>
+  
+  <!-- The popup, meme flipper, and scripts remain exactly as-is, untouched per your instructions --></body></html>
