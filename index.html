@@ -374,6 +374,7 @@
       margin-bottom: 6px;
       flex-wrap: wrap;
     }
+    /* Updated button style - remove bold font weight and increase letter spacing for readability */
     .btn-flat {
       background-color: #a17aff;
       color: #fff;
@@ -383,7 +384,8 @@
       border-radius: 10px;
       cursor: pointer;
       margin: 10px;
-      font-weight: 700;
+      font-weight: 500; /* Reduced font-weight for better readability */
+      letter-spacing: 0.05em; /* Added letter-spacing to improve letter clarity */
       transition: background-color 0.3s ease;
       white-space: nowrap;
     }
@@ -642,7 +644,6 @@
       popup.setAttribute('aria-hidden', 'true');
     });
 
-    // Expose popup show function to global for meme flipper to call
     window.showPopup = function() {
       popup.style.display = 'flex';
       popup.setAttribute('aria-hidden', 'false');
