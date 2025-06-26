@@ -1,0 +1,22 @@
+{
+  "name": "D8Sync",
+  "short_name": "D8Sync",
+  "description": "D8Sync is a swipe-free AI dating app that connects people through memes and comedy.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#FFFFFF",
+  "theme_color": "#FF4FFF",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/assets/favicon.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/assets/favicon.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
