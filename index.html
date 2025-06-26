@@ -494,7 +494,7 @@
   </section>
 
   <section aria-labelledby="talk-it-out-title" class="feature" style="margin-bottom: 3rem;">
-    <h3 class="centered-header" id="talk-it-out-title" style="color: #7b3cff; font-size: 1.25rem;">
+    <h3 class="centered-header" id="talk-it-out-title" style="color: #6a0dad; font-size: 1.25rem;">
       Need to talk it out? We got you.
     </h3>
     <p style="font-size: 1.25rem; text-align: center;">
@@ -526,23 +526,23 @@
       More Than Dating — Make Real Connections
     </h3>
     <p style="font-size: 1.25rem; text-align: center; line-height: 1.6;">
-      Some matches become dates. Some become lifelong friends.<br/>
-      Some become meme dealers. Some become travel buddies.<br/><br/>
-      And a few? They become part of your main character arc. 💋<br/>
-      <strong>D8Sync adapts to you.</strong>
+      Some matches turn into dates. Some into DMs at 2am.<br/>
+      Some fizzle. Some stay on your mind.<br/>
+      And a few?
     </p>
-    <p style="font-size: 1.25rem; text-align:center; line-height: 1.6;">
-      Whether you’re flirting for fun, chasing butterflies... (or waterfalls)<br/>
-      Or just craving a real conversation that doesn’t start with “wyd?” —<br/>
-      D8Sync gets where you're at.
+    <p style="font-size: 1.25rem; text-align: center; line-height: 1.6;">
+      You cross paths. You feel it.<br/>
+      No games, no pressure — just timing.<br/>
+      That’s all it ever really takes.
     </p>
-    <div style="display: flex; justify-content: center;">
-      <div style="text-align: center; font-weight: 700; font-size: 1.25rem; line-height: 1.6; color: #222;">
-        <b><i>This dating app isn’t about swiping or searching.<br/>
-          It’s about showing up.<br/>
-          And seeing who shows up with you.</i></b>
-      </div>
-    </div>
+    <p style="font-size: 1.25rem; text-align: center; line-height: 1.6;">
+      <strong>D8Sync doesn’t promise outcomes. Just opportunities.</strong>
+    </p>
+    <p style="font-size: 1.25rem; text-align: center; line-height: 1.6;">
+      This isn’t about swiping or searching.<br/>
+      It’s about showing up.<br/>
+      And seeing who shows up with you.
+    </p>
   </section>
 
   <section aria-labelledby="waitlist-title" class="feature section7">
@@ -565,7 +565,23 @@
   </section>
 </main>
 
-<!-- Popup and Meme Flipper scripts/styles unchanged -->
+<!-- Popup with correct text and functioning -->
+<div id="matchPopup" aria-hidden="true" role="dialog" aria-modal="true" tabindex="-1" style="display:none;">
+  <div>
+    <h2>Match Found!</h2>
+    <p>Your Comedy Graph™ says you're a great match!</p>
+    <p><em>Get ready for something unique.</em></p>
+    <p><strong>🍀 Shared quirks</strong></p>
+    <p><strong>🎧 Perfect playlist vibe</strong></p>
+    <p><strong>📅 Calendar sync</strong></p>
+    <p><strong>🥠 Icebreaker tips</strong></p>
+    <p>Did this vibe feel accurate?</p>
+    <button id="spooky-button" class="btn-flat" type="button" aria-label="Confirm match">Yup ✔</button>
+    <button id="nah-button" class="btn-flat" type="button" aria-label="Reject match">Nah ✘</button>
+    <button id="popupCloseBtn" aria-label="Close popup" type="button">×</button>
+    <p id="feedback-response" aria-live="polite"></p>
+  </div>
+</div>
 
 <script defer src="https://f.convertkit.com/ckjs/ck.5.js"></script>
 <script>
@@ -612,7 +628,16 @@
 
     popupCloseBtn.addEventListener('click', () => {
       popup.style.display = 'none';
+      popup.setAttribute('aria-hidden', 'true');
     });
+
+    // You can add calls to showPopup() in your meme flipper logic to open this popup.
+    // Example:
+    // function showPopup() {
+    //    popup.style.display = 'flex';
+    //    popup.setAttribute('aria-hidden', 'false');
+    //    popup.focus();
+    // }
   });
 </script>
 <script>
@@ -698,7 +723,9 @@
           updateMeme();
         }
       } else {
-        closeAndScrollToWaitlist();
+        hidePopup();
+        const waitlist = document.getElementById("waitlist");
+        if (waitlist) waitlist.scrollIntoView({ behavior: "smooth" });
       }
     }
     function prevMeme() {
@@ -717,11 +744,7 @@
       clearTimeout(meme10Timeout1);
       clearTimeout(meme10Timeout2);
     }
-    function closeAndScrollToWaitlist() {
-      hidePopup();
-      const waitlist = document.getElementById("waitlist");
-      if (waitlist) waitlist.scrollIntoView({ behavior: "smooth" });
-    }
+
     if (memeImage) {
       memeImage.onclick = () => {
         if (isMeme10Displayed) resetMemeSequence();
