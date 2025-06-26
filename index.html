@@ -10,6 +10,7 @@
   <meta content="D8Sync" name="author" />
   <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&amp;family=Inter&amp;display=swap" rel="stylesheet" />
   <style>
+    /* (Your existing styles retained as before) */
     body {
       margin: 0;
       min-height: 100vh;
@@ -227,7 +228,8 @@
       font-weight: 800;
       text-align: center;
     }
-    /* === BEGIN OLD POPUP STYLES - MODIFIED FOR PURPLE THEME === */
+
+    /* === BEGIN POPUP STYLES - MODIFIED FOR PURPLE THEME === */
     #matchPopup {
       display: none;
       position: fixed;
@@ -235,13 +237,13 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background: #2e1a47;
+      background: #2e1a47; /* Dark purple background */
       z-index: 9999;
       box-sizing: border-box;
       padding: 40px;
       overflow-y: auto;
       font-family: 'Inter', sans-serif;
-      color: #e6e0f8;
+      color: #e6e0f8; /* Light lavender / soft white */
       text-align: center;
       align-items: center;
       justify-content: center;
@@ -252,7 +254,7 @@
     #matchPopup > div {
       max-width: 600px;
       margin: 40px auto;
-      background: #3b2970;
+      background: #3b2970; /* Slightly lighter purple */
       padding: 30px 40px 40px;
       border-radius: 16px;
       box-shadow: 0 0 40px rgba(106, 13, 173, 0.75);
@@ -265,7 +267,7 @@
     #matchPopup > div h2 {
       font-weight: 700;
       font-family: 'Fredoka One', cursive;
-      font-size: 2rem;
+      font-size: 1.8rem;
       margin: 0 0 0.4em 0;
       color: #d8c6ff;
       letter-spacing: 0.06em;
@@ -387,25 +389,6 @@
     }
     .btn-flat:hover {
       background-color: #8047d1;
-    }
-    @media (max-width: 640px) {
-      section h2, section h3 {
-        font-size: 1.6rem;
-      }
-      .meme-flipper {
-        max-width: 90vw;
-      }
-      #waitlist {
-        max-width: 90vw;
-        padding: 2rem 1rem 3rem;
-        display: block !important;
-        min-width: auto;
-      }
-      #waitlist h2 {
-        font-size: 1.6rem;
-        margin-bottom: 0.5rem;
-        text-align: center;
-      }
     }
   </style>
 </head>
@@ -565,21 +548,49 @@
   </section>
 </main>
 
-<!-- Popup with correct text and functioning -->
+<!-- Correct Popup Markup and Content -->
 <div id="matchPopup" aria-hidden="true" role="dialog" aria-modal="true" tabindex="-1" style="display:none;">
   <div>
-    <h2>Match Found!</h2>
-    <p>Your Comedy Graph™ says you're a great match!</p>
-    <p><em>Get ready for something unique.</em></p>
-    <p><strong>🍀 Shared quirks</strong></p>
-    <p><strong>🎧 Perfect playlist vibe</strong></p>
-    <p><strong>📅 Calendar sync</strong></p>
-    <p><strong>🥠 Icebreaker tips</strong></p>
-    <p>Did this vibe feel accurate?</p>
-    <button id="spooky-button" class="btn-flat" type="button" aria-label="Confirm match">Yup ✔</button>
-    <button id="nah-button" class="btn-flat" type="button" aria-label="Reject match">Nah ✘</button>
-    <button id="popupCloseBtn" aria-label="Close popup" type="button">×</button>
-    <p id="feedback-response" aria-live="polite"></p>
+    <button aria-label="Close Popup" id="popupCloseBtn" title="Close Popup" style="position:absolute; top:12px; right:12px; width:28px; height:28px; background:#6e38f7; border:none; border-radius:4px; color:#e6e0f8; font-weight:bold; font-size:22px; line-height:26px; cursor:pointer; user-select:none; transition:background-color 0.3s ease; z-index:10000;">×</button>
+    <h2>You Just Got Synced</h2>
+    <p style="margin-top:45px; font-size:0.95em; color:#c1b7ea; font-style: italic; text-align:center;">(Sample Match Preview)</p>
+    <p style="margin-bottom:20px; text-align:center; color:#e6e0f8;">
+      This is a taste of what matching on D8Sync might feel like.<br/>
+      No swiping. No bios. Just pure vibe alignment.
+    </p>
+    <p style="text-align:center; padding-left: 10px; box-sizing: border-box; color:#d8c6ff;">
+      <strong>Shared Meme Energy:</strong><br/>
+      “Me pretending that I don’t care.<br/>But secretly I'm watching the group chat implode.”
+    </p>
+    <p style="text-align:center; padding-left: 10px; box-sizing: border-box; color:#d8c6ff;">
+      <strong>Audio Match:</strong><br/>
+      Late 2000s indie drama with main character syndrome
+    </p>
+    <p style="text-align:center; padding-left: 10px; box-sizing: border-box; color:#d8c6ff;">
+      <strong>First Date Prompt:</strong><br/>
+      You meet outside a thrift store...<br/>
+      One of you is holding a can of soup.<br/>
+      The other is holding a spoon.
+    </p>
+    <p style="text-align:center; padding-left: 10px; box-sizing: border-box; color:#d8c6ff;">
+      <strong>Vibe Alignment:</strong><br/>
+      84% Emotionally Aligned<br/>
+      72% Chaos Compatibility<br/>
+      92% Meme Fluency
+    </p>
+    <p style="text-align:center; margin-top: 30px; color:#d8c6ff; font-weight:700;">
+      Did this vibe feel accurate?
+    </p>
+    <div id="feedback-response" style="text-align:center; padding-left:10px; box-sizing:border-box;"></div>
+    <div class="popup-buttons-container">
+      <div class="popup-buttons-row">
+        <button class="btn-flat" id="spooky-button" type="button">Yup... Spooky!</button>
+        <button class="btn-flat" id="nah-button" type="button">Not really</button>
+      </div>
+      <a href="https://www.tinder.com" onclick="alert('Bye Felicia 👋');" style="color:#bda9fc; font-size:14px; text-decoration:underline; display:block; margin-top:20px; text-align:center;">
+        Not feeling it? Close
+      </a>
+    </div>
   </div>
 </div>
 
@@ -631,13 +642,12 @@
       popup.setAttribute('aria-hidden', 'true');
     });
 
-    // You can add calls to showPopup() in your meme flipper logic to open this popup.
-    // Example:
-    // function showPopup() {
-    //    popup.style.display = 'flex';
-    //    popup.setAttribute('aria-hidden', 'false');
-    //    popup.focus();
-    // }
+    // Expose popup show function to global for meme flipper to call
+    window.showPopup = function() {
+      popup.style.display = 'flex';
+      popup.setAttribute('aria-hidden', 'false');
+      popup.focus();
+    };
   });
 </script>
 <script>
@@ -680,10 +690,7 @@
       isMeme10Displayed = (current === 9);
     }
     function showPopup() {
-      if (!popup) return;
-      popup.style.display = 'flex';
-      popup.setAttribute('aria-hidden', 'false');
-      popup.focus();
+      if (window.showPopup) window.showPopup();
     }
     function hidePopup() {
       if (!popup) return;
