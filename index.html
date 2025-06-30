@@ -1,87 +1,861 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import { useNavigate } from 'react-router-dom';
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Wild Acres Honey Farm - From a Bookstore to the Bees</title>
 
-const HeroSection: React.FC = () => {
-  const navigate = useNavigate();
+  <!-- Vintage-style fonts -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,700;1,400&family=IM+Fell+DW+Pica&family=Vidaloka&display=swap"
+    rel="stylesheet"
+  />
 
-  return (
-    <section className="story-section relative overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-br from-purple-900/20 to-pink-900/20"></div>
-      
-      <motion.div
-        initial={{ y: 50, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
-        transition={{ duration: 0.8, delay: 0.2 }}
-        className="relative z-10 text-center max-w-4xl mx-auto px-4"
-      >
-        {/* Logo */}
-        <motion.div
-          initial={{ scale: 0.8, opacity: 0 }}
-          animate={{ scale: 1, opacity: 1 }}
-          transition={{ duration: 0.6, delay: 0.4 }}
-          className="mb-8"
-        >
-          <img 
-            src="https://raw.githubusercontent.com/astrobehr/d8sync-landing/main/assets/d8sync-banner.jpg"
-            alt="D8Sync logo with stylized phone icon"
-            className="w-full max-w-2xl mx-auto rounded-2xl shadow-2xl hover:scale-105 transition-transform duration-300"
-          />
-        </motion.div>
+  <style>
+    /* Color Palette */
+    :root {
+      --cream: #f7f0e4;
+      --moss-green: #5a6d3a;
+      --rust-red: #a5402d;
+      --dusty-lilac: #8a7e99;
+      --denim-blue: #3a4963;
+      --bee-gold: #c29d31;
+      --sepia-tone: rgba(101, 67, 33, 0.1);
+      --text-color: #3e2f1c;
+      --shadow: rgba(0, 0, 0, 0.1);
+    }
 
-        {/* Main Headline */}
-        <motion.h1
-          initial={{ y: 30, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ duration: 0.6, delay: 0.6 }}
-          className="text-5xl md:text-7xl font-fredoka text-white mb-6 leading-tight"
-        >
-          Real Vibes Only.
-          <br />
-          <span className="text-yellow-300">No Swipes.</span>
-          <br />
-          <span className="text-pink-300">No Stress.</span>
-        </motion.h1>
+    /* Reset and base */
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      background: var(--cream) url('assets/paper-texture-linen.jpg') repeat;
+      color: var(--text-color);
+      font-family: 'EB Garamond', serif;
+      line-height: 1.55;
+      font-size: 1.125rem;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+    a {
+      color: var(--moss-green);
+      text-decoration: none;
+      border-bottom: 1.5px dashed var(--bee-gold);
+      transition: color 0.3s ease;
+    }
+    a:hover,
+    a:focus {
+      color: var(--rust-red);
+      border-bottom-color: var(--rust-red);
+    }
 
-        {/* Subheadline */}
-        <motion.p
-          initial={{ y: 30, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ duration: 0.6, delay: 0.8 }}
-          className="text-xl md:text-2xl text-white/90 mb-8 max-w-2xl mx-auto leading-relaxed"
-        >
-          This dating app isn't about swiping or searching.
-          <br />
-          It's about showing up.
-          <br />
-          And seeing who shows up with you.
-        </motion.p>
+    /* Scroll fade reveal fade-in animation */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(10px);
+      animation: fadeInUp 1.2s ease forwards;
+      animation-delay: 0.3s;
+    }
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
 
-        {/* CTA Button */}
-        <motion.button
-          initial={{ y: 30, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ duration: 0.6, delay: 1 }}
-          onClick={() => navigate('/join-cult')}
-          className="btn-primary text-xl px-12 py-4 animate-pulse-slow"
-        >
-          Join the Meme Cult 🔮
-        </motion.button>
+    /* Sticky vintage header nav */
+    header {
+      position: sticky;
+      top: 0;
+      background: var(--cream);
+      padding: 0.75rem 1rem;
+      border-bottom: 3px solid var(--bee-gold);
+      box-shadow: 0 3px 6px var(--shadow);
+      z-index: 100;
+      font-family: 'IM Fell DW Pica', serif;
+      font-weight: 700;
+      font-size: 1rem;
+      letter-spacing: 0.08em;
+      user-select: none;
+    }
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem 1.75rem;
+      justify-content: center;
+      text-transform: uppercase;
+      color: var(--moss-green);
+    }
+    nav a {
+      border: none;
+      font-weight: 700;
+      font-size: 0.85rem;
+      color: var(--moss-green);
+      padding: 2px 2px 4px 2px;
+      transition: color 0.3s ease;
+    }
+    nav a:hover,
+    nav a:focus {
+      color: var(--rust-red);
+      outline: none;
+      border-bottom: 2px solid var(--rust-red);
+    }
 
-        {/* Scroll Indicator */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.6, delay: 1.2 }}
-          className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
-        >
-          <div className="w-6 h-10 border-2 border-white/50 rounded-full flex justify-center">
-            <div className="w-1 h-3 bg-white/70 rounded-full mt-2 animate-bounce"></div>
-          </div>
-        </motion.div>
-      </motion.div>
+    /* Structure and layout for field journal spread */
+    main {
+      max-width: 960px;
+      margin: 1.5rem auto 3rem;
+      background: url('assets/paper-texture-grid-faded.jpg') repeat;
+      border: 2px solid var(--bee-gold);
+      box-shadow: inset 0 0 30px #b99c4a44;
+      border-radius: 6px;
+      padding: 2rem 2.5rem;
+      font-size: 1.1rem;
+      line-height: 1.6;
+      position: relative;
+      font-family: 'EB Garamond', serif;
+    }
+
+    /* Journal "spread" left/right pages */
+    section.entry {
+      display: flex;
+      flex-wrap: wrap;
+      margin-bottom: 3.5rem;
+      border-top: 1px solid #c7b593aa;
+      border-bottom: 1px solid #c7b593aa;
+      padding: 1.75rem 0;
+      position: relative;
+    }
+    section.entry:nth-child(odd) > div.page {
+      border-right: 1px dashed var(--bee-gold);
+      padding-right: 2rem;
+    }
+    section.entry:nth-child(even) > div.page {
+      padding-left: 2rem;
+    }
+    div.page {
+      width: 48%;
+      background: url('assets/linen-texture-light.png') repeat;
+      padding: 0 1rem 0 1rem;
+      position: relative;
+      min-height: 320px;
+      box-shadow: inset 0 0 12px #b89e5433;
+      border-radius: 3px;
+    }
+
+    /* Page title styling - handdrawn style effect */
+    h2.entry-title {
+      font-family: 'IM Fell DW Pica', serif;
+      font-size: 1.5rem;
+      color: var(--moss-green);
+      border-bottom: 2px dashed var(--bee-gold);
+      margin-top: 0;
+      margin-bottom: 0.4rem;
+      padding-bottom: 0.25rem;
+      letter-spacing: 0.06em;
+      position: relative;
+    }
+    h3.subheading {
+      font-family: 'Vidaloka', serif;
+      font-size: 1.275rem;
+      color: var(--rust-red);
+      margin-top: 0.4rem;
+      margin-bottom: 1rem;
+      font-weight: 400;
+      letter-spacing: 0.04em;
+      font-style: italic;
+    }
+
+    /* Content styling */
+    p {
+      margin-top: 0.25rem;
+      margin-bottom: 1rem;
+    }
+    ul {
+      list-style-type: disc;
+      margin-left: 1.5rem;
+      margin-bottom: 1rem;
+    }
+    li {
+      margin-bottom: 0.4rem;
+    }
+
+    /* Visual botanical doodle overlays */
+    .botanical-doodle {
+      position: absolute;
+      pointer-events: none;
+      opacity: 0.06;
+      filter: sepia(0.8) brightness(0.85);
+      user-select: none;
+      mix-blend-mode: multiply;
+    }
+    .botanical-tl {
+      top: 12px;
+      left: 14px;
+      width: 120px;
+    }
+    .botanical-br {
+      bottom: 14px;
+      right: 14px;
+      width: 130px;
+    }
+
+    /* Journal entry metadata: date, page number */
+    div.entry-meta {
+      font-family: 'IM Fell DW Pica', serif;
+      font-size: 0.85rem;
+      color: var(--dusty-lilac);
+      position: absolute;
+      bottom: 6px;
+      right: 14px;
+      user-select: none;
+      letter-spacing: 0.12em;
+    }
+
+    /* Horizontal divider style: torn edges */
+    hr.torn {
+      border: none;
+      height: 7px;
+      margin: 3rem 0 2rem;
+      background: url('assets/edge-torn-paper.png') repeat-x;
+      background-size: auto 7px;
+    }
+
+    /* Buttons styled like vintage labels */
+    .btn-vintage {
+      display: inline-block;
+      background: linear-gradient(145deg, #a15e43 0%, #d9b78c 100%);
+      color: #422b1d;
+      font-family: 'IM Fell DW Pica', serif;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      font-size: 0.9rem;
+      padding: 0.4rem 1rem;
+      border: 2px solid #5b3a1a;
+      border-radius: 0.25rem;
+      box-shadow: inset 0 0 4px #d2b186;
+      text-align: center;
+      text-decoration: none;
+      cursor: pointer;
+      user-select: none;
+      transition: background 0.3s ease;
+      white-space: nowrap;
+      margin-top: 1rem;
+      box-sizing: border-box;
+      vertical-align: middle;
+    }
+    .btn-vintage:hover,
+    .btn-vintage:focus {
+      background: linear-gradient(145deg, #d9b78c 5%, #a15e43 95%);
+      color: #2f1c0c;
+      outline: none;
+      border-color: #7b4d27;
+    }
+
+    /* Hero Section */
+    .hero {
+      position: relative;
+      width: 100%;
+      height: 360px;
+      max-height: 450px;
+      margin-bottom: 2rem;
+      overflow: hidden;
+      background: #d8c7a6 url('assets/sepia-placeholder.jpg') center center no-repeat;
+      background-size: cover;
+      box-shadow: inset 0 0 150px 36px #6a4f1c99;
+      border-radius: 4px;
+    }
+    .hero video,
+    .hero img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: sepia(0.6) contrast(1.2) brightness(0.9) saturate(0.85);
+      mix-blend-mode: multiply;
+    }
+    .hero-text-overlay {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-family: 'IM Fell DW Pica', serif;
+      text-align: center;
+      color: var(--bee-gold);
+      text-shadow: 2px 2px 5px #000000bb;
+      font-size: 2.4rem;
+      letter-spacing: 0.12em;
+      user-select: none;
+    }
+
+    /* Product grid */
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit,minmax(180px,1fr));
+      gap: 1rem 1rem;
+      margin-top: 1rem;
+      margin-bottom: 3rem;
+    }
+    .product-item {
+      background: #f3e9d8;
+      border: 1.6px solid #c2aa78;
+      border-radius: 6px;
+      box-shadow: 1px 1px 3px #b49e6244 inset;
+      padding: 0.75rem 0.75rem 1rem;
+      cursor: pointer;
+      transition: box-shadow 0.3s ease;
+      font-family: 'EB Garamond', serif;
+      text-align: center;
+      color: var(--moss-green);
+    }
+    .product-item:hover,
+    .product-item:focus {
+      box-shadow: 1px 1px 14px #8a753153 inset;
+      outline: none;
+      border-color: var(--rust-red);
+      color: var(--rust-red);
+    }
+    .product-item img {
+      max-width: 140px;
+      margin-bottom: 0.5rem;
+      border-radius: 4px;
+      border: 1px solid #ac9272;
+      box-shadow: 1px 1px 6px #a68e5b77 inset;
+    }
+    .product-item-name {
+      font-weight: 600;
+      font-size: 1rem;
+      margin-bottom: 0.15rem;
+    }
+    .product-item-price {
+      font-style: italic;
+      font-family: 'IM Fell DW Pica', serif;
+      font-size: 0.9rem;
+      letter-spacing: 0.04em;
+      color: var(--bee-gold);
+    }
+
+    /* Filter bar */
+    .filter-bar {
+      margin-bottom: 1.5rem;
+      font-family: 'IM Fell DW Pica', serif;
+      font-size: 0.85rem;
+      display: flex;
+      gap: 1.25rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .filter-bar label {
+      cursor: pointer;
+      color: var(--moss-green);
+      border: 1px solid var(--bee-gold);
+      background: #f7f0e4cc;
+      padding: 0.2rem 0.5rem;
+      border-radius: 3px;
+      transition: background 0.3s ease, color 0.3s ease;
+      user-select: none;
+    }
+    .filter-bar input[type='radio'] {
+      display: none;
+    }
+    .filter-bar input[type='radio']:checked + label {
+      background: var(--bee-gold);
+      color: var(--denim-blue);
+      border-color: var(--rust-red);
+      font-weight: 700;
+      text-shadow: 1px 1px 1px #c7b270bb;
+    }
+
+    /* Interactive map placeholder */
+    .map-container {
+      margin: 2rem 0 3rem;
+      background: #f9f6ec;
+      border: 2px solid var(--moss-green);
+      border-radius: 5px;
+      box-shadow: inset 0 0 12px #9a854f4d;
+      padding: 1rem;
+      text-align: center;
+      font-family: 'IM Fell DW Pica', serif;
+      color: var(--denim-blue);
+      font-size: 1.1rem;
+    }
+    .map-placeholder {
+      width: 100%;
+      max-width: 720px;
+      height: 360px;
+      background: url('assets/map-placeholder-sepia.jpg') center center no-repeat;
+      background-size: cover;
+      margin: 0.75rem auto 0 auto;
+      border: 1.5px solid #ac9a6e;
+      border-radius: 5px;
+      filter: sepia(0.6);
+      box-shadow: inset 0 0 24px #9f84503b;
+    }
+
+    /* Forms styling */
+    form {
+      background: #f8f1decc;
+      border: 1.5px solid var(--dusty-lilac);
+      border-radius: 6px;
+      max-width: 540px;
+      margin: 1.5rem auto 3rem auto;
+      padding: 1.25rem 1.5rem;
+      box-shadow: inset 0 0 18px #bbadc9aa;
+      font-family: 'EB Garamond', serif;
+    }
+    form h3 {
+      font-family: 'Vidaloka', serif;
+      font-style: italic;
+      color: var(--rust-red);
+      font-size: 1.3rem;
+      margin-top: 0;
+      margin-bottom: 1rem;
+      letter-spacing: 0.04em;
+    }
+    label {
+      display: block;
+      font-weight: 600;
+      margin-bottom: 0.2rem;
+      color: var(--denim-blue);
+      font-size: 1rem;
+      letter-spacing: 0.02em;
+    }
+    input[type='text'],
+    input[type='email'],
+    select,
+    textarea {
+      font-family: 'EB Garamond', serif;
+      font-size: 1rem;
+      padding: 0.45rem 0.6rem;
+      margin-bottom: 1rem;
+      border: 1.5px solid var(--dusty-lilac);
+      border-radius: 4px;
+      width: 100%;
+      max-width: 100%;
+      background: #fefdf9;
+      transition: border-color 0.3s ease;
+    }
+    input[type='text']:focus,
+    input[type='email']:focus,
+    select:focus,
+    textarea:focus {
+      border-color: var(--rust-red);
+      outline: none;
+      background: #fff9f4;
+    }
+    textarea {
+      resize: vertical;
+      min-height: 85px;
+    }
+    form button[type='submit'] {
+      composes: btn-vintage;
+      width: 100%;
+      max-width: 240px;
+      display: block;
+      margin: 1rem auto 0 auto;
+      cursor: pointer;
+    }
+
+    /* Responsive & mobile adjustments */
+    @media (max-width: 740px) {
+      section.entry {
+        flex-direction: column;
+      }
+      section.entry > div.page {
+        width: 100% !important;
+        border-right: none !important;
+        padding-left: 0.75rem !important;
+        padding-right: 0.75rem !important;
+        margin-bottom: 2rem;
+        min-height: auto;
+      }
+      header nav {
+        font-size: 0.8rem;
+        gap: 0.8rem 1rem;
+      }
+      .hero-text-overlay {
+        font-size: 1.5rem;
+        padding: 0 1rem;
+        letter-spacing: 0.06em;
+      }
+      main {
+        padding: 1.25rem 1.5rem;
+        margin: 1rem auto 2rem auto;
+      }
+      .product-grid {
+        grid-template-columns: repeat(auto-fit,minmax(140px,1fr));
+      }
+      form {
+        padding: 1rem 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header role="banner" aria-label="Primary Site Navigation">
+    <nav role="navigation" aria-label="Main navigation links">
+      <a href="#our-story">Our Story</a>
+      <a href="#wild-arce-way">The Wild Arce Way</a>
+      <a href="#farmstand">The Farmstand</a>
+      <a href="#grow-with-us">Grow With Us</a>
+      <a href="#beekeepers-wanted">Beekeepers Wanted</a>
+      <a href="#be-a-wild-arcer">Be a Wild Arcer™</a>
+      <a href="#honey-flight">The Honey Flight™</a>
+      <a href="#say-hello">Say Hello</a>
+    </nav>
+  </header>
+
+  <main role="main" aria-label="Wild Acres Honey Farm Website Content">
+    <!-- Hero Section -->
+    <section class="hero" aria-label="Hero video background and main tagline">
+      <video autoplay muted loop playsinline aria-hidden="true" tabindex="-1" style="mix-blend-mode: multiply; filter: sepia(0.6) contrast(1.2) brightness(0.9) saturate(0.85); width: 100%; height: 100%; object-fit: cover;" src="assets/sepia-hero-loop.mp4" poster="assets/sepia-placeholder.jpg"></video>
+      <div class="hero-text-overlay" role="heading" aria-level="1">From a Bookstore to the Bees...</div>
     </section>
-  );
-};
 
-export default HeroSection;
+    <!-- Entry 1: Our Story -->
+    <section class="entry fade-in" aria-labelledby="our-story-title" id="our-story">
+      <div class="page" role="region" aria-labelledby="our-story-title">
+        <h2 class="entry-title" id="our-story-title">From a Bookstore to the Bees</h2>
+        <h3 class="subheading">An idea seeded by an old book</h3>
+        <p>
+          It didn’t start with a farm. It started with a used copy of <em>Walden</em>.
+        </p>
+        <p>
+          Found in a city bookstore — dog-eared, under a flickering light — that old pine-covered book planted an idea. That maybe we don’t need to push the land to yield. Maybe we need to step back.
+          Let it breathe. And trust the bees to find their way.
+        </p>
+        <p>
+          Years later, Wild Acres Honey Farm was born from that belief. One jar at a time, one field at a time. Not a business plan, but a promise: to work with nature instead of trying to control it. We bottle small-batch honey from places left a little wild — fields full of clover, hillsides where goldenrod grows free, and gardens tended not with control, but with care.
+        </p>
+        <p>
+          We are not a single location. We are a cooperative, a scattered sanctuary.
+          A collective of stewards — beekeepers, gardeners, landowners — building a future where pollinators thrive and people reconnect with the land.
+        </p>
+
+        <div class="entry-meta" aria-hidden="true">Entry #1 • 1938</div>
+        <img alt="Delicate botanical pencil sketch" src="assets/botanical-sketch-tl.png" class="botanical-doodle botanical-tl" aria-hidden="true" />
+      </div>
+
+      <div class="page" role="region" aria-label="Illustrative botanical image">
+        <img src="assets/vintage-sepia-beekeeping-illustration.jpg" alt="Sepia-toned WPA style illustration of bees and beekeeping" />
+        <div class="entry-meta" aria-hidden="true">🖋 Journal illustration</div>
+        <img alt="Botanical border scrollwork" src="assets/botanical-scrollwork-br.png" class="botanical-doodle botanical-br" aria-hidden="true" />
+      </div>
+    </section>
+
+    <hr class="torn" aria-hidden="true" />
+
+    <!-- Entry 2: What is a Wild Arce? -->
+    <section class="entry fade-in" aria-labelledby="wild-arce-way-title" id="wild-arce-way">
+      <div class="page" role="region" aria-labelledby="wild-arce-way-title">
+        <h2 class="entry-title" id="wild-arce-way-title">What is a Wild Arce?</h2>
+        <h3 class="subheading">A promise and a practice</h3>
+        <p>
+          A Wild Arce isn’t just a plot of land — it’s a choice. A promise. A practice.
+        </p>
+        <p>
+          It’s a space where nature sets the pace. Where dandelions are left for the bees, clover is welcomed underfoot, and hedgerows are full of buzzing, fluttering life.
+        </p>
+        <p>A Wild Arce might be:</p>
+        <ul>
+          <li>A backyard strip blooming with bee balm and milkweed</li>
+          <li>A field edge left unmowed in early summer</li>
+          <li>A rooftop garden with native herbs in full, fragrant bloom</li>
+          <li>A schoolyard garden where pollinators become part of the curriculum</li>
+        </ul>
+        <p>
+          Each Wild Arce becomes part of our shared map. Through our <strong>Wild Arce Certification Kits™</strong>, supporters can mark their space with a field journal, a rustic sign, native wildflower seeds, and illustrated planting guides — planting a visible patch of hope in a world that needs more color.
+        </p>
+        <div class="entry-meta" aria-hidden="true">Entry #2 • 1938</div>
+        <img alt="Botanical hand-drawn flower sketch" src="assets/botanical-flower-sketch.png" class="botanical-doodle botanical-tl" aria-hidden="true" />
+      </div>
+
+      <div class="page" role="region" aria-label="Wild Arce kit image">
+        <img src="assets/wild-arce-kit-vintage-photo.jpg" alt="Wild Arce Certification Kit arranged on vintage field journal" />
+        <div class="entry-meta" aria-hidden="true">Vintage photograph</div>
+        <img alt="Botanical border scrollwork" src="assets/botanical-scrollwork-br.png" class="botanical-doodle botanical-br" aria-hidden="true" />
+      </div>
+    </section>
+
+    <hr class="torn" aria-hidden="true" />
+
+    <!-- Entry 3: Who is Wild Acres Honey Farm? -->
+    <section class="entry fade-in" aria-labelledby="who-are-we-title" id="farmstand">
+      <div class="page" role="region" aria-labelledby="who-are-we-title">
+        <h2 class="entry-title" id="who-are-we-title">Who is Wild Acres Honey Farm?</h2>
+        <h3 class="subheading">More than a brand</h3>
+        <p>
+          Wild Acres Honey Farm is more than a brand.
+        </p>
+        <p>
+          We’re a field-to-jar ecosystem, and a gentle act of resistance in a too-fast world.
+        </p>
+        <p>We are:</p>
+        <ul>
+          <li>A <strong>honey farm cooperative</strong>, where landowners host hives in exchange for honey and pollination.</li>
+          <li>A <strong>pollinator habitat alliance</strong>, growing a patchwork map of gardens, pastures, and quiet corners.</li>
+          <li>A <strong>seasonal product line</strong>, rooted in real harvests and packed with care — from beeswax lip balm and salves to food wraps and "native-to-where-you-are" seed-packets.</li>
+          <li>A <strong>story-sharing brand</strong>, where every jar, every farm, every bee yard has a name, and every season tells a tale.</li>
+          <li>A <strong>mobile tasting experience</strong> we call "<em>The Honey Flight™</em>," with traveling pop-ups and seasonal events where visitors can sample single-origin honeys, learn the stories of the land behind each jar, and explore our handmade goods.</li>
+          <li>A <strong>public education and outreach program</strong>, bringing bee-friendly gardening, habitat awareness, and hands-on learning to local schools, markets, and curious minds of all ages.</li>
+          <li>A <strong>community-driven conservation network</strong>, coordinating ethical bee swarm rescues and relocation through our growing map of regional beekeeper partners.</li>
+        </ul>
+
+        <div class="entry-meta" aria-hidden="true">Entry #3 • 1938</div>
+        <img alt="Hand-drawn bee sketch" src="assets/bee-sketch.png" class="botanical-doodle botanical-tl" aria-hidden="true" />
+      </div>
+
+      <div class="page" role="region" aria-label="Honey jars in vintage setting">
+        <img src="assets/seasonal-honey-jars-vintage.jpg" alt="Seasonal honey jars arranged on wooden crate with vintage labels" />
+        <div class="entry-meta" aria-hidden="true">Vintage photo</div>
+        <img alt="Botanical border scrollwork" src="assets/botanical-scrollwork-br.png" class="botanical-doodle botanical-br" aria-hidden="true" />
+      </div>
+    </section>
+
+    <hr class="torn" aria-hidden="true" />
+
+    <!-- The Farmstand Product Section -->
+    <section class="entry fade-in" aria-labelledby="farmstand-title" id="farmstand-products">
+      <div style="width: 100%; padding: 0 1rem;">
+        <h2 class="entry-title" id="farmstand-title">The Farmstand</h2>
+        <p style="font-style: italic; text-align: center; color: var(--moss-green); max-width: 720px; margin: 0 auto 1rem auto;">
+          Small batch products rooted in real harvests, crafted with care.
+        </p>
+
+        <!-- Filter Bar -->
+        <fieldset class="filter-bar" aria-label="Product category filters" role="group">
+          <input type="radio" id="filter-all" name="product-filter" value="all" checked />
+          <label for="filter-all">All</label>
+
+          <input type="radio" id="filter-honey" name="product-filter" value="honey" />
+          <label for="filter-honey">Honey</label>
+
+          <input type="radio" id="filter-beeswax" name="product-filter" value="beeswax" />
+          <label for="filter-beeswax">Beeswax</label>
+
+          <input type="radio" id="filter-seeds" name="product-filter" value="seeds" />
+          <label for="filter-seeds">Seed Packets</label>
+        </fieldset>
+
+        <!-- Products Grid -->
+        <div class="product-grid" id="product-grid" aria-live="polite" aria-atomic="true">
+          <!-- Product items dynamically inserted by script -->
+        </div>
+      </div>
+    </section>
+
+    <hr class="torn" aria-hidden="true" />
+
+    <!-- The Honey Flight™ Map -->
+    <section class="entry fade-in" aria-labelledby="honey-flight-title" id="honey-flight">
+      <h2 class="entry-title" id="honey-flight-title">The Honey Flight™</h2>
+      <p style="max-width: 720px; margin: 0 auto 1rem auto;">
+        Our mobile tasting experience with traveling pop-ups and seasonal events. Sample single-origin honeys, learn the stories, and explore handmade goods.
+      </p>
+      <div class="map-container" role="region" aria-label="Interactive Honey Flight map">
+        <p>Map of Locations coming soon...</p>
+        <div class="map-placeholder" aria-hidden="true"></div>
+      </div>
+    </section>
+
+    <hr class="torn" aria-hidden="true" />
+
+    <!-- Forms Section -->
+    <section class="entry fade-in" id="grow-with-us" aria-labelledby="grow-with-us-form-title">
+      <h2 class="entry-title" id="grow-with-us-form-title">Grow With Us</h2>
+      <p>Become a Garden Partner by sharing your space and love for pollinators.</p>
+      <form
+        id="garden-partner-form"
+        action="https://docs.google.com/forms/d/e/your-google-sheet-form-url/formResponse"
+        method="POST"
+        target="_blank"
+        aria-describedby="grow-with-us-instructions"
+      >
+        <label for="gp-name">Full Name</label>
+        <input type="text" id="gp-name" name="entry.123456789" required autocomplete="name" />
+
+        <label for="gp-email">Email Address</label>
+        <input type="email" id="gp-email" name="entry.987654321" required autocomplete="email" />
+
+        <label for="gp-location">Location / Address</label>
+        <input type="text" id="gp-location" name="entry.135792468" required autocomplete="postal-code" />
+
+        <label for="gp-space-description">Description of Your Pollinator Space</label>
+        <textarea id="gp-space-description" name="entry.1122334455" required></textarea>
+
+        <button type="submit" class="btn-vintage" aria-label="Submit Garden Partner Form">
+          Submit
+        </button>
+      </form>
+    </section>
+
+    <hr class="torn" aria-hidden="true" />
+
+    <section class="entry fade-in" id="beekeepers-wanted" aria-labelledby="beekeepers-wanted-form-title">
+      <h2 class="entry-title" id="beekeepers-wanted-form-title">Beekeepers Wanted</h2>
+      <p>If you’re interested in joining our cooperative as a beekeeper, please fill the form below.</p>
+      <form
+        id="beekeeper-form"
+        action="https://docs.google.com/forms/d/e/your-google-sheet-form-url-2/formResponse"
+        method="POST"
+        target="_blank"
+        aria-describedby="beekeepers-instructions"
+      >
+        <label for="bk-name">Full Name</label>
+        <input type="text" id="bk-name" name="entry.2233445566" required autocomplete="name" />
+
+        <label for="bk-email">Email Address</label>
+        <input type="email" id="bk-email" name="entry.6655443322" required autocomplete="email" />
+
+        <label for="bk-experience">Beekeeping Experience</label>
+        <select id="bk-experience" name="entry.987654679" required>
+          <option value="" disabled selected>Select experience level</option>
+          <option value="Beginner">Beginner</option>
+          <option value="Intermediate">Intermediate</option>
+          <option value="Advanced">Advanced</option>
+        </select>
+
+        <label for="bk-message">Tell us about your interest</label>
+        <textarea id="bk-message" name="entry.5544332211"></textarea>
+
+        <button type="submit" class="btn-vintage" aria-label="Submit Beekeeper Interest Form">
+          Submit
+        </button>
+      </form>
+    </section>
+
+    <hr class="torn" aria-hidden="true" />
+
+    <section class="entry fade-in" id="be-a-wild-arcer" aria-labelledby="wild-arcer-subscription-title">
+      <h2 class="entry-title" id="wild-arcer-subscription-title">Be a Wild Arcer™</h2>
+      <p>Subscribe to our Supporter Subscription Box and plant a patch of hope.</p>
+      <!-- ConvertKit embed form placeholder -->
+      <div style="max-width: 420px; margin: 0 auto 3rem auto; text-align: center;">
+        <form action="https://app.convertkit.com/forms/your-convertkit-form-id/subscriptions" method="post" target="_blank" aria-label="Supporter Subscription Form">
+          <input type="email" name="email_address" aria-label="Email Address" placeholder="Your email" required style="font-family: 'EB Garamond', serif; font-size: 1rem; padding: 0.4rem 0.75rem; width: 100%; max-width: 100%; margin-bottom: 1rem; border: 1.5px solid var(--dusty-lilac);border-radius: 4px;" />
+          <button type="submit" class="btn-vintage" aria-label="Subscribe to Supporter Box">
+            Subscribe
+          </button>
+        </form>
+      </div>
+    </section>
+
+    <hr class="torn" aria-hidden="true" />
+
+    <section class="entry fade-in" id="say-hello" aria-labelledby="contact-title">
+      <h2 class="entry-title" id="contact-title">Say Hello</h2>
+      <p>We welcome your questions, stories, and notes from the field.</p>
+      <form
+        id="contact-form"
+        action="https://docs.google.com/forms/d/e/your-google-sheet-form-url-3/formResponse"
+        method="POST"
+        target="_blank"
+        aria-describedby="contact-instructions"
+      >
+        <label for="contact-name">Full Name</label>
+        <input type="text" id="contact-name" name="entry.192837465" required autocomplete="name" />
+
+        <label for="contact-email">Email Address</label>
+        <input type="email" id="contact-email" name="entry.564738291" required autocomplete="email" />
+
+        <label for="contact-message">Message</label>
+        <textarea id="contact-message" name="entry.837261945" required></textarea>
+
+        <button type="submit" class="btn-vintage" aria-label="Submit Contact Form">
+          Send Message
+        </button>
+      </form>
+    </section>
+
+    <div role="contentinfo" aria-label="Footer information" style="text-align:center; font-family: 'IM Fell DW Pica', serif; font-size: 0.85rem; color: var(--dusty-lilac); margin-top: 3rem;">
+      &copy; 1938 Wild Acres Honey Farm &nbsp;|&nbsp; Vintage-inspired static website
+    </div>
+  </main>
+
+  <script>
+    // Sample product data - in real use, could be loaded via JSON or Shopify integration
+    const products = [
+      {
+        id: 1,
+        name: "Wild Clover Honey Jar",
+        category: "honey",
+        price: "$12.00",
+        image: "assets/product-honey-jar-1.jpg",
+      },
+      {
+        id: 2,
+        name: "Beeswax Lip Balm",
+        category: "beeswax",
+        price: "$6.50",
+        image: "assets/product-beeswax-lipbalm.jpg",
+      },
+      {
+        id: 3,
+        name: "Native Wildflower Seed Packet",
+        category: "seeds",
+        price: "$4.00",
+        image: "assets/product-seed-packet.jpg",
+      },
+      {
+        id: 4,
+        name: "Goldenrod Honey Jar",
+        category: "honey",
+        price: "$14.00",
+        image: "assets/product-honey-jar-2.jpg",
+      },
+      {
+        id: 5,
+        name: "Beeswax Food Wraps (3-pack)",
+        category: "beeswax",
+        price: "$18.00",
+        image: "assets/product-foodwraps.jpg",
+      },
+    ];
+
+    const productGrid = document.getElementById("product-grid");
+    const filterRadios = document.querySelectorAll('input[name="product-filter"]');
+
+    function renderProducts(filter = "all") {
+      productGrid.innerHTML = "";
+      let filteredProducts = products;
+      if (filter !== "all") {
+        filteredProducts = products.filter((p) => p.category === filter);
+      }
+      if (!filteredProducts.length) {
+        productGrid.innerHTML = "<p style='font-style: italic; color: var(--rust-red);'>No products found in this category.</p>";
+        return;
+      }
+      filteredProducts.forEach((product) => {
+        const div = document.createElement("div");
+        div.className = "product-item";
+        div.tabIndex = 0;
+        div.setAttribute("role", "button");
+        div.setAttribute("aria-label", `View product: ${product.name}, priced at ${product.price}`);
+
+        div.innerHTML = `
+          <img src="${product.image}" alt="${product.name}" />
+          <div class="product-item-name">${product.name}</div>
+          <div class="product-item-price">${product.price}</div>
+          <a href="#" class="btn-vintage" aria-label="Shop ${product.name}">Shop Now</a>
+        `;
+        productGrid.appendChild(div);
+      });
+    }
+    // Initial load
+    renderProducts();
+
+    filterRadios.forEach((radio) => {
+      radio.addEventListener("change", (e) => {
+        renderProducts(e.target.value);
+      });
+    });
+  </script>
+</body>
+</html>
